@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login / Signup</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 30px;
+      width: 320px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      color: #fff;
+      text-align: center;
+    }
+
+    h2 {
+      margin: 20px 0 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    input::placeholder {
+      color: #eee;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      background-color: #00c9a7;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #00a58f;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+<input type="email" id="login-email" placeholder="Email" />
+<input type="password" id="login-password" placeholder="Password" />
+<p style="text-align: right; margin: 5px 0;">
+  <a href="#" onclick="forgotPassword()" style="color: #00f; text-decoration: underline;">Forgot Password?</a>
+</p>
+<button onclick="login()">Login</button>
+
+
+    <h2>Signup</h2>
+    <input type="text" id="signup-first-name" placeholder="First Name" required />
+<input type="text" id="signup-last-name" placeholder="Last Name" required />
+<input type="email" id="signup-email" placeholder="Email" required />
+<input type="password" id="signup-password" placeholder="Password" required />
+<button onclick="signup()">Sign Up</button>
+
+    
+  </div>
+
+
+<script type="module" src="/src/main.js"></script>
+
+
+</body>
+</html>
