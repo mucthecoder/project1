@@ -36,7 +36,7 @@ window.login = (event) => {
   signInWithEmailAndPassword(auth, email, password)
     .then(() => {
       alert("Login successful!");
-      window.location.href = "/src/welcome.html";
+      window.location.href = "/public/welcome.html";
     })
     .catch((err) => {
       alert("Login failed: " + err.message);
