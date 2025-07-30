@@ -97,6 +97,9 @@ window.forgotPassword = () => {
 
 // Google Sign In/Sign Up
 window.googleSignIn = () => {
+  const googleButtons = document.querySelectorAll('.google-signin');
+  googleButtons.forEach(btn => btn.disabled = true);
+
   const provider = new GoogleAuthProvider();
   provider.setCustomParameters({ prompt: 'select_account' }); // Always show account chooser
   signInWithPopup(auth, provider)
@@ -118,7 +121,17 @@ window.googleSignIn = () => {
       window.location.href = "/welcome.html";
     })
     .catch((err) => {
-      alert("Google sign-in failed: " + err.message);
+      if (err.code === "auth/cancelled-popup-request") {
+        // Ignore or show a subtle message if needed
+        // Optionally: alert("Google sign-in was cancelled.");
+      } else if (err.code === "auth/popup-closed-by-user") {
+        // Optionally: alert("Google sign-in popup was closed.");
+      } else {
+        alert("Google sign-in failed: " + err.message);
+      }
+    })
+    .finally(() => {
+      googleButtons.forEach(btn => btn.disabled = false);
     });
 };
 
