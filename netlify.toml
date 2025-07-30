@@ -1,13 +1,4 @@
 [build.environment]
 SECRETS_SCAN_ENABLED = "false"
 
-[[redirects]]
-  from = "/signup"
-  to = "/signup.html"
-  status = 200
-
-[[redirects]]
-  from = "/login"
-  to = "/login.html"
-  status = 200
 
