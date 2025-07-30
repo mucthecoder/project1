@@ -66,32 +66,54 @@
     button:hover {
       background-color: #00a58f;
     }
+
+    .hidden {
+      display: none;
+    }
+
+    .toggle-link {
+      color: #0ff;
+      cursor: pointer;
+      text-decoration: underline;
+      margin-top: 10px;
+      display: block;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>Login</h2>
-<input type="email" id="login-email" placeholder="Email" />
-<input type="password" id="login-password" placeholder="Password" />
-<p style="text-align: right; margin: 5px 0;">
-  <a href="#" onclick="forgotPassword()" style="color: #00f; text-decoration: underline;">Forgot Password?</a>
-</p>
-<button onclick="login()">Login</button>
+    <!-- Login Form -->
+    <div id="login-form">
+      <h2>Login</h2>
+      <input type="email" id="login-email" placeholder="Email" />
+      <input type="password" id="login-password" placeholder="Password" />
+      <p style="text-align: right; margin: 5px 0;">
+        <a href="#" onclick="forgotPassword()" style="color: #00f; text-decoration: underline;">Forgot Password?</a>
+      </p>
+      <button onclick="login()">Login</button>
+      <span class="toggle-link" onclick="toggleForms()">Don't have an account? Sign up</span>
+    </div>
 
-
-    <h2>Signup</h2>
-    <input type="text" id="signup-first-name" placeholder="First Name" required />
-<input type="text" id="signup-last-name" placeholder="Last Name" required />
-<input type="email" id="signup-email" placeholder="Email" required />
-<input type="password" id="signup-password" placeholder="Password" required />
-<button onclick="signup()">Sign Up</button>
-
-    
+    <!-- Signup Form -->
+    <div id="signup-form" class="hidden">
+      <h2>Signup</h2>
+      <input type="text" id="signup-first-name" placeholder="First Name" required />
+      <input type="text" id="signup-last-name" placeholder="Last Name" required />
+      <input type="email" id="signup-email" placeholder="Email" required />
+      <input type="password" id="signup-password" placeholder="Password" required />
+      <button onclick="signup()">Sign Up</button>
+      <span class="toggle-link" onclick="toggleForms()">Already have an account? Login</span>
+    </div>
   </div>
 
-
-<script type="module" src="/src/main.js"></script>
-
-
+  <script type="module" src="/src/main.js"></script>
+  <script>
+    function toggleForms() {
+      const loginForm = document.getElementById('login-form');
+      const signupForm = document.getElementById('signup-form');
+      loginForm.classList.toggle('hidden');
+      signupForm.classList.toggle('hidden');
+    }
+  </script>
 </body>
 </html>
