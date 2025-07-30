@@ -76,6 +76,7 @@ window.signup = () => {
 //  Forgot Password
 window.forgotPassword = () => {
   const email = document.getElementById("login-email").value;
+  console.log("Trying to reset password for:", email); // Debug
 
   if (!email) {
     alert("Please enter your email to reset your password.");
@@ -84,12 +85,14 @@ window.forgotPassword = () => {
 
   sendPasswordResetEmail(auth, email)
     .then(() => {
-      alert("Password reset email sent. Please check your inbox.");
+      alert("Password reset email sent.");
     })
     .catch((error) => {
+      console.error("Password reset error:", error); // Debug
       alert("Error: " + error.message);
     });
 };
+
 
 //  Auto-fill login form from localStorage
 window.addEventListener("DOMContentLoaded", () => {
