@@ -98,6 +98,7 @@ window.forgotPassword = () => {
 // Google Sign In/Sign Up
 window.googleSignIn = () => {
   const provider = new GoogleAuthProvider();
+  provider.setCustomParameters({ prompt: 'select_account' }); // Always show account chooser
   signInWithPopup(auth, provider)
     .then(async (result) => {
       const user = result.user;
