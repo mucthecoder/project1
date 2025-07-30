@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Login</title>
+  <title>Sign Up</title>
   <style>
-    /* same CSS as you provided */
+    /* same CSS copied from login page */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -71,16 +71,15 @@
 </head>
 <body>
   <div class="container">
-    <h2>Login</h2>
-    <input type="email" id="login-email" placeholder="Email" />
-    <input type="password" id="login-password" placeholder="Password" />
-    <p style="text-align: right; margin: 5px 0;">
-      <a href="#" onclick="forgotPassword()" style="color: #00f; text-decoration: underline;">Forgot Password?</a>
-    </p>
-    <button onclick="login()">Login</button>
+    <h2>Sign Up</h2>
+    <input type="text" id="signup-first-name" placeholder="First Name" required />
+    <input type="text" id="signup-last-name" placeholder="Last Name" required />
+    <input type="email" id="signup-email" placeholder="Email" required />
+    <input type="password" id="signup-password" placeholder="Password" required />
+    <button onclick="signup()">Sign Up</button>
 
     <p style="margin-top: 10px;">
-      Don't have an account? <a href="signup.html" style="color: #0ff;">Sign up</a>
+      Already have an account? <a href="login.html" style="color: #0ff;">Log in</a>
     </p>
   </div>
 
