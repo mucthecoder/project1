@@ -41,7 +41,7 @@ window.login = (event) => {
       localStorage.setItem("savedPassword", password);
 
       alert("Login successful!");
-       showMockYocoModal();
+      window.location.href = "/welcome.html";
     })
     .catch((err) => {
       alert("Login failed: " + err.message);

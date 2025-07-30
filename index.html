@@ -124,25 +124,7 @@
   <script type="module" src="/src/main.js"></script>
 
 
-  <script>
-  function showMockYocoModal() {
-    document.getElementById("mock-yoco-modal").style.display = "flex";
-  }
-
-  function completeMockPayment() {
-    const status = document.getElementById("payment-status");
-    status.textContent = "Processing...";
-
-    // Simulate 2-second payment processing
-    setTimeout(() => {
-      status.textContent = "Payment Successful! 🎉";
-      alert("Payment complete. Redirecting...");
-      // Simulate redirect after payment
-      window.location.href = "/dashboard.html"; // or your next page
-    }, 2000);
-  }
-</script>
-
+  
   <script>
     function toggleForms() {
       const loginForm = document.getElementById('login-form');
