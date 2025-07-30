@@ -3,7 +3,9 @@ import {
   getAuth,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
-  sendPasswordResetEmail
+  sendPasswordResetEmail,
+  signInWithPopup,
+  GoogleAuthProvider
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import {
   getFirestore,
@@ -93,6 +95,31 @@ window.forgotPassword = () => {
     });
 };
 
+// Google Sign In/Sign Up
+window.googleSignIn = () => {
+  const provider = new GoogleAuthProvider();
+  signInWithPopup(auth, provider)
+    .then(async (result) => {
+      const user = result.user;
+      // Check if user doc exists, if not, create it
+      const userDocRef = doc(db, "users", user.uid);
+      const userDocSnap = await import("https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js")
+        .then(({ getDoc }) => getDoc(userDocRef));
+      if (!userDocSnap.exists()) {
+        await setDoc(userDocRef, {
+          firstName: user.displayName ? user.displayName.split(" ")[0] : "",
+          lastName: user.displayName ? user.displayName.split(" ").slice(1).join(" ") : "",
+          email: user.email,
+          createdAt: serverTimestamp()
+        });
+      }
+      alert("Google sign-in successful!");
+      window.location.href = "/welcome.html";
+    })
+    .catch((err) => {
+      alert("Google sign-in failed: " + err.message);
+    });
+};
 
 //  Auto-fill login form from localStorage
 window.addEventListener("DOMContentLoaded", () => {

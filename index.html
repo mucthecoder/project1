@@ -78,6 +78,31 @@
       margin-top: 10px;
       display: block;
     }
+
+    .google-signin {
+      background: #fff;
+      color: #444;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: normal;
+      border: none;
+      border-radius: 8px;
+      padding: 12px;
+      margin: 10px 0;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .google-signin:hover {
+      background: #f0f0f0;
+    }
+
+    .google-signin img {
+      width: 20px;
+      height: 20px;
+    }
   </style>
 </head>
 <body>
@@ -91,6 +116,9 @@
         <a href="#" onclick="forgotPassword()" style="color: #00f; text-decoration: underline;">Forgot Password?</a>
       </p>
       <button onclick="login()">Login</button>
+      <button class="google-signin" onclick="googleSignIn()">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google"> Sign in with Google
+      </button>
       <span class="toggle-link" onclick="toggleForms()">Don't have an account? Sign up</span>
     </div>
 
@@ -102,6 +130,9 @@
       <input type="email" id="signup-email" placeholder="Email" required />
       <input type="password" id="signup-password" placeholder="Password" required />
       <button onclick="signup()">Sign Up</button>
+      <button class="google-signin" onclick="googleSignIn()">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google"> Sign up with Google
+      </button>
       <span class="toggle-link" onclick="toggleForms()">Already have an account? Login</span>
     </div>
   </div>
