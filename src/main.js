@@ -12,7 +12,7 @@ import {
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-// Initialize Firebase with env variables
+// ✅ Firebase Config from .env
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
@@ -22,29 +22,33 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
+//  Init Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// ----- Login -----
+// Login
 window.login = (event) => {
-  if (event) event.preventDefault(); // Prevent form submission if called from a form
+  if (event) event.preventDefault();
 
   const email = document.getElementById("login-email").value;
   const password = document.getElementById("login-password").value;
 
   signInWithEmailAndPassword(auth, email, password)
     .then(() => {
-      alert("Login successful!");
-     window.location.href = "/welcome.html";
+      // ⚠️ Save to localStorage for dev/demo
+      localStorage.setItem("savedEmail", email);
+      localStorage.setItem("savedPassword", password);
 
+      alert("Login successful!");
+      window.location.href = "/welcome.html";
     })
     .catch((err) => {
       alert("Login failed: " + err.message);
     });
 };
 
-// ----- Signup -----
+// Signup
 window.signup = () => {
   const firstName = document.getElementById("signup-first-name").value;
   const lastName = document.getElementById("signup-last-name").value;
@@ -69,7 +73,7 @@ window.signup = () => {
     });
 };
 
-// ----- Forgot Password -----
+//  Forgot Password
 window.forgotPassword = () => {
   const email = document.getElementById("login-email").value;
 
@@ -86,3 +90,16 @@ window.forgotPassword = () => {
       alert("Error: " + error.message);
     });
 };
+
+//  Auto-fill login form from localStorage
+window.addEventListener("DOMContentLoaded", () => {
+  const savedEmail = localStorage.getItem("savedEmail");
+  const savedPassword = localStorage.getItem("savedPassword");
+
+  if (savedEmail) {
+    document.getElementById("login-email").value = savedEmail;
+  }
+  if (savedPassword) {
+    document.getElementById("login-password").value = savedPassword;
+  }
+});
