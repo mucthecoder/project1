@@ -1,0 +1,2105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foot Care - FirstChem Pharmacy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: rgb(233, 30, 99); /* Professional blue */
+            --primary-dark: rgb(33, 150, 243); /* Darker blue for contrast */
+            --secondary-color: #f5f7fa;
+            --accent-color: #2196F3;
+            --accent-light: #BBDEFB;
+            --text-color: #333;
+            --light-text: #666;
+            --white: #ffffff;
+            --cold-blue: #E3F2FD;
+            --flu-purple: #EDE7F6;
+            --border-radius: 10px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --box-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --header-height: 80px;        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--secondary-color);
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 5px rgba(141, 110, 99, 0.2);
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(93, 64, 55, 0.3);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            box-shadow: none;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Section Titles */
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+            color: var(--primary-dark);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+        
+        .text-center .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Header Styles */
+        .top-bar {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 10px 0;
+            font-size: 14px;
+        }
+        
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .top-links ul {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .top-links a {
+            color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .top-links a:hover {
+            color: var(--white);
+        }
+        
+        .main-header {
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            background-color: var(--white);
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+        
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .logo-text span {
+            color: var(--accent-color);
+            font-weight: 800;
+        }
+        
+        /* Search Bar */
+        .search-bar {
+            flex-grow: 1;
+            margin: 0 30px;
+            position: relative;
+            max-width: 600px;
+            display: flex;
+        }
+        
+        .search-container {
+            position: relative;
+            width: 100%;
+        }
+        
+        .search-bar input {
+            width: 100%;
+            padding: 12px 50px 12px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 30px;
+            font-size: 15px;
+            transition: var(--transition);
+            background-color: #f8fafc;
+        }
+        
+        .search-bar input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background-color: var(--white);
+            box-shadow: 0 0 0 3px rgba(93, 64, 55, 0.1);
+        }
+        
+        .search-bar button {
+            position: absolute;
+            right: 8px;
+            top: 8px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .search-bar button:hover {
+            background-color: var(--primary-dark);
+            transform: scale(1.05);
+        }
+        
+        .results-dropdown {
+            position: absolute;
+            width: 100%;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: none;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .result-item {
+            display: block;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+        
+        .result-item:hover {
+            background-color: #f0f7ff;
+        }
+        
+        .result-item strong {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+        
+        .result-item span {
+            font-size: 13px;
+            color: #666;
+        }
+        
+        .result-item small {
+            display: block;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-top: 3px;
+        }
+        
+        /* Header Icons */
+        .header-icons {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .header-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 13px;
+            color: var(--text-color);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .header-icon:hover {
+            color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+        
+        .header-icon i {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .icon-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        
+        /* Navigation */
+        .main-nav {
+            background-color: var(--primary-color);
+            padding: 0;
+        }
+        
+        .main-nav .container {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+        
+        .main-nav ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .main-nav li {
+            position: relative;
+        }
+        
+        .main-nav a {
+            display: block;
+            color: var(--white);
+            padding: 16px 15px;
+            transition: var(--transition);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+        
+        .main-nav a:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        .main-nav .nav-dropdown {
+            position: relative;
+        }
+        
+        .main-nav .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            min-width: 220px;
+            box-shadow: var(--box-shadow-lg);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+        
+        .main-nav .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-menu li a {
+            color: var(--text-color);
+            padding: 12px 20px;
+            border-bottom: 1px solid #f1f5f9;
+            text-transform: none;
+        }
+        
+        .dropdown-menu li a:hover {
+            background-color: #f8fafc;
+            color: var(--primary-color);
+            padding-left: 25px;
+        }
+        
+        /* Cart Dropdown */
+        .cart-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 380px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            display: none;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .cart-header {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .cart-items {
+            padding: 15px;
+        }
+        
+        .cart-item {
+            display: flex;
+            padding: 10px 0;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        
+        .cart-item img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            margin-right: 15px;
+            border-radius: 4px;
+            background: #f8f9fa;
+            padding: 5px;
+        }
+        
+        .cart-item-info {
+            flex: 1;
+        }
+        
+        .cart-item-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+        
+        .cart-item-price {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+        }
+        
+        .quantity-btn {
+            width: 28px;
+            height: 28px;
+            background: #f1f1f1;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .quantity-value {
+            margin: 0 10px;
+            min-width: 30px;
+            text-align: center;
+        }
+        
+        .remove-item {
+            background: none;
+            border: none;
+            color: #e74c3c;
+            cursor: pointer;
+            margin-left: 15px;
+            font-size: 18px;
+        }
+        
+        .cart-footer {
+            padding: 15px;
+            border-top: 1px solid #eee;
+            background: #f8f9fa;
+        }
+        
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .cart-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn-view {
+            background: #fff;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+        
+        .btn-view:hover {
+            background: #f0f7ff;
+        }
+        
+        .btn-checkout {
+            background: var(--primary-color);
+            color: white;
+            border: 1px solid var(--primary-color);
+        }
+        
+        .btn-checkout:hover {
+            background: var(--primary-dark);
+        }
+        
+        .empty-cart {
+            text-align: center;
+            padding: 30px 15px;
+            color: #7f8c8d;
+        }
+        
+        .empty-cart i {
+            font-size: 50px;
+            margin-bottom: 15px;
+            color: #bdc3c7;
+        }
+        
+        /* Add to cart confirmation */
+        .confirmation {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #27ae60;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            z-index: 1000;
+            animation: fadeInOut 3s ease;
+            display: none;
+        }
+        
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(20px); }
+            10% { opacity: 1; transform: translateY(0); }
+            90% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(20px); }
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(250, 250, 250, 0.6), rgba(77, 54, 47, 0.7)), 
+            url('https://images.unsplash.com/photo-1542296339-f9d8ecb1e7a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            margin-bottom: 40px;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 800;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .breadcrumb {
+            padding: 15px 0;
+            background-color: #f0f5ff;
+            margin-bottom: 30px;
+        }
+        
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .breadcrumb span {
+            color: var(--light-text);
+        }
+        
+        /* Foot Care Benefits */
+        .footcare-benefits {
+            background: linear-gradient(to right, #81c784, #64b5f6);
+            padding: 50px 0;
+            margin-bottom: 40px;
+            border-radius: var(--border-radius);
+        }
+        
+        .tips-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .tip-card {
+            background: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .tip-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .tip-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+        
+        .tip-card h3 i {
+            color: #388e3c;
+        }
+        
+        /* Categories */
+        .categories {
+            padding: 40px 0;
+        }
+        
+        .categories-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            position: relative;
+            text-align: center;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-img {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--footcare-blue);
+        }
+        
+        .category-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .category-info {
+            padding: 20px;
+        }
+        
+        .category-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 40px 0;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 40px;
+        }
+        
+        .filter-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .filter-section {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .filter-label {
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+        
+        .filter-select {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            background-color: #fff;
+            cursor: pointer;
+        }
+        
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .product-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            position: relative;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            cursor: pointer;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgb(233, 30, 99);;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 2;
+        }
+        
+        .product-img {
+            height: 200px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--footcare-blue);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: var(--transition);
+        }
+        
+        .product-info {
+            padding: 20px;
+            border-top: 1px solid #f1f5f9;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-title {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+        
+        .product-price {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        .add-to-cart {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            font-size: 15px;
+            margin-top: auto;
+        }
+        
+        .add-to-cart:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        /* Product Type Tags */
+        .product-tag {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .tag-fungal {
+            background-color: #E8F5E9;
+            color: #1B5E20;
+        }
+        
+        .tag-callus {
+            background-color: #FFF3E0;
+            color: #E65100;
+        }
+        
+        .tag-diabetic {
+            background-color: #E3F2FD;
+            color: #0D47A1;
+        }
+        
+        .tag-moisturizing {
+            background-color: #F3E5F5;
+            color: #7B1FA2;
+        }
+        
+        .tag-general {
+            background-color: #E0E0E0;
+            color: #424242;
+        }
+        
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .pagination button {
+            margin: 0 5px;
+            padding: 8px 15px;
+            background-color: var(--white);
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .pagination button:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+        
+        .pagination button.active {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+        
+        /* Footer */
+        .main-footer {
+            background-color: #1a202c;
+            color: var(--white);
+            padding: 40px 0 0;
+            margin-top: 40px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .copyright {
+            background-color: #0d1117;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 14px;
+            color: #a0aec0;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background-color: var(--white);
+            margin: 50px auto;
+            max-width: 800px;
+            width: 90%;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .modal-header {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--light-text);
+        }
+        
+        .modal-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        @media (min-width: 768px) {
+            .modal-body {
+                flex-direction: row;
+            }
+        }
+        
+        .modal-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #f8fafc;
+            border-radius: var(--border-radius);
+        }
+        
+        .modal-image img {
+            max-width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+        }
+        
+        .modal-info {
+            flex: 1;
+        }
+        
+        .modal-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+        
+        .modal-price {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .modal-description {
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .modal-quantity {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .modal-quantity input {
+            width: 60px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+            margin: 0 10px;
+        }
+        
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn-modal {
+            flex: 1;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        /* Usage Guide */
+        .usage-guide {
+            background-color: #e8f5e9;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .guide-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary-dark);
+        }
+        
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .guide-card {
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+        }
+        
+        .guide-icon {
+            font-size: 40px;
+            color: #056dff;
+            margin-bottom: 15px;
+        }
+        
+        .guide-card h4 {
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+        }
+        
+        /* Wellness Section */
+        .wellness-section {
+            background-color: #e3f2fd;
+            padding: 50px 0;
+            margin: 40px 0;
+            border-radius: var(--border-radius);
+        }
+        
+        .wellness-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .wellness-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .search-bar {
+                margin: 15px 0;
+                max-width: 100%;
+            }
+            
+            .filter-container {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                height: 250px;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-icons {
+                width: 100%;
+                justify-content: space-around;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="welcome-msg">Welcome to FirstChem Pharmacy - South Africa's Trusted Online Pharmacy</div>
+            <div class="top-links">
+                <ul>
+                    <li><a href="tel:0123456789"><i class="fas fa-phone-alt" aria-hidden="true"></i> <span>012 345 6789</span></a></li>
+                    <li><a href="mailto:info@firstchempharmacy.co.za"><i class="fas fa-envelope" aria-hidden="true"></i> <span>info@firstchempharmacy.co.za</span></a></li>
+                    <li><a href="#store-locator"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span>Store Locator</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <a href="/" class="logo">
+                        <div class="logo-text">First<span>Chem</span></div>
+                    </a>
+
+                    <div class="search-bar">
+                        <div class="search-container">
+                            <label for="searchInput" class="sr-only">Search for foot care products</label>
+                            <input type="text" id="searchInput" placeholder="Search for foot care products..." aria-label="Search products">
+                            <div id="searchResults" class="results-dropdown"></div>
+                        </div>
+                        <button aria-label="Search" id="searchButton"><i class="fas fa-search"></i></button>
+                    </div>
+
+                    <div class="header-icons">
+                        <a href="#account" class="header-icon" aria-label="My Account">
+                            <i class="fas fa-user" aria-hidden="true"></i>
+                            <span>Account</span>
+                        </a>
+                        <a href="#wishlist" class="header-icon" aria-label="Wishlist">
+                            <i class="fas fa-heart" aria-hidden="true"></i>
+                            <span>Wishlist</span>
+                        </a>
+                        <div class="header-icon" id="cartIcon" aria-label="Shopping Cart">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                                <span class="cart-count">0</span>
+                            </div>
+                            <span>Cart</span>
+                            <!-- Cart Dropdown -->
+                            <div class="cart-dropdown" id="cartDropdown">
+                                <div class="cart-header">
+                                    <h3>Your Shopping Cart</h3>
+                                </div>
+                                <div class="cart-items" id="cartItems">
+                                    <!-- Cart items will be inserted here -->
+                                </div>
+                                <div class="cart-footer">
+                                    <div class="cart-total">
+                                        <span>Total:</span>
+                                        <span id="cartTotalPrice">R0.00</span>
+                                    </div>
+                                    <div class="cart-buttons">
+                                        <a href="cart.html" class="btn btn-view">View Cart</a>
+                                        <a href="checkout.html" class="btn btn-checkout">Checkout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Navigation -->
+        <nav class="main-nav" aria-label="Main navigation">
+            <div class="container">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#">Shop <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="category.html?category=Wound Care">Wound Care</a></li>
+                            <li><a href="category.html?category=Self Medication">Self Medication</a></li>
+                            <li><a href="category.html?category=Vitamins & Supplements">Vitamins & Supplements</a></li>
+                            <li><a href="category.html?category=Baby & Kids Medication">Baby & Kids</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Prescriptions</a></li>
+                    <li><a href="#">Health & Wellness</a></li>
+                    <li><a href="#">Baby & Kids</a></li>
+                    <li><a href="#">Vitamins & Supplements</a></li>
+                    <li><a href="#">Beauty</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Add to cart confirmation -->
+    <div class="confirmation" id="confirmation">Product added to cart!</div>
+
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-heading">
+        <div class="container">
+            <div class="hero-content">
+                <h1 id="hero-heading">Foot Care Solutions</h1>
+                <p>Specialized products for healthy, comfortable feet at every stage of life</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> > <a href="#">Shop</a> > <span>Foot Care</span>
+        </div>
+    </div>
+
+    <!-- Foot Care Benefits -->
+    <section class="footcare-benefits">
+        <div class="container">
+            <h2 class="section-title text-center">Foot Care Benefits</h2>
+            <div class="tips-container">
+                <div class="tip-card">
+                    <h3><i class="fas fa-bacteria"></i> Fungal Treatment</h3>
+                    <p>Effective solutions for athlete's foot and nail fungus to restore healthy nails and skin.</p>
+                </div>
+                <div class="tip-card">
+                    <h3><i class="fas fa-hand-sparkles"></i> Callus & Corn Care</h3>
+                    <p>Specialized products to gently remove and prevent painful calluses and corns.</p>
+                </div>
+                <div class="tip-card">
+                    <h3><i class="fas fa-allergies"></i> Diabetic Foot Care</h3>
+                    <p>Gentle, specialized products designed for sensitive diabetic feet.</p>
+                </div>
+                <div class="tip-card">
+                    <h3><i class="fas fa-spa"></i> Moisturizing Relief</h3>
+                    <p>Intensive hydration for dry, cracked heels and rough skin.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Foot Care Guide -->
+    <div class="container">
+        <div class="usage-guide">
+            <h3 class="guide-title">Foot Care Guidance</h3>
+            <div class="guide-grid">
+                <div class="guide-card">
+                    <div class="guide-icon">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <h4>Daily Cleaning</h4>
+                    <p>Proper washing and drying techniques to prevent fungal infections and odor.</p>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h4>Nail Care</h4>
+                    <p>Safe trimming and maintenance to prevent ingrown toenails and infections.</p>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-icon">
+                        <i class="fas fa-socks"></i>
+                    </div>
+                    <h4>Sock Selection</h4>
+                    <p>Choosing the right socks to prevent moisture buildup and friction.</p>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-icon">
+                        <i class="fas fa-shoe-prints"></i>
+                    </div>
+                    <h4>Shoe Fit</h4>
+                    <p>Proper footwear selection to prevent blisters, corns, and other foot problems.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title text-center">Foot Care Categories</h2>
+            <div class="categories-container">
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1607602132700-0681204f21da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Fungal Treatments">
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-title">Fungal Treatments</h3>
+                        <p>Creams, sprays and solutions for athlete's foot and nail fungus</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1607602132863-7c1a8d5a8c4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Callus & Corn Care">
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-title">Callus & Corn Care</h3>
+                        <p>Files, removers and cushions for rough skin and pressure points</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1607602132863-7c1a8d5a8c4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Diabetic Foot Care">
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-title">Diabetic Foot Care</h3>
+                        <p>Specialized products for sensitive diabetic feet</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1607602132863-7c1a8d5a8c4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Moisturizers & Balms">
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-title">Moisturizers & Balms</h3>
+                        <p>Hydrating creams and ointments for dry, cracked skin</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wellness Section -->
+    <section class="wellness-section">
+        <div class="container">
+            <div class="wellness-content">
+                <h2 class="wellness-title">Comprehensive Foot Health</h2>
+                <p>At FirstChem Pharmacy, we understand that healthy feet are essential for overall wellbeing. Our foot care range includes clinically-proven treatments and premium care products to address common foot problems and maintain optimal foot health.</p>
+                <p>From fungal infections to diabetic foot care, our products are selected for their efficacy and safety. Consult with our pharmacists for personalized foot care recommendations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" aria-labelledby="products-heading">
+        <div class="container">
+            <h2 id="products-heading" class="section-title">Foot Care Products</h2>
+            <p class="text-center" style="margin-bottom: 30px; color: var(--light-text); max-width: 800px; margin-left: auto; margin-right: auto;">
+                Discover our range of specialized products for foot health and comfort.
+            </p>
+            
+            <!-- Filter Section -->
+            <div class="filter-container">
+                <div class="filter-section">
+                    <span class="filter-label">Sort By:</span>
+                    <select id="sortBy" class="filter-select">
+                        <option value="default">Featured</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="name-asc">Name: A to Z</option>
+                        <option value="name-desc">Name: Z to A</option>
+                    </select>
+                </div>
+                
+                <div class="filter-section">
+                    <span class="filter-label">Filter By:</span>
+                    <select id="filterBy" class="filter-select">
+                        <option value="all">All Products</option>
+                        <option value="fungal">Fungal Treatments</option>
+                        <option value="callus">Callus & Corn Care</option>
+                        <option value="diabetic">Diabetic Foot Care</option>
+                        <option value="moisturizing">Moisturizers & Balms</option>
+                        <option value="best-seller">Best Sellers</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="product-grid" id="productGrid">
+                <!-- Products will be loaded here via JavaScript -->
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination" id="pagination">
+                <!-- Pagination buttons will be generated here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Product Details</h3>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Product details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>First Chem Pharmacy</h3>
+                    <p>Your trusted online pharmacy providing quality healthcare products and services since 2010.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Refunds</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span>123 Main Street, Johannesburg, 0001, South Africa</span></p>
+                        <p><i class="fas fa-phone-alt" aria-hidden="true"></i> <span>+27 68 001 7270</span></p>
+                        <p><i class="fas fa-envelope" aria-hidden="true"></i> <span>info@firstchempharmacy.co.za</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; 2023 First Chem Pharmacy. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Foot care products data
+            const footCareProducts = [
+                {
+                    id: 1,
+                    name: "Antifungal Foot Cream",
+                    price: 129.99,
+                    image: "https://images.unsplash.com/photo-1607602132700-0681204f21da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Clinically proven cream to treat athlete's foot and relieve itching, burning and cracking.",
+                    benefits: "Kills fungus that causes athlete's foot, relieves symptoms, prevents reinfection",
+                    ingredients: "Clotrimazole 1%, Aloe Vera, Tea Tree Oil",
+                    usage: "Apply to affected area twice daily for 4 weeks",
+                    type: "fungal",
+                    volume: "30g",
+                    badge: "Best Seller",
+                    stock: 50
+                },
+                {
+                    id: 2,
+                    name: "Callus Remover Gel",
+                    price: 89.50,
+                    image: "https://images.unsplash.com/photo-1607602132863-7c1a8d5a8c4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Fast-acting gel that softens and removes calluses and rough skin without scraping.",
+                    benefits: "Gentle exfoliation, no painful filing, prevents recurrence",
+                    ingredients: "Salicylic Acid 17%, Lactic Acid, Aloe Vera",
+                    usage: "Apply daily to callused areas",
+                    type: "callus",
+                    volume: "50ml",
+                    badge: "Fast Acting",
+                    stock: 35
+                },
+                {
+                    id: 3,
+                    name: "Diabetic Foot Cream",
+                    price: 149.99,
+                    image: "https://images.unsplash.com/photo-1607602132863-7c1a8d5a8c4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Ultra-moisturizing cream specially formulated for sensitive diabetic skin.",
+                    benefits: "Prevents cracking, soothes dryness, non-greasy formula",
+                    ingredients: "Urea 10%, Shea Butter, Vitamin E",
+                    usage: "Apply to feet daily, especially after bathing",
+                    type: "diabetic",
+                    volume: "100ml",
+                    badge: "Diabetic Approved",
+                    stock: 40
+                },
+                {
+                    id: 4,
+                    name: "Medicated Foot Powder",
+                    price: 79.75,
+                    image: "https://images.unsplash.com/photo-1607602132863-7c1a8d5a8c4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Absorbs moisture and prevents fungal growth to keep feet dry and fresh all day.",
+                    benefits: "Controls odor, prevents athlete's foot, absorbs sweat",
+                    ingredients: "Talc, Zinc Oxide, Menthol, Tea Tree Oil",
+                    usage: "Sprinkle in shoes and on feet daily",
+                    type: "fungal",
+                    volume: "100g",
+                    badge: "Odor Control",
+                    stock: 30
+                },
+                {
+                    id: 5,
+                    name: "Heel Balm for Cracked Feet",
+                    price: 119.99,
+                    image: "https://images.unsplash.com/photo-1607602132863-7c1a8d5a8c4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Intensive repair balm with natural emollients to heal severely dry, cracked heels.",
+                    benefits: "Deeply moisturizes, repairs cracks, prevents splitting",
+                    ingredients: "Lanolin, Beeswax, Coconut Oil, Vitamin E",
+                    usage: "Apply thickly to clean feet at bedtime",
+                    type: "moisturizing",
+                    volume: "75ml",
+                    badge: "Intensive Repair",
+                    stock: 25
+                },
+                {
+                    id: 6,
+                    name: "Toenail Fungus Treatment",
+                    price: 199.95,
+                    image: "https://images.unsplash.com/photo-1607602132863-7c1a8d5a8c4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Professional-strength solution to treat fungal nail infections and restore healthy nails.",
+                    benefits: "Penetrates nail to kill fungus, promotes healthy regrowth",
+                    ingredients: "Amorolfine 5%, Tea Tree Oil, Almond Oil",
+                    usage: "Apply once weekly for 6-12 months",
+                    type: "fungal",
+                    volume: "5ml",
+                    badge: "Professional Strength",
+                    stock: 45
+                },
+                {
+                    id: 7,
+                    name: "Gel Corn Cushions",
+                    price: 59.50,
+                    image: "https://images.unsplash.com/photo-1607602132863-7c1a8d5a8c4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Soft gel cushions to relieve pressure and pain from corns and calluses.",
+                    benefits: "Instant pain relief, stays in place, washable and reusable",
+                    ingredients: "Medical-grade silicone",
+                    usage: "Apply directly to corn or callus",
+                    type: "callus",
+                    volume: "Pack of 6",
+                    badge: "Pain Relief",
+                    stock: 28
+                },
+                {
+                    id: 8,
+                    name: "Cooling Foot Spray",
+                    price: 89.99,
+                    image: "https://images.unsplash.com/photo-1607602132863-7c1a8d5a8c4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Refreshing spray to cool tired, aching feet and reduce swelling.",
+                    benefits: "Instant cooling relief, reduces swelling, deodorizes",
+                    ingredients: "Menthol, Witch Hazel, Peppermint Oil",
+                    usage: "Spray on feet as needed",
+                    type: "general",
+                    volume: "150ml",
+                    badge: "Cooling Relief",
+                    stock: 22
+                }
+            ];
+
+            // Cart functionality
+            let cart = [];
+            const cartIcon = document.getElementById('cartIcon');
+            const cartDropdown = document.getElementById('cartDropdown');
+            const cartItems = document.getElementById('cartItems');
+            const cartTotalPrice = document.getElementById('cartTotalPrice');
+            const cartCount = document.querySelector('.cart-count');
+            const confirmation = document.getElementById('confirmation');
+            
+            // Pagination variables
+            const productsPerPage = 8;
+            let currentPage = 1;
+            let filteredProducts = [...footCareProducts];
+            
+            // DOM Elements
+            const productGrid = document.getElementById('productGrid');
+            const paginationDiv = document.getElementById('pagination');
+            const sortBy = document.getElementById('sortBy');
+            const filterBy = document.getElementById('filterBy');
+            const searchInput = document.getElementById('searchInput');
+            const searchResults = document.getElementById('searchResults');
+            const productModal = document.getElementById('productModal');
+            const modalBody = document.getElementById('modalBody');
+            const closeModal = document.getElementById('closeModal');
+            
+            // Initialize the page
+            function init() {
+                displayProducts();
+                createPagination();
+                setupEventListeners();
+                updateCartCount();
+            }
+            
+            // Set up event listeners
+            function setupEventListeners() {
+                // Cart icon hover
+                cartIcon.addEventListener('mouseenter', showCartDropdown);
+                cartIcon.addEventListener('mouseleave', hideCartDropdown);
+                
+                // Sorting and filtering
+                sortBy.addEventListener('change', handleSorting);
+                filterBy.addEventListener('change', handleFiltering);
+                
+                // Search functionality
+                searchInput.addEventListener('input', handleSearch);
+                searchButton.addEventListener('click', handleSearch);
+                
+                // Modal close
+                closeModal.addEventListener('click', () => {
+                    productModal.style.display = 'none';
+                });
+                
+                // Close modal when clicking outside
+                window.addEventListener('click', (e) => {
+                    if (e.target === productModal) {
+                        productModal.style.display = 'none';
+                    }
+                });
+            }
+            
+            // Display products
+            function displayProducts() {
+                productGrid.innerHTML = '';
+                
+                const startIndex = (currentPage - 1) * productsPerPage;
+                const endIndex = Math.min(startIndex + productsPerPage, filteredProducts.length);
+                
+                for (let i = startIndex; i < endIndex; i++) {
+                    const product = filteredProducts[i];
+                    const productCard = document.createElement('div');
+                    productCard.className = 'product-card';
+                    
+                    // Determine tag class based on product type
+                    let tagClass = '';
+                    let tagText = '';
+                    
+                    switch(product.type) {
+                        case 'fungal':
+                            tagClass = 'tag-fungal';
+                            tagText = 'Fungal';
+                            break;
+                        case 'callus':
+                            tagClass = 'tag-callus';
+                            tagText = 'Callus';
+                            break;
+                        case 'diabetic':
+                            tagClass = 'tag-diabetic';
+                            tagText = 'Diabetic';
+                            break;
+                        case 'moisturizing':
+                            tagClass = 'tag-moisturizing';
+                            tagText = 'Moisturizing';
+                            break;
+                        default:
+                            tagClass = 'tag-general';
+                            tagText = 'General';
+                    }
+                    
+                    productCard.innerHTML = `
+                        ${product.badge ? `<div class="product-badge">${product.badge}</div>` : ''}
+                        <div class="product-img">
+                            <img src="${product.image}" alt="${product.name}">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">${product.name}</h3>
+                            <div class="product-price">R${product.price.toFixed(2)}</div>
+                            <div class="product-tags">
+                                <span class="product-tag ${tagClass}">${tagText}</span>
+                                <span class="product-tag">${product.volume}</span>
+                            </div>
+                            <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
+                        </div>
+                    `;
+                    
+                    // Add click event to show product details
+                    productCard.addEventListener('click', (e) => {
+                        // Don't trigger if clicking on the add to cart button
+                        if (!e.target.classList.contains('add-to-cart')) {
+                            showProductDetails(product.id);
+                        }
+                    });
+                    
+                    // Add to cart button event
+                    const addToCartBtn = productCard.querySelector('.add-to-cart');
+                    addToCartBtn.addEventListener('click', (e) => {
+                        e.stopPropagation(); // Prevent triggering the product card click
+                        addToCart(product.id);
+                    });
+                    
+                    productGrid.appendChild(productCard);
+                }
+            }
+            
+            // Create pagination buttons
+            function createPagination() {
+                const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+                paginationDiv.innerHTML = '';
+                
+                if (totalPages <= 1) return;
+                
+                // Previous button
+                const prevButton = document.createElement('button');
+                prevButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
+                prevButton.disabled = currentPage === 1;
+                prevButton.addEventListener('click', () => {
+                    if (currentPage > 1) {
+                        currentPage--;
+                        displayProducts();
+                        createPagination();
+                    }
+                });
+                paginationDiv.appendChild(prevButton);
+                
+                // Page buttons
+                for (let i = 1; i <= totalPages; i++) {
+                    const pageButton = document.createElement('button');
+                    pageButton.textContent = i;
+                    pageButton.className = currentPage === i ? 'active' : '';
+                    pageButton.addEventListener('click', () => {
+                        currentPage = i;
+                        displayProducts();
+                        createPagination();
+                    });
+                    paginationDiv.appendChild(pageButton);
+                }
+                
+                // Next button
+                const nextButton = document.createElement('button');
+                nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
+                nextButton.disabled = currentPage === totalPages;
+                nextButton.addEventListener('click', () => {
+                    if (currentPage < totalPages) {
+                        currentPage++;
+                        displayProducts();
+                        createPagination();
+                    }
+                });
+                paginationDiv.appendChild(nextButton);
+            }
+            
+            // Handle sorting
+            function handleSorting() {
+                const value = sortBy.value;
+                
+                filteredProducts.sort((a, b) => {
+                    switch(value) {
+                        case 'price-asc':
+                            return a.price - b.price;
+                        case 'price-desc':
+                            return b.price - a.price;
+                        case 'name-asc':
+                            return a.name.localeCompare(b.name);
+                        case 'name-desc':
+                            return b.name.localeCompare(a.name);
+                        default:
+                            return a.id - b.id; // Default order
+                    }
+                });
+                
+                currentPage = 1;
+                displayProducts();
+                createPagination();
+            }
+            
+            // Handle filtering
+            function handleFiltering() {
+                const value = filterBy.value;
+                
+                if (value === 'all') {
+                    filteredProducts = [...footCareProducts];
+                } else if (value === 'fungal') {
+                    filteredProducts = footCareProducts.filter(p => p.type === 'fungal');
+                } else if (value === 'callus') {
+                    filteredProducts = footCareProducts.filter(p => p.type === 'callus');
+                } else if (value === 'diabetic') {
+                    filteredProducts = footCareProducts.filter(p => p.type === 'diabetic');
+                } else if (value === 'moisturizing') {
+                    filteredProducts = footCareProducts.filter(p => p.type === 'moisturizing');
+                } else if (value === 'best-seller') {
+                    filteredProducts = footCareProducts.filter(p => p.badge === 'Best Seller');
+                }
+                
+                currentPage = 1;
+                displayProducts();
+                createPagination();
+            }
+            
+            // Handle search
+            function handleSearch() {
+                const query = searchInput.value.toLowerCase().trim();
+                searchResults.innerHTML = '';
+                
+                if (query.length < 2) {
+                    searchResults.style.display = 'none';
+                    return;
+                }
+                
+                const results = footCareProducts.filter(product => 
+                    product.name.toLowerCase().includes(query) || 
+                    product.description.toLowerCase().includes(query)
+                );
+                
+                if (results.length > 0) {
+                    results.slice(0, 5).forEach(product => {
+                        const resultItem = document.createElement('a');
+                        resultItem.className = 'result-item';
+                        resultItem.href = '#';
+                        resultItem.innerHTML = `
+                            <strong>${product.name}</strong>
+                            <span>${product.description.substring(0, 70)}...</span>
+                            <small>R${product.price.toFixed(2)}</small>
+                        `;
+                        resultItem.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            showProductDetails(product.id);
+                            searchResults.style.display = 'none';
+                            searchInput.value = '';
+                        });
+                        searchResults.appendChild(resultItem);
+                    });
+                    searchResults.style.display = 'block';
+                } else {
+                    const noResults = document.createElement('div');
+                    noResults.className = 'result-item';
+                    noResults.textContent = 'No products found';
+                    searchResults.appendChild(noResults);
+                    searchResults.style.display = 'block';
+                }
+            }
+            
+            // Show product details in modal
+            function showProductDetails(productId) {
+                const product = footCareProducts.find(p => p.id == productId);
+                if (!product) return;
+                
+                modalBody.innerHTML = `
+                    <div class="modal-image">
+                        <img src="${product.image}" alt="${product.name}">
+                    </div>
+                    <div class="modal-info">
+                        <h2 class="modal-title">${product.name}</h2>
+                        <div class="modal-price">R${product.price.toFixed(2)}</div>
+                        <p class="modal-description">${product.description}</p>
+                        
+                        <h4>Key Benefits:</h4>
+                        <p>${product.benefits}</p>
+                        
+                        <h4>Ingredients:</h4>
+                        <p>${product.ingredients}</p>
+                        
+                        <h4>Usage:</h4>
+                        <p>${product.usage}</p>
+                        
+                        <div class="modal-quantity">
+                            <label for="quantity">Quantity:</label>
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" id="quantity" value="1" min="1" max="${product.stock}">
+                            <button class="quantity-btn plus">+</button>
+                            <span>(${product.stock} in stock)</span>
+                        </div>
+                        
+                        <div class="modal-actions">
+                            <button class="btn btn-modal add-to-cart-modal" data-id="${product.id}">Add to Cart</button>
+                            <button class="btn btn-modal btn-outline">Add to Wishlist</button>
+                        </div>
+                    </div>
+                `;
+                
+                // Add event listeners for quantity buttons
+                const minusBtn = modalBody.querySelector('.minus');
+                const plusBtn = modalBody.querySelector('.plus');
+                const quantityInput = modalBody.querySelector('#quantity');
+                
+                minusBtn.addEventListener('click', () => {
+                    if (parseInt(quantityInput.value) > 1) {
+                        quantityInput.value = parseInt(quantityInput.value) - 1;
+                    }
+                });
+                
+                plusBtn.addEventListener('click', () => {
+                    if (parseInt(quantityInput.value) < product.stock) {
+                        quantityInput.value = parseInt(quantityInput.value) + 1;
+                    }
+                });
+                
+                // Add to cart button in modal
+                const addToCartBtn = modalBody.querySelector('.add-to-cart-modal');
+                addToCartBtn.addEventListener('click', () => {
+                    const quantity = parseInt(quantityInput.value);
+                    addToCart(product.id, quantity);
+                });
+                
+                // Show modal
+                productModal.style.display = 'block';
+            }
+            
+            // Add to cart functionality
+            function addToCart(productId, quantity = 1) {
+                const product = footCareProducts.find(p => p.id == productId);
+                if (!product) return;
+                
+                // Check if product is already in cart
+                const existingItem = cart.find(item => item.id == productId);
+                
+                if (existingItem) {
+                    existingItem.quantity += quantity;
+                } else {
+                    cart.push({
+                        id: product.id,
+                        name: product.name,
+                        price: product.price,
+                        image: product.image,
+                        quantity: quantity
+                    });
+                }
+                
+                // Update cart
+                updateCartDropdown();
+                updateCartCount();
+                
+                // Show confirmation
+                confirmation.style.display = 'block';
+                setTimeout(() => {
+                    confirmation.style.display = 'none';
+                }, 3000);
+            }
+            
+            // Remove from cart
+            function removeFromCart(productId) {
+                cart = cart.filter(item => item.id != productId);
+                updateCartDropdown();
+                updateCartCount();
+            }
+            
+            // Update cart quantity
+            function updateCartItemQuantity(productId, newQuantity) {
+                const item = cart.find(item => item.id == productId);
+                if (item) {
+                    item.quantity = newQuantity;
+                    if (item.quantity <= 0) {
+                        removeFromCart(productId);
+                    } else {
+                        updateCartDropdown();
+                    }
+                }
+            }
+            
+            // Update cart dropdown
+            function updateCartDropdown() {
+                cartItems.innerHTML = '';
+                
+                if (cart.length === 0) {
+                    cartItems.innerHTML = `
+                        <div class="empty-cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p>Your cart is empty</p>
+                        </div>
+                    `;
+                    cartTotalPrice.textContent = 'R0.00';
+                    return;
+                }
+                
+                let total = 0;
+                
+                cart.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    total += itemTotal;
+                    
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    cartItem.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}">
+                        <div class="cart-item-info">
+                            <div class="cart-item-title">${item.name}</div>
+                            <div class="cart-item-price">R${item.price.toFixed(2)} x ${item.quantity}</div>
+                            <div class="cart-item-quantity">
+                                <button class="quantity-btn minus" data-id="${item.id}">-</button>
+                                <span class="quantity-value">${item.quantity}</span>
+                                <button class="quantity-btn plus" data-id="${item.id}">+</button>
+                                <button class="remove-item" data-id="${item.id}"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    `;
+                    cartItems.appendChild(cartItem);
+                    
+                    // Add event listeners
+                    const minusBtn = cartItem.querySelector('.minus');
+                    const plusBtn = cartItem.querySelector('.plus');
+                    const removeBtn = cartItem.querySelector('.remove-item');
+                    
+                    minusBtn.addEventListener('click', () => {
+                        updateCartItemQuantity(item.id, item.quantity - 1);
+                    });
+                    
+                    plusBtn.addEventListener('click', () => {
+                        updateCartItemQuantity(item.id, item.quantity + 1);
+                    });
+                    
+                    removeBtn.addEventListener('click', () => {
+                        removeFromCart(item.id);
+                    });
+                });
+                
+                cartTotalPrice.textContent = `R${total.toFixed(2)}`;
+            }
+            
+            // Update cart count
+            function updateCartCount() {
+                const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+                cartCount.textContent = totalItems;
+            }
+            
+            // Show cart dropdown
+            function showCartDropdown() {
+                updateCartDropdown();
+                cartDropdown.style.display = 'block';
+            }
+            
+            // Hide cart dropdown
+            function hideCartDropdown() {
+                setTimeout(() => {
+                    cartDropdown.style.display = 'none';
+                }, 300);
+            }
+            
+            // Initialize the application
+            init();
+        });
+    </script>
+</body>
+</html>
