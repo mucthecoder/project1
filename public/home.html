@@ -1,0 +1,3469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="First Chem Pharmacy - Your trusted online pharmacy in South Africa. Quality medications, health products, and wellness solutions at affordable prices.">
+    <meta name="keywords" content="online pharmacy, South Africa, medications, health products, wellness, prescriptions, vitamins, supplements">
+    <title>FirstChem Pharmacy - Your Trusted Online Pharmacy in South Africa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1976D2; /* Professional blue */
+            --primary-dark: #1565C0; /* Darker blue for contrast */
+            --secondary-color: #f5f7fa; /* Light background */
+            --accent-color: #E91E63; /* Vibrant pink */
+            --accent-light: #F8BBD0; /* Light pink for accents */
+            --text-color: #333; /* Darker, more readable text */
+            --light-text: #666; /* Lighter secondary text */
+            --white: #ffffff;
+            --border-radius: 10px; /* Smoother corners */
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --box-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --header-height: 80px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--secondary-color);
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 5px rgba(233, 30, 99, 0.2);
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(25, 118, 210, 0.3);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            box-shadow: none;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Section Titles */
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+            color: var(--primary-dark);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+        
+        .text-center .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Header Styles */
+        .top-bar {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 10px 0;
+            font-size: 14px;
+        }
+        
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .top-links ul {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .top-links a {
+            color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .top-links a:hover {
+            color: var(--white);
+        }
+        
+        .main-header {
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            background-color: var(--white);
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+        
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .logo-text span {
+            color: var(--accent-color);
+            font-weight: 800;
+        }
+        
+        /* Search Bar */
+        .search-bar {
+            flex-grow: 1;
+            margin: 0 30px;
+            position: relative;
+            max-width: 600px;
+            display: flex;
+        }
+        
+        .search-container {
+            position: relative;
+            width: 100%;
+        }
+        
+        .search-bar input {
+            width: 100%;
+            padding: 12px 50px 12px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 30px;
+            font-size: 15px;
+            transition: var(--transition);
+            background-color: #f8fafc;
+        }
+        
+        .search-bar input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background-color: var(--white);
+            box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+        }
+        
+        .search-bar button {
+            position: absolute;
+            right: 8px;
+            top: 8px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .search-bar button:hover {
+            background-color: var(--primary-dark);
+            transform: scale(1.05);
+        }
+        
+        .results-dropdown {
+            position: absolute;
+            width: 100%;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: none;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .result-item {
+            display: block;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+        
+        .result-item:hover {
+            background-color: #f0f7ff;
+        }
+        
+        .result-item strong {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+        
+        .result-item span {
+            font-size: 13px;
+            color: #666;
+        }
+        
+        .result-item small {
+            display: block;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-top: 3px;
+        }
+        
+        /* Header Icons */
+        .header-icons {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .header-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 13px;
+            color: var(--text-color);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .header-icon:hover {
+            color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+        
+        .header-icon i {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .icon-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        
+        /* Navigation */
+        .main-nav {
+            background-color: var(--primary-color);
+            padding: 0;
+        }
+        
+        .main-nav .container {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+        
+        .main-nav ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .main-nav li {
+            position: relative;
+        }
+        
+        .main-nav a {
+            display: block;
+            color: var(--white);
+            padding: 16px 15px;
+            transition: var(--transition);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+        
+        .main-nav a:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        .main-nav .nav-dropdown {
+            position: relative;
+        }
+        
+        .main-nav .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            min-width: 220px;
+            box-shadow: var(--box-shadow-lg);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+        
+        .main-nav .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-menu li a {
+            color: var(--text-color);
+            padding: 12px 20px;
+            border-bottom: 1px solid #f1f5f9;
+            text-transform: none;
+        }
+        
+        .dropdown-menu li a:hover {
+            background-color: #f8fafc;
+            color: var(--primary-color);
+            padding-left: 25px;
+        }
+        
+        /* Cart Dropdown */
+        .cart-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 380px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            display: none;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .cart-header {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .cart-items {
+            padding: 15px;
+        }
+        
+        .cart-item {
+            display: flex;
+            padding: 10px 0;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        
+        .cart-item img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            margin-right: 15px;
+            border-radius: 4px;
+            background: #f8f9fa;
+            padding: 5px;
+        }
+        
+        .cart-item-info {
+            flex: 1;
+        }
+        
+        .cart-item-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+        
+        .cart-item-price {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+        }
+        
+        .quantity-btn {
+            width: 28px;
+            height: 28px;
+            background: #f1f1f1;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .quantity-value {
+            margin: 0 10px;
+            min-width: 30px;
+            text-align: center;
+        }
+        
+        .remove-item {
+            background: none;
+            border: none;
+            color: #e74c3c;
+            cursor: pointer;
+            margin-left: 15px;
+            font-size: 18px;
+        }
+        
+        .cart-footer {
+            padding: 15px;
+            border-top: 1px solid #eee;
+            background: #f8f9fa;
+        }
+        
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .cart-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn-view {
+            background: #fff;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+        
+        .btn-view:hover {
+            background: #f0f7ff;
+        }
+        
+        .btn-checkout {
+            background: var(--primary-color);
+            color: white;
+            border: 1px solid var(--primary-color);
+        }
+        
+        .btn-checkout:hover {
+            background: var(--primary-dark);
+        }
+        
+        .empty-cart {
+            text-align: center;
+            padding: 30px 15px;
+            color: #7f8c8d;
+        }
+        
+        .empty-cart i {
+            font-size: 50px;
+            margin-bottom: 15px;
+            color: #bdc3c7;
+        }
+        
+        /* Add to cart confirmation */
+        .confirmation {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #27ae60;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            z-index: 1000;
+            animation: fadeInOut 3s ease;
+            display: none;
+        }
+        
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(20px); }
+            10% { opacity: 1; transform: translateY(0); }
+            90% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(20px); }
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(250, 250, 250, 0), rgba(13, 71, 161, 0.8)), 
+            url('https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            background-attachment: fixed; /* Parallax effect */
+            background-repeat: no-repeat;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 800;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        /* Hero button backgrounds */
+        .hero-btns .btn {
+            background-color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+            color: white;
+        }
+        
+        .hero-btns .btn.btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        
+        .hero-btns .btn:hover {
+            background-color: white;
+            color: var(--accent-color);
+        }
+        
+        .hero-btns .btn.btn-outline:hover {
+            background-color: white;
+            color: var(--accent-color);
+        }
+        
+        /* Categories Section */
+        .categories {
+            padding: 80px 0;
+            background-color: var(--white); 
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .category-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border: none;
+            position: relative;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow-lg);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+        }
+        
+        .category-card:hover .category-info h3,
+        .category-card:hover .category-info p {
+            color: white;
+        }
+        
+        .category-icon {
+            font-size: 48px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            transition: var(--transition);
+            background: #f0f7ff;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+        }
+        
+        .category-card:hover .category-icon {
+            background: rgb(33, 150, 243);
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .category-info h3 {
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+            font-size: 20px;
+            transition: var(--transition);
+        }
+        
+        .category-info .count {
+            color: var(--light-text);
+            font-size: 14px;
+            margin-bottom: 15px;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .category-link {
+            display: inline-block;
+            color: var(--primary-color);
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 5px;
+            transition: var(--transition);
+        }
+        
+        .category-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent-color);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+        
+        .category-card:hover .category-link {
+            color: rgb(255, 255, 255);
+        }
+        
+        .category-card:hover .category-link::after {
+            background-color: rgb(33, 150, 243);
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 80px 0;
+            background-color: var(--secondary-color);
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .view-all {
+            color: var(--primary-color);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+        
+        .view-all:hover {
+            color: var(--accent-color);
+            gap: 8px;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .product-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            position: relative;
+            border: none;
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 2;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .product-img {
+            height: 200px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8fafc;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: var(--transition);
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+        
+        .quick-view {
+            position: absolute;
+            bottom: -40px;
+            left: 0;
+            width: 100%;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            transition: var(--transition);
+            opacity: 0;
+            cursor: pointer;
+        }
+        
+        .product-card:hover .quick-view {
+            bottom: 0;
+            opacity: 1;
+        }
+        
+        .product-info {
+            padding: 20px;
+            border-top: 1px solid #f1f5f9;
+        }
+        
+        .product-title {
+            font-size: 16px;
+            margin-bottom: 10px;
+            height: 40px;
+            overflow: hidden;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+        
+        .product-desc {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            min-height: 2.8rem;
+        }
+        
+        .product-price {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        .old-price {
+            text-decoration: line-through;
+            color: var(--light-text);
+            font-size: 14px;
+            margin-right: 5px;
+        }
+        
+        .product-rating {
+            color: #FFC107;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .rating-count {
+            color: var(--light-text);
+            font-size: 13px;
+        }
+        
+        .add-to-cart {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            font-size: 15px;
+        }
+        
+        .add-to-cart:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        /* Product Slideshow */
+        .product-slideshow {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+            height: 400px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow-lg);
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            background-color: white;
+            padding: 0;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide-content {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide-image {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            background-color: #f8fafc;
+        }
+
+        .slide-image img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+            transition: var(--transition);
+        }
+
+        .slide-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .slide-info {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .slide-info h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        .slide-price {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .slide-rating {
+            color: #FFC107;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .slide-description {
+            margin-bottom: 25px;
+            color: var(--light-text);
+            line-height: 1.7;
+        }
+
+        .slideshow-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            gap: 20px;
+        }
+
+        .slideshow-controls button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            box-shadow: var(--box-shadow);
+        }
+
+        .slideshow-controls button:hover {
+            background-color: var(--primary-dark);
+            transform: scale(1.1);
+        }
+
+        .dots-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #cbd5e0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .dot.active {
+            background-color: var(--primary-color);
+            transform: scale(1.2);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: var(--secondary-color);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: var(--border-radius);
+            background-color: var(--white);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border: none;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-lg);
+        }
+
+        .feature-icon {
+            margin-bottom: 20px;
+            transition: var(--transition);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+        }
+
+        .feature-icon {
+            width: 120px;
+            height: 120px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0 auto 1rem;
+        }
+
+        .delivery-icon {
+            background-image: url('https://cdn-icons-png.flaticon.com/512/3097/3097974.png');
+        }
+
+        .payment-icon {
+            background-image: url('https://cdn-icons-png.flaticon.com/512/2331/2331966.png');
+        }
+
+        .support-icon {
+            background-image: url('https://cdn-icons-png.flaticon.com/512/2102/2102647.png');
+        }
+
+        .calendar-icon {
+            background-image: url('https://cdn-icons-png.flaticon.com/512/3652/3652191.png');
+        }
+
+        .feature-card:hover .feature-icon img {
+            transform: scale(1.1);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+            font-size: 18px;
+        }
+
+        .feature-card p {
+            color: var(--light-text);
+            font-size: 15px;
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .newsletter::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .newsletter::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 300px;
+            height: 300px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .newsletter .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .newsletter h2 {
+            margin-bottom: 20px;
+            font-size: 36px;
+            font-weight: 700;
+        }
+        
+        .newsletter p {
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        
+        .newsletter-form input {
+            flex-grow: 1;
+            padding: 15px 20px;
+            border: none;
+            font-size: 16px;
+        }
+        
+        .newsletter-form input:focus {
+            outline: none;
+        }
+        
+        .newsletter-form button {
+            padding: 15px 30px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: #C2185B;
+        }
+        
+        /* Script Upload Section */
+        .script-upload {
+            padding: 80px 0;
+            background-color: var(--white);
+            text-align: center;
+        }
+        
+        .script-upload .container {
+            max-width: 800px;
+        }
+        
+        .upload-container {
+            background-color: #f8fafc;
+            border-radius: var(--border-radius);
+            padding: 50px;
+            box-shadow: var(--box-shadow);
+            margin-top: 30px;
+        }
+        
+        .upload-icon {
+            font-size: 64px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .upload-instructions {
+            margin-bottom: 30px;
+            color: var(--light-text);
+            line-height: 1.7;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .upload-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .file-input-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .file-input {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            position: absolute;
+        }
+        
+        .file-input-label {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: var(--border-radius);
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+        
+        .file-input-label:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .file-name {
+            margin-top: 10px;
+            font-size: 14px;
+            color: var(--light-text);
+        }
+        
+        .upload-btn {
+            padding: 15px 50px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+        
+        .upload-btn:hover {
+            background-color: #C2185B;
+            transform: translateY(-2px);
+        }
+        
+        .upload-btn:disabled {
+            background-color: #a0aec0;
+            cursor: not-allowed;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+        }
+        
+        /* Footer */
+        .main-footer {
+            background-color: #1a202c;
+            color: var(--white);
+            padding: 80px 0 0;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-col h3 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+            color: var(--white);
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-col a {
+            color: #a0aec0;
+            transition: var(--transition);
+            display: inline-block;
+        }
+        
+        .footer-col a:hover {
+            color: var(--white);
+            transform: translateX(5px);
+        }
+        
+        .contact-info p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: #a0aec0;
+        }
+        
+        .contact-info i {
+            margin-top: 3px;
+            color: var(--accent-color);
+            min-width: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+            color: var(--white);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            background-color: #0d1117;
+            padding: 25px 0;
+            text-align: center;
+            font-size: 14px;
+            color: #a0aec0;
+        }
+        
+        .copyright a {
+            color: var(--accent-light);
+        }
+        
+        /* Payment Methods */
+        .payment-methods {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .payment-method {
+            background-color: white;
+            border-radius: 4px;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 30px;
+            transition: var(--transition);
+        }
+        
+        .payment-method:hover {
+            transform: translateY(-3px);
+        }
+        
+        .payment-method i {
+            font-size: 20px;
+            color: #333;
+        }
+        
+        /* Accessibility Improvements */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        
+        /* Focus styles for keyboard navigation */
+        a:focus, button:focus, input:focus {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+        
+        /* WhatsApp Widget */
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 15px;
+        }
+        
+        .whatsapp-btn {
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .whatsapp-btn i {
+            color: white;
+            font-size: 32px;
+        }
+        
+        .whatsapp-chat {
+            background: rgb(233, 30, 99);
+            border-radius: 15px 15px 0 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            width: 300px;
+            overflow: hidden;
+            transform: translateY(20px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            max-height: 0;
+        }
+        
+        .whatsapp-widget.active .whatsapp-chat {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+            max-height: 400px;
+        }
+        
+        .chat-header {
+            background-color: rgb(33, 150, 243);
+            color: white;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .chat-header img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .chat-header-text h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+        
+        .chat-header-text p {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+        
+        .chat-messages {
+            padding: 15px;
+            background-color: #f0f5f7;
+            height: 250px;
+            overflow-y: auto;
+        }
+        
+        .message {
+            max-width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            position: relative;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .message.received {
+            background: white;
+            border-radius: 0 10px 10px 10px;
+            align-self: flex-start;
+        }
+        
+        .message.sent {
+            background: rgb(33, 150, 243);
+            border-radius: 10px 0 10px 10px;
+            margin-left: auto;
+        }
+        
+        .chat-input {
+            display: flex;
+            padding: 10px;
+            background: white;
+            border-top: 1px solid #eee;
+        }
+        
+        .chat-input input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+        
+        .chat-input button {
+            background: rgb(233, 30, 99);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        .chat-input button i {
+            color: white;
+        }
+        
+        .close-chat {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        
+        /* QUICK VIEW MODAL STYLES */
+        .quick-view-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quick-view-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .close-quick-view {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            z-index: 10;
+        }
+
+        .quick-view-flex {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .quick-view-img {
+            flex: 1;
+        }
+
+        .quick-view-img img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            max-height: 300px;
+            object-fit: contain;
+        }
+
+        .quick-view-details {
+            flex: 1;
+        }
+
+        .quick-view-details h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .quick-view-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1976D2;
+            margin-bottom: 1rem;
+        }
+
+        .quick-view-description {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .quick-view-rating {
+            color: #FFC107;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .quick-view-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .add-to-cart-large {
+            padding: 12px 24px;
+            background-color: #1976D2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .add-to-cart-large:hover {
+            background-color: #1565C0;
+        }
+
+        .view-details {
+            padding: 12px 24px;
+            background-color: #f0f0f0;
+            color: #333;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .view-details:hover {
+            background-color: #ddd;
+        }
+
+        @media (max-width: 768px) {
+            .quick-view-flex {
+                flex-direction: column;
+            }
+            
+            .quick-view-img img {
+                max-height: 200px;
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .header-content {
+                gap: 15px;
+            }
+            
+            .search-bar {
+                order: 3;
+                margin: 15px 0 0;
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            .slide-content {
+                flex-direction: column;
+            }
+            
+            .slide-image, .slide-info {
+                flex: none;
+                width: 100%;
+            }
+            
+            .slideshow-container {
+                height: auto;
+            }
+            
+            .hero h1 {
+                font-size: 40px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .upload-container {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .main-nav ul {
+                flex-direction: column;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+                box-shadow: none;
+                gap: 10px;
+            }
+            
+            .newsletter-form input,
+            .newsletter-form button {
+                border-radius: var(--border-radius);
+                width: 100%;
+            }
+            
+            .newsletter-form button {
+                margin-top: 0;
+            }
+            
+            .whatsapp-chat {
+                width: 280px;
+            }
+
+            .cart-dropdown {
+                width: 320px;
+                right: -15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .top-bar .container {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .hero {
+                height: 400px;
+            }
+            
+            .header-icons {
+                gap: 15px;
+            }
+            
+            .logo-text {
+                font-size: 20px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .upload-container {
+                padding: 20px;
+            }
+            
+            .whatsapp-widget {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .whatsapp-btn {
+                width: 55px;
+                height: 55px;
+            }
+            
+            .whatsapp-chat {
+                width: 260px;
+            }
+
+            .cart-dropdown {
+                width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="welcome-msg">Welcome to FirstChem Pharmacy - South Africa's Trusted Online Pharmacy</div>
+            <div class="top-links">
+                <ul>
+                    <li><a href="tel:0123456789"><i class="fas fa-phone-alt" aria-hidden="true"></i> <span>012 345 6789</span></a></li>
+                    <li><a href="mailto:info@firstchempharmacy.co.za"><i class="fas fa-envelope" aria-hidden="true"></i> <span>info@firstchempharmacy.co.za</span></a></li>
+                    <li><a href="#store-locator"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span>Store Locator</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<header>
+    <div class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img src="images/FirstChemLogo-removebg-preview-e1751526921499-removebg.png" 
+                        alt="FirstChem Logo" 
+                        style="height: 100px; width: auto;">
+                </a>
+
+                    <div class="search-bar">
+                        <div class="search-container">
+                            <label for="searchInput" class="sr-only">Search for medicines and health products</label>
+                            <input type="text" id="searchInput" placeholder="Search for medicines and health products..." aria-label="Search products">
+                            <div id="searchResults" class="results-dropdown"></div>
+                        </div>
+                        <button aria-label="Search" id="searchButton"><i class="fas fa-search"></i></button>
+                    </div>
+
+                    <div class="header-icons">
+                        <a href="#account" class="header-icon" aria-label="My Account">
+                            <i class="fas fa-user" aria-hidden="true"></i>
+                            <span>Account</span>
+                        </a>
+                        <a href="#wishlist" class="header-icon" aria-label="Wishlist">
+                            <i class="fas fa-heart" aria-hidden="true"></i>
+                            <span>Wishlist</span>
+                        </a>
+                        <div class="header-icon" id="cartIcon" aria-label="Shopping Cart">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                                <span class="cart-count">0</span>
+                            </div>
+                            <span>Cart</span>
+                            <!-- Cart Dropdown -->
+                            <div class="cart-dropdown" id="cartDropdown">
+                                <div class="cart-header">
+                                    <h3>Your Shopping Cart</h3>
+                                </div>
+                                <div class="cart-items" id="cartItems">
+                                    <!-- Cart items will be inserted here -->
+                                </div>
+                                <div class="cart-footer">
+                                    <div class="cart-total">
+                                        <span>Total:</span>
+                                        <span id="cartTotalPrice">R0.00</span>
+                                    </div>
+                                    <div class="cart-buttons">
+                                        <a href="cart.html" class="btn btn-view">View Cart</a>
+                                        <a href="checkout.html" class="btn btn-checkout">Checkout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Navigation -->
+        <nav class="main-nav" aria-label="Main navigation">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="nav-dropdown">
+                        <a href="shop.html">Shop <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="wound-care.html">Wound Care</a></li>
+                            <li><a href="self-medication.html">Self Medication</a></li>
+                            <li><a href="vitamins-supplements.html">Vitamins & Supplements</a></li>
+                            <li><a href="baby-kids.html">Baby & Kids</a></li>
+                            <li><a href="antioxidants.html">Antioxidants</a></li>
+                            <li><a href="baby-care.html">Baby Care</a></li>
+                            <li><a href="beauty-essentials.html">Beauty Essentials</a></li>
+                            <li><a href="bone-&-joint-support.html">Bone & Joint Support</a></li>
+                            <li><a href="cold-and-flu.html">Cold and Flu</a></li>
+                            <li><a href="cough-mixtures.html">Cough Mixtures</a></li>
+                            <li><a href="dental-oral-care.html">Dental & Oral Care</a></li>
+                            <li><a href="deodorants-&-perfumes.html">Deodorants & Perfumes</a></li>
+                            <li><a href="drinks.html">Drinks</a></li>
+                            <li><a href="essential-oils.html">Essential Oils</a></li>
+                            <li><a href="female-essentials.html">Female Essentials</a></li>
+                            <li><a href="foot-care.html">Foot Care</a></li>
+                            <li><a href="front-shop-meds.html">Front Shop Meds</a></li>
+                            <li><a href="herbal-wound-care.html">Herbal & Wound Care</a></li>
+                            <li><a href="household-items.html">Household Items</a></li>
+                            <li><a href="immune-boosters.html">Immune Boosters</a></li>
+                            <li><a href="intimacy-supplements.html">Intimacy Supplements</a></li>
+                            <li><a href="iron-supplements.html">Iron Supplements</a></li>
+                            <li><a href="kids-vitamins.html">Kids Vitamins</a></li>
+                            <li><a href="liver-support.html">Liver Support</a></li>
+                            <li><a href="multi-vitamins.html">Multi Vitamins</a></li>
+                            <li><a href="muscle-camp-meds.html">Muscle Camp Meds</a></li>
+                            <li><a href="ointments.html">Ointments</a></li>
+                            <li><a href="pregnancy-vitamins.html">Pregnancy Vitamins</a></li>
+                            <li><a href="probiotics.html">Probiotics</a></li>
+                            <li><a href="skin-care.html">Skin Care</a></li>
+                            <li><a href="snacks.html">Snacks</a></li>
+                            <li><a href="stomach-meds.html">Stomach Meds</a></li>
+                            <li><a href="teas.html">Teas</a></li>
+                            <li><a href="test-kits.html">Test Kits</a></li>
+                            <li><a href="health-monitors.html">Health Monitors</a></li>
+                            <li><a href="tissues-toilet-rolls.html">Tissues & Toilet Rolls</a></li>
+                            <li><a href="urinary-support.html">Urinary Support</a></li>
+                            <li><a href="vapour-rubs.html">Vapour Rubs</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="prescriptions.html">Prescriptions</a></li>
+                    <li><a href="health-wellness.html">Health & Wellness</a></li>
+                    <li><a href="baby-kids.html">Baby & Kids</a></li>
+                    <li><a href="vitamins-supplements.html">Vitamins & Supplements</a></li>
+                    <li><a href="beauty.html">Beauty</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Add to cart confirmation -->
+    <div class="confirmation" id="confirmation">Product added to cart!</div>
+
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-heading">
+        <div class="container">
+            <div class="hero-content">
+                <h1 id="hero-heading">Your Health is Our Priority</h1>
+                <p>Quality medications and healthcare products at affordable prices</p>
+                <div class="hero-btns">
+                    <a href="#shop" class="btn">Shop Now</a>
+                    <a href="#upload-prescription" class="btn btn-outline">Upload Prescription</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+<!-- Categories Section -->
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <span>HealthPlus</span>
+            </div>
+            
+            <div class="nav-icons">
+                <a href="#"><i class="fas fa-user"></i></a>
+                <a href="#"><i class="fas fa-heart"></i></a>
+                <a href="#">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+
+            
+            <div class="category-grid">
+                <!-- Antioxidants -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Antioxidants</h3>
+                        <span class="count">(32 products)</span>
+                        <p>Boost your immune system with powerful antioxidants</p>
+                        <a href="antioxidants.html" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Baby & kids Medication -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Baby & Kids Medication</h3>
+                        <span class="count">(45 products)</span>
+                        <p>Specialized medications for infants and children</p>
+                        <a href="baby-kids-medication.html" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Baby Care -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-baby-carriage"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Baby Care</h3>
+                        <span class="count">(62 products)</span>
+                        <p>Essentials for your baby's health and hygiene</p>
+                        <a href="baby-care.html" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Beauty Essentials -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Beauty Essentials</h3>
+                        <span class="count">(78 products)</span>
+                        <p>Soaps, vaselines and personal care products</p>
+                        <a href="beauty-essentials.html" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Bone & Joint Support -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-bone"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Bone & Joint Support</h3>
+                        <span class="count">(28 products)</span>
+                        <p>Products for bone health and joint mobility</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Cold and Flu -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-head-side-cough"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Cold and Flu</h3>
+                        <span class="count">(36 products)</span>
+                        <p>Relief for cold, flu, and respiratory symptoms</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Cough Mixtures -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-lungs"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Cough Mixtures</h3>
+                        <span class="count">(24 products)</span>
+                        <p>Pediatric syrups and adult formulations</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Dental & Oral Care -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Dental & Oral Care</h3>
+                        <span class="count">(41 products)</span>
+                        <p>Essentials for dental hygiene and oral health</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Deodorants & Perfumes -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Deodorants & Perfumes</h3>
+                        <span class="count">(56 products)</span>
+                        <p>Personal fragrances and hygiene products</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Drinks -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Drinks</h3>
+                        <span class="count">(33 products)</span>
+                        <p>Health beverages and nutritional drinks</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Essential Oils -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-oil-can"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Essential Oils</h3>
+                        <span class="count">(27 products)</span>
+                        <p>Therapeutic oils for aromatherapy and wellness</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Female Essentials -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-female"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Female Essentials</h3>
+                        <span class="count">(39 products)</span>
+                        <p>Specialized products for women's health</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Foot Care -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-socks"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Foot Care</h3>
+                        <span class="count">(22 products)</span>
+                        <p>Products for foot health and comfort</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Front Shop Meds -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-capsules"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Front Shop Meds</h3>
+                        <span class="count">(68 products)</span>
+                        <p>Aspirins, heart support, and OTC medications</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Herbal & Wound Care -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Herbal & Wound Care</h3>
+                        <span class="count">(31 products)</span>
+                        <p>Natural remedies and wound treatment products</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Household Items -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Household Items</h3>
+                        <span class="count">(47 products)</span>
+                        <p>Essential household and cleaning products</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Immune Boosters -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Immune Boosters</h3>
+                        <span class="count">(29 products)</span>
+                        <p>Strengthen your body's natural defenses</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Intimacy Supplements -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Intimacy Supplements</h3>
+                        <span class="count">(18 products)</span>
+                        <p>Supplements for intimacy and relationships</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Iron Supplements -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-prescription-bottle"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Iron Supplements</h3>
+                        <span class="count">(21 products)</span>
+                        <p>Essential supplements for iron deficiency</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Kids Vitamins -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Kids Vitamins</h3>
+                        <span class="count">(35 products)</span>
+                        <p>Essential vitamins for growing children</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Liver Support -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-filter"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Liver Support</h3>
+                        <span class="count">(17 products)</span>
+                        <p>Products for liver health and detoxification</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Multi Vitamins -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Multi Vitamins</h3>
+                        <span class="count">(42 products)</span>
+                        <p>Comprehensive vitamin supplements</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Muscle Camp Meds -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Muscle Camp Meds</h3>
+                        <span class="count">(15 products)</span>
+                        <p>Medications for muscle cramps and pain</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Ointments -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-prescription-bottle-alt"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Ointments</h3>
+                        <span class="count">(38 products)</span>
+                        <p>Topical treatments for various skin conditions</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Pregnancy Vitamins -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Pregnancy Vitamins</h3>
+                        <span class="count">(26 products)</span>
+                        <p>Essential nutrients for expecting mothers</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Probiotics -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-bacteria"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Probiotics</h3>
+                        <span class="count">(23 products)</span>
+                        <p>Supplements for digestive and gut health</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Skin Care -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Skin Care</h3>
+                        <span class="count">(59 products)</span>
+                        <p>Creams and treatments for healthy skin</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Snacks -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-cookie"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Snacks</h3>
+                        <span class="count">(41 products)</span>
+                        <p>Healthy snacks and nutritional treats</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Stomach Meds -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-stomach"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Stomach Meds</h3>
+                        <span class="count">(37 products)</span>
+                        <p>Relief for digestive issues and stomach discomfort</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Teas -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-mug-hot"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Teas</h3>
+                        <span class="count">(28 products)</span>
+                        <p>Medicinal and wellness teas</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Test Kits -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Test Kits</h3>
+                        <span class="count">(19 products)</span>
+                        <p>Home testing kits for various health conditions</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Health Monitors -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Health Monitors</h3>
+                        <span class="count">(32 products)</span>
+                        <p>Thermometers, glucose meters, and BP monitors</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Tissues & Toilet Rolls -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-toilet-paper"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Tissues & Toilet Rolls</h3>
+                        <span class="count">(25 products)</span>
+                        <p>Hygiene essentials for home and travel</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Urinary Support -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-toilet"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Urinary Support</h3>
+                        <span class="count">(20 products)</span>
+                        <p>Medications for urinary tract health</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Vapour Rubs -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Vapour Rubs</h3>
+                        <span class="count">(14 products)</span>
+                        <p>Topical ointments for congestion relief</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Products Section -->
+<section class="products" aria-labelledby="popular-products-heading">
+    <div class="container">
+        <div class="section-header">
+            <h2 id="popular-products-heading" class="section-title">Popular Products</h2>
+            <a href="products.html" class="view-all">View All Products <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-badge">New</div>
+                <div class="product-img">
+                    <img src="Products/Panado_Tablets_1000mg_24s-removebg-preview.png" alt="Panado Tablets">
+                    <div class="quick-view" data-product-id="1">Quick View</div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Panado Tablets 1000mg 24s</h3>
+                    <p class="product-desc">Fast-acting pain relief for headaches, fever, and mild arthritis pain.</p>
+                    <div class="product-price">R49.99</div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="rating-count">(128)</span>
+                    </div>
+                    <button class="add-to-cart" data-id="1">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-badge">Sale</div>
+                <div class="product-img">
+                    <img src="Products/Disprin_Tablets_300mg_24s-removebg-preview.png" alt="Disprin Tablets">
+                    <div class="quick-view" data-product-id="2">Quick View</div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Disprin Tablets 300mg 24s</h3>
+                    <p class="product-desc">Effervescent pain reliever that works quickly to reduce pain and inflammation.</p>
+                    <div class="product-price">R39.99 <span class="old-price">R49.99</span></div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span class="rating-count">(95)</span>
+                    </div>
+                    <button class="add-to-cart" data-id="2">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="Products/Very_Well_Vitamin_C_1000mg_60_Tablets-removebg-preview.png" alt="Vitamin C Tablets">
+                    <div class="quick-view" data-product-id="3">Quick View</div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Vitamin C 1000mg 60 Tablets</h3>
+                    <p class="product-desc">Boosts immune system and promotes healthy skin with high-potency Vitamin C.</p>
+                    <div class="product-price">R129.99</div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="rating-count">(210)</span>
+                    </div>
+                    <button class="add-to-cart" data-id="3">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="Products/Pampers_Baby_Dry_Size_3_98-removebg-preview.png" alt="Pampers Baby Dry">
+                    <div class="quick-view" data-product-id="4">Quick View</div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Pampers Baby Dry Size 3 60s</h3>
+                    <p class="product-desc">Premium diapers with 12-hour leak protection and wetness indicator.</p>
+                    <div class="product-price">R249.99</div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="rating-count">(187)</span>
+                    </div>
+                    <button class="add-to-cart" data-id="4">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    <!-- Product Slideshow Section -->
+    <section class="product-slideshow" aria-labelledby="featured-products-heading">
+        <div class="container">
+            <h2 id="featured-products-heading" class="section-title text-center">Featured Products</h2>
+            <div class="slideshow-container">
+                <div class="slide active">
+                    <div class="slide-content">
+                        <div class="slide-image">
+                            <img src="Products/Panado_Tablets_1000mg_24s-removebg-preview.png" alt="Panado Tablets">
+                        </div>
+                        <div class="slide-info">
+                            <h3>Panado Tablets 1000mg 24s</h3>
+                            <div class="slide-price">R49.99</div>
+                            <div class="slide-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p class="slide-description">Effective pain relief for headaches, toothaches, and fever. Contains paracetamol for fast-acting relief. Suitable for adults and children over 12 years. Always read the label and use as directed.</p>
+                            <button class="btn add-to-cart" data-id="1">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <div class="slide-image">
+                            <img src="Products/Disprin_Tablets_300mg_24s-removebg-preview.png" alt="Disprin Tablets">
+                        </div>
+                        <div class="slide-info">
+                            <h3>Disprin Tablets 300mg 24s</h3>
+                            <div class="slide-price">R39.99</div>
+                            <div class="slide-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <p class="slide-description">Fast-acting soluble aspirin tablets for pain relief and fever reduction. Easy to take with water. Provides relief from mild to moderate pain including headaches, period pain, and muscle aches.</p>
+                            <button class="btn add-to-cart" data-id="2">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slideshow-controls">
+                <button class="prev-btn" aria-label="Previous product"><i class="fas fa-chevron-left"></i></button>
+                <div class="dots-container" role="tablist">
+                    <div class="dot active" data-index="0"></div>
+                    <div class="dot" data-index="1"></div>
+                </div>
+                <button class="next-btn" aria-label="Next product"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Script Upload Section -->
+    <section id="upload-prescription" class="script-upload" aria-labelledby="script-upload-heading">
+        <div class="container">
+            <h2 id="script-upload-heading" class="section-title text-center">Upload Your Prescription</h2>
+            <div class="upload-container">
+                <div class="upload-icon">
+                    <i class="fas fa-file-medical"></i>
+                </div>
+                <h3>Fast & Secure Prescription Processing</h3>
+                <p class="upload-instructions">
+                    Upload your doctor's prescription and our pharmacists will prepare your medication for pickup or delivery.
+                    Supported file types: JPG, PNG, PDF (Max file size: 5MB)
+                </p>
+                
+                <form class="upload-form" id="scriptUploadForm">
+                    <div class="file-input-wrapper">
+                        <input type="file" id="prescription-file" class="file-input" accept=".jpg,.jpeg,.png,.pdf" required>
+                        <label for="prescription-file" class="file-input-label">
+                            <i class="fas fa-upload"></i> Select Prescription File
+                        </label>
+                        <div id="file-name" class="file-name">No file selected</div>
+                    </div>
+                    
+                    <div class="form-group" style="width: 100%; max-width: 400px;">
+                        <label for="patient-name" class="sr-only">Patient Name</label>
+                        <input type="text" id="patient-name" class="form-control" placeholder="Patient Full Name" required>
+                    </div>
+                    
+                    <div class="form-group" style="width: 100%; max-width: 400px;">
+                        <label for="contact-number" class="sr-only">Contact Number</label>
+                        <input type="tel" id="contact-number" class="form-control" placeholder="Contact Number" required>
+                    </div>
+                    
+                    <button type="submit" class="upload-btn" id="upload-btn">Upload Prescription</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+<section class="features" aria-labelledby="features-heading">
+    <div class="container">
+        <h2 id="features-heading" class="section-title text-center">Why Choose Us</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon delivery-icon"></div>
+                <h3>Delivery/Pickup Point</h3>
+                <p>On orders over R450 anywhere in South Africa</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon payment-icon"></div>
+                <h3>Secure Payments</h3>
+                <p>100% secure payment options with SSL encryption</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon support-icon"></div>
+                <h3>24/7 Support</h3>
+                <p>Dedicated support team ready to assist you</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon calendar-icon"></div>
+                <h3>Book an Appointment</h3>
+                <p>Book an Appointment to see a qualified pharmacists</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" aria-labelledby="newsletter-heading">
+        <div class="container">
+            <h2 id="newsletter-heading">Subscribe to Our Newsletter</h2>
+            <p>Get the latest updates on health tips, special offers and new products directly to your inbox.</p>
+            <form class="newsletter-form" id="newsletterForm">
+                <label for="newsletter-email" class="sr-only">Email address</label>
+                <input type="email" id="newsletter-email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>First Chem Pharmacy</h3>
+                    <p>Your trusted online pharmacy providing quality healthcare products and services since 2010.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">Prescriptions</a></li>
+                        <li><a href="#">Health Blog</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Order Tracking</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Refunds</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span>123 Main Street, Johannesburg, 0001, South Africa</span></p>
+                        <p><i class="fas fa-phone-alt" aria-hidden="true"></i> <span>+27 68 001 7270</span></p>
+                        <p><i class="fas fa-envelope" aria-hidden="true"></i> <span>info@firstchempharmacy.co.za</span></p>
+                        <p><i class="fas fa-clock" aria-hidden="true"></i> <span>Mon-Fri: 8:00 - 17:00, Sat: 9:00 - 13:00</span></p>
+                    </div>
+                    <div class="payment-methods">
+                        <div class="payment-method"><i class="fab fa-cc-visa"></i></div>
+                        <div class="payment-method"><i class="fab fa-cc-mastercard"></i></div>
+                        <div class="payment-method"><i class="fab fa-cc-amex"></i></div>
+                        <div class="payment-method"><i class="fab fa-cc-paypal"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; 2023 First Chem Pharmacy. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Widget -->
+    <div class="whatsapp-widget">
+        <div class="whatsapp-btn" id="whatsappBtn">
+            <i class="fab fa-whatsapp"></i>
+        </div>
+        <div class="whatsapp-chat">
+            <button class="close-chat" id="closeChat"><i class="fas fa-times"></i></button>
+            <div class="chat-header">
+                <div class="chat-header-text">
+                    <h4>First Chem Pharmacy</h4>
+                    <p>Typically replies in minutes</p>
+                </div>
+            </div>
+            <div class="chat-messages">
+                <div class="message received">
+                    Hello! How can we assist you today?
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type a message...">
+                <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Quick View Modal -->
+    <div class="quick-view-modal" id="quickViewModal">
+        <div class="quick-view-content">
+            <button class="close-quick-view" id="closeQuickView">&times;</button>
+            <div class="quick-view-flex" id="quickViewContent">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Shopping cart functionality
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartIcon = document.getElementById('cartIcon');
+            const cartDropdown = document.getElementById('cartDropdown');
+            const cartItemsContainer = document.getElementById('cartItems');
+            const cartCount = document.querySelector('.cart-count');
+            const cartTotalPrice = document.getElementById('cartTotalPrice');
+            const confirmation = document.getElementById('confirmation');
+            
+            // Product database
+            const products = [
+                {
+                    id: 1,
+                    name: "Panado Tablets 1000mg 24s",
+                    price: 49.99,
+                    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "Fast-acting pain relief for headaches, fever, and mild arthritis pain."
+                },
+                {
+                    id: 2,
+                    name: "Disprin Tablets 300mg 24s",
+                    price: 39.99,
+                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "Effervescent pain reliever that works quickly to reduce pain and inflammation."
+                },
+                {
+                    id: 3,
+                    name: "Vitamin C 1000mg 60 Tablets",
+                    price: 129.99,
+                    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "Boosts immune system and promotes healthy skin with high-potency Vitamin C."
+                },
+                {
+                    id: 4,
+                    name: "Pampers Baby Dry Size 3 60s",
+                    price: 249.99,
+                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "Premium diapers with 12-hour leak protection and wetness indicator."
+                }
+            ];
+            
+            // Initialize cart display
+            updateCartDisplay();
+            
+            // Add to cart functionality
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('add-to-cart')) {
+                    const productId = parseInt(e.target.dataset.id);
+                    addToCart(productId);
+                }
+            });
+            
+            // Add product to cart
+            function addToCart(productId) {
+                const product = products.find(p => p.id === productId);
+                
+                if (!product) return;
+                
+                const existingItem = cart.find(item => item.id === productId);
+                
+                if (existingItem) {
+                    existingItem.quantity++;
+                } else {
+                    cart.push({
+                        id: product.id,
+                        name: product.name,
+                        price: product.price,
+                        image: product.image,
+                        quantity: 1
+                    });
+                }
+                
+                // Save to localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+                
+                // Update cart display
+                updateCartDisplay();
+                
+                // Show cart dropdown
+                cartDropdown.style.display = 'block';
+                
+                // Show confirmation
+                showAddToCartConfirmation(product.name);
+            }
+            
+            // Show add to cart confirmation
+            function showAddToCartConfirmation(productName) {
+                confirmation.textContent = `${productName} added to cart!`;
+                confirmation.style.display = 'block';
+                
+                setTimeout(() => {
+                    confirmation.style.display = 'none';
+                }, 3000);
+            }
+            
+            // Update cart display
+            function updateCartDisplay() {
+                // Update cart count
+                const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+                cartCount.textContent = totalItems;
+                
+                // Update cart items display
+                if (cart.length === 0) {
+                    cartItemsContainer.innerHTML = `
+                        <div class="empty-cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p>Your cart is empty</p>
+                        </div>
+                    `;
+                    cartTotalPrice.textContent = 'R0.00';
+                } else {
+                    cartItemsContainer.innerHTML = '';
+                    let totalPrice = 0;
+                    
+                    cart.forEach(item => {
+                        const itemTotal = item.price * item.quantity;
+                        totalPrice += itemTotal;
+                        
+                        const cartItem = document.createElement('div');
+                        cartItem.className = 'cart-item';
+                        cartItem.innerHTML = `
+                            <img src="${item.image}" alt="${item.name}">
+                            <div class="cart-item-info">
+                                <div class="cart-item-title">${item.name}</div>
+                                <div class="cart-item-price">R${item.price.toFixed(2)}</div>
+                                <div class="cart-item-quantity">
+                                    <button class="quantity-btn minus" data-id="${item.id}">-</button>
+                                    <span class="quantity-value">${item.quantity}</span>
+                                    <button class="quantity-btn plus" data-id="${item.id}">+</button>
+                                    <button class="remove-item" data-id="${item.id}">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        `;
+                        cartItemsContainer.appendChild(cartItem);
+                    });
+                    
+                    cartTotalPrice.textContent = `R${totalPrice.toFixed(2)}`;
+                    
+                    // Add event listeners to quantity buttons
+                    document.querySelectorAll('.quantity-btn.minus').forEach(button => {
+                        button.addEventListener('click', () => {
+                            const id = parseInt(button.dataset.id);
+                            updateQuantity(id, -1);
+                        });
+                    });
+                    
+                    document.querySelectorAll('.quantity-btn.plus').forEach(button => {
+                        button.addEventListener('click', () => {
+                            const id = parseInt(button.dataset.id);
+                            updateQuantity(id, 1);
+                        });
+                    });
+                    
+                    document.querySelectorAll('.remove-item').forEach(button => {
+                        button.addEventListener('click', () => {
+                            const id = parseInt(button.dataset.id);
+                            removeFromCart(id);
+                        });
+                    });
+                }
+            }
+            
+            // Update item quantity
+            function updateQuantity(productId, change) {
+                const item = cart.find(item => item.id === productId);
+                
+                if (item) {
+                    item.quantity += change;
+                    
+                    // Remove item if quantity becomes 0
+                    if (item.quantity <= 0) {
+                        cart = cart.filter(item => item.id !== productId);
+                    }
+                    
+                    // Save to localStorage
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    
+                    // Update cart display
+                    updateCartDisplay();
+                }
+            }
+            
+            // Remove item from cart
+            function removeFromCart(productId) {
+                cart = cart.filter(item => item.id !== productId);
+                
+                // Save to localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+                
+                // Update cart display
+                updateCartDisplay();
+            }
+            
+            // Toggle cart dropdown
+            cartIcon.addEventListener('click', toggleCartDropdown);
+            
+            function toggleCartDropdown(e) {
+                e.stopPropagation();
+                if (cartDropdown.style.display === 'block') {
+                    cartDropdown.style.display = 'none';
+                } else {
+                    cartDropdown.style.display = 'block';
+                    searchResults.style.display = 'none'; // Hide search results when cart is open
+                }
+            }
+            
+            // Close cart when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!cartIcon.contains(e.target) && !cartDropdown.contains(e.target)) {
+                    cartDropdown.style.display = 'none';
+                }
+            });
+            
+            // Search functionality
+            const searchInput = document.getElementById('searchInput');
+            const resultsContainer = document.getElementById('searchResults');
+            const searchButton = document.getElementById('searchButton');
+            
+            // Product data for search
+            const productsData = [
+                { id: 1, title: "Panado Tablets 1000mg 24s", category: "Pain Relief", price: "R49.99", keywords: "pain relief headache fever" },
+                { id: 2, title: "Disprin Tablets 300mg 24s", category: "Pain Relief", price: "R39.99", keywords: "aspirin pain fever" },
+                { id: 3, title: "Vitamin C 1000mg 60 Tablets", category: "Vitamins", price: "R129.99", keywords: "immune health antioxidant" },
+                { id: 4, title: "Pampers Baby Dry Size 3 60s", category: "Baby Care", price: "R249.99", keywords: "diapers baby care" },
+                { id: 5, title: "Allergex Tablets 30s", category: "Allergy", price: "R89.99", keywords: "allergy antihistamine" },
+                { id: 6, title: "Thermometer Digital", category: "Health Devices", price: "R199.99", keywords: "fever temperature" }
+            ];
+            
+            function searchProducts(term) {
+                term = term.toLowerCase();
+                return productsData.filter(product => 
+                    product.title.toLowerCase().includes(term) ||
+                    product.category.toLowerCase().includes(term) ||
+                    product.keywords.toLowerCase().includes(term)
+                );
+            }
+            
+            function displayResults(results) {
+                resultsContainer.innerHTML = '';
+                if (results.length === 0) {
+                    resultsContainer.innerHTML = '<div class="result-item">No products found</div>';
+                    resultsContainer.style.display = 'block';
+                    return;
+                }
+                
+                results.forEach(item => {
+                    const resultItem = document.createElement('a');
+                    resultItem.href = '#';
+                    resultItem.className = 'result-item';
+                    resultItem.innerHTML = `
+                        <strong>${item.title}</strong>
+                        <span>${item.category}</span>
+                        <small>${item.price}</small>
+                    `;
+                    resultsContainer.appendChild(resultItem);
+                    
+                    // Add click event to close search results and scroll to product
+                    resultItem.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        resultsContainer.style.display = 'none';
+                        searchInput.value = '';
+                        
+                        // Scroll to product
+                        const productElement = document.querySelector(`.product-card:nth-child(${products.findIndex(p => p.id === item.id) + 1})`);
+                        if (productElement) {
+                            productElement.scrollIntoView({ behavior: 'smooth' });
+                            
+                            // Highlight the product
+                            productElement.style.boxShadow = '0 0 0 3px #3498db';
+                            setTimeout(() => {
+                                productElement.style.boxShadow = '';
+                            }, 2000);
+                        }
+                    });
+                });
+                
+                resultsContainer.style.display = 'block';
+            }
+            
+            searchInput.addEventListener('input', function() {
+                const term = this.value.trim();
+                if (term.length < 2) {
+                    resultsContainer.style.display = 'none';
+                    return;
+                }
+                const results = searchProducts(term);
+                displayResults(results);
+            });
+            
+            searchButton.addEventListener('click', function() {
+                const term = searchInput.value.trim();
+                if (term.length < 2) return;
+                const results = searchProducts(term);
+                if (results.length === 1) {
+                    // Scroll to the single product result
+                    const productElement = document.querySelector(`.product-card:nth-child(${products.findIndex(p => p.id === results[0].id) + 1})`);
+                    if (productElement) {
+                        productElement.scrollIntoView({ behavior: 'smooth' });
+                        productElement.style.boxShadow = '0 0 0 3px #3498db';
+                        setTimeout(() => {
+                            productElement.style.boxShadow = '';
+                        }, 2000);
+                    }
+                } else {
+                    displayResults(results);
+                }
+            });
+            
+            document.addEventListener('click', function(e) {
+                if (!searchInput.contains(e.target) && !resultsContainer.contains(e.target)) {
+                    resultsContainer.style.display = 'none';
+                }
+            });
+            
+            // Slideshow functionality
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            let currentSlide = 0;
+            
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentSlide = index;
+            }
+            
+            function nextSlide() {
+                let nextIndex = (currentSlide + 1) % slides.length;
+                showSlide(nextIndex);
+            }
+            
+            function prevSlide() {
+                let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(prevIndex);
+            }
+            
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+            
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => showSlide(index));
+            });
+            
+            // Auto-advance slides
+            setInterval(nextSlide, 5000);
+            
+            // WhatsApp Widget
+            const whatsappBtn = document.getElementById('whatsappBtn');
+            const closeChat = document.getElementById('closeChat');
+            const whatsappWidget = document.querySelector('.whatsapp-widget');
+            const sendMessageBtn = document.getElementById('sendMessage');
+            const chatInput = document.querySelector('.chat-input input');
+            const chatMessages = document.querySelector('.chat-messages');
+            
+            whatsappBtn.addEventListener('click', function() {
+                whatsappWidget.classList.toggle('active');
+            });
+            
+            closeChat.addEventListener('click', function(e) {
+                e.stopPropagation();
+                whatsappWidget.classList.remove('active');
+            });
+            
+            sendMessageBtn.addEventListener('click', function() {
+                const messageText = chatInput.value.trim();
+                if (messageText) {
+                    // Add user message
+                    const messageElement = document.createElement('div');
+                    messageElement.className = 'message sent';
+                    messageElement.textContent = messageText;
+                    chatMessages.appendChild(messageElement);
+                    
+                    // Clear input
+                    chatInput.value = '';
+                    
+                    // Scroll to bottom
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                    
+                    // Simulate reply after delay
+                    setTimeout(() => {
+                        const replyElement = document.createElement('div');
+                        replyElement.className = 'message received';
+                        replyElement.textContent = "Thanks for your message! Our team will respond shortly. For immediate assistance, you can also call us at +27 68 001 7270.";
+                        chatMessages.appendChild(replyElement);
+                        chatMessages.scrollTop = chatMessages.scrollHeight;
+                    }, 1000);
+                }
+            });
+            
+            // Prescription upload
+            const scriptUploadForm = document.getElementById('scriptUploadForm');
+            const fileInput = document.getElementById('prescription-file');
+            const fileNameDisplay = document.getElementById('file-name');
+            const uploadBtn = document.getElementById('upload-btn');
+            
+            fileInput.addEventListener('change', function() {
+                if (this.files.length > 0) {
+                    fileNameDisplay.textContent = this.files[0].name;
+                } else {
+                    fileNameDisplay.textContent = 'No file selected';
+                }
+            });
+            
+            scriptUploadForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Disable button during upload simulation
+                uploadBtn.disabled = true;
+                uploadBtn.textContent = 'Uploading...';
+                
+                // Simulate upload process
+                setTimeout(() => {
+                    // Success message
+                    alert('Prescription uploaded successfully! Our pharmacists will process your order shortly, We will contact you through Whatsapp.');
+                    
+                    // Reset form
+                    scriptUploadForm.reset();
+                    fileNameDisplay.textContent = 'No file selected';
+                    uploadBtn.disabled = false;
+                    uploadBtn.textContent = 'Upload Prescription';
+                }, 1500);
+            });
+            
+            // Newsletter form
+            const newsletterForm = document.getElementById('newsletterForm');
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = document.getElementById('newsletter-email').value;
+                alert(`Thank you for subscribing with ${email}! You'll receive our newsletter soon.`);
+                this.reset();
+            });
+            
+            // Quick View Functionality
+            const quickViewButtons = document.querySelectorAll('.quick-view');
+            const modal = document.getElementById('quickViewModal');
+            const closeButton = document.getElementById('closeQuickView');
+            const modalContent = document.getElementById('quickViewContent');
+            
+            // Product details for quick view
+            const productsQuickView = {
+                1: {
+                    title: "Panado Tablets 1000mg 24s",
+                    price: "R49.99",
+                    description: "Fast-acting pain relief for headaches, fever, and mild arthritis pain. Contains paracetamol which works to block pain signals to the brain. Suitable for adults and children over 12 years. Always read the label and use as directed.",
+                    image: "Products/Panado_Tablets_1000mg_24s-removebg-preview.png",
+                    rating: 4.5,
+                    ratingCount: 128,
+                    category: "Pain Relief",
+                    sku: "PAN1000-24",
+                    stock: "In Stock"
+                },
+                2: {
+                    title: "Disprin Tablets 300mg 24s",
+                    price: "R70.99",
+                    oldPrice: "R49.99",
+                    description: "Effervescent pain reliever that works quickly to reduce pain and inflammation. Contains aspirin which helps to reduce substances in the body that cause pain and inflammation. Ideal for headaches, period pain, and mild arthritis.",
+                    image: "Products/Disprin_Tablets_300mg_24s-removebg-preview.png",
+                    rating: 4.0,
+                    ratingCount: 95,
+                    category: "Pain Relief",
+                    sku: "DISP300-24",
+                    stock: "In Stock"
+                },
+                3: {
+                    title: "Vitamin C 1000mg 60 Tablets",
+                    price: "R129.99",
+                    description: "Boosts immune system and promotes healthy skin with high-potency Vitamin C. Essential for the growth and repair of tissues in all parts of your body. Helps the body make collagen, an important protein used to make skin, cartilage, tendons, ligaments, and blood vessels.",
+                    image: "Products/Very_Well_Vitamin_C_1000mg_60_Tablets-removebg-preview.png",
+                    rating: 5.0,
+                    ratingCount: 210,
+                    category: "Vitamins & Supplements",
+                    sku: "VITC1000-60",
+                    stock: "In Stock"
+                },
+                4: {
+                    title: "Pampers Baby Dry Size 3 60s",
+                    price: "R249.99",
+                    description: "Premium diapers with 12-hour leak protection and wetness indicator. Features Air Channels that help distribute wetness for up to 12 hours of overnight protection. Wetness indicator lets you know when baby might need a change.",
+                    image: "Products/Pampers_Baby_Dry_Size_3_98-removebg-preview.png",
+                    rating: 4.5,
+                    ratingCount: 187,
+                    category: "Baby Care",
+                    sku: "PAMP3-60",
+                    stock: "In Stock"
+                }
+            };
+            
+            // Show quick view on hover
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    const quickView = card.querySelector('.quick-view');
+                    quickView.style.bottom = '0';
+                    quickView.style.opacity = '1';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    const quickView = card.querySelector('.quick-view');
+                    quickView.style.bottom = '-40px';
+                    quickView.style.opacity = '0';
+                });
+            });
+            
+            // Add click event to quick view buttons
+            quickViewButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const productId = button.getAttribute('data-product-id');
+                    showQuickView(productId);
+                });
+            });
+            
+            // Close modal when clicking close button
+            closeButton.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+            
+            // Close modal when clicking outside content
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+            
+            // Function to show quick view
+            function showQuickView(productId) {
+                const product = productsQuickView[productId];
+                if (!product) return;
+                
+                // Generate stars HTML
+                let starsHtml = '';
+                const fullStars = Math.floor(product.rating);
+                const halfStar = product.rating % 1 >= 0.5;
+                
+                for (let i = 0; i < fullStars; i++) {
+                    starsHtml += '<i class="fas fa-star"></i>';
+                }
+                
+                if (halfStar) {
+                    starsHtml += '<i class="fas fa-star-half-alt"></i>';
+                }
+                
+                const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+                for (let i = 0; i < emptyStars; i++) {
+                    starsHtml += '<i class="far fa-star"></i>';
+                }
+                
+                // Create modal content
+                modalContent.innerHTML = `
+                    <div class="quick-view-img">
+                        <img src="${product.image}" alt="${product.title}">
+                    </div>
+                    <div class="quick-view-details">
+                        <h3>${product.title}</h3>
+                        <div class="quick-view-price">
+                            ${product.oldPrice ? `<span style="text-decoration: line-through; color: #999; margin-right: 10px;">${product.oldPrice}</span>` : ''}
+                            ${product.price}
+                        </div>
+                        <div class="quick-view-rating">
+                            ${starsHtml}
+                            <span class="rating-count" style="color: #666; font-size: 1rem; margin-left: 10px;">(${product.ratingCount})</span>
+                        </div>
+                        <p class="quick-view-description">${product.description}</p>
+                        <div style="margin-bottom: 1rem;">
+                            <strong>Category:</strong> ${product.category}<br>
+                            <strong>SKU:</strong> ${product.sku}<br>
+                            <strong>Availability:</strong> ${product.stock}
+                        </div>
+                        <div class="quick-view-actions">
+                            <button class="add-to-cart-large" data-id="${productId}">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                            <button class="view-details">
+                                View Full Details
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                // Show modal
+                modal.style.display = 'flex';
+                
+                // Add event to the new "Add to Cart" button
+                const addToCartBtn = modalContent.querySelector('.add-to-cart-large');
+                addToCartBtn.addEventListener('click', function() {
+                    const id = parseInt(this.dataset.id);
+                    addToCart(id);
+                    modal.style.display = 'none';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

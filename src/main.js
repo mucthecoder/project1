@@ -14,7 +14,7 @@ import {
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-// ✅ Firebase Config from .env
+// Firebase Config from .env
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
@@ -43,7 +43,7 @@ window.login = (event) => {
       localStorage.setItem("savedPassword", password);
 
       alert("Login successful!");
-      window.location.href = "/welcome.html";
+      window.location.href = "/home.html";
     })
     .catch((err) => {
       alert("Login failed: " + err.message);
@@ -118,7 +118,7 @@ window.googleSignIn = () => {
         });
       }
       alert("Google sign-in successful!");
-      window.location.href = "/welcome.html";
+      window.location.href = "/home.html";
     })
     .catch((err) => {
       if (err.code === "auth/cancelled-popup-request") {
