@@ -122,8 +122,8 @@ window.googleSignIn = () => {
     })
     .catch((err) => {
       if (err.code === "auth/cancelled-popup-request") {
-        // Ignore or show a subtle message if needed
-        // Optionally: alert("Google sign-in was cancelled.");
+       
+      
       } else if (err.code === "auth/popup-closed-by-user") {
         // Optionally: alert("Google sign-in popup was closed.");
       } else {

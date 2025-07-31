@@ -1,0 +1,2027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dental & Oral Essentials - FirstChem Pharmacy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: rgb(233, 30, 99); /* Professional blue */
+            --primary-dark: rgb(33, 150, 243); /* Darker blue for contrast */
+            --secondary-color: #f5f7fa;
+            --accent-color: #2196F3;
+            --accent-light: #BBDEFB;
+            --text-color: #333;
+            --light-text: #666;
+            --white: #ffffff;
+            --cold-blue: #E3F2FD;
+            --flu-purple: #EDE7F6;
+            --border-radius: 10px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --box-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --header-height: 80px;        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--secondary-color);
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 5px rgba(33, 150, 243, 0.2);
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(25, 118, 210, 0.3);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            box-shadow: none;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Section Titles */
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+            color: var(--primary-dark);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+        
+        .text-center .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Header Styles */
+        .top-bar {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 10px 0;
+            font-size: 14px;
+        }
+        
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .top-links ul {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .top-links a {
+            color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .top-links a:hover {
+            color: var(--white);
+        }
+        
+        .main-header {
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            background-color: var(--white);
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+        
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .logo-text span {
+            color: var(--accent-color);
+            font-weight: 800;
+        }
+        
+        /* Search Bar */
+        .search-bar {
+            flex-grow: 1;
+            margin: 0 30px;
+            position: relative;
+            max-width: 600px;
+            display: flex;
+        }
+        
+        .search-container {
+            position: relative;
+            width: 100%;
+        }
+        
+        .search-bar input {
+            width: 100%;
+            padding: 12px 50px 12px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 30px;
+            font-size: 15px;
+            transition: var(--transition);
+            background-color: #f8fafc;
+        }
+        
+        .search-bar input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background-color: var(--white);
+            box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+        }
+        
+        .search-bar button {
+            position: absolute;
+            right: 8px;
+            top: 8px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .search-bar button:hover {
+            background-color: var(--primary-dark);
+            transform: scale(1.05);
+        }
+        
+        .results-dropdown {
+            position: absolute;
+            width: 100%;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: none;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .result-item {
+            display: block;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+        
+        .result-item:hover {
+            background-color: #f0f7ff;
+        }
+        
+        .result-item strong {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+        
+        .result-item span {
+            font-size: 13px;
+            color: #666;
+        }
+        
+        .result-item small {
+            display: block;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-top: 3px;
+        }
+        
+        /* Header Icons */
+        .header-icons {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .header-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 13px;
+            color: var(--text-color);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .header-icon:hover {
+            color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+        
+        .header-icon i {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .icon-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        
+        /* Navigation */
+        .main-nav {
+            background-color: var(--primary-color);
+            padding: 0;
+        }
+        
+        .main-nav .container {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+        
+        .main-nav ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .main-nav li {
+            position: relative;
+        }
+        
+        .main-nav a {
+            display: block;
+            color: var(--white);
+            padding: 16px 15px;
+            transition: var(--transition);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+        
+        .main-nav a:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        .main-nav .nav-dropdown {
+            position: relative;
+        }
+        
+        .main-nav .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            min-width: 220px;
+            box-shadow: var(--box-shadow-lg);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+        
+        .main-nav .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-menu li a {
+            color: var(--text-color);
+            padding: 12px 20px;
+            border-bottom: 1px solid #f1f5f9;
+            text-transform: none;
+        }
+        
+        .dropdown-menu li a:hover {
+            background-color: #f8fafc;
+            color: var(--primary-color);
+            padding-left: 25px;
+        }
+        
+        /* Cart Dropdown */
+        .cart-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 380px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            display: none;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .cart-header {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .cart-items {
+            padding: 15px;
+        }
+        
+        .cart-item {
+            display: flex;
+            padding: 10px 0;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        
+        .cart-item img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            margin-right: 15px;
+            border-radius: 4px;
+            background: #f8f9fa;
+            padding: 5px;
+        }
+        
+        .cart-item-info {
+            flex: 1;
+        }
+        
+        .cart-item-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+        
+        .cart-item-price {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+        }
+        
+        .quantity-btn {
+            width: 28px;
+            height: 28px;
+            background: #f1f1f1;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .quantity-value {
+            margin: 0 10px;
+            min-width: 30px;
+            text-align: center;
+        }
+        
+        .remove-item {
+            background: none;
+            border: none;
+            color: #e74c3c;
+            cursor: pointer;
+            margin-left: 15px;
+            font-size: 18px;
+        }
+        
+        .cart-footer {
+            padding: 15px;
+            border-top: 1px solid #eee;
+            background: #f8f9fa;
+        }
+        
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .cart-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn-view {
+            background: #fff;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+        
+        .btn-view:hover {
+            background: #f0f7ff;
+        }
+        
+        .btn-checkout {
+            background: var(--primary-color);
+            color: white;
+            border: 1px solid var(--primary-color);
+        }
+        
+        .btn-checkout:hover {
+            background: var(--primary-dark);
+        }
+        
+        .empty-cart {
+            text-align: center;
+            padding: 30px 15px;
+            color: #7f8c8d;
+        }
+        
+        .empty-cart i {
+            font-size: 50px;
+            margin-bottom: 15px;
+            color: #bdc3c7;
+        }
+        
+        /* Add to cart confirmation */
+        .confirmation {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #27ae60;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            z-index: 1000;
+            animation: fadeInOut 3s ease;
+            display: none;
+        }
+        
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(20px); }
+            10% { opacity: 1; transform: translateY(0); }
+            90% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(20px); }
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(250, 250, 250, 0.6), rgba(25, 118, 210, 0.7)), 
+            url('https://images.unsplash.com/photo-1588776813677-77d00c6fafac?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            margin-bottom: 40px;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 800;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .breadcrumb {
+            padding: 15px 0;
+            background-color: #f0f5ff;
+            margin-bottom: 30px;
+        }
+        
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .breadcrumb span {
+            color: var(--light-text);
+        }
+        
+        /* Health Tips Section */
+        .health-tips {
+            background: linear-gradient(to right, var(--dental-blue), var(--dental-teal));
+            padding: 50px 0;
+            margin-bottom: 40px;
+            border-radius: var(--border-radius);
+        }
+        
+        .tips-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .tip-card {
+            background: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .tip-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .tip-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+        
+        .tip-card h3 i {
+            color: var(--accent-color);
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 40px 0;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 40px;
+        }
+        
+        .filter-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .filter-section {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .filter-label {
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+        
+        .filter-select {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            background-color: #fff;
+            cursor: pointer;
+        }
+        
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .product-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            position: relative;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            cursor: pointer;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 2;
+        }
+        
+        .product-img {
+            height: 200px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--dental-blue);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: var(--transition);
+        }
+        
+        .product-info {
+            padding: 20px;
+            border-top: 1px solid #f1f5f9;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-title {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+        
+        .product-price {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        .add-to-cart {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            font-size: 15px;
+            margin-top: auto;
+        }
+        
+        .add-to-cart:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        /* Product Type Tags */
+        .product-tag {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .tag-toothpaste {
+            background-color: #E3F2FD;
+            color: #0D47A1;
+        }
+        
+        .tag-toothbrush {
+            background-color: #FFECB3;
+            color: #FF8F00;
+        }
+        
+        .tag-mouthwash {
+            background-color: #E8F5E9;
+            color: #1B5E20;
+        }
+        
+        .tag-whitening {
+            background-color: #FFF3E0;
+            color: #E65100;
+        }
+        
+        .tag-sensitive {
+            background-color: #F3E5F5;
+            color: #7B1FA2;
+        }
+        
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .pagination button {
+            margin: 0 5px;
+            padding: 8px 15px;
+            background-color: var(--white);
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .pagination button:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+        
+        .pagination button.active {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+        
+        /* Footer */
+        .main-footer {
+            background-color: #1a202c;
+            color: var(--white);
+            padding: 40px 0 0;
+            margin-top: 40px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .copyright {
+            background-color: #0d1117;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 14px;
+            color: #a0aec0;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background-color: var(--white);
+            margin: 50px auto;
+            max-width: 800px;
+            width: 90%;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .modal-header {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--light-text);
+        }
+        
+        .modal-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        @media (min-width: 768px) {
+            .modal-body {
+                flex-direction: row;
+            }
+        }
+        
+        .modal-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #f8fafc;
+            border-radius: var(--border-radius);
+        }
+        
+        .modal-image img {
+            max-width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+        }
+        
+        .modal-info {
+            flex: 1;
+        }
+        
+        .modal-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+        
+        .modal-price {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .modal-description {
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .modal-quantity {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .modal-quantity input {
+            width: 60px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+            margin: 0 10px;
+        }
+        
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn-modal {
+            flex: 1;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .search-bar {
+                margin: 15px 0;
+                max-width: 100%;
+            }
+            
+            .filter-container {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                height: 250px;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-icons {
+                width: 100%;
+                justify-content: space-around;
+            }
+        }
+        
+        /* Oral Care Guide */
+        .oral-care-guide {
+            background-color: #f0f7ff;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .oral-care-guide h3 {
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .care-steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .care-step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .care-step h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .care-step i {
+            font-size: 36px;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        /* Daily Routine */
+        .daily-routine {
+            background: linear-gradient(to right, var(--dental-teal), var(--dental-green));
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin: 40px 0;
+        }
+        
+        .routine-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary-dark);
+        }
+        
+        .routine-steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .routine-step {
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+            padding: 15px;
+        }
+        
+        .routine-step i {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="welcome-msg">Welcome to FirstChem Pharmacy - South Africa's Trusted Online Pharmacy</div>
+            <div class="top-links">
+                <ul>
+                    <li><a href="tel:0123456789"><i class="fas fa-phone-alt" aria-hidden="true"></i> <span>012 345 6789</span></a></li>
+                    <li><a href="mailto:info@firstchempharmacy.co.za"><i class="fas fa-envelope" aria-hidden="true"></i> <span>info@firstchempharmacy.co.za</span></a></li>
+                    <li><a href="#store-locator"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span>Store Locator</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <a href="/" class="logo">
+                        <img src="images/FirstChemLogo-removebg-preview-e1751526921499-removebg.png" style="height: 100px; width: auto;">
+                    </a>
+                    <div class="search-bar">
+                        <div class="search-container">
+                            <label for="searchInput" class="sr-only">Search for medicines and health products</label>
+                            <input type="text" id="searchInput" placeholder="Search for dental and oral care products..." aria-label="Search products">
+                            <div id="searchResults" class="results-dropdown"></div>
+                        </div>
+                        <button aria-label="Search" id="searchButton"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="header-icons">
+                        <a href="#account" class="header-icon" aria-label="My Account">
+                            <i class="fas fa-user" aria-hidden="true"></i>
+                            <span>Account</span>
+                        </a>
+                        <a href="#wishlist" class="header-icon" aria-label="Wishlist">
+                            <i class="fas fa-heart" aria-hidden="true"></i>
+                            <span>Wishlist</span>
+                        </a>
+                        <div class="header-icon" id="cartIcon" aria-label="Shopping Cart">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                                <span class="cart-count">0</span>
+                            </div>
+                            <span>Cart</span>
+                            <!-- Cart Dropdown -->
+                            <div class="cart-dropdown" id="cartDropdown">
+                                <div class="cart-header">
+                                    <h3>Your Shopping Cart</h3>
+                                </div>
+                                <div class="cart-items" id="cartItems">
+                                    <!-- Cart items will be inserted here -->
+                                </div>
+                                <div class="cart-footer">
+                                    <div class="cart-total">
+                                        <span>Total:</span>
+                                        <span id="cartTotalPrice">R0.00</span>
+                                    </div>
+                                    <div class="cart-buttons">
+                                        <a href="cart.html" class="btn btn-view">View Cart</a>
+                                        <a href="checkout.html" class="btn btn-checkout">Checkout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                    <li><a href="#">Home</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#">Shop <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="category.html?category=Wound Care">Wound Care</a></li>
+                            <li><a href="category.html?category=Self Medication">Self Medication</a></li>
+                            <li><a href="category.html?category=Vitamins & Supplements">Vitamins & Supplements</a></li>
+                            <li><a href="category.html?category=Baby & Kids Medication">Baby & Kids</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Prescriptions</a></li>
+                    <li><a href="#">Health & Wellness</a></li>
+                    <li><a href="#">Baby & Kids</a></li>
+                    <li><a href="#">Vitamins & Supplements</a></li>
+                    <li><a href="#">Beauty</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Add to cart confirmation -->
+    <div class="confirmation" id="confirmation">Product added to cart!</div>
+
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-heading">
+        <div class="container">
+            <div class="hero-content">
+                <h1 id="hero-heading">Dental & Oral Essentials</h1>
+                <p>Complete oral care solutions for a healthy, confident smile</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> > <a href="#">Shop</a> > <span>Dental & Oral Care</span>
+        </div>
+    </div>
+
+    <!-- Health Tips Section -->
+    <section class="health-tips">
+        <div class="container">
+            <h2 class="section-title text-center">Oral Health Tips</h2>
+            <div class="tips-container">
+                <div class="tip-card">
+                    <h3><i class="fas fa-tooth"></i> Brush Twice Daily</h3>
+                    <p>Brush your teeth for two minutes, twice a day with fluoride toothpaste to remove plaque and prevent decay.</p>
+                </div>
+                <div class="tip-card">
+                    <h3><i class="fas fa-hand-holding-water"></i> Floss Regularly</h3>
+                    <p>Floss daily to remove food particles and plaque between teeth where your toothbrush can't reach.</p>
+                </div>
+                <div class="tip-card">
+                    <h3><i class="fas fa-apple-alt"></i> Healthy Diet</h3>
+                    <p>Limit sugary snacks and drinks which can cause tooth decay. Choose water, dairy, fruits and vegetables.</p>
+                </div>
+                <div class="tip-card">
+                    <h3><i class="fas fa-calendar-check"></i> Regular Checkups</h3>
+                    <p>Visit your dentist every six months for professional cleaning and early detection of dental issues.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Oral Care Guide -->
+    <div class="container">
+        <div class="oral-care-guide">
+            <h3>Complete Oral Care Routine</h3>
+            <div class="care-steps">
+                <div class="care-step">
+                    <i class="fas fa-toothbrush"></i>
+                    <h4>Toothbrushing</h4>
+                    <p>Brush twice daily with fluoride toothpaste</p>
+                </div>
+                <div class="care-step">
+                    <i class="fas fa-hand-sparkles"></i>
+                    <h4>Flossing</h4>
+                    <p>Clean between teeth daily</p>
+                </div>
+                <div class="care-step">
+                    <i class="fas fa-spray-can"></i>
+                    <h4>Mouthwash</h4>
+                    <p>Use antimicrobial rinse to reduce bacteria</p>
+                </div>
+                <div class="care-step">
+                    <i class="fas fa-water"></i>
+                    <h4>Hydration</h4>
+                    <p>Drink water to maintain saliva flow</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Daily Routine -->
+    <div class="container">
+        <div class="daily-routine">
+            <h3 class="routine-title">Daily Dental Routine</h3>
+            <div class="routine-steps">
+                <div class="routine-step">
+                    <i class="fas fa-sun"></i>
+                    <h4>Morning</h4>
+                    <p>Brush & Floss</p>
+                </div>
+                <div class="routine-step">
+                    <i class="fas fa-utensils"></i>
+                    <h4>After Meals</h4>
+                    <p>Rinse with water</p>
+                </div>
+                <div class="routine-step">
+                    <i class="fas fa-moon"></i>
+                    <h4>Evening</h4>
+                    <p>Floss & Brush</p>
+                </div>
+                <div class="routine-step">
+                    <i class="fas fa-spray-can"></i>
+                    <h4>Before Bed</h4>
+                    <p>Mouthwash rinse</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <section class="products" aria-labelledby="dental-heading">
+        <div class="container">
+            <h2 id="dental-heading" class="section-title">Dental & Oral Care Products</h2>
+            <p class="text-center" style="margin-bottom: 30px; color: var(--light-text); max-width: 800px; margin-left: auto; margin-right: auto;">
+                Complete your oral care routine with our range of dentist-recommended products for all your dental hygiene needs.
+            </p>
+            
+            <!-- Filter Section -->
+            <div class="filter-container">
+                <div class="filter-section">
+                    <span class="filter-label">Sort By:</span>
+                    <select id="sortBy" class="filter-select">
+                        <option value="default">Featured</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="name-asc">Name: A to Z</option>
+                        <option value="name-desc">Name: Z to A</option>
+                    </select>
+                </div>
+                
+                <div class="filter-section">
+                    <span class="filter-label">Filter By:</span>
+                    <select id="filterBy" class="filter-select">
+                        <option value="all">All Products</option>
+                        <option value="toothpaste">Toothpaste</option>
+                        <option value="toothbrush">Toothbrushes</option>
+                        <option value="mouthwash">Mouthwash</option>
+                        <option value="whitening">Whitening</option>
+                        <option value="sensitive">Sensitive Teeth</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="product-grid" id="productGrid">
+                <!-- Products will be loaded here via JavaScript -->
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination" id="pagination">
+                <!-- Pagination buttons will be generated here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Product Details</h3>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Product details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>First Chem Pharmacy</h3>
+                    <p>Your trusted online pharmacy providing quality healthcare products and services since 2010.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Refunds</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span>123 Main Street, Johannesburg, 0001, South Africa</span></p>
+                        <p><i class="fas fa-phone-alt" aria-hidden="true"></i> <span>+27 68 001 7270</span></p>
+                        <p><i class="fas fa-envelope" aria-hidden="true"></i> <span>info@firstchempharmacy.co.za</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; 2023 First Chem Pharmacy. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Dental products data
+            const dentalProducts = [
+                {
+                    id: 1,
+                    name: "Colgate Total Toothpaste 150g",
+                    price: 39.99,
+                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "Advanced 12-hour protection against bacteria. Fights germs on teeth, tongue, cheeks and gums.",
+                    benefits: "Cavity protection, fresh breath, reduces plaque, whitens teeth",
+                    ingredients: "Sodium Fluoride, Triclosan",
+                    usage: "Brush teeth thoroughly for at least 2 minutes twice daily",
+                    type: "toothpaste",
+                    badge: "Best Seller",
+                    stock: 50
+                },
+                {
+                    id: 2,
+                    name: "Oral-B Pro 3 Electric Toothbrush",
+                    price: 499.99,
+                    image: "https://images.unsplash.com/photo-1606310734273-1a332d20c867?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "3D cleaning action removes up to 100% more plaque than a regular manual toothbrush.",
+                    benefits: "3 cleaning modes, pressure sensor, timer, rechargeable",
+                    ingredients: "",
+                    usage: "Use with fluoride toothpaste twice daily for 2 minutes",
+                    type: "toothbrush",
+                    badge: "Popular",
+                    stock: 25
+                },
+                {
+                    id: 3,
+                    name: "Listerine Total Care Mouthwash 500ml",
+                    price: 89.50,
+                    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "6 benefits in 1 oral rinse: kills germs, strengthens teeth, freshens breath, prevents plaque, cleans mouth, whitens teeth.",
+                    benefits: "Alcohol-free formula, fluoride enriched, fresh mint flavor",
+                    ingredients: "Sodium Fluoride, Essential Oils",
+                    usage: "Rinse with 20ml for 30 seconds twice daily",
+                    type: "mouthwash",
+                    badge: "Dentist Recommended",
+                    stock: 40
+                },
+                {
+                    id: 4,
+                    name: "Sensodyne Repair & Protect Toothpaste 100g",
+                    price: 65.75,
+                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "Clinically proven to repair sensitive teeth. Builds a protective layer over vulnerable areas.",
+                    benefits: "Relieves sensitivity, repairs enamel, protects against cavities",
+                    ingredients: "Novamin, Fluoride",
+                    usage: "Brush teeth twice daily for sensitive relief",
+                    type: "toothpaste",
+                    badge: "For Sensitive Teeth",
+                    stock: 35
+                },
+                {
+                    id: 5,
+                    name: "Oral-B Glide Pro-Health Dental Floss 50m",
+                    price: 45.30,
+                    image: "https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "Shred-resistant floss slides up to 50% more easily in tight spaces. Removes plaque effectively.",
+                    benefits: "Comfortable glide, shred-resistant, mint flavor",
+                    ingredients: "PTFE, Silica, Flavor",
+                    usage: "Use daily to clean between teeth",
+                    type: "floss",
+                    badge: "Essential",
+                    stock: 60
+                },
+                {
+                    id: 6,
+                    name: "Crest 3D White Whitestrips 20 Treatments",
+                    price: 349.99,
+                    image: "https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "Professional-level teeth whitening at home. Removes 15 years of stains in just 20 treatments.",
+                    benefits: "Noticeable results, enamel safe, easy to use",
+                    ingredients: "Hydrogen Peroxide",
+                    usage: "Apply strips for 30 minutes daily for 20 days",
+                    type: "whitening",
+                    badge: "Whitening",
+                    stock: 15
+                },
+                {
+                    id: 7,
+                    name: "GUM Soft-Picks Advanced 90 Count",
+                    price: 59.95,
+                    image: "https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "Gentle alternative to floss. Effectively cleans between teeth and along the gumline.",
+                    benefits: "Soft flexible bristles, comfortable grip, removes plaque",
+                    ingredients: "Plastic, Rubber",
+                    usage: "Use daily instead of floss for interdental cleaning",
+                    type: "floss",
+                    badge: "New",
+                    stock: 30
+                },
+                {
+                    id: 8,
+                    name: "Philips Sonicare ProtectiveClean 4100",
+                    price: 799.50,
+                    image: "https://images.unsplash.com/photo-1606310734273-1a332d20c867?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "Sonic technology removes up to 7x more plaque than a manual toothbrush. 3 intensity settings.",
+                    benefits: "2-minute timer, pressure sensor, long battery life",
+                    ingredients: "",
+                    usage: "Use with fluoride toothpaste twice daily for 2 minutes",
+                    type: "toothbrush",
+                    badge: "Premium",
+                    stock: 10
+                }
+            ];
+
+            // Cart functionality
+            let cart = [];
+            const cartIcon = document.getElementById('cartIcon');
+            const cartDropdown = document.getElementById('cartDropdown');
+            const cartItems = document.getElementById('cartItems');
+            const cartTotalPrice = document.getElementById('cartTotalPrice');
+            const cartCount = document.querySelector('.cart-count');
+            const confirmation = document.getElementById('confirmation');
+            
+            // Pagination variables
+            const productsPerPage = 8;
+            let currentPage = 1;
+            let filteredProducts = [...dentalProducts];
+            
+            // DOM Elements
+            const productGrid = document.getElementById('productGrid');
+            const paginationDiv = document.getElementById('pagination');
+            const sortBy = document.getElementById('sortBy');
+            const filterBy = document.getElementById('filterBy');
+            const searchInput = document.getElementById('searchInput');
+            const searchResults = document.getElementById('searchResults');
+            const productModal = document.getElementById('productModal');
+            const modalBody = document.getElementById('modalBody');
+            const closeModal = document.getElementById('closeModal');
+            
+            // Initialize the page
+            function init() {
+                displayProducts();
+                createPagination();
+                setupEventListeners();
+                updateCartCount();
+            }
+            
+            // Set up event listeners
+            function setupEventListeners() {
+                // Cart icon hover
+                cartIcon.addEventListener('mouseenter', showCartDropdown);
+                cartIcon.addEventListener('mouseleave', hideCartDropdown);
+                
+                // Sorting and filtering
+                sortBy.addEventListener('change', handleSorting);
+                filterBy.addEventListener('change', handleFiltering);
+                
+                // Search functionality
+                searchInput.addEventListener('input', handleSearch);
+                searchButton.addEventListener('click', handleSearch);
+                
+                // Modal close
+                closeModal.addEventListener('click', () => {
+                    productModal.style.display = 'none';
+                });
+                
+                // Close modal when clicking outside
+                window.addEventListener('click', (e) => {
+                    if (e.target === productModal) {
+                        productModal.style.display = 'none';
+                    }
+                });
+            }
+            
+            // Display products
+            function displayProducts() {
+                productGrid.innerHTML = '';
+                
+                const startIndex = (currentPage - 1) * productsPerPage;
+                const endIndex = Math.min(startIndex + productsPerPage, filteredProducts.length);
+                
+                for (let i = startIndex; i < endIndex; i++) {
+                    const product = filteredProducts[i];
+                    const productCard = document.createElement('div');
+                    productCard.className = 'product-card';
+                    
+                    // Determine tag class based on product type
+                    let tagClass = '';
+                    let tagText = '';
+                    
+                    switch(product.type) {
+                        case 'toothpaste':
+                            tagClass = 'tag-toothpaste';
+                            tagText = 'Toothpaste';
+                            break;
+                        case 'toothbrush':
+                            tagClass = 'tag-toothbrush';
+                            tagText = 'Toothbrush';
+                            break;
+                        case 'mouthwash':
+                            tagClass = 'tag-mouthwash';
+                            tagText = 'Mouthwash';
+                            break;
+                        case 'whitening':
+                            tagClass = 'tag-whitening';
+                            tagText = 'Whitening';
+                            break;
+                        case 'floss':
+                            tagClass = 'tag-sensitive';
+                            tagText = 'Floss';
+                            break;
+                        default:
+                            tagClass = 'tag-toothpaste';
+                            tagText = 'Dental';
+                    }
+                    
+                    productCard.innerHTML = `
+                        ${product.badge ? `<div class="product-badge">${product.badge}</div>` : ''}
+                        <div class="product-img">
+                            <img src="${product.image}" alt="${product.name}">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">${product.name}</h3>
+                            <div class="product-price">R${product.price.toFixed(2)}</div>
+                            <div class="product-tags">
+                                <span class="product-tag ${tagClass}">${tagText}</span>
+                            </div>
+                            <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
+                        </div>
+                    `;
+                    
+                    // Add click event to show product details
+                    productCard.addEventListener('click', (e) => {
+                        // Don't trigger if clicking on the add to cart button
+                        if (!e.target.classList.contains('add-to-cart')) {
+                            showProductDetails(product.id);
+                        }
+                    });
+                    
+                    // Add to cart button event
+                    const addToCartBtn = productCard.querySelector('.add-to-cart');
+                    addToCartBtn.addEventListener('click', (e) => {
+                        e.stopPropagation(); // Prevent triggering the product card click
+                        addToCart(product.id);
+                    });
+                    
+                    productGrid.appendChild(productCard);
+                }
+            }
+            
+            // Create pagination buttons
+            function createPagination() {
+                const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+                paginationDiv.innerHTML = '';
+                
+                if (totalPages <= 1) return;
+                
+                // Previous button
+                const prevButton = document.createElement('button');
+                prevButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
+                prevButton.disabled = currentPage === 1;
+                prevButton.addEventListener('click', () => {
+                    if (currentPage > 1) {
+                        currentPage--;
+                        displayProducts();
+                        createPagination();
+                    }
+                });
+                paginationDiv.appendChild(prevButton);
+                
+                // Page buttons
+                for (let i = 1; i <= totalPages; i++) {
+                    const pageButton = document.createElement('button');
+                    pageButton.textContent = i;
+                    pageButton.className = currentPage === i ? 'active' : '';
+                    pageButton.addEventListener('click', () => {
+                        currentPage = i;
+                        displayProducts();
+                        createPagination();
+                    });
+                    paginationDiv.appendChild(pageButton);
+                }
+                
+                // Next button
+                const nextButton = document.createElement('button');
+                nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
+                nextButton.disabled = currentPage === totalPages;
+                nextButton.addEventListener('click', () => {
+                    if (currentPage < totalPages) {
+                        currentPage++;
+                        displayProducts();
+                        createPagination();
+                    }
+                });
+                paginationDiv.appendChild(nextButton);
+            }
+            
+            // Handle sorting
+            function handleSorting() {
+                const value = sortBy.value;
+                
+                filteredProducts.sort((a, b) => {
+                    switch(value) {
+                        case 'price-asc':
+                            return a.price - b.price;
+                        case 'price-desc':
+                            return b.price - a.price;
+                        case 'name-asc':
+                            return a.name.localeCompare(b.name);
+                        case 'name-desc':
+                            return b.name.localeCompare(a.name);
+                        default:
+                            return a.id - b.id; // Default order
+                    }
+                });
+                
+                currentPage = 1;
+                displayProducts();
+                createPagination();
+            }
+            
+            // Handle filtering
+            function handleFiltering() {
+                const value = filterBy.value;
+                
+                if (value === 'all') {
+                    filteredProducts = [...dentalProducts];
+                } else if (value === 'toothpaste') {
+                    filteredProducts = dentalProducts.filter(p => p.type === 'toothpaste');
+                } else if (value === 'toothbrush') {
+                    filteredProducts = dentalProducts.filter(p => p.type === 'toothbrush');
+                } else if (value === 'mouthwash') {
+                    filteredProducts = dentalProducts.filter(p => p.type === 'mouthwash');
+                } else if (value === 'whitening') {
+                    filteredProducts = dentalProducts.filter(p => p.type === 'whitening');
+                } else if (value === 'sensitive') {
+                    filteredProducts = dentalProducts.filter(p => p.name.toLowerCase().includes('sensitive'));
+                }
+                
+                currentPage = 1;
+                displayProducts();
+                createPagination();
+            }
+            
+            // Handle search
+            function handleSearch() {
+                const query = searchInput.value.toLowerCase().trim();
+                searchResults.innerHTML = '';
+                
+                if (query.length < 2) {
+                    searchResults.style.display = 'none';
+                    return;
+                }
+                
+                const results = dentalProducts.filter(product => 
+                    product.name.toLowerCase().includes(query) || 
+                    product.description.toLowerCase().includes(query)
+                );
+                
+                if (results.length > 0) {
+                    results.slice(0, 5).forEach(product => {
+                        const resultItem = document.createElement('a');
+                        resultItem.className = 'result-item';
+                        resultItem.href = '#';
+                        resultItem.innerHTML = `
+                            <strong>${product.name}</strong>
+                            <span>${product.description.substring(0, 70)}...</span>
+                            <small>R${product.price.toFixed(2)}</small>
+                        `;
+                        resultItem.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            showProductDetails(product.id);
+                            searchResults.style.display = 'none';
+                            searchInput.value = '';
+                        });
+                        searchResults.appendChild(resultItem);
+                    });
+                    searchResults.style.display = 'block';
+                } else {
+                    const noResults = document.createElement('div');
+                    noResults.className = 'result-item';
+                    noResults.textContent = 'No products found';
+                    searchResults.appendChild(noResults);
+                    searchResults.style.display = 'block';
+                }
+            }
+            
+            // Show product details in modal
+            function showProductDetails(productId) {
+                const product = dentalProducts.find(p => p.id == productId);
+                if (!product) return;
+                
+                modalBody.innerHTML = `
+                    <div class="modal-image">
+                        <img src="${product.image}" alt="${product.name}">
+                    </div>
+                    <div class="modal-info">
+                        <h2 class="modal-title">${product.name}</h2>
+                        <div class="modal-price">R${product.price.toFixed(2)}</div>
+                        <p class="modal-description">${product.description}</p>
+                        
+                        <h4>Key Benefits:</h4>
+                        <p>${product.benefits}</p>
+                        
+                        <h4>Ingredients:</h4>
+                        <p>${product.ingredients}</p>
+                        
+                        <h4>Usage:</h4>
+                        <p>${product.usage}</p>
+                        
+                        <div class="modal-quantity">
+                            <label for="quantity">Quantity:</label>
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" id="quantity" value="1" min="1" max="${product.stock}">
+                            <button class="quantity-btn plus">+</button>
+                            <span>(${product.stock} in stock)</span>
+                        </div>
+                        
+                        <div class="modal-actions">
+                            <button class="btn btn-modal add-to-cart-modal" data-id="${product.id}">Add to Cart</button>
+                            <button class="btn btn-modal btn-outline">Add to Wishlist</button>
+                        </div>
+                    </div>
+                `;
+                
+                // Add event listeners for quantity buttons
+                const minusBtn = modalBody.querySelector('.minus');
+                const plusBtn = modalBody.querySelector('.plus');
+                const quantityInput = modalBody.querySelector('#quantity');
+                
+                minusBtn.addEventListener('click', () => {
+                    if (parseInt(quantityInput.value) > 1) {
+                        quantityInput.value = parseInt(quantityInput.value) - 1;
+                    }
+                });
+                
+                plusBtn.addEventListener('click', () => {
+                    if (parseInt(quantityInput.value) < product.stock) {
+                        quantityInput.value = parseInt(quantityInput.value) + 1;
+                    }
+                });
+                
+                // Add to cart button in modal
+                const addToCartBtn = modalBody.querySelector('.add-to-cart-modal');
+                addToCartBtn.addEventListener('click', () => {
+                    const quantity = parseInt(quantityInput.value);
+                    addToCart(product.id, quantity);
+                });
+                
+                // Show modal
+                productModal.style.display = 'block';
+            }
+            
+            // Add to cart functionality
+            function addToCart(productId, quantity = 1) {
+                const product = dentalProducts.find(p => p.id == productId);
+                if (!product) return;
+                
+                // Check if product is already in cart
+                const existingItem = cart.find(item => item.id == productId);
+                
+                if (existingItem) {
+                    existingItem.quantity += quantity;
+                } else {
+                    cart.push({
+                        id: product.id,
+                        name: product.name,
+                        price: product.price,
+                        image: product.image,
+                        quantity: quantity
+                    });
+                }
+                
+                // Update cart
+                updateCartDropdown();
+                updateCartCount();
+                
+                // Show confirmation
+                confirmation.style.display = 'block';
+                setTimeout(() => {
+                    confirmation.style.display = 'none';
+                }, 3000);
+            }
+            
+            // Remove from cart
+            function removeFromCart(productId) {
+                cart = cart.filter(item => item.id != productId);
+                updateCartDropdown();
+                updateCartCount();
+            }
+            
+            // Update cart quantity
+            function updateCartItemQuantity(productId, newQuantity) {
+                const item = cart.find(item => item.id == productId);
+                if (item) {
+                    item.quantity = newQuantity;
+                    if (item.quantity <= 0) {
+                        removeFromCart(productId);
+                    } else {
+                        updateCartDropdown();
+                    }
+                }
+            }
+            
+            // Update cart dropdown
+            function updateCartDropdown() {
+                cartItems.innerHTML = '';
+                
+                if (cart.length === 0) {
+                    cartItems.innerHTML = `
+                        <div class="empty-cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p>Your cart is empty</p>
+                        </div>
+                    `;
+                    cartTotalPrice.textContent = 'R0.00';
+                    return;
+                }
+                
+                let total = 0;
+                
+                cart.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    total += itemTotal;
+                    
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    cartItem.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}">
+                        <div class="cart-item-info">
+                            <div class="cart-item-title">${item.name}</div>
+                            <div class="cart-item-price">R${item.price.toFixed(2)} x ${item.quantity}</div>
+                            <div class="cart-item-quantity">
+                                <button class="quantity-btn minus" data-id="${item.id}">-</button>
+                                <span class="quantity-value">${item.quantity}</span>
+                                <button class="quantity-btn plus" data-id="${item.id}">+</button>
+                                <button class="remove-item" data-id="${item.id}"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    `;
+                    cartItems.appendChild(cartItem);
+                    
+                    // Add event listeners
+                    const minusBtn = cartItem.querySelector('.minus');
+                    const plusBtn = cartItem.querySelector('.plus');
+                    const removeBtn = cartItem.querySelector('.remove-item');
+                    
+                    minusBtn.addEventListener('click', () => {
+                        updateCartItemQuantity(item.id, item.quantity - 1);
+                    });
+                    
+                    plusBtn.addEventListener('click', () => {
+                        updateCartItemQuantity(item.id, item.quantity + 1);
+                    });
+                    
+                    removeBtn.addEventListener('click', () => {
+                        removeFromCart(item.id);
+                    });
+                });
+                
+                cartTotalPrice.textContent = `R${total.toFixed(2)}`;
+            }
+            
+            // Update cart count
+            function updateCartCount() {
+                const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+                cartCount.textContent = totalItems;
+            }
+            
+            // Show cart dropdown
+            function showCartDropdown() {
+                updateCartDropdown();
+                cartDropdown.style.display = 'block';
+            }
+            
+            // Hide cart dropdown
+            function hideCartDropdown() {
+                setTimeout(() => {
+                    cartDropdown.style.display = 'none';
+                }, 300);
+            }
+            
+            // Initialize the application
+            init();
+        });
+    </script>
+</body>
+</html>
