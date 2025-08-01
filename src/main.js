@@ -135,6 +135,41 @@ window.googleSignIn = () => {
     });
 };
 
+
+import {
+  updateDoc,
+  arrayUnion,
+  arrayRemove,
+  getDoc
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+// Add item to Firestore cart
+window.addToUserCart = async (product, quantity = 1) => {
+  const user = auth.currentUser;
+  if (!user) return alert("Please log in to add items to cart.");
+
+  const userRef = doc(db, "users", user.uid);
+
+  await updateDoc(userRef, {
+    cart: arrayUnion({ ...product, quantity })
+  });
+
+  alert("Added to cart!");
+};
+
+// Remove item from Firestore cart
+window.removeFromUserCart = async (product) => {
+  const user = auth.currentUser;
+  if (!user) return;
+
+  const userRef = doc(db, "users", user.uid);
+
+  await updateDoc(userRef, {
+    cart: arrayRemove(product)
+  });
+};
+
+
 //  Auto-fill login form from localStorage
 window.addEventListener("DOMContentLoaded", () => {
   const savedEmail = localStorage.getItem("savedEmail");

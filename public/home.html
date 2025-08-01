@@ -3444,5 +3444,79 @@
             }
         });
     </script>
+
+    <script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+// 🔥 Your Firebase Config (replace with real values from your Firebase console)
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT.appspot.com",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+// 🔄 Sync local cart with Firestore on every change
+function syncCartToFirestore(cart) {
+  if (!auth.currentUser) return;
+  const userRef = doc(db, "users", auth.currentUser.uid);
+  return setDoc(userRef, { cart: cart }, { merge: true });
+}
+
+// ✅ Run this AFTER DOM is ready
+document.addEventListener("DOMContentLoaded", () => {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // 🔄 On login: load saved cart from Firestore
+  onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      const userRef = doc(db, "users", user.uid);
+      const docSnap = await getDoc(userRef);
+
+      if (docSnap.exists()) {
+        const data = docSnap.data();
+        if (data.cart && Array.isArray(data.cart)) {
+          cart = data.cart;
+          localStorage.setItem("cart", JSON.stringify(cart));
+          if (typeof updateCartDisplay === "function") {
+            updateCartDisplay();
+          }
+        }
+      }
+    }
+  });
+
+  // 🧠 Hook into your cart updates
+  function wrapCartPersistence(originalFunction) {
+    return function (...args) {
+      const result = originalFunction.apply(this, args);
+      cart = JSON.parse(localStorage.getItem("cart")) || [];
+      syncCartToFirestore(cart);
+      return result;
+    };
+  }
+
+  // ⛓ Hook the functions where you call localStorage.setItem
+  const originalSetItem = localStorage.setItem;
+  localStorage.setItem = function (key, value) {
+    originalSetItem.call(this, key, value);
+    if (key === "cart") {
+      try {
+        const parsed = JSON.parse(value);
+        if (Array.isArray(parsed)) syncCartToFirestore(parsed);
+      } catch (_) {}
+    }
+  };
+});
+</script>
+
 </body>
 </html>
