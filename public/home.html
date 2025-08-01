@@ -2918,8 +2918,7 @@
                     });
                 }
                 
-                // Save to localStorage
-                localStorage.setItem('cart', JSON.stringify(cart));
+               window.saveCart(cart)
                 
                 // Update cart display
                 updateCartDisplay();
@@ -3022,9 +3021,7 @@
                         cart = cart.filter(item => item.id !== productId);
                     }
                     
-                    // Save to localStorage
-                    localStorage.setItem('cart', JSON.stringify(cart));
-                    
+                  window.saveCart(cart)
                     // Update cart display
                     updateCartDisplay();
                 }
@@ -3035,7 +3032,7 @@
                 cart = cart.filter(item => item.id !== productId);
                 
                 // Save to localStorage
-                localStorage.setItem('cart', JSON.stringify(cart));
+               window.saveCart(cart)
                 
                 // Update cart display
                 updateCartDisplay();
@@ -3445,7 +3442,8 @@
         });
     </script>
 
-    <script type="module">
+ // ...existing code...
+<script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
@@ -3462,47 +3460,49 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// 🔄 Sync local cart with Firestore on every change
-function syncCartToFirestore(cart) {
+// Sync local cart to Firestore
+async function syncCartToFirestore(cart) {
   if (!auth.currentUser) return;
   const userRef = doc(db, "users", auth.currentUser.uid);
-  return setDoc(userRef, { cart: cart }, { merge: true });
+  await setDoc(userRef, { cart }, { merge: true });
 }
 
-// ✅ Run this AFTER DOM is ready
+// Load cart from Firestore
+async function loadCartFromFirestore() {
+  if (!auth.currentUser) return [];
+  const userRef = doc(db, "users", auth.currentUser.uid);
+  const docSnap = await getDoc(userRef);
+  if (docSnap.exists() && Array.isArray(docSnap.data().cart)) {
+    return docSnap.data().cart;
+  }
+  return [];
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  // 🔄 On login: load saved cart from Firestore
+  // On login: always use Firestore cart
   onAuthStateChanged(auth, async (user) => {
     if (user) {
-      const userRef = doc(db, "users", user.uid);
-      const docSnap = await getDoc(userRef);
-
-      if (docSnap.exists()) {
-        const data = docSnap.data();
-        if (data.cart && Array.isArray(data.cart)) {
-          cart = data.cart;
-          localStorage.setItem("cart", JSON.stringify(cart));
-          if (typeof updateCartDisplay === "function") {
-            updateCartDisplay();
-          }
-        }
-      }
+      cart = await loadCartFromFirestore();
+      localStorage.setItem("cart", JSON.stringify(cart));
+      if (typeof updateCartDisplay === "function") updateCartDisplay();
     }
   });
 
-  // 🧠 Hook into your cart updates
-  function wrapCartPersistence(originalFunction) {
-    return function (...args) {
-      const result = originalFunction.apply(this, args);
-      cart = JSON.parse(localStorage.getItem("cart")) || [];
-      syncCartToFirestore(cart);
-      return result;
-    };
-  }
+  // Whenever cart changes, update both localStorage and Firestore
+  window.saveCart = async function(newCart) {
+    cart = newCart;
+    localStorage.setItem("cart", JSON.stringify(cart));
+    await syncCartToFirestore(cart);
+    if (typeof updateCartDisplay === "function") updateCartDisplay();
+  };
 
-  // ⛓ Hook the functions where you call localStorage.setItem
+  // Example: Replace all localStorage.setItem('cart', ...) with saveCart(cart)
+  // Example usage in your addToCart, updateQuantity, removeFromCart:
+  // window.saveCart(cart);
+
+  // Optionally, override localStorage.setItem for "cart" key:
   const originalSetItem = localStorage.setItem;
   localStorage.setItem = function (key, value) {
     originalSetItem.call(this, key, value);
@@ -3515,6 +3515,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 });
 </script>
+// ...existing code...
 
 </body>
 </html>
