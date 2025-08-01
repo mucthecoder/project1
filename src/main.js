@@ -5,17 +5,12 @@ import {
   createUserWithEmailAndPassword,
   sendPasswordResetEmail,
   signInWithPopup,
-  GoogleAuthProvider,
-  onAuthStateChanged
+  GoogleAuthProvider
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import {
   getFirestore,
   doc,
   setDoc,
-  getDoc,
-  updateDoc,
-  arrayUnion,
-  arrayRemove,
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
@@ -29,198 +24,153 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
-// Initialize Firebase
+//  Init Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
-const googleProvider = new GoogleAuthProvider();
 
-// Cart Management Functions
-let currentCart = [];
-
-// Initialize cart sync on auth state change
-onAuthStateChanged(auth, async (user) => {
-  if (user) {
-    // User signed in - load cart from Firestore
-    try {
-      const userRef = doc(db, "users", user.uid);
-      const docSnap = await getDoc(userRef);
-      
-      if (docSnap.exists() && docSnap.data().cart) {
-        currentCart = docSnap.data().cart;
-        updateLocalCart(currentCart);
-      }
-    } catch (error) {
-      console.error("Error loading cart:", error);
-    }
-  } else {
-    // User signed out - clear cart
-    currentCart = [];
-    updateLocalCart(currentCart);
-  }
-});
-
-// Update both Firestore and local cart
-async function updateCart(newCart) {
-  currentCart = newCart;
-  updateLocalCart(currentCart);
-  
-  const user = auth.currentUser;
-  if (user) {
-    try {
-      const userRef = doc(db, "users", user.uid);
-      await setDoc(userRef, { cart: currentCart }, { merge: true });
-    } catch (error) {
-      console.error("Error updating cart:", error);
-    }
-  }
-}
-
-// Update local storage and UI
-function updateLocalCart(cart) {
-  localStorage.setItem("cart", JSON.stringify(cart));
-  if (typeof updateCartDisplay === "function") {
-    updateCartDisplay(cart);
-  }
-}
-
-// Add item to cart
-window.addToCart = async function(productId, productData) {
-  const existingItem = currentCart.find(item => item.id === productId);
-  
-  if (existingItem) {
-    existingItem.quantity++;
-  } else {
-    currentCart.push({
-      id: productId,
-      ...productData,
-      quantity: 1
-    });
-  }
-  
-  await updateCart(currentCart);
-  showAddToCartConfirmation(productData.name);
-};
-
-// Remove item from cart
-window.removeFromCart = async function(productId) {
-  currentCart = currentCart.filter(item => item.id !== productId);
-  await updateCart(currentCart);
-};
-
-// Update item quantity
-window.updateCartItemQuantity = async function(productId, change) {
-  const item = currentCart.find(item => item.id === productId);
-  
-  if (item) {
-    item.quantity += change;
-    
-    if (item.quantity <= 0) {
-      currentCart = currentCart.filter(item => item.id !== productId);
-    }
-    
-    await updateCart(currentCart);
-  }
-};
-
-// User Authentication Functions
-
-// Email/Password Login
-window.login = async (event) => {
+// Login
+window.login = (event) => {
   if (event) event.preventDefault();
 
   const email = document.getElementById("login-email").value;
   const password = document.getElementById("login-password").value;
 
-  try {
-    await signInWithEmailAndPassword(auth, email, password);
-    localStorage.setItem("savedEmail", email);
-    localStorage.setItem("savedPassword", password);
-    alert("Login successful!");
-    window.location.href = "/home.html";
-  } catch (err) {
-    alert("Login failed: " + err.message);
-  }
+  signInWithEmailAndPassword(auth, email, password)
+    .then(() => {
+      // ⚠️ Save to localStorage for dev/demo
+      localStorage.setItem("savedEmail", email);
+      localStorage.setItem("savedPassword", password);
+
+      alert("Login successful!");
+      window.location.href = "/home.html";
+    })
+    .catch((err) => {
+      alert("Login failed: " + err.message);
+    });
 };
 
-// Email/Password Signup
-window.signup = async () => {
+// Signup
+window.signup = () => {
   const firstName = document.getElementById("signup-first-name").value;
   const lastName = document.getElementById("signup-last-name").value;
   const email = document.getElementById("signup-email").value;
   const password = document.getElementById("signup-password").value;
 
-  try {
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    const uid = userCredential.user.uid;
-    
-    await setDoc(doc(db, "users", uid), {
-      firstName,
-      lastName,
-      email,
-      createdAt: serverTimestamp(),
-      cart: [] // Initialize empty cart
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const uid = userCredential.user.uid;
+      return setDoc(doc(db, "users", uid), {
+        firstName,
+        lastName,
+        email,
+        createdAt: serverTimestamp()
+      });
+    })
+    .then(() => {
+      alert("Signup successful!");
+    })
+    .catch((err) => {
+      alert("Signup failed: " + err.message);
     });
-    
-    alert("Signup successful!");
-    window.location.href = "/home.html";
-  } catch (err) {
-    alert("Signup failed: " + err.message);
-  }
 };
 
-// Password Reset
-window.forgotPassword = async () => {
+//  Forgot Password
+window.forgotPassword = () => {
   const email = document.getElementById("login-email").value;
+  console.log("Trying to reset password for:", email); // Debug
 
   if (!email) {
     alert("Please enter your email to reset your password.");
     return;
   }
 
-  try {
-    await sendPasswordResetEmail(auth, email);
-    alert("Password reset email sent. Please check your inbox.");
-  } catch (error) {
-    alert("Error: " + error.message);
-  }
+  sendPasswordResetEmail(auth, email)
+    .then(() => {
+      alert("Password reset email sent.");
+    })
+    .catch((error) => {
+      console.error("Password reset error:", error); // Debug
+      alert("Error: " + error.message);
+    });
 };
 
-// Google Sign In
-window.googleSignIn = async () => {
+// Google Sign In/Sign Up
+window.googleSignIn = () => {
   const googleButtons = document.querySelectorAll('.google-signin');
   googleButtons.forEach(btn => btn.disabled = true);
 
-  try {
-    const result = await signInWithPopup(auth, googleProvider);
-    const user = result.user;
-    
-    const userDocRef = doc(db, "users", user.uid);
-    const userDocSnap = await getDoc(userDocRef);
-    
-    if (!userDocSnap.exists()) {
-      await setDoc(userDocRef, {
-        firstName: user.displayName?.split(" ")[0] || "",
-        lastName: user.displayName?.split(" ").slice(1).join(" ") || "",
-        email: user.email,
-        createdAt: serverTimestamp(),
-        cart: [] // Initialize empty cart
-      });
-    }
-    
-    alert("Google sign-in successful!");
-    window.location.href = "/home.html";
-  } catch (err) {
-    if (err.code !== "auth/cancelled-popup-request" && 
-        err.code !== "auth/popup-closed-by-user") {
-      alert("Google sign-in failed: " + err.message);
-    }
-  } finally {
-    googleButtons.forEach(btn => btn.disabled = false);
-  }
+  const provider = new GoogleAuthProvider();
+  provider.setCustomParameters({ prompt: 'select_account' }); // Always show account chooser
+  signInWithPopup(auth, provider)
+    .then(async (result) => {
+      const user = result.user;
+      // Check if user doc exists, if not, create it
+      const userDocRef = doc(db, "users", user.uid);
+      const userDocSnap = await import("https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js")
+        .then(({ getDoc }) => getDoc(userDocRef));
+      if (!userDocSnap.exists()) {
+        await setDoc(userDocRef, {
+          firstName: user.displayName ? user.displayName.split(" ")[0] : "",
+          lastName: user.displayName ? user.displayName.split(" ").slice(1).join(" ") : "",
+          email: user.email,
+          createdAt: serverTimestamp()
+        });
+      }
+      alert("Google sign-in successful!");
+      window.location.href = "/home.html";
+    })
+    .catch((err) => {
+      if (err.code === "auth/cancelled-popup-request") {
+       
+      
+      } else if (err.code === "auth/popup-closed-by-user") {
+        // Optionally: alert("Google sign-in popup was closed.");
+      } else {
+        alert("Google sign-in failed: " + err.message);
+      }
+    })
+    .finally(() => {
+      googleButtons.forEach(btn => btn.disabled = false);
+    });
 };
 
-// Auto-fill login form from localStorage
+
+import {
+  updateDoc,
+  arrayUnion,
+  arrayRemove,
+  getDoc
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+// Add item to Firestore cart
+window.addToUserCart = async (product, quantity = 1) => {
+  const user = auth.currentUser;
+  if (!user) return alert("Please log in to add items to cart.");
+
+  const userRef = doc(db, "users", user.uid);
+
+  await updateDoc(userRef, {
+    cart: arrayUnion({ ...product, quantity })
+  });
+
+  alert("Added to cart!");
+};
+
+// Remove item from Firestore cart
+window.removeFromUserCart = async (product) => {
+  const user = auth.currentUser;
+  if (!user) return;
+
+  const userRef = doc(db, "users", user.uid);
+
+  await updateDoc(userRef, {
+    cart: arrayRemove(product)
+  });
+};
+
+
+//  Auto-fill login form from localStorage
 window.addEventListener("DOMContentLoaded", () => {
   const savedEmail = localStorage.getItem("savedEmail");
   const savedPassword = localStorage.getItem("savedPassword");
@@ -230,14 +180,5 @@ window.addEventListener("DOMContentLoaded", () => {
   }
   if (savedPassword) {
     document.getElementById("login-password").value = savedPassword;
-  }
-
-  // Initialize cart from local storage if not logged in
-  if (!auth.currentUser) {
-    const localCart = localStorage.getItem("cart");
-    if (localCart) {
-      currentCart = JSON.parse(localCart);
-      updateLocalCart(currentCart);
-    }
   }
 });
