@@ -1,3 +1,4 @@
+// Firebase setup
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import {
   getAuth,
@@ -5,16 +6,21 @@ import {
   createUserWithEmailAndPassword,
   sendPasswordResetEmail,
   signInWithPopup,
-  GoogleAuthProvider
+  GoogleAuthProvider,
+  onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import {
   getFirestore,
   doc,
   setDoc,
+  getDoc,
+  updateDoc,
+  arrayUnion,
+  arrayRemove,
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-// Firebase Config from .env
+// 🔐 Firebase config from environment (no hardcoding)
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
@@ -24,30 +30,26 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
-//  Init Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// Login
-window.login = (event) => {
-  if (event) event.preventDefault();
+// -------------------- AUTH -------------------------
 
+// Login
+window.login = (e) => {
+  if (e) e.preventDefault();
   const email = document.getElementById("login-email").value;
   const password = document.getElementById("login-password").value;
 
   signInWithEmailAndPassword(auth, email, password)
     .then(() => {
-      // ⚠️ Save to localStorage for dev/demo
       localStorage.setItem("savedEmail", email);
       localStorage.setItem("savedPassword", password);
-
       alert("Login successful!");
       window.location.href = "/home.html";
     })
-    .catch((err) => {
-      alert("Login failed: " + err.message);
-    });
+    .catch((err) => alert("Login failed: " + err.message));
 };
 
 // Signup
@@ -58,103 +60,72 @@ window.signup = () => {
   const password = document.getElementById("signup-password").value;
 
   createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      const uid = userCredential.user.uid;
+    .then((cred) => {
+      const uid = cred.user.uid;
       return setDoc(doc(db, "users", uid), {
         firstName,
         lastName,
         email,
+        cart: [],
         createdAt: serverTimestamp()
       });
     })
-    .then(() => {
-      alert("Signup successful!");
-    })
-    .catch((err) => {
-      alert("Signup failed: " + err.message);
-    });
+    .then(() => alert("Signup successful!"))
+    .catch((err) => alert("Signup failed: " + err.message));
 };
 
-//  Forgot Password
+// Password reset
 window.forgotPassword = () => {
   const email = document.getElementById("login-email").value;
-  console.log("Trying to reset password for:", email); // Debug
-
-  if (!email) {
-    alert("Please enter your email to reset your password.");
-    return;
-  }
+  if (!email) return alert("Please enter your email to reset password.");
 
   sendPasswordResetEmail(auth, email)
-    .then(() => {
-      alert("Password reset email sent.");
-    })
-    .catch((error) => {
-      console.error("Password reset error:", error); // Debug
-      alert("Error: " + error.message);
-    });
+    .then(() => alert("Password reset email sent."))
+    .catch((err) => alert("Error: " + err.message));
 };
 
-// Google Sign In/Sign Up
+// Google Sign-In
 window.googleSignIn = () => {
-  const googleButtons = document.querySelectorAll('.google-signin');
-  googleButtons.forEach(btn => btn.disabled = true);
-
   const provider = new GoogleAuthProvider();
-  provider.setCustomParameters({ prompt: 'select_account' }); // Always show account chooser
+  provider.setCustomParameters({ prompt: 'select_account' });
+
   signInWithPopup(auth, provider)
     .then(async (result) => {
       const user = result.user;
-      // Check if user doc exists, if not, create it
-      const userDocRef = doc(db, "users", user.uid);
-      const userDocSnap = await import("https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js")
-        .then(({ getDoc }) => getDoc(userDocRef));
-      if (!userDocSnap.exists()) {
-        await setDoc(userDocRef, {
-          firstName: user.displayName ? user.displayName.split(" ")[0] : "",
-          lastName: user.displayName ? user.displayName.split(" ").slice(1).join(" ") : "",
+      const userRef = doc(db, "users", user.uid);
+      const snap = await getDoc(userRef);
+
+      if (!snap.exists()) {
+        await setDoc(userRef, {
+          firstName: user.displayName?.split(" ")[0] || "",
+          lastName: user.displayName?.split(" ").slice(1).join(" ") || "",
           email: user.email,
+          cart: [],
           createdAt: serverTimestamp()
         });
       }
+
       alert("Google sign-in successful!");
       window.location.href = "/home.html";
     })
-    .catch((err) => {
-      if (err.code === "auth/cancelled-popup-request") {
-       
-      
-      } else if (err.code === "auth/popup-closed-by-user") {
-        // Optionally: alert("Google sign-in popup was closed.");
-      } else {
-        alert("Google sign-in failed: " + err.message);
-      }
-    })
-    .finally(() => {
-      googleButtons.forEach(btn => btn.disabled = false);
-    });
+    .catch((err) => alert("Google sign-in failed: " + err.message));
 };
 
+// ---------------- CART FUNCTIONS ------------------
 
-import {
-  updateDoc,
-  arrayUnion,
-  arrayRemove,
-  getDoc
-} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-
-// Add item to Firestore cart
+// Add item to user Firestore cart
 window.addToUserCart = async (product, quantity = 1) => {
   const user = auth.currentUser;
-  if (!user) return alert("Please log in to add items to cart.");
+  if (!user) return alert("Please log in first.");
 
   const userRef = doc(db, "users", user.uid);
-
+  const updatedProduct = { ...product, quantity };
   await updateDoc(userRef, {
-    cart: arrayUnion({ ...product, quantity })
+    cart: arrayUnion(updatedProduct)
   });
 
   alert("Added to cart!");
+  loadUserCart(); // Refresh cart
 };
 
 // Remove item from Firestore cart
@@ -163,22 +134,75 @@ window.removeFromUserCart = async (product) => {
   if (!user) return;
 
   const userRef = doc(db, "users", user.uid);
-
   await updateDoc(userRef, {
     cart: arrayRemove(product)
   });
+
+  loadUserCart(); // Refresh cart
 };
 
+// Load and render user cart on page
+async function loadUserCart() {
+  const user = auth.currentUser;
+  if (!user) return;
 
-//  Auto-fill login form from localStorage
+  const userRef = doc(db, "users", user.uid);
+  const userSnap = await getDoc(userRef);
+  const cart = userSnap.exists() && userSnap.data().cart ? userSnap.data().cart : [];
+
+  const cartItemsContainer = document.getElementById("cartItems");
+  const cartTotalPrice = document.getElementById("cartTotalPrice");
+
+  if (!cartItemsContainer || !cartTotalPrice) return;
+
+  cartItemsContainer.innerHTML = "";
+  let total = 0;
+
+  cart.forEach((item) => {
+    const itemElement = document.createElement("div");
+    itemElement.className = "cart-item";
+
+    itemElement.innerHTML = `
+      <img src="${item.image || '#'}" alt="${item.title}" />
+      <div class="cart-item-info">
+        <div class="cart-item-title">${item.title}</div>
+        <div class="cart-item-price">R${item.price.toFixed(2)}</div>
+        <div class="cart-item-quantity">
+          Quantity: <span class="quantity-value">${item.quantity}</span>
+        </div>
+      </div>
+      <button class="remove-item" onclick='removeFromUserCart(${JSON.stringify(item).replace(/"/g, '&quot;')})'>
+        &times;
+      </button>
+    `;
+
+    total += item.price * item.quantity;
+    cartItemsContainer.appendChild(itemElement);
+  });
+
+  cartTotalPrice.textContent = `R${total.toFixed(2)}`;
+
+  // Update cart count badge
+  const cartCount = document.querySelector(".cart-count");
+  if (cartCount) {
+    cartCount.textContent = cart.length;
+  }
+}
+
+// ----------------- UTILS -------------------------
+
+// Autofill login form from localStorage
 window.addEventListener("DOMContentLoaded", () => {
   const savedEmail = localStorage.getItem("savedEmail");
   const savedPassword = localStorage.getItem("savedPassword");
 
-  if (savedEmail) {
-    document.getElementById("login-email").value = savedEmail;
-  }
-  if (savedPassword) {
-    document.getElementById("login-password").value = savedPassword;
+  if (savedEmail) document.getElementById("login-email").value = savedEmail;
+  if (savedPassword) document.getElementById("login-password").value = savedPassword;
+});
+
+// Load cart if user is logged in
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    loadUserCart();
   }
 });
