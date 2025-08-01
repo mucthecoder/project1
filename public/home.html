@@ -2843,6 +2843,82 @@
             </div>
         </div>
     </div>
+
+
+    
+ // ...existing code...
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
+};
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+// Sync local cart to Firestore
+async function syncCartToFirestore(cart) {
+  if (!auth.currentUser) return;
+  const userRef = doc(db, "users", auth.currentUser.uid);
+  await setDoc(userRef, { cart }, { merge: true });
+}
+
+// Load cart from Firestore
+async function loadCartFromFirestore() {
+  if (!auth.currentUser) return [];
+  const userRef = doc(db, "users", auth.currentUser.uid);
+  const docSnap = await getDoc(userRef);
+  if (docSnap.exists() && Array.isArray(docSnap.data().cart)) {
+    return docSnap.data().cart;
+  }
+  return [];
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // On login: always use Firestore cart
+  onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      cart = await loadCartFromFirestore();
+      localStorage.setItem("cart", JSON.stringify(cart));
+      if (typeof updateCartDisplay === "function") updateCartDisplay();
+    }
+  });
+
+  // Whenever cart changes, update both localStorage and Firestore
+  window.saveCart = async function(newCart) {
+    cart = newCart;
+    localStorage.setItem("cart", JSON.stringify(cart));
+    await syncCartToFirestore(cart);
+    if (typeof updateCartDisplay === "function") updateCartDisplay();
+  };
+
+  // Example: Replace all localStorage.setItem('cart', ...) with saveCart(cart)
+  // Example usage in your addToCart, updateQuantity, removeFromCart:
+  // window.saveCart(cart);
+
+  // Optionally, override localStorage.setItem for "cart" key:
+  const originalSetItem = localStorage.setItem;
+  localStorage.setItem = function (key, value) {
+    originalSetItem.call(this, key, value);
+    if (key === "cart") {
+      try {
+        const parsed = JSON.parse(value);
+        if (Array.isArray(parsed)) syncCartToFirestore(parsed);
+      } catch (_) {}
+    }
+  };
+});
+</script>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -3442,79 +3518,6 @@
         });
     </script>
 
- // ...existing code...
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-
-const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID
-};
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-
-// Sync local cart to Firestore
-async function syncCartToFirestore(cart) {
-  if (!auth.currentUser) return;
-  const userRef = doc(db, "users", auth.currentUser.uid);
-  await setDoc(userRef, { cart }, { merge: true });
-}
-
-// Load cart from Firestore
-async function loadCartFromFirestore() {
-  if (!auth.currentUser) return [];
-  const userRef = doc(db, "users", auth.currentUser.uid);
-  const docSnap = await getDoc(userRef);
-  if (docSnap.exists() && Array.isArray(docSnap.data().cart)) {
-    return docSnap.data().cart;
-  }
-  return [];
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-  // On login: always use Firestore cart
-  onAuthStateChanged(auth, async (user) => {
-    if (user) {
-      cart = await loadCartFromFirestore();
-      localStorage.setItem("cart", JSON.stringify(cart));
-      if (typeof updateCartDisplay === "function") updateCartDisplay();
-    }
-  });
-
-  // Whenever cart changes, update both localStorage and Firestore
-  window.saveCart = async function(newCart) {
-    cart = newCart;
-    localStorage.setItem("cart", JSON.stringify(cart));
-    await syncCartToFirestore(cart);
-    if (typeof updateCartDisplay === "function") updateCartDisplay();
-  };
-
-  // Example: Replace all localStorage.setItem('cart', ...) with saveCart(cart)
-  // Example usage in your addToCart, updateQuantity, removeFromCart:
-  // window.saveCart(cart);
-
-  // Optionally, override localStorage.setItem for "cart" key:
-  const originalSetItem = localStorage.setItem;
-  localStorage.setItem = function (key, value) {
-    originalSetItem.call(this, key, value);
-    if (key === "cart") {
-      try {
-        const parsed = JSON.parse(value);
-        if (Array.isArray(parsed)) syncCartToFirestore(parsed);
-      } catch (_) {}
-    }
-  };
-});
-</script>
 // ...existing code...
 
 </body>
