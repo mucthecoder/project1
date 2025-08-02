@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,21 +8,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
- --primary-color: rgb(233, 30, 99); /* Professional blue */
-            --primary-dark: rgb(33, 150, 243); /* Darker blue for contrast */
-            --secondary-color: #f5f7fa;
-            --accent-color: #2196F3;
-            --accent-light: #BBDEFB;
-            --text-color: #333;
-            --light-text: #666;
+            --primary-color: #E91E63; /* Professional blue */
+            --primary-dark: #1565C0; /* Darker blue for contrast */
+            --secondary-color: #f5f7fa; /* Light background */
+            --accent-color: #E91E63; /* Vibrant pink */
+            --accent-light: #F8BBD0; /* Light pink for accents */
+            --text-color: #333; /* Darker, more readable text */
+            --light-text: #666; /* Lighter secondary text */
             --white: #ffffff;
-            --cold-blue: #E3F2FD;
-            --flu-purple: #EDE7F6;
-            --border-radius: 10px;
+            --border-radius: 10px; /* Smoother corners */
             --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --box-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            --header-height: 80px;        }
+            --header-height: 80px;
+        }
         
         * {
             margin: 0;
@@ -1176,7 +1175,7 @@
             <div class="container">
                 <div class="header-content">
                     <a href="/" class="logo">
-                        <img src="images/FirstChemLogo-removebg-preview-e1751526921499-removebg.png" style="height: 100px; width: auto;">
+                        <div class="logo-text">First<span>Chem</span></div>
                     </a>
                     <div class="search-bar">
                         <div class="search-container">
@@ -1240,13 +1239,12 @@
                             <li><a href="category.html?category=Baby & Kids Medication">Baby & Kids</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Prescriptions</a></li>
-                    <li><a href="#">Health & Wellness</a></li>
-                    <li><a href="#">Baby & Kids</a></li>
-                    <li><a href="#">Vitamins & Supplements</a></li>
-                    <li><a href="#">Beauty</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="female-essentials.html">Female Essentials</a></li>
+                    <li><a href="baby-&-kids-medication.html">Baby & Kids</a></li>
+                    <li><a href="pregnancy-vitamins.html">Pregnancy Vitamins</a></li>
+                    <li><a href="cold-and-flu.html">Cold and Flu</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -1476,121 +1474,119 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Drink products data
+            // Updated drink products data based on the PDF
             const drinkProducts = [
-                {
-                    id: 1,
-                    name: "Powerade Berry Sports Drink 500ml",
-                    price: 24.99,
-                    image: "https://images.unsplash.com/photo-1626074353765-517c681e0be9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Electrolyte-enhanced sports drink to replenish fluids and minerals lost during exercise. Provides hydration and energy.",
-                    benefits: "Replenishes electrolytes, provides hydration, contains B vitamins for energy",
-                    ingredients: "Water, Sugar, Minerals (Sodium, Potassium, Magnesium, Calcium), Vitamins B3, B6, B12",
-                    usage: "Drink during or after physical activity",
-                    type: "hydration",
-                    volume: "500ml",
-                    badge: "Best Seller",
-                    stock: 50
-                },
-                {
-                    id: 2,
-                    name: "Red Bull Energy Drink 250ml",
-                    price: 29.50,
-                    image: "https://images.unsplash.com/photo-1619994948937-ef1e758d46ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Energy drink that improves performance, concentration and reaction speed. Provides energy and mental focus.",
-                    benefits: "Increases energy and alertness, improves concentration, enhances performance",
-                    ingredients: "Water, Sucrose, Glucose, Caffeine, Taurine, B-group Vitamins",
-                    usage: "Consume when needing increased energy and concentration",
-                    type: "energy",
-                    volume: "250ml",
-                    badge: "Popular",
-                    stock: 35
-                },
-                {
-                    id: 3,
-                    name: "Ensure Nutrition Shake Chocolate 237ml",
-                    price: 32.99,
-                    image: "https://images.unsplash.com/photo-1613478223719-2ab802602423?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Nutritional shake with high-quality protein, vitamins and minerals. Supports immune health and muscle maintenance.",
-                    benefits: "Complete balanced nutrition, supports immune health, maintains muscle mass",
-                    ingredients: "Water, Corn Maltodextrin, Sugar, Milk Protein Concentrate, Canola Oil, Cocoa Powder",
-                    usage: "As a meal supplement or snack",
-                    type: "health",
-                    volume: "237ml",
-                    badge: "Nutrition",
-                    stock: 40
-                },
-                {
-                    id: 4,
-                    name: "Pure Fruit Smoothie Mango & Passionfruit 300ml",
-                    price: 35.75,
-                    image: "https://images.unsplash.com/photo-1626074353765-517c681e0be9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "100% pure fruit smoothie with no added sugar. Rich in vitamins and antioxidants for natural energy.",
-                    benefits: "Natural energy source, rich in vitamins A & C, high in antioxidants",
-                    ingredients: "Mango Puree (60%), Passionfruit Juice (20%), Banana Puree, Apple Juice",
-                    usage: "Enjoy chilled as a refreshing drink or snack",
-                    type: "juice",
-                    volume: "300ml",
-                    badge: "Natural",
-                    stock: 30
-                },
-                {
-                    id: 5,
-                    name: "Hydralyte Electrolyte Tablets Orange 20 Tablets",
-                    price: 89.99,
-                    image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Rapid hydration solution with glucose and electrolytes. Helps prevent and treat dehydration from illness or exercise.",
-                    benefits: "Rapid rehydration, replaces essential electrolytes, sugar-free formula",
-                    ingredients: "Dextrose, Citric Acid, Sodium Citrate, Potassium Citrate, Natural Orange Flavor",
-                    usage: "Dissolve 1 tablet in 200ml of water",
-                    type: "hydration",
-                    volume: "20 tablets",
-                    badge: "Hydration",
-                    stock: 25
-                },
-                {
-                    id: 6,
-                    name: "Monster Ultra Zero Energy Drink 500ml",
-                    price: 34.95,
-                    image: "https://images.unsplash.com/photo-1619994948937-ef1e758d46ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Zero sugar energy drink with a crisp, refreshing taste. Provides energy with no sugar and only 10 calories.",
-                    benefits: "Zero sugar, low calorie, full flavor energy boost",
-                    ingredients: "Carbonated Water, Citric Acid, Natural Flavors, Caffeine, Sodium Citrate",
-                    usage: "Consume when needing energy boost",
-                    type: "energy",
-                    volume: "500ml",
-                    badge: "Sugar Free",
-                    stock: 45
-                },
-                {
-                    id: 7,
-                    name: "Boost High Protein Nutritional Drink Vanilla 237ml",
-                    price: 37.50,
-                    image: "https://images.unsplash.com/photo-1613478223719-2ab802602423?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "High protein nutritional drink with 20g of protein per serving. Supports muscle health and provides balanced nutrition.",
-                    benefits: "High protein content, supports muscle health, 26 vitamins and minerals",
-                    ingredients: "Water, Corn Syrup, Milk Protein Concentrate, Sugar, Canola Oil, Soy Protein Isolate",
-                    usage: "As a meal supplement or snack",
-                    type: "health",
-                    volume: "237ml",
-                    badge: "High Protein",
-                    stock: 28
-                },
-                {
-                    id: 8,
-                    name: "Naked Green Machine Smoothie 450ml",
-                    price: 42.99,
-                    image: "https://images.unsplash.com/photo-1626074353765-517c681e0be9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Blend of apple, mango, pineapple, banana, kiwi and spirulina with added vitamins. No added sugar or preservatives.",
-                    benefits: "Rich in antioxidants, contains 2 servings of fruit, no added sugar",
-                    ingredients: "Apple Juice, Mango Puree, Pineapple Juice, Banana Puree, Kiwi Puree, Spirulina",
-                    usage: "Enjoy chilled as a nutritious beverage",
-                    type: "juice",
-                    volume: "450ml",
-                    badge: "Natural",
-                    stock: 22
-                }
+                // Energy Drinks
+                { id: 1, name: "Red bull apricot & strawberry", price: 20.00, type: "energy", volume: "250ml", badge: "Popular" },
+                { id: 2, name: "Red bull coconut & berry", price: 20.00, type: "energy", volume: "250ml", badge: "New" },
+                { id: 3, name: "Red bull sugar free", price: 20.00, type: "energy", volume: "250ml", badge: "Sugar Free" },
+                { id: 4, name: "BioPlus sugar free", price: 21.16, type: "energy", volume: "250ml", badge: "Sugar Free" },
+                { id: 5, name: "BioPlus berry", price: 21.16, type: "energy", volume: "250ml", badge: "Popular" },
+                { id: 6, name: "Switch 10^4 birthday", price: 10.00, type: "energy", volume: "250ml", badge: "Limited" },
+                { id: 7, name: "Switch cutie pie", price: 10.00, type: "energy", volume: "250ml", badge: "New" },
+                { id: 8, name: "Switch prickly pear", price: 10.00, type: "energy", volume: "250ml", badge: "Popular" },
+                { id: 9, name: "Best malt", price: 11.99, type: "energy", volume: "330ml", badge: "Classic" },
+                { id: 10, name: "Dragon Ballistic", price: 9.99, type: "energy", volume: "250ml", badge: "Popular" },
+                { id: 11, name: "Monster original", price: 32.75, type: "energy", volume: "500ml", badge: "Best Seller" },
+                { id: 12, name: "Monster Rehab peach tea", price: 25.02, type: "energy", volume: "500ml", badge: "Tea Blend" },
+                { id: 13, name: "MoFaya", price: 12.08, type: "energy", volume: "250ml", badge: "Local" },
+                { id: 14, name: "Slayer Sour Apple", price: 19.24, type: "energy", volume: "250ml", badge: "Sour" },
+                { id: 15, name: "Super charge cherry", price: 23.55, type: "energy", volume: "250ml", badge: "Cherry" },
+                { id: 16, name: "Super charge ginger", price: 23.55, type: "energy", volume: "250ml", badge: "Ginger" },
+                { id: 17, name: "Super C Mixed berry", price: 11.43, type: "energy", volume: "250ml", badge: "Berry" },
+                { id: 18, name: "V energy", price: 25.76, type: "energy", volume: "250ml", badge: "Premium" },
+                { id: 19, name: "Lucozade blackcurrent", price: 19.33, type: "energy", volume: "500ml", badge: "Classic" },
+                { id: 20, name: "Lucozade carribean fusion", price: 19.33, type: "energy", volume: "500ml", badge: "Tropical" },
+                { id: 21, name: "Lucozade original", price: 19.33, type: "energy", volume: "500ml", badge: "Original" },
+                
+                // Immune Boosters (Health Drinks)
+                { id: 22, name: "Score mango peach", price: 12.66, type: "health", volume: "300ml", badge: "Fruity" },
+                { id: 23, name: "Score pine ginger", price: 12.66, type: "health", volume: "300ml", badge: "Ginger" },
+                { id: 24, name: "Vita C Rooibos and Honey", price: 10.00, type: "health", volume: "300ml", badge: "Natural" },
+                
+                // Ice Teas (Juice)
+                { id: 25, name: "Lipton Mixed berry", price: 18.19, type: "juice", volume: "500ml", badge: "Berry" },
+                { id: 26, name: "Lipton lemon", price: 18.19, type: "juice", volume: "500ml", badge: "Lemon" },
+                { id: 27, name: "Lipton Peach", price: 18.19, type: "juice", volume: "500ml", badge: "Peach" },
+                { id: 28, name: "Carters lemon", price: 10.00, type: "juice", volume: "330ml", badge: "Classic" },
+                
+                // Cooldrinks/sparkling drinks (Juice)
+                { id: 29, name: "7Up", price: 9.90, type: "juice", volume: "330ml", badge: "Lemon-Lime" },
+                { id: 30, name: "kingsley kool zero", price: 6.56, type: "juice", volume: "330ml", badge: "Sugar Free" },
+                { id: 31, name: "Frugo grape", price: 10.00, type: "juice", volume: "330ml", badge: "Grape" },
+                { id: 32, name: "Frugo Apple", price: 10.00, type: "juice", volume: "330ml", badge: "Apple" },
+                { id: 33, name: "Mountain Dew", price: 9.90, type: "juice", volume: "330ml", badge: "Citrus" },
+                { id: 34, name: "Mirinda", price: 9.90, type: "juice", volume: "330ml", badge: "Orange" },
+                { id: 35, name: "Aquell’e honey melon", price: 10.21, type: "juice", volume: "330ml", badge: "Melon" },
+                
+                // Vitamin water/boosters (Health)
+                { id: 36, name: "Oshee zero lemon lime", price: 26.45, type: "health", volume: "500ml", badge: "Sugar Free" },
+                { id: 37, name: "Oshee blue magnesium + B6", price: 26.45, type: "health", volume: "500ml", badge: "Electrolytes" },
+                { id: 38, name: "Vita 24 Tangerine", price: 27.50, type: "health", volume: "500ml", badge: "Vitamin C" },
+                { id: 39, name: "Vita 24 Blueberry", price: 27.50, type: "health", volume: "500ml", badge: "Antioxidants" },
+                { id: 40, name: "Vita 24 Red berry", price: 27.50, type: "health", volume: "500ml", badge: "Berry Blend" },
+                
+                // Sports Drinks (Hydration)
+                { id: 41, name: "Yi Kid", price: 15.28, type: "hydration", volume: "500ml", badge: "For Kids" },
+                { id: 42, name: "Energade mixed berry", price: 16.10, type: "hydration", volume: "500ml", badge: "Berry" },
+                { id: 43, name: "Energade Strawberry and cucumber zero", price: 15.39, type: "hydration", volume: "500ml", badge: "Sugar Free" },
+                { id: 44, name: "Energade Tropical", price: 16.10, type: "hydration", volume: "500ml", badge: "Tropical" },
+                { id: 45, name: "Energade blueberry", price: 16.10, type: "hydration", volume: "500ml", badge: "Blueberry" },
+                { id: 46, name: "Powerade mountain blast zero", price: 21.05, type: "hydration", volume: "500ml", badge: "Sugar Free" },
+                
+                // Hydration Drinks (Hydration)
+                { id: 47, name: "Hakahana berry", price: 20.13, type: "hydration", volume: "500ml", badge: "Berry" },
+                { id: 48, name: "Hakahana dragon fruit", price: 20.13, type: "hydration", volume: "500ml", badge: "Exotic" },
+                { id: 49, name: "Hakahana blueberry", price: 20.13, type: "hydration", volume: "500ml", badge: "Blueberry" },
+                
+                // Waters (Hydration)
+                { id: 50, name: "Aquafria still water", price: 5.31, type: "hydration", volume: "500ml", badge: "Pure" },
+                { id: 51, name: "Aquafria sparkling water", price: 5.31, type: "hydration", volume: "500ml", badge: "Sparkling" },
+                { id: 52, name: "Alkaline water", price: 12.17, type: "hydration", volume: "500ml", badge: "Alkaline" },
+                
+                // Milkshake (Health)
+                { id: 53, name: "strawberry squeeze me", price: 19.27, type: "health", volume: "300ml", badge: "Creamy" }
             ];
+
+            // Image URLs by category
+            const categoryImages = {
+                energy: "https://images.unsplash.com/photo-1619994948937-ef1e758d46ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                health: "https://images.unsplash.com/photo-1626074353765-517c681e0be9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                hydration: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                juice: "https://images.unsplash.com/photo-1613478223719-2ab802602423?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80"
+            };
+
+            // Category descriptions
+            const categoryDescriptions = {
+                energy: "Energy drink that improves performance, concentration and reaction speed. Provides energy and mental focus.",
+                health: "Nutritional drink with vitamins and minerals. Supports immune health and overall wellness.",
+                hydration: "Electrolyte-enhanced drink to replenish fluids and minerals. Provides hydration for active lifestyles.",
+                juice: "Refreshing beverage with natural flavors. Perfect for any time of day."
+            };
+
+            // Category benefits
+            const categoryBenefits = {
+                energy: "Increases energy and alertness, improves concentration, enhances performance",
+                health: "Supports immune system, provides essential vitamins, promotes overall health",
+                hydration: "Replenishes electrolytes, provides hydration, contains minerals for body function",
+                juice: "Refreshing taste, natural flavors, hydrating"
+            };
+
+            // Category ingredients
+            const categoryIngredients = {
+                energy: "Water, Sucrose, Glucose, Caffeine, Taurine, B-group Vitamins",
+                health: "Water, Vitamins (A, C, D, E, B-complex), Minerals (Zinc, Selenium), Natural Flavors",
+                hydration: "Water, Electrolytes (Sodium, Potassium, Magnesium), Natural Flavors",
+                juice: "Water, Natural Flavors, Citric Acid, Sweeteners"
+            };
+
+            // Category usage
+            const categoryUsage = {
+                energy: "Consume when needing increased energy and concentration",
+                health: "Enjoy as a daily wellness supplement",
+                hydration: "Drink during or after physical activity",
+                juice: "Enjoy chilled as a refreshing drink"
+            };
 
             // Cart functionality
             let cart = [];
@@ -1639,7 +1635,6 @@
                 
                 // Search functionality
                 searchInput.addEventListener('input', handleSearch);
-                searchButton.addEventListener('click', handleSearch);
                 
                 // Modal close
                 closeModal.addEventListener('click', () => {
@@ -1719,8 +1714,8 @@
                     
                     productCard.innerHTML = `
                         ${product.badge ? `<div class="product-badge">${product.badge}</div>` : ''}
-                        <div class="product-img">
-                            <img src="${product.image}" alt="${product.name}">
+                        <div class="product-img" style="background-color: ${product.type === 'energy' ? '#FFF3E0' : product.type === 'health' ? '#E8F5E9' : product.type === 'juice' ? '#F3E5F5' : '#E3F2FD'}">
+                            <img src="${categoryImages[product.type]}" alt="${product.name}">
                         </div>
                         <div class="product-info">
                             <h3 class="product-title">${product.name}</h3>
@@ -1838,7 +1833,12 @@
                 } else if (value === 'juice') {
                     filteredProducts = drinkProducts.filter(p => p.type === 'juice');
                 } else if (value === 'best-seller') {
-                    filteredProducts = drinkProducts.filter(p => p.badge === 'Best Seller');
+                    // For demo, let's mark some as best sellers
+                    filteredProducts = drinkProducts.filter(p => 
+                        p.name.includes("Red bull") || 
+                        p.name.includes("Monster") ||
+                        p.name.includes("Powerade")
+                    );
                 }
                 
                 currentPage = 1;
@@ -1857,8 +1857,7 @@
                 }
                 
                 const results = drinkProducts.filter(product => 
-                    product.name.toLowerCase().includes(query) || 
-                    product.description.toLowerCase().includes(query)
+                    product.name.toLowerCase().includes(query)
                 );
                 
                 if (results.length > 0) {
@@ -1868,7 +1867,6 @@
                         resultItem.href = '#';
                         resultItem.innerHTML = `
                             <strong>${product.name}</strong>
-                            <span>${product.description.substring(0, 70)}...</span>
                             <small>R${product.price.toFixed(2)}</small>
                         `;
                         resultItem.addEventListener('click', (e) => {
@@ -1896,28 +1894,27 @@
                 
                 modalBody.innerHTML = `
                     <div class="modal-image">
-                        <img src="${product.image}" alt="${product.name}">
+                        <img src="${categoryImages[product.type]}" alt="${product.name}" style="max-height: 200px;">
                     </div>
                     <div class="modal-info">
                         <h2 class="modal-title">${product.name}</h2>
                         <div class="modal-price">R${product.price.toFixed(2)}</div>
-                        <p class="modal-description">${product.description}</p>
+                        <p class="modal-description">${categoryDescriptions[product.type]}</p>
                         
                         <h4>Key Benefits:</h4>
-                        <p>${product.benefits}</p>
+                        <p>${categoryBenefits[product.type]}</p>
                         
                         <h4>Ingredients:</h4>
-                        <p>${product.ingredients}</p>
+                        <p>${categoryIngredients[product.type]}</p>
                         
                         <h4>Usage:</h4>
-                        <p>${product.usage}</p>
+                        <p>${categoryUsage[product.type]}</p>
                         
                         <div class="modal-quantity">
                             <label for="quantity">Quantity:</label>
                             <button class="quantity-btn minus">-</button>
-                            <input type="number" id="quantity" value="1" min="1" max="${product.stock}">
+                            <input type="number" id="quantity" value="1" min="1" max="50">
                             <button class="quantity-btn plus">+</button>
-                            <span>(${product.stock} in stock)</span>
                         </div>
                         
                         <div class="modal-actions">
@@ -1939,7 +1936,7 @@
                 });
                 
                 plusBtn.addEventListener('click', () => {
-                    if (parseInt(quantityInput.value) < product.stock) {
+                    if (parseInt(quantityInput.value) < 50) {
                         quantityInput.value = parseInt(quantityInput.value) + 1;
                     }
                 });
@@ -1970,7 +1967,7 @@
                         id: product.id,
                         name: product.name,
                         price: product.price,
-                        image: product.image,
+                        image: categoryImages[product.type],
                         quantity: quantity
                     });
                 }
@@ -2030,7 +2027,7 @@
                     const cartItem = document.createElement('div');
                     cartItem.className = 'cart-item';
                     cartItem.innerHTML = `
-                        <img src="${item.image}" alt="${item.name}">
+                        <img src="${item.image}" alt="${item.name}" style="width: 70px; height: 70px;">
                         <div class="cart-item-info">
                             <div class="cart-item-title">${item.name}</div>
                             <div class="cart-item-price">R${item.price.toFixed(2)} x ${item.quantity}</div>

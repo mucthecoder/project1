@@ -8,19 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #d35400;
-            --primary-dark: #a04000;
-            --secondary-color: #fef9e7;
-            --accent-color: #e67e22;
-            --accent-light: #fdebd0;
-            --iron-orange: #fbeee6;
-            --iron-red: #fadbd8;
-            --iron-green: #d5f5e3;
-            --iron-blue: #d6eaf8;
-            --text-color: #333;
-            --light-text: #666;
+          --primary-color: #E91E63; /* Professional blue */
+            --primary-dark: #1565C0; /* Darker blue for contrast */
+            --secondary-color: #f5f7fa; /* Light background */
+            --accent-color: #E91E63; /* Vibrant pink */
+            --accent-light: #F8BBD0; /* Light pink for accents */
+            --text-color: #333; /* Darker, more readable text */
+            --light-text: #666; /* Lighter secondary text */
             --white: #ffffff;
-            --border-radius: 10px;
+            --border-radius: 10px; /* Smoother corners */
             --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --box-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -1262,13 +1258,12 @@
                             <li><a href="category.html?category=Baby & Kids Medication">Baby & Kids</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Prescriptions</a></li>
-                    <li><a href="#">Health & Wellness</a></li>
-                    <li><a href="#">Baby & Kids</a></li>
-                    <li><a href="#">Vitamins & Supplements</a></li>
-                    <li><a href="#">Beauty</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="female-essentials.html">Female Essentials</a></li>
+                    <li><a href="baby-&-kids-medication.html">Baby & Kids</a></li>
+                    <li><a href="pregnancy-vitamins.html">Pregnancy Vitamins</a></li>
+                    <li><a href="cold-and-flu.html">Cold and Flu</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -1521,119 +1516,147 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Iron supplement products data
             const ironProducts = [
-                {
-                    id: 1,
-                    name: "Ferrous Sulfate 325mg",
-                    price: 149.99,
-                    image: "https://images.unsplash.com/photo-1598808503746-f34cfb6c2524?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "High potency iron supplement for treating iron deficiency anemia.",
-                    benefits: "Boosts hemoglobin, increases energy, supports oxygen transport",
-                    ingredients: "Ferrous Sulfate (65mg elemental iron), Cellulose, Stearic Acid",
-                    usage: "Take one tablet daily with water",
-                    type: "tablet",
-                    volume: "90 tablets",
-                    badge: "Best Seller",
-                    stock: 50
-                },
-                {
-                    id: 2,
-                    name: "Gentle Liquid Iron",
-                    price: 189.50,
-                    image: "https://images.unsplash.com/photo-1591348131719-8c1a7b8a2b4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Gentle iron formula that's easy on the stomach with minimal side effects.",
-                    benefits: "Reduced constipation, better absorption, pleasant taste",
-                    ingredients: "Ferrous Bisglycinate, Vitamin C, Natural Berry Flavor",
-                    usage: "Take 10ml daily with juice or water",
-                    type: "liquid",
-                    volume: "250ml",
-                    badge: "Easy Absorption",
-                    stock: 35
-                },
-                {
-                    id: 3,
-                    name: "Iron + Vitamin C Capsules",
-                    price: 229.99,
-                    image: "https://images.unsplash.com/photo-1526662093473-1cfff6a3b0c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Enhanced formula with vitamin C for optimal iron absorption.",
-                    benefits: "Triples absorption, boosts immunity, increases energy",
-                    ingredients: "Ferrous Fumarate (33mg), Vitamin C (100mg), Rose Hips",
-                    usage: "Take one capsule daily with food",
-                    type: "combo",
-                    volume: "60 capsules",
-                    badge: "Enhanced Formula",
-                    stock: 40
-                },
-                {
-                    id: 4,
-                    name: "Chewable Iron for Kids",
-                    price: 129.75,
-                    image: "https://images.unsplash.com/photo-1603398938373-e54da0bbf5e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Delicious chewable iron tablets with natural berry flavor for children.",
-                    benefits: "Supports growth, improves concentration, prevents anemia",
-                    ingredients: "Ferrous Gluconate (15mg), Vitamin C, Natural Flavors",
-                    usage: "Chew one tablet daily",
-                    type: "chewable",
-                    volume: "60 chewables",
-                    badge: "Kids Formula",
-                    stock: 30
-                },
-                {
-                    id: 5,
-                    name: "Prenatal Iron Complex",
-                    price: 259.99,
-                    image: "https://images.unsplash.com/photo-1518556737724-0d8f3f8d0d6a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Comprehensive iron supplement specially formulated for pregnancy needs.",
-                    benefits: "Supports fetal development, prevents anemia, reduces fatigue",
-                    ingredients: "Ferrous Fumarate (28mg), Folic Acid, Vitamin B12",
-                    usage: "Take one tablet daily",
-                    type: "tablet",
-                    volume: "90 tablets",
-                    badge: "Pregnancy Safe",
-                    stock: 25
-                },
-                {
-                    id: 6,
-                    name: "High Potency Iron Capsules",
-                    price: 199.95,
-                    image: "https://images.unsplash.com/photo-1607602132863-7c1a8d5a8c4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "High-strength iron for severe deficiency with reduced gastrointestinal effects.",
-                    benefits: "Rapid hemoglobin increase, minimal side effects, easy absorption",
-                    ingredients: "Iron Polysaccharide Complex (150mg), Vitamin C",
-                    usage: "Take one capsule every other day",
-                    type: "capsule",
-                    volume: "30 capsules",
-                    badge: "High Potency",
-                    stock: 45
-                },
-                {
-                    id: 7,
-                    name: "Iron with B Vitamins",
-                    price: 179.50,
-                    image: "https://images.unsplash.com/photo-1591348131719-8c1a7b8a2b4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Comprehensive formula with B vitamins for energy production.",
-                    benefits: "Boosts energy, supports red blood cell formation, reduces fatigue",
-                    ingredients: "Ferrous Sulfate (65mg), B12, B6, Folic Acid",
-                    usage: "Take one tablet daily with food",
-                    type: "tablet",
-                    volume: "60 tablets",
-                    badge: "Energy Boost",
-                    stock: 28
-                },
-                {
-                    id: 8,
-                    name: "Vegetarian Iron Supplement",
-                    price: 209.99,
-                    image: "https://images.unsplash.com/photo-1518577915332-c2a19f149a75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Plant-based iron derived from organic curry leaves for vegetarians.",
-                    benefits: "Gentle absorption, no constipation, suitable for vegetarians",
-                    ingredients: "Organic Curry Leaf Extract, Vitamin C, Beetroot Powder",
-                    usage: "Take two capsules daily",
-                    type: "capsule",
-                    volume: "60 capsules",
-                    badge: "Vegetarian",
-                    stock: 22
-                }
-            ];
+              {
+                id: 1,
+                name: "Folic Acid Forte",
+                price: 160.33,
+                image: "https://images.unsplash.com/photo-1598808503746-f34cfb6c2524?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                description: "Folic acid supplement for supporting red blood cell formation.",
+                benefits: "Supports healthy cell growth and development",
+                ingredients: "Folic Acid",
+                usage: "Take as directed by your healthcare provider",
+                type: "tablet",
+                volume: "30 tablets",
+                badge: "",
+                stock: 50
+            },
+            {
+                id: 2,
+                name: "Ferrousforte SOTTEL",
+                price: 410.00,
+                image: "https://images.unsplash.com/photo-1591348131719-8c1a7b8a2b4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                description: "High potency iron supplement with special formulation.",
+                benefits: "Effective iron supplementation with reduced side effects",
+                ingredients: "Ferrous Iron Complex",
+                usage: "Take once daily with food",
+                type: "capsule",
+                volume: "30 capsules",
+                badge: "Premium",
+                stock: 35
+            },
+            {
+                id: 3,
+                name: "Ferrous Forte Amino Acid Chelated Iron",
+                price: 190.77,
+                image: "https://images.unsplash.com/photo-1526662093473-1cfff6a3b0c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                description: "Amino acid chelated iron with Folic Acid, Vitamin B12 and Vitamin C.",
+                benefits: "Enhanced absorption with supporting nutrients",
+                ingredients: "Amino Acid Chelated Iron, Folic Acid, B12, Vitamin C",
+                usage: "Take one capsule daily",
+                type: "combo",
+                volume: "30 capsules",
+                badge: "Enhanced Formula",
+                stock: 40
+            },
+            {
+                id: 4,
+                name: "Ferrous Forte",
+                price: 333.04,
+                image: "https://images.unsplash.com/photo-1603398938373-e54da0bbf5e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                description: "Standard ferrous iron supplement.",
+                benefits: "Basic iron supplementation",
+                ingredients: "Ferrous Sulfate",
+                usage: "Take as directed",
+                type: "tablet",
+                volume: "30 tablets",
+                badge: "",
+                stock: 30
+            },
+            {
+                id: 5,
+                name: "SiderAL",
+                price: 395.90,
+                image: "https://images.unsplash.com/photo-1518556737724-0d8f3f8d0d6a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                description: "Advanced iron supplement formula.",
+                benefits: "High absorption with minimal side effects",
+                ingredients: "Sucrosomial Iron",
+                usage: "Take once daily",
+                type: "capsule",
+                volume: "30 capsules",
+                badge: "High Absorption",
+                stock: 25
+            },
+            {
+                id: 6,
+                name: "Chela-fer iron supplement 15mg",
+                price: 200.80,
+                image: "https://images.unsplash.com/photo-1607602132863-7c1a8d5a8c4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                description: "Chelated iron for better absorption.",
+                benefits: "Gentle on stomach with good bioavailability",
+                ingredients: "Iron Bisglycinate",
+                usage: "Take one tablet daily",
+                type: "tablet",
+                volume: "30 tablets",
+                badge: "Gentle Formula",
+                stock: 45
+            },
+            {
+                id: 7,
+                name: "Chela-fer iron supplement 24mg",
+                price: 272.58,
+                image: "https://images.unsplash.com/photo-1591348131719-8c1a7b8a2b4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                description: "Higher strength chelated iron supplement.",
+                benefits: "Increased iron dosage with good tolerance",
+                ingredients: "Iron Bisglycinate",
+                usage: "Take one tablet daily",
+                type: "tablet",
+                volume: "30 tablets",
+                badge: "Higher Strength",
+                stock: 28
+            },
+            {
+                id: 8,
+                name: "Gulf Ferrous Sulphate compound tablets",
+                price: 45.00,
+                image: "https://images.unsplash.com/photo-1518577915332-c2a19f149a75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                description: "Basic ferrous sulfate iron supplement.",
+                benefits: "Cost-effective iron supplementation",
+                ingredients: "Ferrous Sulfate",
+                usage: "Take as directed",
+                type: "tablet",
+                volume: "30 tablets",
+                badge: "Value",
+                stock: 60
+            },
+            {
+                id: 9,
+                name: "Iron Plus 90 Tabs",
+                price: 103.37,
+                image: "https://images.unsplash.com/photo-1598808503746-f34cfb6c2524?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                description: "Iron supplement with added nutrients.",
+                benefits: "Comprehensive iron formula with supporting vitamins",
+                ingredients: "Ferrous Fumarate, Vitamin C, B Vitamins",
+                usage: "Take one tablet daily",
+                type: "combo",
+                volume: "90 tablets",
+                badge: "Economy Pack",
+                stock: 40
+            },
+            {
+                id: 10,
+                name: "CNT Iron plus 30 tabs",
+                price: 76.91,
+                image: "https://images.unsplash.com/photo-1591348131719-8c1a7b8a2b4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                description: "Iron supplement with enhanced formulation.",
+                benefits: "Effective iron delivery with good absorption",
+                ingredients: "Iron Amino Acid Chelate",
+                usage: "Take one tablet daily",
+                type: "tablet",
+                volume: "30 tablets",
+                badge: "Value",
+                stock: 55
+            }
+        ];
 
             // Cart functionality
             let cart = [];

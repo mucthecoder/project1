@@ -8,8 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: rgb(233, 30, 99); /* Professional blue */
-            --primary-dark: rgb(33, 150, 243); /* Darker blue for contrast */
+            --primary-color: rgb(233, 30, 99);
+            --primary-dark: rgb(33, 150, 243);
             --secondary-color: #f5f7fa;
             --accent-color: #2196F3;
             --accent-light: #BBDEFB;
@@ -22,7 +22,8 @@
             --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --box-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            --header-height: 80px;        }
+            --header-height: 80px;
+        }
         * {
             margin: 0;
             padding: 0;
@@ -1259,13 +1260,12 @@
                             <li><a href="category.html?category=Baby & Kids Medication">Baby & Kids</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Prescriptions</a></li>
-                    <li><a href="#">Health & Wellness</a></li>
-                    <li><a href="#">Baby & Kids</a></li>
-                    <li><a href="#">Vitamins & Supplements</a></li>
-                    <li><a href="#">Beauty</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="female-essentials.html">Female Essentials</a></li>
+                    <li><a href="baby-&-kids-medication.html">Baby & Kids</a></li>
+                    <li><a href="pregnancy-vitamins.html">Pregnancy Vitamins</a></li>
+                    <li><a href="cold-and-flu.html">Cold and Flu</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -1516,119 +1516,63 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Foot care products data
+            // Updated foot care products from PDF
             const footCareProducts = [
                 {
                     id: 1,
-                    name: "Antifungal Foot Cream",
-                    price: 129.99,
+                    name: "New Season Foot Powder",
+                    price: 37.35,
                     image: "https://images.unsplash.com/photo-1607602132700-0681204f21da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Clinically proven cream to treat athlete's foot and relieve itching, burning and cracking.",
-                    benefits: "Kills fungus that causes athlete's foot, relieves symptoms, prevents reinfection",
-                    ingredients: "Clotrimazole 1%, Aloe Vera, Tea Tree Oil",
-                    usage: "Apply to affected area twice daily for 4 weeks",
-                    type: "fungal",
-                    volume: "30g",
-                    badge: "Best Seller",
-                    stock: 50
-                },
-                {
-                    id: 2,
-                    name: "Callus Remover Gel",
-                    price: 89.50,
-                    image: "https://images.unsplash.com/photo-1607602132863-7c1a8d5a8c4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Fast-acting gel that softens and removes calluses and rough skin without scraping.",
-                    benefits: "Gentle exfoliation, no painful filing, prevents recurrence",
-                    ingredients: "Salicylic Acid 17%, Lactic Acid, Aloe Vera",
-                    usage: "Apply daily to callused areas",
-                    type: "callus",
-                    volume: "50ml",
-                    badge: "Fast Acting",
-                    stock: 35
-                },
-                {
-                    id: 3,
-                    name: "Diabetic Foot Cream",
-                    price: 149.99,
-                    image: "https://images.unsplash.com/photo-1607602132863-7c1a8d5a8c4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Ultra-moisturizing cream specially formulated for sensitive diabetic skin.",
-                    benefits: "Prevents cracking, soothes dryness, non-greasy formula",
-                    ingredients: "Urea 10%, Shea Butter, Vitamin E",
-                    usage: "Apply to feet daily, especially after bathing",
-                    type: "diabetic",
-                    volume: "100ml",
-                    badge: "Diabetic Approved",
-                    stock: 40
-                },
-                {
-                    id: 4,
-                    name: "Medicated Foot Powder",
-                    price: 79.75,
-                    image: "https://images.unsplash.com/photo-1607602132863-7c1a8d5a8c4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
                     description: "Absorbs moisture and prevents fungal growth to keep feet dry and fresh all day.",
                     benefits: "Controls odor, prevents athlete's foot, absorbs sweat",
                     ingredients: "Talc, Zinc Oxide, Menthol, Tea Tree Oil",
                     usage: "Sprinkle in shoes and on feet daily",
                     type: "fungal",
                     volume: "100g",
-                    badge: "Odor Control",
-                    stock: 30
+                    badge: "Best Seller",
+                    stock: 50
                 },
                 {
-                    id: 5,
-                    name: "Heel Balm for Cracked Feet",
-                    price: 119.99,
+                    id: 2,
+                    name: "Kroko Heel Balm",
+                    price: 86.38,
                     image: "https://images.unsplash.com/photo-1607602132863-7c1a8d5a8c4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Intensive repair balm with natural emollients to heal severely dry, cracked heels.",
-                    benefits: "Deeply moisturizes, repairs cracks, prevents splitting",
+                    description: "Intensive heel balm for dry and cracked heels.",
+                    benefits: "Deeply moisturizes, repairs cracks, softens skin",
                     ingredients: "Lanolin, Beeswax, Coconut Oil, Vitamin E",
                     usage: "Apply thickly to clean feet at bedtime",
                     type: "moisturizing",
-                    volume: "75ml",
-                    badge: "Intensive Repair",
-                    stock: 25
+                    volume: "100g",
+                    badge: "Popular",
+                    stock: 35
                 },
                 {
-                    id: 6,
-                    name: "Toenail Fungus Treatment",
-                    price: 199.95,
+                    id: 3,
+                    name: "Karroo Foot Spray",
+                    price: 59.99,
                     image: "https://images.unsplash.com/photo-1607602132863-7c1a8d5a8c4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Professional-strength solution to treat fungal nail infections and restore healthy nails.",
-                    benefits: "Penetrates nail to kill fungus, promotes healthy regrowth",
-                    ingredients: "Amorolfine 5%, Tea Tree Oil, Almond Oil",
-                    usage: "Apply once weekly for 6-12 months",
-                    type: "fungal",
-                    volume: "5ml",
-                    badge: "Professional Strength",
-                    stock: 45
-                },
-                {
-                    id: 7,
-                    name: "Gel Corn Cushions",
-                    price: 59.50,
-                    image: "https://images.unsplash.com/photo-1607602132863-7c1a8d5a8c4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Soft gel cushions to relieve pressure and pain from corns and calluses.",
-                    benefits: "Instant pain relief, stays in place, washable and reusable",
-                    ingredients: "Medical-grade silicone",
-                    usage: "Apply directly to corn or callus",
-                    type: "callus",
-                    volume: "Pack of 6",
-                    badge: "Pain Relief",
-                    stock: 28
-                },
-                {
-                    id: 8,
-                    name: "Cooling Foot Spray",
-                    price: 89.99,
-                    image: "https://images.unsplash.com/photo-1607602132863-7c1a8d5a8c4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Refreshing spray to cool tired, aching feet and reduce swelling.",
-                    benefits: "Instant cooling relief, reduces swelling, deodorizes",
-                    ingredients: "Menthol, Witch Hazel, Peppermint Oil",
-                    usage: "Spray on feet as needed",
+                    description: "Refreshing foot spray for daily use.",
+                    benefits: "Refreshes feet, controls odor, cools skin",
+                    ingredients: "Alcohol, Menthol, Fragrance",
+                    usage: "Spray on feet and between toes",
                     type: "general",
-                    volume: "150ml",
-                    badge: "Cooling Relief",
-                    stock: 22
+                    volume: "120ml",
+                    badge: "Cooling",
+                    stock: 40
+                },
+                {
+                    id: 4,
+                    name: "Recharge your feet herbal foot cream",
+                    price: 74.99,
+                    image: "https://images.unsplash.com/photo-1607602132863-7c1a8d5a8c4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Herbal foot cream for tired feet.",
+                    benefits: "Rejuvenates tired feet, natural ingredients, soothes",
+                    ingredients: "Herbal extracts, Aloe Vera, Tea Tree Oil",
+                    usage: "Massage into feet daily",
+                    type: "moisturizing",
+                    volume: "100ml",
+                    badge: "Herbal",
+                    stock: 25
                 }
             ];
 
@@ -1642,7 +1586,7 @@
             const confirmation = document.getElementById('confirmation');
             
             // Pagination variables
-            const productsPerPage = 8;
+            const productsPerPage = 4;
             let currentPage = 1;
             let filteredProducts = [...footCareProducts];
             

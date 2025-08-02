@@ -3,26 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dental & Oral Essentials - FirstChem Pharmacy</title>
+    <title>Teas - FirstChem Pharmacy</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-            :root {
-            --primary-color: #E91E63; /* Professional blue */
-            --primary-dark: #1565C0; /* Darker blue for contrast */
-            --secondary-color: #f5f7fa; /* Light background */
-            --accent-color: #E91E63; /* Vibrant pink */
-            --accent-light: #F8BBD0; /* Light pink for accents */
-            --text-color: #333; /* Darker, more readable text */
-            --light-text: #666; /* Lighter secondary text */
+        :root {
+            --primary-color: #8e44ad;
+            --primary-dark: #6c3483;
+            --secondary-color: #f8f9fa;
+            --accent-color: #9b59b6;
+            --accent-light: #e8daef;
+            --intimacy-purple: #f5eef8;
+            --intimacy-pink: #fdebd0;
+            --intimacy-red: #fadbd8;
+            --intimacy-blue: #d6eaf8;
+            --text-color: #333;
+            --light-text: #666;
             --white: #ffffff;
-            --border-radius: 10px; /* Smoother corners */
+            --border-radius: 10px;
             --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --box-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             --header-height: 80px;
         }
-        
         * {
             margin: 0;
             padding: 0;
@@ -69,13 +72,13 @@
             font-weight: 600;
             font-size: 15px;
             letter-spacing: 0.5px;
-            box-shadow: 0 2px 5px rgba(33, 150, 243, 0.2);
+            box-shadow: 0 2px 5px rgba(141, 110, 99, 0.2);
         }
         
         .btn:hover {
             background-color: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(25, 118, 210, 0.3);
+            box-shadow: 0 4px 8px rgba(93, 64, 55, 0.3);
         }
         
         .btn-outline {
@@ -220,7 +223,7 @@
             outline: none;
             border-color: var(--primary-color);
             background-color: var(--white);
-            box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+            box-shadow: 0 0 0 3px rgba(93, 64, 55, 0.1);
         }
         
         .search-bar button {
@@ -579,8 +582,8 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(250, 250, 250, 0.6), rgba(13, 71, 161, 0.7)), 
-            url('https://images.unsplash.com/photo-1583324113626-70df0f4deaab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(142, 68, 173, 0.8), rgba(108, 52, 131, 0.8)), 
+            url('https://images.unsplash.com/photo-1534957753291-64d667ce2927?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
             height: 350px;
@@ -628,9 +631,9 @@
             color: var(--light-text);
         }
         
-        /* Health Tips Section */
-        .health-tips {
-            background: linear-gradient(to right, var(--cough-green), var(--pediatric-blue));
+        /* Tea Benefits */
+        .tea-benefits {
+            background: linear-gradient(to right, #9b59b6, #8e44ad);
             padding: 50px 0;
             margin-bottom: 40px;
             border-radius: var(--border-radius);
@@ -664,7 +667,57 @@
         }
         
         .tip-card h3 i {
-            color: var(--accent-color);
+            color: #8e44ad;
+        }
+        
+        /* Categories */
+        .categories {
+            padding: 40px 0;
+        }
+        
+        .categories-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            position: relative;
+            text-align: center;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-img {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--intimacy-purple);
+        }
+        
+        .category-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .category-info {
+            padding: 20px;
+        }
+        
+        .category-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary-dark);
         }
         
         /* Products Section */
@@ -739,7 +792,7 @@
             position: absolute;
             top: 10px;
             left: 10px;
-            background-color: var(--accent-color);
+            background-color: #e74c3c;
             color: white;
             padding: 5px 12px;
             border-radius: 20px;
@@ -754,7 +807,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: var(--cough-green);
+            background-color: var(--intimacy-purple);
             position: relative;
             overflow: hidden;
         }
@@ -806,8 +859,8 @@
             background-color: var(--primary-dark);
         }
         
-        /* Relief Type Tags */
-        .relief-tag {
+        /* Product Type Tags */
+        .product-tag {
             display: inline-block;
             padding: 3px 8px;
             border-radius: 4px;
@@ -817,24 +870,29 @@
             margin-bottom: 5px;
         }
         
-        .tag-adult {
-            background-color: #E3F2FD;
-            color: #0D47A1;
+        .tag-green {
+            background-color: #d5f5e3;
+            color: #1e8449;
         }
         
-        .tag-pediatric {
-            background-color: #FFECB3;
-            color: #FF8F00;
+        .tag-herbal {
+            background-color: #fadbd8;
+            color: #78281f;
         }
         
-        .tag-cough {
-            background-color: #E8F5E9;
-            color: #1B5E20;
+        .tag-flavored {
+            background-color: #e8daef;
+            color: #4a235a;
         }
         
-        .tag-chest {
-            background-color: #FFF3E0;
-            color: #E65100;
+        .tag-medicinal {
+            background-color: #fdebd0;
+            color: #7d6608;
+        }
+        
+        .tag-general {
+            background-color: #e0e0e0;
+            color: #424242;
         }
         
         /* Pagination */
@@ -1005,6 +1063,66 @@
             text-align: center;
         }
         
+        /* Usage Guide */
+        .usage-guide {
+            background-color: #e8daef;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .guide-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary-dark);
+        }
+        
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .guide-card {
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+        }
+        
+        .guide-icon {
+            font-size: 40px;
+            color: #8e44ad;
+            margin-bottom: 15px;
+        }
+        
+        .guide-card h4 {
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+        }
+        
+        /* Wellness Section */
+        .wellness-section {
+            background-color: #f5eef8;
+            padding: 50px 0;
+            margin: 40px 0;
+            border-radius: var(--border-radius);
+        }
+        
+        .wellness-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .wellness-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
@@ -1056,83 +1174,6 @@
                 justify-content: space-around;
             }
         }
-
-        /* Oral Care Guide */
-        .oral-care-guide {
-            background-color: #f0f7ff;
-            border-radius: var(--border-radius);
-            padding: 30px;
-            margin: 40px 0;
-            box-shadow: var(--box-shadow);
-        }
-        
-        .oral-care-guide h3 {
-            color: var(--primary-dark);
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        .care-steps {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        
-        .care-step {
-            flex: 1;
-            min-width: 200px;
-            text-align: center;
-            padding: 20px;
-            background: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-        }
-        
-        .care-step h4 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-        
-        .care-step i {
-            font-size: 36px;
-            color: var(--accent-color);
-            margin-bottom: 15px;
-        }
-        
-        /* Daily Routine */
-        .daily-routine {
-            background: linear-gradient(to right, var(--dental-teal), var(--dental-green));
-            padding: 30px;
-            border-radius: var(--border-radius);
-            margin: 40px 0;
-        }
-        
-        .routine-title {
-            text-align: center;
-            margin-bottom: 30px;
-            color: var(--primary-dark);
-        }
-        
-        .routine-steps {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        
-        .routine-step {
-            flex: 1;
-            min-width: 150px;
-            text-align: center;
-            padding: 15px;
-        }
-        
-        .routine-step i {
-            font-size: 32px;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
     </style>
 </head>
 <body>
@@ -1155,16 +1196,18 @@
             <div class="container">
                 <div class="header-content">
                     <a href="/" class="logo">
-                        <img src="images/FirstChemLogo-removebg-preview-e1751526921499-removebg.png" style="height: 100px; width: auto;">
+                        <div class="logo-text">First<span>Chem</span></div>
                     </a>
+
                     <div class="search-bar">
                         <div class="search-container">
-                            <label for="searchInput" class="sr-only">Search for medicines and health products</label>
-                            <input type="text" id="searchInput" placeholder="Search for dental and oral care products..." aria-label="Search products">
+                            <label for="searchInput" class="sr-only">Search for teas</label>
+                            <input type="text" id="searchInput" placeholder="Search for teas..." aria-label="Search products">
                             <div id="searchResults" class="results-dropdown"></div>
                         </div>
                         <button aria-label="Search" id="searchButton"><i class="fas fa-search"></i></button>
                     </div>
+
                     <div class="header-icons">
                         <a href="#account" class="header-icon" aria-label="My Account">
                             <i class="fas fa-user" aria-hidden="true"></i>
@@ -1205,6 +1248,10 @@
             </div>
         </div>
         
+        <!-- Main Navigation -->
+        <nav class="main-nav" aria-label="Main navigation">
+            <div class="container">
+                <ul>
                     <li><a href="#">Home</a></li>
                     <li class="nav-dropdown">
                         <a href="#">Shop <i class="fas fa-chevron-down"></i></a>
@@ -1213,6 +1260,7 @@
                             <li><a href="category.html?category=Self Medication">Self Medication</a></li>
                             <li><a href="category.html?category=Vitamins & Supplements">Vitamins & Supplements</a></li>
                             <li><a href="category.html?category=Baby & Kids Medication">Baby & Kids</a></li>
+                            <li><a href="teas.html">Teas</a></li>
                         </ul>
                     </li>
                     <li><a href="female-essentials.html">Female Essentials</a></li>
@@ -1233,8 +1281,8 @@
     <section class="hero" aria-labelledby="hero-heading">
         <div class="container">
             <div class="hero-content">
-                <h1 id="hero-heading">Dental & Oral Essentials</h1>
-                <p>Complete oral care solutions for a healthy, confident smile</p>
+                <h1 id="hero-heading">Premium Teas</h1>
+                <p>Discover our selection of health-promoting teas for wellness and relaxation</p>
             </div>
         </div>
     </section>
@@ -1242,99 +1290,134 @@
     <!-- Breadcrumb -->
     <div class="breadcrumb">
         <div class="container">
-            <a href="index.html">Home</a> > <a href="#">Shop</a> > <span>Dental & Oral Care</span>
+            <a href="index.html">Home</a> > <a href="#">Shop</a> > <span>Teas</span>
         </div>
     </div>
 
-    <!-- Health Tips Section -->
-    <section class="health-tips">
+    <!-- Tea Benefits -->
+    <section class="tea-benefits">
         <div class="container">
-            <h2 class="section-title text-center">Oral Health Tips</h2>
+            <h2 class="section-title text-center">Tea Wellness Benefits</h2>
             <div class="tips-container">
                 <div class="tip-card">
-                    <h3><i class="fas fa-tooth"></i> Brush Twice Daily</h3>
-                    <p>Brush your teeth for two minutes, twice a day with fluoride toothpaste to remove plaque and prevent decay.</p>
+                    <h3><i class="fas fa-leaf"></i> Antioxidant Rich</h3>
+                    <p>Our teas are packed with antioxidants to support overall health and wellbeing.</p>
                 </div>
                 <div class="tip-card">
-                    <h3><i class="fas fa-hand-holding-water"></i> Floss Regularly</h3>
-                    <p>Floss daily to remove food particles and plaque between teeth where your toothbrush can't reach.</p>
+                    <h3><i class="fas fa-heart"></i> Heart Health</h3>
+                    <p>Certain teas can help support cardiovascular health and circulation.</p>
                 </div>
                 <div class="tip-card">
-                    <h3><i class="fas fa-apple-alt"></i> Healthy Diet</h3>
-                    <p>Limit sugary snacks and drinks which can cause tooth decay. Choose water, dairy, fruits and vegetables.</p>
+                    <h3><i class="fas fa-brain"></i> Mental Clarity</h3>
+                    <p>Teas that promote focus and calmness for your daily routine.</p>
                 </div>
                 <div class="tip-card">
-                    <h3><i class="fas fa-calendar-check"></i> Regular Checkups</h3>
-                    <p>Visit your dentist every six months for professional cleaning and early detection of dental issues.</p>
+                    <h3><i class="fas fa-moon"></i> Relaxation</h3>
+                    <p>Soothing blends to help you unwind and relax after a long day.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Oral Care Guide -->
+    <!-- Tea Guide -->
     <div class="container">
-        <div class="oral-care-guide">
-            <h3>Complete Oral Care Routine</h3>
-            <div class="care-steps">
-                <div class="care-step">
-                    <i class="fas fa-toothbrush"></i>
-                    <h4>Toothbrushing</h4>
-                    <p>Brush twice daily with fluoride toothpaste</p>
+        <div class="usage-guide">
+            <h3 class="guide-title">Tea Brewing Guidance</h3>
+            <div class="guide-grid">
+                <div class="guide-card">
+                    <div class="guide-icon">
+                        <i class="fas fa-temperature-high"></i>
+                    </div>
+                    <h4>Water Temperature</h4>
+                    <p>Different teas require specific water temperatures for optimal flavor and benefits.</p>
                 </div>
-                <div class="care-step">
-                    <i class="fas fa-hand-sparkles"></i>
-                    <h4>Flossing</h4>
-                    <p>Clean between teeth daily</p>
+                <div class="guide-card">
+                    <div class="guide-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h4>Steeping Time</h4>
+                    <p>Proper steeping times ensure you get the perfect cup every time.</p>
                 </div>
-                <div class="care-step">
-                    <i class="fas fa-spray-can"></i>
-                    <h4>Mouthwash</h4>
-                    <p>Use antimicrobial rinse to reduce bacteria</p>
+                <div class="guide-card">
+                    <div class="guide-icon">
+                        <i class="fas fa-wine-bottle"></i>
+                    </div>
+                    <h4>Storage Tips</h4>
+                    <p>Keep your teas fresh by storing them properly in airtight containers.</p>
                 </div>
-                <div class="care-step">
-                    <i class="fas fa-water"></i>
-                    <h4>Hydration</h4>
-                    <p>Drink water to maintain saliva flow</p>
+                <div class="guide-card">
+                    <div class="guide-icon">
+                        <i class="fas fa-plus-circle"></i>
+                    </div>
+                    <h4>Enhancements</h4>
+                    <p>Discover complementary flavors like honey, lemon, or mint to enhance your tea.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Daily Routine -->
-    <div class="container">
-        <div class="daily-routine">
-            <h3 class="routine-title">Daily Dental Routine</h3>
-            <div class="routine-steps">
-                <div class="routine-step">
-                    <i class="fas fa-sun"></i>
-                    <h4>Morning</h4>
-                    <p>Brush & Floss</p>
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title text-center">Tea Categories</h2>
+            <div class="categories-container">
+                <div class="category-card">
+                    <div class="category-img" style="background-color: #e8f8f5;">
+                        <img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Green Teas">
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-title">Green Teas</h3>
+                        <p>Antioxidant-rich teas for energy and metabolism</p>
+                    </div>
                 </div>
-                <div class="routine-step">
-                    <i class="fas fa-utensils"></i>
-                    <h4>After Meals</h4>
-                    <p>Rinse with water</p>
+                <div class="category-card">
+                    <div class="category-img" style="background-color: #f5eef8;">
+                        <img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Herbal Teas">
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-title">Herbal Teas</h3>
+                        <p>Caffeine-free infusions for relaxation and wellness</p>
+                    </div>
                 </div>
-                <div class="routine-step">
-                    <i class="fas fa-moon"></i>
-                    <h4>Evening</h4>
-                    <p>Floss & Brush</p>
+                <div class="category-card">
+                    <div class="category-img" style="background-color: #fef9e7;">
+                        <img src="https://images.unsplash.com/photo-1515823064-d6e0b0461a37?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Flavored Teas">
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-title">Flavored Teas</h3>
+                        <p>Delicious blends with natural flavors and aromas</p>
+                    </div>
                 </div>
-                <div class="routine-step">
-                    <i class="fas fa-spray-can"></i>
-                    <h4>Before Bed</h4>
-                    <p>Mouthwash rinse</p>
+                <div class="category-card">
+                    <div class="category-img" style="background-color: #eaf2f8;">
+                        <img src="https://images.unsplash.com/photo-1560343090-f0409e92791a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Medicinal Teas">
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-title">Medicinal Teas</h3>
+                        <p>Traditional remedies for specific health concerns</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Wellness Section -->
+    <section class="wellness-section">
+        <div class="container">
+            <div class="wellness-content">
+                <h2 class="wellness-title">Tea for Health & Wellness</h2>
+                <p>At FirstChem Pharmacy, we understand that tea is more than just a beverage - it's a ritual, a comfort, and for many, a path to better health. Our carefully selected teas offer a range of benefits from antioxidant support to relaxation and digestion aid.</p>
+                <p>Whether you're looking for a morning energizer, an afternoon pick-me-up, or an evening relaxant, we have the perfect tea for every moment of your day.</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Products Section -->
-    <section class="products" aria-labelledby="dental-heading">
+    <section class="products" aria-labelledby="products-heading">
         <div class="container">
-            <h2 id="dental-heading" class="section-title">Dental & Oral Care Products</h2>
+            <h2 id="products-heading" class="section-title">Our Tea Selection</h2>
             <p class="text-center" style="margin-bottom: 30px; color: var(--light-text); max-width: 800px; margin-left: auto; margin-right: auto;">
-                Complete your oral care routine with our range of dentist-recommended products for all your dental hygiene needs.
+                Discover our premium selection of teas for health, wellness, and pure enjoyment.
             </p>
             
             <!-- Filter Section -->
@@ -1353,12 +1436,12 @@
                 <div class="filter-section">
                     <span class="filter-label">Filter By:</span>
                     <select id="filterBy" class="filter-select">
-                        <option value="all">All Products</option>
-                        <option value="toothpaste">Toothpaste</option>
-                        <option value="toothbrush">Toothbrushes</option>
-                        <option value="mouthwash">Mouthwash</option>
-                        <option value="whitening">Whitening</option>
-                        <option value="sensitive">Sensitive Teeth</option>
+                        <option value="all">All Teas</option>
+                        <option value="green">Green Teas</option>
+                        <option value="herbal">Herbal Teas</option>
+                        <option value="flavored">Flavored Teas</option>
+                        <option value="medicinal">Medicinal Teas</option>
+                        <option value="best-seller">Best Sellers</option>
                     </select>
                 </div>
             </div>
@@ -1436,390 +1519,119 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Dental products data
-            const dentalProducts = [
+            // Tea products data from the PDF
+            const teaProducts = [
                 {
                     id: 1,
-                    name: "Dentyl Mouth Wash Mint",
-                    price: 156.99,
-                    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Advanced dual-phase formula fights bacteria and freshens breath",
-                    benefits: "Kills germs, reduces plaque, fresh mint flavor",
-                    ingredients: "Cetylpyridinium Chloride, Essential Oils",
-                    usage: "Rinse with 10ml for 30 seconds twice daily",
-                    type: "mouthwash",
+                    name: "Closemyer honey green tea 16s",
+                    price: 74.69,
+                    image: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Premium green tea with natural honey flavor, packed with antioxidants.",
+                    benefits: "Boosts metabolism, rich in antioxidants, natural energy",
+                    ingredients: "Green tea leaves, natural honey flavor",
+                    usage: "Steep 1 tea bag in hot water for 3-5 minutes",
+                    type: "green",
+                    volume: "16 tea bags",
                     badge: "Popular",
-                    stock: 35
+                    stock: 50
                 },
                 {
                     id: 2,
-                    name: "Listerine Cool Mint Mouthwash",
-                    price: 67.22,
-                    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Kills 99.9% of germs that cause bad breath, plaque, and gingivitis",
-                    benefits: "Fresh breath, reduces plaque, alcohol formula",
-                    ingredients: "Menthol, Thymol, Eucalyptol, Methyl Salicylate",
-                    usage: "Rinse with 20ml for 30 seconds twice daily",
-                    type: "mouthwash",
-                    badge: "Best Seller",
-                    stock: 50
+                    name: "BST Green Tea 25s",
+                    price: 31.31,
+                    image: "https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Classic green tea for daily wellness and hydration.",
+                    benefits: "Supports digestion, natural detox, mild caffeine",
+                    ingredients: "Pure green tea leaves",
+                    usage: "Steep in hot water for 2-3 minutes",
+                    type: "green",
+                    volume: "25 tea bags",
+                    badge: "Value Pack",
+                    stock: 75
                 },
                 {
                     id: 3,
-                    name: "Tea Tree Oil Mouth Wash",
-                    price: 48.29,
-                    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Natural antiseptic properties for healthy gums and fresh breath",
-                    benefits: "Natural formula, fights bacteria, soothes gums",
-                    ingredients: "Melaleuca Alternifolia (Tea Tree) Leaf Oil",
-                    usage: "Rinse with 15ml for 60 seconds twice daily",
-                    type: "mouthwash",
-                    badge: "Natural",
-                    stock: 25
+                    name: "BST Cinnamon Green Tea 20s",
+                    price: 37.90,
+                    image: "https://images.unsplash.com/photo-1515823064-d6e0b0461a37?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Green tea blended with cinnamon for a warming, spicy flavor.",
+                    benefits: "Antioxidant-rich, supports blood sugar levels, warming",
+                    ingredients: "Green tea, cinnamon pieces",
+                    usage: "Steep for 3-4 minutes in hot water",
+                    type: "flavored",
+                    volume: "20 tea bags",
+                    badge: "Seasonal Favorite",
+                    stock: 40
                 },
                 {
                     id: 4,
-                    name: "Medi-keel A Throat Spray",
-                    price: 70.70,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Soothes sore throats and reduces inflammation",
-                    benefits: "Instant relief, antiseptic action, easy application",
-                    ingredients: "Benzocaine, Cetylpyridinium Chloride",
-                    usage: "Spray directly onto affected area 3-4 times daily",
-                    type: "throatspray",
-                    badge: "Fast Relief",
-                    stock: 20
+                    name: "BST Senna Green Tea 20s",
+                    price: 24.20,
+                    image: "https://images.unsplash.com/photo-1560343090-f0409e92791a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Green tea with senna leaf for digestive support.",
+                    benefits: "Digestive aid, natural cleansing, mild laxative",
+                    ingredients: "Green tea, senna leaves",
+                    usage: "Steep for 2-3 minutes, drink in moderation",
+                    type: "medicinal",
+                    volume: "20 tea bags",
+                    badge: "Digestive Support",
+                    stock: 30
                 },
-                // Page 2
                 {
                     id: 5,
-                    name: "Dermadine Oral Antiseptic",
-                    price: 63.49,
-                    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Antiseptic solution for oral hygiene and wound care",
-                    benefits: "Promotes healing, prevents infection, soothes irritation",
-                    ingredients: "Povidone-Iodine",
-                    usage: "Apply directly to affected area 2-3 times daily",
-                    type: "mouthwash",
-                    badge: "Antiseptic",
-                    stock: 18
+                    name: "Black Forest herbal Tea 10s",
+                    price: 45.56,
+                    image: "https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Herbal tea blend inspired by the flavors of the Black Forest.",
+                    benefits: "Caffeine-free, relaxing, fruity flavor",
+                    ingredients: "Hibiscus, apple pieces, rose hips, natural flavors",
+                    usage: "Steep for 5-7 minutes in hot water",
+                    type: "herbal",
+                    volume: "10 tea bags",
+                    badge: "Limited Edition",
+                    stock: 25
                 },
                 {
                     id: 6,
-                    name: "Betadine Gargle and Mouth Wash",
-                    price: 55.14,
-                    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Antiseptic gargle for sore throats and oral hygiene",
-                    benefits: "Kills germs, soothes throat, prevents infection",
-                    ingredients: "Povidone-Iodine",
-                    usage: "Gargle with 15ml for 30 seconds twice daily",
-                    type: "mouthwash",
-                    badge: "Dentist Recommended",
-                    stock: 30
-                },
-                {
-                    id: 7,
-                    name: "Septochlor Oral Antiseptic 200ml",
-                    price: 49.99,
-                    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Antiseptic mouthwash for comprehensive oral care",
-                    benefits: "Reduces bacteria, prevents plaque, freshens breath",
-                    ingredients: "Chlorhexidine Gluconate",
-                    usage: "Rinse with 10ml for 60 seconds twice daily",
-                    type: "mouthwash",
-                    badge: "Antibacterial",
-                    stock: 22
-                },
-                {
-                    id: 8,
-                    name: "Septochlor Toothbrush",
-                    price: 19.96,
-                    image: "https://images.unsplash.com/photo-1606310734273-1a332d20c867?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Soft bristle toothbrush for gentle cleaning",
-                    benefits: "Gentle on gums, effective plaque removal, comfortable grip",
-                    ingredients: "",
-                    usage: "Use with fluoride toothpaste twice daily",
-                    type: "toothbrush",
-                    badge: "Soft Bristles",
-                    stock: 40
-                },
-                // Page 3
-                {
-                    id: 9,
-                    name: "Spetadine Oral Antiseptic 200ml",
-                    price: 49.99,
-                    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Antiseptic solution for oral hygiene maintenance",
-                    benefits: "Reduces bacteria, prevents infection, promotes healing",
-                    ingredients: "Povidone-Iodine",
-                    usage: "Rinse or apply to affected area 2-3 times daily",
-                    type: "mouthwash",
-                    badge: "Antiseptic",
-                    stock: 15
-                },
-                {
-                    id: 10,
-                    name: "Andolex C Mouthwash 200ml",
-                    price: 65.50,
-                    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Antiseptic and analgesic mouth rinse for oral discomfort",
-                    benefits: "Soothes pain, reduces inflammation, promotes healing",
-                    ingredients: "Chlorhexidine Gluconate, Benzocaine",
-                    usage: "Rinse with 15ml for 1 minute 3 times daily",
-                    type: "mouthwash",
-                    badge: "Pain Relief",
-                    stock: 28
-                },
-                {
-                    id: 11,
-                    name: "Andolex C Mouthwash 100ml",
-                    price: 35.75,
-                    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Travel size antiseptic and analgesic mouth rinse",
-                    benefits: "Soothes oral pain, reduces inflammation, convenient size",
-                    ingredients: "Chlorhexidine Gluconate, Benzocaine",
-                    usage: "Rinse with 10ml for 1 minute 3 times daily",
-                    type: "mouthwash",
-                    badge: "Travel Size",
-                    stock: 20
-                },
-                // Page 4
-                {
-                    id: 12,
-                    name: "333 Disinfecting Liquid 100ml",
-                    price: 96.28,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Disinfectant solution for dental instruments and surfaces",
-                    benefits: "Effective disinfection, kills bacteria and viruses",
-                    ingredients: "Alkyl Dimethyl Benzyl Ammonium Chloride",
-                    usage: "Dilute as directed for surface or instrument disinfection",
-                    type: "denture",
-                    badge: "Disinfectant",
-                    stock: 12
-                },
-                {
-                    id: 13,
-                    name: "Mentadent P Toothpaste",
-                    price: 40.10,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Advanced whitening toothpaste with micro granules",
-                    benefits: "Removes surface stains, whitens teeth, fresh breath",
-                    ingredients: "Hydrated Silica, Sodium Bicarbonate",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "Whitening",
-                    stock: 45
-                },
-                {
-                    id: 14,
-                    name: "Himalaya Stain Removal Toothpaste",
-                    price: 46.29,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Natural toothpaste for stain removal and whitening",
-                    benefits: "Removes coffee and tea stains, whitens naturally, herbal formula",
-                    ingredients: "Pomegranate Extract, Papain, Salt Minerals",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "Natural",
-                    stock: 30
-                },
-                {
-                    id: 15,
-                    name: "Corega Denture Fixative Cream",
-                    price: 185.74,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Strong hold denture adhesive cream for all-day security",
-                    benefits: "Long-lasting hold, prevents food particles, zinc-free formula",
-                    ingredients: "Methyl Vinyl Ether/Maleic Anhydride Copolymer",
-                    usage: "Apply to clean, dry dentures before wearing",
-                    type: "denture",
-                    badge: "Strong Hold",
-                    stock: 8
-                },
-                {
-                    id: 16,
-                    name: "White Glo Charcoal Toothpaste",
-                    price: 29.18,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Activated charcoal toothpaste for deep whitening",
-                    benefits: "Removes deep stains, whitens teeth, detoxifies mouth",
-                    ingredients: "Activated Charcoal, Hydrated Silica",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "Whitening",
-                    stock: 50
-                },
-                // Page 5
-                {
-                    id: 17,
-                    name: "Miswak Toothpaste",
-                    price: 51.59,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Natural toothpaste with miswak extract for oral health",
-                    benefits: "Natural cleaning, fights bacteria, strengthens gums",
-                    ingredients: "Miswak Extract, Calcium Carbonate",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "Herbal",
-                    stock: 25
-                },
-                {
-                    id: 18,
-                    name: "Colgate Triple Action Toothpaste",
-                    price: 51.59,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Triple protection against cavities, plaque and bad breath",
-                    benefits: "Cavity protection, fresh breath, whitening",
-                    ingredients: "Sodium Fluoride, Triclosan",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "Best Seller",
-                    stock: 60
-                },
-                {
-                    id: 19,
-                    name: "Aquafresh Fresh and Minty Toothpaste",
-                    price: 20.65,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Triple protection toothpaste with fresh mint flavor",
-                    benefits: "Cavity protection, fresh breath, whitening",
-                    ingredients: "Sodium Fluoride, Triclosan",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "Fresh Mint",
-                    stock: 55
-                },
-                {
-                    id: 20,
-                    name: "Aquafresh Milk Teeth Toothpaste",
-                    price: 31.19,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Gentle toothpaste specially formulated for children's milk teeth",
-                    benefits: "Mild flavor, safe if swallowed, cavity protection",
-                    ingredients: "Sodium Fluoride, Calcium",
-                    usage: "Brush children's teeth twice daily",
-                    type: "toothpaste",
-                    badge: "For Kids",
-                    stock: 40
-                },
-                {
-                    id: 21,
-                    name: "Closeup Red Hot Toothpaste",
-                    price: 22.51,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Deep red gel toothpaste for intense freshness",
-                    benefits: "Long-lasting freshness, whitening, fights bacteria",
-                    ingredients: "Hydrated Silica, Sodium Fluoride",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "Intense Fresh",
+                    name: "Chamomile Tea 20s",
+                    price: 57.96,
+                    image: "https://images.unsplash.com/photo-1515823064-d6e0b0461a37?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Classic chamomile flowers for a calming, caffeine-free infusion.",
+                    benefits: "Promotes relaxation, aids sleep, soothes digestion",
+                    ingredients: "Pure chamomile flowers",
+                    usage: "Steep for 5 minutes in hot water before bedtime",
+                    type: "herbal",
+                    volume: "20 tea bags",
+                    badge: "Relaxation",
                     stock: 35
                 },
                 {
-                    id: 22,
-                    name: "Slosep Aloe Fresh Toothpaste",
-                    price: 93.22,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Aloe vera toothpaste for sensitive teeth and gums",
-                    benefits: "Soothes gums, reduces sensitivity, natural formula",
-                    ingredients: "Aloe Vera, Potassium Nitrate",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "Sensitive",
-                    stock: 15
-                },
-                {
-                    id: 23,
-                    name: "Sensodyne Multi-care Toothpaste",
-                    price: 71.13,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Multi-protection toothpaste for sensitive teeth",
-                    benefits: "Relieves sensitivity, cavity protection, fresh breath",
-                    ingredients: "Potassium Nitrate, Stannous Fluoride",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "For Sensitive Teeth",
-                    stock: 42
-                },
-                // Page 6
-                {
-                    id: 24,
-                    name: "Meridol Toothpaste",
-                    price: 97.97,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Specialist toothpaste for gum health and protection",
-                    benefits: "Reduces plaque, prevents gingivitis, strengthens gums",
-                    ingredients: "Amine Fluoride, Stannous Fluoride",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "Gum Care",
+                    id: 7,
+                    name: "Eye Chamomile Tea 20s",
+                    price: 61.23,
+                    image: "https://images.unsplash.com/photo-1560343090-f0409e92791a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Premium chamomile tea specifically blended for eye relaxation.",
+                    benefits: "Soothes tired eyes, reduces puffiness, calming",
+                    ingredients: "Chamomile flowers, eyebright herb",
+                    usage: "Steep for tea or use cooled as an eye compress",
+                    type: "medicinal",
+                    volume: "20 tea bags",
+                    badge: "Eye Care",
                     stock: 20
                 },
                 {
-                    id: 25,
-                    name: "Deep Cleaning Smokers Fresh Breath Toothpaste",
-                    price: 46.12,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Specially formulated for smokers to remove nicotine stains",
-                    benefits: "Removes tough stains, fights bad breath, whitening",
-                    ingredients: "Hydrated Silica, Sodium Tripolyphosphate",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "For Smokers",
-                    stock: 18
-                },
-                {
-                    id: 26,
-                    name: "Corega Super Denture Cleaner",
-                    price: 146.20,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Effervescent tablets for deep cleaning dentures",
-                    benefits: "Removes stains, kills bacteria, freshens dentures",
-                    ingredients: "Sodium Percarbonate, Sodium Bicarbonate",
-                    usage: "Soak dentures daily for 3-5 minutes",
-                    type: "denture",
-                    badge: "Deep Clean",
-                    stock: 12
-                },
-                {
-                    id: 27,
-                    name: "Aquafresh Milk Teeth Toothbrush",
-                    price: 46.69,
-                    image: "https://images.unsplash.com/photo-1606310734273-1a332d20c867?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Soft-bristled toothbrush designed for children's milk teeth",
-                    benefits: "Extra soft bristles, small head, comfortable grip",
-                    ingredients: "",
-                    usage: "Use with children's toothpaste twice daily",
-                    type: "toothbrush",
-                    badge: "For Kids",
-                    stock: 30
-                },
-                // Page 7
-                {
-                    id: 28,
-                    name: "Aquafresh Little Teeth Toothbrush",
-                    price: 39.92,
-                    image: "https://images.unsplash.com/photo-1606310734273-1a332d20c867?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Toothbrush designed for toddlers and young children",
-                    benefits: "Extra soft bristles, small head, easy-grip handle",
-                    ingredients: "",
-                    usage: "Use with children's toothpaste twice daily",
-                    type: "toothbrush",
-                    badge: "For Toddlers",
-                    stock: 25
-                },
-                {
-                    id: 29,
-                    name: "Sensodyne Toothbrush",
-                    price: 89.34,
-                    image: "https://images.unsplash.com/photo-1606310734273-1a332d20c867?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Ultra-soft toothbrush for sensitive teeth and gums",
-                    benefits: "Extra soft bristles, gentle on gums, comfortable grip",
-                    ingredients: "",
-                    usage: "Use with Sensodyne toothpaste twice daily",
-                    type: "toothbrush",
-                    badge: "Extra Soft",
-                    stock: 22
+                    id: 8,
+                    name: "Eve ginger tea 20s",
+                    price: 49.99, // Placeholder price since not specified in PDF
+                    image: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Spicy ginger tea for digestion and immune support.",
+                    benefits: "Aids digestion, supports immunity, warming",
+                    ingredients: "Dried ginger root",
+                    usage: "Steep for 5-7 minutes, add honey if desired",
+                    type: "herbal",
+                    volume: "20 tea bags",
+                    badge: "Digestive Aid",
+                    stock: 45
                 }
             ];
 
@@ -1835,7 +1647,7 @@
             // Pagination variables
             const productsPerPage = 8;
             let currentPage = 1;
-            let filteredProducts = [...dentalProducts];
+            let filteredProducts = [...teaProducts];
             
             // DOM Elements
             const productGrid = document.getElementById('productGrid');
@@ -1900,29 +1712,25 @@
                     let tagText = '';
                     
                     switch(product.type) {
-                        case 'toothpaste':
-                            tagClass = 'tag-toothpaste';
-                            tagText = 'Toothpaste';
+                        case 'green':
+                            tagClass = 'tag-green';
+                            tagText = "Green Tea";
                             break;
-                        case 'toothbrush':
-                            tagClass = 'tag-toothbrush';
-                            tagText = 'Toothbrush';
+                        case 'herbal':
+                            tagClass = 'tag-herbal';
+                            tagText = "Herbal";
                             break;
-                        case 'mouthwash':
-                            tagClass = 'tag-mouthwash';
-                            tagText = 'Mouthwash';
+                        case 'flavored':
+                            tagClass = 'tag-flavored';
+                            tagText = "Flavored";
                             break;
-                        case 'whitening':
-                            tagClass = 'tag-whitening';
-                            tagText = 'Whitening';
-                            break;
-                        case 'floss':
-                            tagClass = 'tag-sensitive';
-                            tagText = 'Floss';
+                        case 'medicinal':
+                            tagClass = 'tag-medicinal';
+                            tagText = "Medicinal";
                             break;
                         default:
-                            tagClass = 'tag-toothpaste';
-                            tagText = 'Dental';
+                            tagClass = 'tag-general';
+                            tagText = 'General';
                     }
                     
                     productCard.innerHTML = `
@@ -1935,6 +1743,7 @@
                             <div class="product-price">R${product.price.toFixed(2)}</div>
                             <div class="product-tags">
                                 <span class="product-tag ${tagClass}">${tagText}</span>
+                                <span class="product-tag">${product.volume}</span>
                             </div>
                             <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
                         </div>
@@ -2035,17 +1844,17 @@
                 const value = filterBy.value;
                 
                 if (value === 'all') {
-                    filteredProducts = [...dentalProducts];
-                } else if (value === 'toothpaste') {
-                    filteredProducts = dentalProducts.filter(p => p.type === 'toothpaste');
-                } else if (value === 'toothbrush') {
-                    filteredProducts = dentalProducts.filter(p => p.type === 'toothbrush');
-                } else if (value === 'mouthwash') {
-                    filteredProducts = dentalProducts.filter(p => p.type === 'mouthwash');
-                } else if (value === 'whitening') {
-                    filteredProducts = dentalProducts.filter(p => p.type === 'whitening');
-                } else if (value === 'sensitive') {
-                    filteredProducts = dentalProducts.filter(p => p.name.toLowerCase().includes('sensitive'));
+                    filteredProducts = [...teaProducts];
+                } else if (value === 'green') {
+                    filteredProducts = teaProducts.filter(p => p.type === 'green');
+                } else if (value === 'herbal') {
+                    filteredProducts = teaProducts.filter(p => p.type === 'herbal');
+                } else if (value === 'flavored') {
+                    filteredProducts = teaProducts.filter(p => p.type === 'flavored');
+                } else if (value === 'medicinal') {
+                    filteredProducts = teaProducts.filter(p => p.type === 'medicinal');
+                } else if (value === 'best-seller') {
+                    filteredProducts = teaProducts.filter(p => p.badge === 'Best Seller');
                 }
                 
                 currentPage = 1;
@@ -2063,7 +1872,7 @@
                     return;
                 }
                 
-                const results = dentalProducts.filter(product => 
+                const results = teaProducts.filter(product => 
                     product.name.toLowerCase().includes(query) || 
                     product.description.toLowerCase().includes(query)
                 );
@@ -2098,7 +1907,7 @@
             
             // Show product details in modal
             function showProductDetails(productId) {
-                const product = dentalProducts.find(p => p.id == productId);
+                const product = teaProducts.find(p => p.id == productId);
                 if (!product) return;
                 
                 modalBody.innerHTML = `
@@ -2164,7 +1973,7 @@
             
             // Add to cart functionality
             function addToCart(productId, quantity = 1) {
-                const product = dentalProducts.find(p => p.id == productId);
+                const product = teaProducts.find(p => p.id == productId);
                 if (!product) return;
                 
                 // Check if product is already in cart

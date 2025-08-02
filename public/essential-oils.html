@@ -8,21 +8,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
- --primary-color: rgb(233, 30, 99); /* Professional blue */
-            --primary-dark: rgb(33, 150, 243); /* Darker blue for contrast */
-            --secondary-color: #f5f7fa;
-            --accent-color: #2196F3;
-            --accent-light: #BBDEFB;
-            --text-color: #333;
-            --light-text: #666;
+            --primary-color: #E91E63; /* Professional blue */
+            --primary-dark: #1565C0; /* Darker blue for contrast */
+            --secondary-color: #f5f7fa; /* Light background */
+            --accent-color: #E91E63; /* Vibrant pink */
+            --accent-light: #F8BBD0; /* Light pink for accents */
+            --text-color: #333; /* Darker, more readable text */
+            --light-text: #666; /* Lighter secondary text */
             --white: #ffffff;
-            --cold-blue: #E3F2FD;
-            --flu-purple: #EDE7F6;
-            --border-radius: 10px;
+            --border-radius: 10px; /* Smoother corners */
             --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --box-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            --header-height: 80px;        }
+            --header-height: 80px;
+        }
         * {
             margin: 0;
             padding: 0;
@@ -1168,7 +1167,7 @@
             <div class="container">
                 <div class="header-content">
                     <a href="/" class="logo">
-                        <img src="images/FirstChemLogo-removebg-preview-e1751526921499-removebg.png" style="height: 100px; width: auto;">
+                        <div class="logo-text">First<span>Chem</span></div>
                     </a>
                     <div class="search-bar">
                         <div class="search-container">
@@ -1222,7 +1221,7 @@
         <nav class="main-nav" aria-label="Main navigation">
             <div class="container">
                 <ul>
-                                  <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
                     <li class="nav-dropdown">
                         <a href="#">Shop <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
@@ -1232,13 +1231,12 @@
                             <li><a href="category.html?category=Baby & Kids Medication">Baby & Kids</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Prescriptions</a></li>
-                    <li><a href="#">Health & Wellness</a></li>
-                    <li><a href="#">Baby & Kids</a></li>
-                    <li><a href="#">Vitamins & Supplements</a></li>
-                    <li><a href="#">Beauty</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="female-essentials.html">Female Essentials</a></li>
+                    <li><a href="baby-&-kids-medication.html">Baby & Kids</a></li>
+                    <li><a href="pregnancy-vitamins.html">Pregnancy Vitamins</a></li>
+                    <li><a href="cold-and-flu.html">Cold and Flu</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -1478,119 +1476,203 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Essential oil products data
+            // Updated essential oil products data from PDF
             const essentialOils = [
                 {
                     id: 1,
-                    name: "Lavender Essential Oil 10ml",
-                    price: 149.99,
-                    image: "https://images.unsplash.com/photo-1603665280141-5bf0a54d0cf5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Pure lavender essential oil known for its calming and relaxing properties. Helps reduce stress and promote restful sleep.",
-                    benefits: "Promotes relaxation, reduces anxiety, improves sleep quality, soothes skin irritations",
-                    ingredients: "100% Pure Lavandula angustifolia oil",
-                    usage: "Diffuse, topical application (diluted), add to bath",
-                    type: "calming",
-                    volume: "10ml",
-                    badge: "Best Seller",
-                    stock: 50
+                    name: "Humidifier",
+                    price: 149.73,
+                    image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Essential oil humidifier for dispersing therapeutic oils into your living space.",
+                    benefits: "Improves air quality, disperses essential oils, creates relaxing atmosphere",
+                    ingredients: "High-quality plastic, ceramic components",
+                    usage: "Add water and essential oils, then turn on to enjoy aromatherapy benefits",
+                    type: "healing",
+                    volume: "1 unit",
+                    badge: "Accessory",
+                    stock: 25
                 },
                 {
                     id: 2,
-                    name: "Peppermint Essential Oil 10ml",
-                    price: 159.50,
-                    image: "https://images.unsplash.com/photo-1591085686350-798c0f9faa7f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Invigorating peppermint oil that enhances focus and energy. Also supports respiratory function and soothes muscle tension.",
-                    benefits: "Boosts energy and focus, relieves headaches, supports respiratory health, soothes muscles",
-                    ingredients: "100% Pure Mentha piperita oil",
-                    usage: "Diffuse, topical application (diluted), inhaler",
-                    type: "energizing",
-                    volume: "10ml",
-                    badge: "Popular",
-                    stock: 35
+                    name: "Hercules Eucalyptus oil 20ml",
+                    price: 39.04,
+                    image: "https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Pure eucalyptus essential oil known for its respiratory benefits and refreshing aroma.",
+                    benefits: "Clears sinuses, supports respiratory health, relieves muscle tension",
+                    ingredients: "100% Pure Eucalyptus globulus oil",
+                    usage: "Diffuse, topical application (diluted), steam inhalation",
+                    type: "healing",
+                    volume: "20ml",
+                    badge: "Respiratory",
+                    stock: 40
                 },
                 {
                     id: 3,
-                    name: "Tea Tree Essential Oil 10ml",
-                    price: 139.99,
+                    name: "Aviva Tea Tree Oil 10ml",
+                    price: 60.41,
                     image: "https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Powerful antiseptic oil with cleansing properties. Ideal for skin care and immune support.",
-                    benefits: "Natural antiseptic, supports skin health, boosts immunity, cleanses surfaces",
+                    description: "Pure tea tree oil with powerful antiseptic and antimicrobial properties.",
+                    benefits: "Natural antiseptic, supports skin health, boosts immunity",
                     ingredients: "100% Pure Melaleuca alternifolia oil",
                     usage: "Topical application (diluted), add to cleansers, diffuser",
                     type: "healing",
                     volume: "10ml",
                     badge: "Antiseptic",
-                    stock: 40
+                    stock: 35
                 },
                 {
                     id: 4,
-                    name: "Calm Blend Essential Oil 10ml",
-                    price: 189.75,
-                    image: "https://images.unsplash.com/photo-1598897500320-5e4f5d5851c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Special blend of lavender, chamomile, and bergamot oils designed for deep relaxation and stress relief.",
-                    benefits: "Reduces anxiety, promotes restful sleep, creates peaceful environment",
-                    ingredients: "Lavender, Roman Chamomile, Bergamot, Ylang Ylang",
-                    usage: "Diffuse before bedtime, apply to temples (diluted), add to bath",
-                    type: "blend",
+                    name: "Mobithol wintergreen oil 10ml",
+                    price: 49.99,
+                    image: "https://images.unsplash.com/photo-1591085686350-798c0f9faa7f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Wintergreen essential oil with a minty aroma and soothing properties.",
+                    benefits: "Soothes muscle discomfort, improves circulation, refreshing scent",
+                    ingredients: "100% Pure Wintergreen oil",
+                    usage: "Topical application (diluted), massage, diffuser",
+                    type: "energizing",
                     volume: "10ml",
-                    badge: "Relaxation",
+                    badge: "Soothing",
                     stock: 30
                 },
                 {
                     id: 5,
-                    name: "Eucalyptus Essential Oil 10ml",
-                    price: 129.99,
-                    image: "https://images.unsplash.com/photo-1598897500320-5e4f5d5851c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Refreshing oil that supports respiratory health. Ideal for cold and flu season.",
-                    benefits: "Clears airways, supports respiratory function, relieves muscle tension",
-                    ingredients: "100% Pure Eucalyptus globulus oil",
-                    usage: "Steam inhalation, chest rub (diluted), diffuser",
-                    type: "healing",
-                    volume: "10ml",
-                    badge: "Respiratory",
-                    stock: 25
-                },
-                {
-                    id: 6,
-                    name: "Citrus Burst Blend 10ml",
-                    price: 174.95,
+                    name: "Mobithol peppermint oil 10ml",
+                    price: 52.50,
                     image: "https://images.unsplash.com/photo-1591085686350-798c0f9faa7f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Uplifting blend of orange, lemon, and grapefruit oils. Perfect for boosting mood and energy.",
-                    benefits: "Elevates mood, increases energy, purifies air, enhances focus",
-                    ingredients: "Sweet Orange, Lemon, Grapefruit, Bergamot",
-                    usage: "Diffuse in morning, add to cleaning products, room spray",
-                    type: "blend",
+                    description: "Pure peppermint essential oil for mental clarity and digestive support.",
+                    benefits: "Enhances focus, soothes digestive discomfort, cools and refreshes",
+                    ingredients: "100% Pure Mentha piperita oil",
+                    usage: "Diffuse, topical application (diluted), add to beverages",
+                    type: "energizing",
                     volume: "10ml",
-                    badge: "Energizing",
+                    badge: "Refreshing",
                     stock: 45
                 },
                 {
-                    id: 7,
-                    name: "Frankincense Essential Oil 5ml",
-                    price: 249.50,
-                    image: "https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Revered oil with deep spiritual and healing properties. Supports skin health and emotional balance.",
-                    benefits: "Promotes cellular health, reduces inflammation, supports meditation, improves skin appearance",
-                    ingredients: "100% Pure Boswellia carterii oil",
-                    usage: "Diffuse during meditation, apply to skin (diluted), add to skincare",
-                    type: "healing",
-                    volume: "5ml",
-                    badge: "Premium",
+                    id: 6,
+                    name: "Revite earth essence 20ml",
+                    price: 65.99,
+                    image: "https://images.unsplash.com/photo-1603665280141-5bf0a54d0cf5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Special blend of earthy essential oils for grounding and balance.",
+                    benefits: "Promotes emotional balance, grounding effect, reduces stress",
+                    ingredients: "Patchouli, Vetiver, Cedarwood, Sandalwood",
+                    usage: "Diffuse, topical application (diluted), meditation",
+                    type: "blend",
+                    volume: "20ml",
+                    badge: "Grounding",
                     stock: 28
                 },
                 {
+                    id: 7,
+                    name: "Mobithol Castor oil organic 50ml",
+                    price: 73.54,
+                    image: "https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Organic cold-pressed castor oil for hair and skin nourishment.",
+                    benefits: "Promotes hair growth, moisturizes skin, natural lash enhancer",
+                    ingredients: "100% Organic Cold-Pressed Castor Oil",
+                    usage: "Apply to hair, skin, or lashes as needed",
+                    type: "healing",
+                    volume: "50ml",
+                    badge: "Organic",
+                    stock: 40
+                },
+                {
                     id: 8,
-                    name: "Focus Blend Essential Oil 10ml",
-                    price: 199.99,
-                    image: "https://images.unsplash.com/photo-1603665280141-5bf0a54d0cf5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Cognitive-enhancing blend of rosemary, peppermint, and lemon oils. Ideal for study or work.",
-                    benefits: "Enhances concentration, boosts mental clarity, improves memory retention",
-                    ingredients: "Rosemary, Peppermint, Lemon, Basil",
-                    usage: "Diffuse while working, apply to temples (diluted), inhaler",
-                    type: "blend",
-                    volume: "10ml",
-                    badge: "Focus",
-                    stock: 22
+                    name: "Mobithol Tissue oil 50ml",
+                    price: 73.54,
+                    image: "https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Specialized tissue oil for improving skin elasticity and scar reduction.",
+                    benefits: "Improves skin elasticity, reduces scar appearance, moisturizes deeply",
+                    ingredients: "Vitamin E, Lavender Oil, Rosehip Oil, Jojoba Oil",
+                    usage: "Apply to affected areas twice daily",
+                    type: "healing",
+                    volume: "50ml",
+                    badge: "Skin Care",
+                    stock: 35
+                },
+                {
+                    id: 9,
+                    name: "Mobithol Almond oil 50ml",
+                    price: 73.54,
+                    image: "https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Pure sweet almond oil, a versatile carrier oil for all skin types.",
+                    benefits: "Nourishes skin, improves complexion, excellent massage oil",
+                    ingredients: "100% Pure Sweet Almond Oil",
+                    usage: "Use as carrier oil, apply directly to skin, hair treatment",
+                    type: "healing",
+                    volume: "50ml",
+                    badge: "Versatile",
+                    stock: 50
+                },
+                {
+                    id: 10,
+                    name: "PakMed Camphor Oil B.P 50ml",
+                    price: 29.97,
+                    image: "https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Medicinal camphor oil for respiratory relief and muscle aches.",
+                    benefits: "Relieves congestion, soothes muscle pain, antiseptic properties",
+                    ingredients: "Pure Camphor Oil B.P.",
+                    usage: "Topical application (diluted), steam inhalation",
+                    type: "healing",
+                    volume: "50ml",
+                    badge: "Medicinal",
+                    stock: 45
+                },
+                {
+                    id: 11,
+                    name: "Flora Force Castor oil 100ml",
+                    price: 89.99,
+                    image: "https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Premium cold-pressed castor oil for therapeutic and cosmetic use.",
+                    benefits: "Promotes hair growth, natural laxative, skin moisturizer",
+                    ingredients: "100% Pure Cold-Pressed Castor Oil",
+                    usage: "Apply to hair, skin, or take internally as directed",
+                    type: "healing",
+                    volume: "100ml",
+                    badge: "Premium",
+                    stock: 30
+                },
+                {
+                    id: 12,
+                    name: "Hercules Olive Oil 50ml",
+                    price: 44.99,
+                    image: "https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Extra virgin olive oil for culinary and therapeutic purposes.",
+                    benefits: "Rich in antioxidants, skin moisturizer, heart-healthy",
+                    ingredients: "100% Extra Virgin Olive Oil",
+                    usage: "Cooking, topical application, hair treatment",
+                    type: "healing",
+                    volume: "50ml",
+                    badge: "Natural",
+                    stock: 50
+                },
+                {
+                    id: 13,
+                    name: "Hercules coconut oil 100ml",
+                    price: 79.99,
+                    image: "https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Cold-pressed virgin coconut oil for cooking and skincare.",
+                    benefits: "Moisturizes skin, promotes hair health, natural cooking oil",
+                    ingredients: "100% Virgin Coconut Oil",
+                    usage: "Cooking, skin moisturizer, hair mask, oil pulling",
+                    type: "healing",
+                    volume: "100ml",
+                    badge: "Versatile",
+                    stock: 40
+                },
+                {
+                    id: 14,
+                    name: "Alpha Citronella oil 100ml",
+                    price: 92.22,
+                    image: "https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Natural citronella oil for insect repellent and outdoor use.",
+                    benefits: "Repels insects, natural air freshener, antifungal properties",
+                    ingredients: "100% Pure Citronella Oil",
+                    usage: "Outdoor diffusion, add to candles, topical repellent",
+                    type: "healing",
+                    volume: "100ml",
+                    badge: "Insect Repellent",
+                    stock: 35
                 }
             ];
 

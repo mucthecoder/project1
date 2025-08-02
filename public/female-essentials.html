@@ -8,21 +8,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: rgb(233, 30, 99); /* Professional blue */
-            --primary-dark: rgb(33, 150, 243); /* Darker blue for contrast */
-            --secondary-color: #f5f7fa;
-            --accent-color: #2196F3;
-            --accent-light: #BBDEFB;
-            --text-color: #333;
-            --light-text: #666;
+           --primary-color: #E91E63; /* Professional blue */
+            --primary-dark: #1565C0; /* Darker blue for contrast */
+            --secondary-color: #f5f7fa; /* Light background */
+            --accent-color: #E91E63; /* Vibrant pink */
+            --accent-light: #F8BBD0; /* Light pink for accents */
+            --text-color: #333; /* Darker, more readable text */
+            --light-text: #666; /* Lighter secondary text */
             --white: #ffffff;
-            --cold-blue: #E3F2FD;
-            --flu-purple: #EDE7F6;
-            --border-radius: 10px;
+            --border-radius: 10px; /* Smoother corners */
             --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --box-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            --header-height: 80px;        }
+            --header-height: 80px;
+        }
         * {
             margin: 0;
             padding: 0;
@@ -1259,13 +1258,12 @@
                             <li><a href="category.html?category=Baby & Kids Medication">Baby & Kids</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Prescriptions</a></li>
-                    <li><a href="#">Health & Wellness</a></li>
-                    <li><a href="#">Baby & Kids</a></li>
-                    <li><a href="#">Vitamins & Supplements</a></li>
-                    <li><a href="#">Beauty</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="female-essentials.html">Female Essentials</a></li>
+                    <li><a href="baby-&-kids-medication.html">Baby & Kids</a></li>
+                    <li><a href="pregnancy-vitamins.html">Pregnancy Vitamins</a></li>
+                    <li><a href="cold-and-flu.html">Cold and Flu</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -1518,117 +1516,166 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Female essential products data
             const femaleProducts = [
+                                // Page 1 Products
                 {
                     id: 1,
-                    name: "Evening Primrose Oil 1000mg",
-                    price: 189.99,
-                    image: "https://images.unsplash.com/photo-1628015081036-074b8d0d2ced?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Supports hormonal balance and relieves PMS symptoms. Rich in gamma-linolenic acid (GLA).",
-                    benefits: "Helps relieve PMS symptoms, supports hormonal balance, promotes healthy skin",
-                    ingredients: "Pure Evening Primrose Oil, Softgel Capsule (Gelatin, Glycerin)",
-                    usage: "Take 1 capsule daily with food",
-                    type: "hormonal",
-                    volume: "60 capsules",
-                    badge: "Best Seller",
+                    name: "Libresse Night Pads 16s",
+                    price: 32.73,
+                    originalPrice: 59.80,
+                    image: "https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Overnight protection pads for maximum comfort and security during sleep.",
+                    type: "general",
+                    volume: "16 pads",
+                    badge: "Sale",
                     stock: 50
                 },
                 {
                     id: 2,
-                    name: "pH-Balanced Intimate Wash",
-                    price: 89.50,
-                    image: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Gentle daily cleanser formulated to maintain natural pH balance. Dermatologist tested.",
-                    benefits: "Maintains natural pH, soothes sensitive skin, fragrance-free, gynecologist approved",
-                    ingredients: "Aqua, Decyl Glucoside, Glycerin, Lactic Acid, Aloe Barbadensis Leaf Juice",
-                    usage: "Use daily in the shower",
-                    type: "intimate",
-                    volume: "250ml",
-                    badge: "Gynecologist Approved",
-                    stock: 35
+                    name: "Libresse Protection and Comfort Pad 10s",
+                    price: 37.98,
+                    image: "https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Daily protection pads with comfort fit for all-day freshness.",
+                    type: "general",
+                    volume: "10 pads",
+                    stock: 50
                 },
                 {
                     id: 3,
-                    name: "Prenatal Multivitamin",
-                    price: 249.99,
-                    image: "https://images.unsplash.com/photo-1534367507877-0edd93bd013b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Comprehensive formula with folic acid, iron, and DHA to support healthy pregnancy.",
-                    benefits: "Supports fetal development, contains essential nutrients, promotes maternal health",
-                    ingredients: "Folic Acid, Iron, DHA, Vitamins A, C, D, E, B-complex, Calcium, Zinc",
-                    usage: "Take 1 tablet daily with food",
-                    type: "maternity",
-                    volume: "90 tablets",
-                    badge: "Pregnancy Essential",
-                    stock: 40
+                    name: "Always Cotton Soft Pads 8s",
+                    price: 37.98,
+                    image: "https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Ultra-soft cotton pads for sensitive skin with breathable protection.",
+                    type: "general",
+                    volume: "8 pads",
+                    stock: 50
                 },
                 {
                     id: 4,
-                    name: "Menopause Support Complex",
-                    price: 299.75,
-                    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Natural formula to ease menopause symptoms with black cohosh and soy isoflavones.",
-                    benefits: "Reduces hot flashes, supports mood balance, promotes restful sleep",
-                    ingredients: "Black Cohosh, Soy Isoflavones, Red Clover, Vitamin D, Calcium",
-                    usage: "Take 2 capsules daily",
-                    type: "menopause",
-                    volume: "60 capsules",
-                    badge: "Hot Flash Relief",
-                    stock: 30
+                    name: "Always All Night Pads XL 8s",
+                    price: 73.24,
+                    originalPrice: 37.60,
+                    image: "https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Extra-long overnight pads for maximum coverage and protection.",
+                    type: "general",
+                    volume: "8 pads",
+                    badge: "Sale",
+                    stock: 50
                 },
                 {
                     id: 5,
-                    name: "Organic Cotton Menstrual Pads",
-                    price: 129.99,
+                    name: "Always All Night Pads 14s",
+                    price: 46.85,
                     image: "https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Ultra-soft, breathable pads made from organic cotton. Chlorine-free and hypoallergenic.",
-                    benefits: "Gentle on sensitive skin, eco-friendly, highly absorbent, chlorine-free",
-                    ingredients: "Organic Cotton, Biodegradable Materials",
-                    usage: "For menstrual hygiene protection",
+                    description: "Reliable overnight protection for worry-free sleep.",
                     type: "general",
-                    volume: "Pack of 24",
-                    badge: "Eco-Friendly",
-                    stock: 25
+                    volume: "14 pads",
+                    stock: 50
                 },
+                
+                // Page 2 Products
                 {
                     id: 6,
-                    name: "Postpartum Recovery Kit",
-                    price: 349.95,
-                    image: "https://images.unsplash.com/photo-1603665280141-5bf0a54d0cf5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Essential products for postpartum recovery including soothing sprays and healing balms.",
-                    benefits: "Soothes perineal discomfort, supports healing, provides comfort after delivery",
-                    ingredients: "Herbal Sitz Bath, Cooling Pads, Healing Balm, Perineal Spray",
-                    usage: "As needed for postpartum recovery",
+                    name: "III Lets Maternity Pads 10s",
+                    price: 60.06,
+                    image: "https://images.unsplash.com/photo-1534367507877-0edd93bd013b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Specialized maternity pads for postpartum comfort and protection.",
                     type: "maternity",
-                    volume: "Complete Kit",
-                    badge: "New Mom Essential",
-                    stock: 45
+                    volume: "10 pads",
+                    stock: 50
                 },
                 {
                     id: 7,
-                    name: "Bone Health Calcium + D3",
-                    price: 159.50,
-                    image: "https://images.unsplash.com/photo-1591085686350-798c0f9faa7f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "High-potency calcium with vitamin D3 to support bone density during menopause.",
-                    benefits: "Supports bone health, reduces osteoporosis risk, enhances calcium absorption",
-                    ingredients: "Calcium Carbonate, Vitamin D3, Magnesium, Zinc",
-                    usage: "Take 2 tablets daily with food",
-                    type: "menopause",
-                    volume: "120 tablets",
-                    badge: "Bone Support",
-                    stock: 28
+                    name: "Kotex Maxi Protect Pads 8s",
+                    price: 32.88,
+                    image: "https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Maximum protection pads for heavy flow days.",
+                    type: "general",
+                    volume: "8 pads",
+                    stock: 50
                 },
                 {
                     id: 8,
-                    name: "Fertility Support Supplement",
-                    price: 279.99,
-                    image: "https://images.unsplash.com/photo-1598897500320-5e4f5d5851c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Comprehensive formula with myo-inositol and folate to support reproductive health.",
-                    benefits: "Supports ovarian function, promotes hormonal balance, provides essential nutrients",
-                    ingredients: "Myo-Inositol, Folate, CoQ10, Vitamin D, Zinc, Selenium",
-                    usage: "Take 2 capsules twice daily",
-                    type: "hormonal",
-                    volume: "120 capsules",
-                    badge: "Fertility Support",
-                    stock: 22
+                    name: "Kotex 40 Panty Liners",
+                    price: 41.37,
+                    image: "https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Daily panty liners for freshness and light protection.",
+                    type: "general",
+                    volume: "40 liners",
+                    stock: 50
+                },
+                {
+                    id: 9,
+                    name: "Kotex 20 Panty Liners",
+                    price: 29.29,
+                    originalPrice: 31.15,
+                    image: "https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Compact pack of panty liners for on-the-go freshness.",
+                    type: "general",
+                    volume: "20 liners",
+                    badge: "Sale",
+                    stock: 50
+                },
+                {
+                    id: 10,
+                    name: "Gynaguard 20 Panty Liners",
+                    price: 85.66,
+                    image: "https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Premium panty liners with pH-balancing protection.",
+                    type: "intimate",
+                    volume: "20 liners",
+                    stock: 50
+                },
+                
+                // Page 3 Products
+                {
+                    id: 11,
+                    name: "III Lets Super Non-Applicator Tampons",
+                    price: 33.09,
+                    image: "https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Super absorbency tampons for comfortable protection.",
+                    type: "general",
+                    volume: "Standard pack",
+                    stock: 50
+                },
+                {
+                    id: 12,
+                    name: "III Lets Regular Non-Applicator Tampons",
+                    price: 45.11,
+                    image: "https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Regular absorbency tampons for everyday use.",
+                    type: "general",
+                    volume: "Standard pack",
+                    stock: 50
+                },
+                {
+                    id: 13,
+                    name: "III Lets Panty Liners",
+                    price: 43.63,
+                    image: "https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Comfortable panty liners for daily freshness.",
+                    type: "general",
+                    volume: "Standard pack",
+                    stock: 50
+                },
+                {
+                    id: 14,
+                    name: "Mandys Hair Removal Lotion",
+                    price: 61.39,
+                    image: "https://images.unsplash.com/photo-1591085686350-798c0f9faa7f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Gentle hair removal lotion for smooth skin.",
+                    type: "general",
+                    volume: "200ml",
+                    stock: 50
+                },
+                {
+                    id: 15,
+                    name: "Vital Breast Pads",
+                    price: 30.64,
+                    image: "https://images.unsplash.com/photo-1603665280141-5bf0a54d0cf5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Soft, absorbent breast pads for nursing comfort.",
+                    type: "maternity",
+                    volume: "24 pads",
+                    stock: 50
                 }
             ];
 

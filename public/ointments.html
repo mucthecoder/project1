@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dental & Oral Essentials - FirstChem Pharmacy</title>
+    <title>Ointments - FirstChem Pharmacy</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-            :root {
-            --primary-color: #E91E63; /* Professional blue */
+        :root {
+           --primary-color: #E91E63; /* Professional blue */
             --primary-dark: #1565C0; /* Darker blue for contrast */
             --secondary-color: #f5f7fa; /* Light background */
             --accent-color: #E91E63; /* Vibrant pink */
@@ -22,7 +22,6 @@
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             --header-height: 80px;
         }
-        
         * {
             margin: 0;
             padding: 0;
@@ -69,13 +68,13 @@
             font-weight: 600;
             font-size: 15px;
             letter-spacing: 0.5px;
-            box-shadow: 0 2px 5px rgba(33, 150, 243, 0.2);
+            box-shadow: 0 2px 5px rgba(141, 110, 99, 0.2);
         }
         
         .btn:hover {
             background-color: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(25, 118, 210, 0.3);
+            box-shadow: 0 4px 8px rgba(93, 64, 55, 0.3);
         }
         
         .btn-outline {
@@ -220,7 +219,7 @@
             outline: none;
             border-color: var(--primary-color);
             background-color: var(--white);
-            box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+            box-shadow: 0 0 0 3px rgba(93, 64, 55, 0.1);
         }
         
         .search-bar button {
@@ -579,8 +578,8 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(250, 250, 250, 0.6), rgba(13, 71, 161, 0.7)), 
-            url('https://images.unsplash.com/photo-1583324113626-70df0f4deaab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(142, 68, 173, 0.8), rgba(108, 52, 131, 0.8)), 
+            url('https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
             height: 350px;
@@ -628,9 +627,9 @@
             color: var(--light-text);
         }
         
-        /* Health Tips Section */
-        .health-tips {
-            background: linear-gradient(to right, var(--cough-green), var(--pediatric-blue));
+        /* Benefits Section */
+        .benefits {
+            background: linear-gradient(to right, #9b59b6, #8e44ad);
             padding: 50px 0;
             margin-bottom: 40px;
             border-radius: var(--border-radius);
@@ -664,7 +663,57 @@
         }
         
         .tip-card h3 i {
-            color: var(--accent-color);
+            color: #8e44ad;
+        }
+        
+        /* Categories */
+        .categories {
+            padding: 40px 0;
+        }
+        
+        .categories-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            position: relative;
+            text-align: center;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-img {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e8f4f8;
+        }
+        
+        .category-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .category-info {
+            padding: 20px;
+        }
+        
+        .category-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary-dark);
         }
         
         /* Products Section */
@@ -739,7 +788,7 @@
             position: absolute;
             top: 10px;
             left: 10px;
-            background-color: var(--accent-color);
+            background-color: #e74c3c;
             color: white;
             padding: 5px 12px;
             border-radius: 20px;
@@ -754,7 +803,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: var(--cough-green);
+            background-color: #e8f4f8;
             position: relative;
             overflow: hidden;
         }
@@ -806,8 +855,8 @@
             background-color: var(--primary-dark);
         }
         
-        /* Relief Type Tags */
-        .relief-tag {
+        /* Product Type Tags */
+        .product-tag {
             display: inline-block;
             padding: 3px 8px;
             border-radius: 4px;
@@ -817,24 +866,29 @@
             margin-bottom: 5px;
         }
         
-        .tag-adult {
-            background-color: #E3F2FD;
-            color: #0D47A1;
+        .tag-skin {
+            background-color: #fdebd0;
+            color: #7d6608;
         }
         
-        .tag-pediatric {
-            background-color: #FFECB3;
-            color: #FF8F00;
+        .tag-pain {
+            background-color: #fadbd8;
+            color: #78281f;
         }
         
-        .tag-cough {
-            background-color: #E8F5E9;
-            color: #1B5E20;
+        .tag-antiseptic {
+            background-color: #d6eaf8;
+            color: #1a5276;
         }
         
-        .tag-chest {
-            background-color: #FFF3E0;
-            color: #E65100;
+        .tag-haemorrhoids {
+            background-color: #e8daef;
+            color: #4a235a;
+        }
+        
+        .tag-general {
+            background-color: #e0e0e0;
+            color: #424242;
         }
         
         /* Pagination */
@@ -1005,6 +1059,66 @@
             text-align: center;
         }
         
+        /* Usage Guide */
+        .usage-guide {
+            background-color: #e8daef;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .guide-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary-dark);
+        }
+        
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .guide-card {
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+        }
+        
+        .guide-icon {
+            font-size: 40px;
+            color: #8e44ad;
+            margin-bottom: 15px;
+        }
+        
+        .guide-card h4 {
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+        }
+        
+        /* Wellness Section */
+        .wellness-section {
+            background-color: #f5eef8;
+            padding: 50px 0;
+            margin: 40px 0;
+            border-radius: var(--border-radius);
+        }
+        
+        .wellness-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .wellness-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
@@ -1056,83 +1170,6 @@
                 justify-content: space-around;
             }
         }
-
-        /* Oral Care Guide */
-        .oral-care-guide {
-            background-color: #f0f7ff;
-            border-radius: var(--border-radius);
-            padding: 30px;
-            margin: 40px 0;
-            box-shadow: var(--box-shadow);
-        }
-        
-        .oral-care-guide h3 {
-            color: var(--primary-dark);
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        .care-steps {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        
-        .care-step {
-            flex: 1;
-            min-width: 200px;
-            text-align: center;
-            padding: 20px;
-            background: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-        }
-        
-        .care-step h4 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-        
-        .care-step i {
-            font-size: 36px;
-            color: var(--accent-color);
-            margin-bottom: 15px;
-        }
-        
-        /* Daily Routine */
-        .daily-routine {
-            background: linear-gradient(to right, var(--dental-teal), var(--dental-green));
-            padding: 30px;
-            border-radius: var(--border-radius);
-            margin: 40px 0;
-        }
-        
-        .routine-title {
-            text-align: center;
-            margin-bottom: 30px;
-            color: var(--primary-dark);
-        }
-        
-        .routine-steps {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        
-        .routine-step {
-            flex: 1;
-            min-width: 150px;
-            text-align: center;
-            padding: 15px;
-        }
-        
-        .routine-step i {
-            font-size: 32px;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
     </style>
 </head>
 <body>
@@ -1155,16 +1192,18 @@
             <div class="container">
                 <div class="header-content">
                     <a href="/" class="logo">
-                        <img src="images/FirstChemLogo-removebg-preview-e1751526921499-removebg.png" style="height: 100px; width: auto;">
+                        <div class="logo-text">First<span>Chem</span></div>
                     </a>
+
                     <div class="search-bar">
                         <div class="search-container">
-                            <label for="searchInput" class="sr-only">Search for medicines and health products</label>
-                            <input type="text" id="searchInput" placeholder="Search for dental and oral care products..." aria-label="Search products">
+                            <label for="searchInput" class="sr-only">Search for ointments</label>
+                            <input type="text" id="searchInput" placeholder="Search for ointments..." aria-label="Search products">
                             <div id="searchResults" class="results-dropdown"></div>
                         </div>
                         <button aria-label="Search" id="searchButton"><i class="fas fa-search"></i></button>
                     </div>
+
                     <div class="header-icons">
                         <a href="#account" class="header-icon" aria-label="My Account">
                             <i class="fas fa-user" aria-hidden="true"></i>
@@ -1205,6 +1244,10 @@
             </div>
         </div>
         
+        <!-- Main Navigation -->
+        <nav class="main-nav" aria-label="Main navigation">
+            <div class="container">
+                <ul>
                     <li><a href="#">Home</a></li>
                     <li class="nav-dropdown">
                         <a href="#">Shop <i class="fas fa-chevron-down"></i></a>
@@ -1213,6 +1256,7 @@
                             <li><a href="category.html?category=Self Medication">Self Medication</a></li>
                             <li><a href="category.html?category=Vitamins & Supplements">Vitamins & Supplements</a></li>
                             <li><a href="category.html?category=Baby & Kids Medication">Baby & Kids</a></li>
+                            <li><a href="category.html?category=Ointments">Ointments</a></li>
                         </ul>
                     </li>
                     <li><a href="female-essentials.html">Female Essentials</a></li>
@@ -1233,8 +1277,8 @@
     <section class="hero" aria-labelledby="hero-heading">
         <div class="container">
             <div class="hero-content">
-                <h1 id="hero-heading">Dental & Oral Essentials</h1>
-                <p>Complete oral care solutions for a healthy, confident smile</p>
+                <h1 id="hero-heading">Medicated Ointments</h1>
+                <p>High-quality topical treatments for various skin conditions and ailments</p>
             </div>
         </div>
     </section>
@@ -1242,99 +1286,134 @@
     <!-- Breadcrumb -->
     <div class="breadcrumb">
         <div class="container">
-            <a href="index.html">Home</a> > <a href="#">Shop</a> > <span>Dental & Oral Care</span>
+            <a href="index.html">Home</a> > <a href="#">Shop</a> > <span>Ointments</span>
         </div>
     </div>
 
-    <!-- Health Tips Section -->
-    <section class="health-tips">
+    <!-- Benefits Section -->
+    <section class="benefits">
         <div class="container">
-            <h2 class="section-title text-center">Oral Health Tips</h2>
+            <h2 class="section-title text-center">Ointment Benefits</h2>
             <div class="tips-container">
                 <div class="tip-card">
-                    <h3><i class="fas fa-tooth"></i> Brush Twice Daily</h3>
-                    <p>Brush your teeth for two minutes, twice a day with fluoride toothpaste to remove plaque and prevent decay.</p>
+                    <h3><i class="fas fa-burn"></i> Pain Relief</h3>
+                    <p>Topical ointments that provide targeted relief for muscle and joint pain.</p>
                 </div>
                 <div class="tip-card">
-                    <h3><i class="fas fa-hand-holding-water"></i> Floss Regularly</h3>
-                    <p>Floss daily to remove food particles and plaque between teeth where your toothbrush can't reach.</p>
+                    <h3><i class="fas fa-shield-virus"></i> Antiseptic Protection</h3>
+                    <p>Formulated to prevent infection in minor cuts, burns and abrasions.</p>
                 </div>
                 <div class="tip-card">
-                    <h3><i class="fas fa-apple-alt"></i> Healthy Diet</h3>
-                    <p>Limit sugary snacks and drinks which can cause tooth decay. Choose water, dairy, fruits and vegetables.</p>
+                    <h3><i class="fas fa-heartbeat"></i> Hemorrhoid Relief</h3>
+                    <p>Soothing treatments to reduce discomfort from hemorrhoids and piles.</p>
                 </div>
                 <div class="tip-card">
-                    <h3><i class="fas fa-calendar-check"></i> Regular Checkups</h3>
-                    <p>Visit your dentist every six months for professional cleaning and early detection of dental issues.</p>
+                    <h3><i class="fas fa-allergies"></i> Skin Conditions</h3>
+                    <p>Specialized formulas for eczema, rashes, and other skin irritations.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Oral Care Guide -->
+    <!-- Usage Guide -->
     <div class="container">
-        <div class="oral-care-guide">
-            <h3>Complete Oral Care Routine</h3>
-            <div class="care-steps">
-                <div class="care-step">
-                    <i class="fas fa-toothbrush"></i>
-                    <h4>Toothbrushing</h4>
-                    <p>Brush twice daily with fluoride toothpaste</p>
+        <div class="usage-guide">
+            <h3 class="guide-title">Ointment Application Guide</h3>
+            <div class="guide-grid">
+                <div class="guide-card">
+                    <div class="guide-icon">
+                        <i class="fas fa-hand-paper"></i>
+                    </div>
+                    <h4>Clean Hands</h4>
+                    <p>Always wash hands before and after applying ointment to prevent contamination.</p>
                 </div>
-                <div class="care-step">
-                    <i class="fas fa-hand-sparkles"></i>
-                    <h4>Flossing</h4>
-                    <p>Clean between teeth daily</p>
+                <div class="guide-card">
+                    <div class="guide-icon">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <h4>Clean Area</h4>
+                    <p>Gently clean and dry the affected area before application for best results.</p>
                 </div>
-                <div class="care-step">
-                    <i class="fas fa-spray-can"></i>
-                    <h4>Mouthwash</h4>
-                    <p>Use antimicrobial rinse to reduce bacteria</p>
+                <div class="guide-card">
+                    <div class="guide-icon">
+                        <i class="fas fa-ruler-vertical"></i>
+                    </div>
+                    <h4>Thin Layer</h4>
+                    <p>Apply a thin layer as directed - more isn't necessarily better.</p>
                 </div>
-                <div class="care-step">
-                    <i class="fas fa-water"></i>
-                    <h4>Hydration</h4>
-                    <p>Drink water to maintain saliva flow</p>
+                <div class="guide-card">
+                    <div class="guide-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h4>Consistency</h4>
+                    <p>Use regularly as prescribed for maximum effectiveness.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Daily Routine -->
-    <div class="container">
-        <div class="daily-routine">
-            <h3 class="routine-title">Daily Dental Routine</h3>
-            <div class="routine-steps">
-                <div class="routine-step">
-                    <i class="fas fa-sun"></i>
-                    <h4>Morning</h4>
-                    <p>Brush & Floss</p>
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title text-center">Ointment Categories</h2>
+            <div class="categories-container">
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Pain Relief">
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-title">Pain Relief</h3>
+                        <p>Topical analgesics for muscle and joint discomfort</p>
+                    </div>
                 </div>
-                <div class="routine-step">
-                    <i class="fas fa-utensils"></i>
-                    <h4>After Meals</h4>
-                    <p>Rinse with water</p>
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Antiseptic">
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-title">Antiseptic</h3>
+                        <p>Prevent infection in minor wounds and burns</p>
+                    </div>
                 </div>
-                <div class="routine-step">
-                    <i class="fas fa-moon"></i>
-                    <h4>Evening</h4>
-                    <p>Floss & Brush</p>
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Hemorrhoid Relief">
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-title">Hemorrhoid Relief</h3>
+                        <p>Soothing treatments for piles and discomfort</p>
+                    </div>
                 </div>
-                <div class="routine-step">
-                    <i class="fas fa-spray-can"></i>
-                    <h4>Before Bed</h4>
-                    <p>Mouthwash rinse</p>
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Skin Care">
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-title">Skin Care</h3>
+                        <p>Treatments for eczema, rashes and skin conditions</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Wellness Section -->
+    <section class="wellness-section">
+        <div class="container">
+            <div class="wellness-content">
+                <h2 class="wellness-title">Topical Treatment Solutions</h2>
+                <p>At FirstChem Pharmacy, we offer a comprehensive range of medicated ointments for various therapeutic purposes. Our selection includes trusted brands that provide effective relief for pain, skin conditions, hemorrhoids, and minor wounds.</p>
+                <p>All our ointments are carefully selected for their quality and efficacy. Consult with our pharmacists for personalized recommendations on topical treatments.</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Products Section -->
-    <section class="products" aria-labelledby="dental-heading">
+    <section class="products" aria-labelledby="products-heading">
         <div class="container">
-            <h2 id="dental-heading" class="section-title">Dental & Oral Care Products</h2>
+            <h2 id="products-heading" class="section-title">Medicated Ointments</h2>
             <p class="text-center" style="margin-bottom: 30px; color: var(--light-text); max-width: 800px; margin-left: auto; margin-right: auto;">
-                Complete your oral care routine with our range of dentist-recommended products for all your dental hygiene needs.
+                Browse our selection of high-quality ointments for various therapeutic needs.
             </p>
             
             <!-- Filter Section -->
@@ -1354,11 +1433,11 @@
                     <span class="filter-label">Filter By:</span>
                     <select id="filterBy" class="filter-select">
                         <option value="all">All Products</option>
-                        <option value="toothpaste">Toothpaste</option>
-                        <option value="toothbrush">Toothbrushes</option>
-                        <option value="mouthwash">Mouthwash</option>
-                        <option value="whitening">Whitening</option>
-                        <option value="sensitive">Sensitive Teeth</option>
+                        <option value="pain">Pain Relief</option>
+                        <option value="antiseptic">Antiseptic</option>
+                        <option value="haemorrhoids">Hemorrhoid Relief</option>
+                        <option value="skin">Skin Care</option>
+                        <option value="best-seller">Best Sellers</option>
                     </select>
                 </div>
             </div>
@@ -1436,390 +1515,245 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Dental products data
-            const dentalProducts = [
+            // Ointments products data from the PDF
+            const ointmentsProducts = [
                 {
                     id: 1,
-                    name: "Dentyl Mouth Wash Mint",
-                    price: 156.99,
-                    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Advanced dual-phase formula fights bacteria and freshens breath",
-                    benefits: "Kills germs, reduces plaque, fresh mint flavor",
-                    ingredients: "Cetylpyridinium Chloride, Essential Oils",
-                    usage: "Rinse with 10ml for 30 seconds twice daily",
-                    type: "mouthwash",
-                    badge: "Popular",
-                    stock: 35
+                    name: "Melcura Balm 15g",
+                    price: 91.86,
+                    image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Soothing balm for minor skin irritations and dry skin conditions.",
+                    benefits: "Relieves itching and irritation, moisturizes dry skin",
+                    ingredients: "Herbal extracts, natural emollients",
+                    usage: "Apply to affected area 2-3 times daily",
+                    type: "skin",
+                    volume: "15g",
+                    badge: "Skin Care",
+                    stock: 25
                 },
                 {
                     id: 2,
-                    name: "Listerine Cool Mint Mouthwash",
-                    price: 67.22,
-                    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Kills 99.9% of germs that cause bad breath, plaque, and gingivitis",
-                    benefits: "Fresh breath, reduces plaque, alcohol formula",
-                    ingredients: "Menthol, Thymol, Eucalyptol, Methyl Salicylate",
-                    usage: "Rinse with 20ml for 30 seconds twice daily",
-                    type: "mouthwash",
-                    badge: "Best Seller",
-                    stock: 50
+                    name: "ReJoovena Piles ointment",
+                    price: 85.88,
+                    image: "https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Specialized ointment for hemorrhoid relief and comfort.",
+                    benefits: "Reduces swelling and discomfort from hemorrhoids",
+                    ingredients: "Witch hazel, hydrocortisone, soothing agents",
+                    usage: "Apply externally as directed",
+                    type: "haemorrhoids",
+                    volume: "30g",
+                    badge: "Hemorrhoid Relief",
+                    stock: 18
                 },
                 {
                     id: 3,
-                    name: "Tea Tree Oil Mouth Wash",
-                    price: 48.29,
-                    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Natural antiseptic properties for healthy gums and fresh breath",
-                    benefits: "Natural formula, fights bacteria, soothes gums",
-                    ingredients: "Melaleuca Alternifolia (Tea Tree) Leaf Oil",
-                    usage: "Rinse with 15ml for 60 seconds twice daily",
-                    type: "mouthwash",
-                    badge: "Natural",
-                    stock: 25
+                    name: "Zam-Buk Ointment 7g",
+                    price: 8.99,
+                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Traditional ointment for minor cuts, burns and skin irritations.",
+                    benefits: "Soothes minor skin irritations, promotes healing",
+                    ingredients: "Natural antiseptics, emollients",
+                    usage: "Apply to affected area as needed",
+                    type: "antiseptic",
+                    volume: "7g",
+                    badge: "Antiseptic",
+                    stock: 42
                 },
                 {
                     id: 4,
-                    name: "Medi-keel A Throat Spray",
-                    price: 70.70,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Soothes sore throats and reduces inflammation",
-                    benefits: "Instant relief, antiseptic action, easy application",
-                    ingredients: "Benzocaine, Cetylpyridinium Chloride",
-                    usage: "Spray directly onto affected area 3-4 times daily",
-                    type: "throatspray",
-                    badge: "Fast Relief",
-                    stock: 20
+                    name: "Piloherb Haemorrhoids & Varicose veins ointment 30g",
+                    price: 112.91,
+                    image: "https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Herbal ointment for hemorrhoid and varicose vein relief.",
+                    benefits: "Reduces swelling and discomfort, improves circulation",
+                    ingredients: "Herbal extracts, natural vasoconstrictors",
+                    usage: "Apply to affected area 2-3 times daily",
+                    type: "haemorrhoids",
+                    volume: "30g",
+                    badge: "Hemorrhoid Relief",
+                    stock: 15
                 },
-                // Page 2
                 {
                     id: 5,
-                    name: "Dermadine Oral Antiseptic",
-                    price: 63.49,
-                    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Antiseptic solution for oral hygiene and wound care",
-                    benefits: "Promotes healing, prevents infection, soothes irritation",
-                    ingredients: "Povidone-Iodine",
-                    usage: "Apply directly to affected area 2-3 times daily",
-                    type: "mouthwash",
-                    badge: "Antiseptic",
-                    stock: 18
+                    name: "Preparation H ointment 25g",
+                    price: 144.13,
+                    image: "https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Trusted hemorrhoid treatment for external relief.",
+                    benefits: "Relieves itching, burning and discomfort from hemorrhoids",
+                    ingredients: "Phenylephrine HCl, shark liver oil",
+                    usage: "Apply to affected area up to 4 times daily",
+                    type: "haemorrhoids",
+                    volume: "25g",
+                    badge: "Best Seller",
+                    stock: 30
                 },
                 {
                     id: 6,
-                    name: "Betadine Gargle and Mouth Wash",
-                    price: 55.14,
-                    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Antiseptic gargle for sore throats and oral hygiene",
-                    benefits: "Kills germs, soothes throat, prevents infection",
-                    ingredients: "Povidone-Iodine",
-                    usage: "Gargle with 15ml for 30 seconds twice daily",
-                    type: "mouthwash",
-                    badge: "Dentist Recommended",
-                    stock: 30
+                    name: "Anusol ointment 25g",
+                    price: 120.00,
+                    image: "https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Soothing ointment for hemorrhoid relief and comfort.",
+                    benefits: "Reduces swelling and discomfort from hemorrhoids",
+                    ingredients: "Zinc oxide, bismuth subgallate",
+                    usage: "Apply externally as directed",
+                    type: "haemorrhoids",
+                    volume: "25g",
+                    badge: "Hemorrhoid Relief",
+                    stock: 22
                 },
                 {
                     id: 7,
-                    name: "Septochlor Oral Antiseptic 200ml",
-                    price: 49.99,
-                    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Antiseptic mouthwash for comprehensive oral care",
-                    benefits: "Reduces bacteria, prevents plaque, freshens breath",
-                    ingredients: "Chlorhexidine Gluconate",
-                    usage: "Rinse with 10ml for 60 seconds twice daily",
-                    type: "mouthwash",
-                    badge: "Antibacterial",
-                    stock: 22
-                },
-                {
-                    id: 8,
-                    name: "Septochlor Toothbrush",
-                    price: 19.96,
-                    image: "https://images.unsplash.com/photo-1606310734273-1a332d20c867?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Soft bristle toothbrush for gentle cleaning",
-                    benefits: "Gentle on gums, effective plaque removal, comfortable grip",
-                    ingredients: "",
-                    usage: "Use with fluoride toothpaste twice daily",
-                    type: "toothbrush",
-                    badge: "Soft Bristles",
-                    stock: 40
-                },
-                // Page 3
-                {
-                    id: 9,
-                    name: "Spetadine Oral Antiseptic 200ml",
-                    price: 49.99,
-                    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Antiseptic solution for oral hygiene maintenance",
-                    benefits: "Reduces bacteria, prevents infection, promotes healing",
-                    ingredients: "Povidone-Iodine",
-                    usage: "Rinse or apply to affected area 2-3 times daily",
-                    type: "mouthwash",
-                    badge: "Antiseptic",
-                    stock: 15
-                },
-                {
-                    id: 10,
-                    name: "Andolex C Mouthwash 200ml",
-                    price: 65.50,
-                    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Antiseptic and analgesic mouth rinse for oral discomfort",
-                    benefits: "Soothes pain, reduces inflammation, promotes healing",
-                    ingredients: "Chlorhexidine Gluconate, Benzocaine",
-                    usage: "Rinse with 15ml for 1 minute 3 times daily",
-                    type: "mouthwash",
-                    badge: "Pain Relief",
-                    stock: 28
-                },
-                {
-                    id: 11,
-                    name: "Andolex C Mouthwash 100ml",
-                    price: 35.75,
-                    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Travel size antiseptic and analgesic mouth rinse",
-                    benefits: "Soothes oral pain, reduces inflammation, convenient size",
-                    ingredients: "Chlorhexidine Gluconate, Benzocaine",
-                    usage: "Rinse with 10ml for 1 minute 3 times daily",
-                    type: "mouthwash",
-                    badge: "Travel Size",
-                    stock: 20
-                },
-                // Page 4
-                {
-                    id: 12,
-                    name: "333 Disinfecting Liquid 100ml",
-                    price: 96.28,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Disinfectant solution for dental instruments and surfaces",
-                    benefits: "Effective disinfection, kills bacteria and viruses",
-                    ingredients: "Alkyl Dimethyl Benzyl Ammonium Chloride",
-                    usage: "Dilute as directed for surface or instrument disinfection",
-                    type: "denture",
-                    badge: "Disinfectant",
-                    stock: 12
-                },
-                {
-                    id: 13,
-                    name: "Mentadent P Toothpaste",
-                    price: 40.10,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Advanced whitening toothpaste with micro granules",
-                    benefits: "Removes surface stains, whitens teeth, fresh breath",
-                    ingredients: "Hydrated Silica, Sodium Bicarbonate",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "Whitening",
-                    stock: 45
-                },
-                {
-                    id: 14,
-                    name: "Himalaya Stain Removal Toothpaste",
-                    price: 46.29,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Natural toothpaste for stain removal and whitening",
-                    benefits: "Removes coffee and tea stains, whitens naturally, herbal formula",
-                    ingredients: "Pomegranate Extract, Papain, Salt Minerals",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "Natural",
-                    stock: 30
-                },
-                {
-                    id: 15,
-                    name: "Corega Denture Fixative Cream",
-                    price: 185.74,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Strong hold denture adhesive cream for all-day security",
-                    benefits: "Long-lasting hold, prevents food particles, zinc-free formula",
-                    ingredients: "Methyl Vinyl Ether/Maleic Anhydride Copolymer",
-                    usage: "Apply to clean, dry dentures before wearing",
-                    type: "denture",
-                    badge: "Strong Hold",
-                    stock: 8
-                },
-                {
-                    id: 16,
-                    name: "White Glo Charcoal Toothpaste",
-                    price: 29.18,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Activated charcoal toothpaste for deep whitening",
-                    benefits: "Removes deep stains, whitens teeth, detoxifies mouth",
-                    ingredients: "Activated Charcoal, Hydrated Silica",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "Whitening",
-                    stock: 50
-                },
-                // Page 5
-                {
-                    id: 17,
-                    name: "Miswak Toothpaste",
-                    price: 51.59,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Natural toothpaste with miswak extract for oral health",
-                    benefits: "Natural cleaning, fights bacteria, strengthens gums",
-                    ingredients: "Miswak Extract, Calcium Carbonate",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "Herbal",
-                    stock: 25
-                },
-                {
-                    id: 18,
-                    name: "Colgate Triple Action Toothpaste",
-                    price: 51.59,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Triple protection against cavities, plaque and bad breath",
-                    benefits: "Cavity protection, fresh breath, whitening",
-                    ingredients: "Sodium Fluoride, Triclosan",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "Best Seller",
-                    stock: 60
-                },
-                {
-                    id: 19,
-                    name: "Aquafresh Fresh and Minty Toothpaste",
-                    price: 20.65,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Triple protection toothpaste with fresh mint flavor",
-                    benefits: "Cavity protection, fresh breath, whitening",
-                    ingredients: "Sodium Fluoride, Triclosan",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "Fresh Mint",
-                    stock: 55
-                },
-                {
-                    id: 20,
-                    name: "Aquafresh Milk Teeth Toothpaste",
-                    price: 31.19,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Gentle toothpaste specially formulated for children's milk teeth",
-                    benefits: "Mild flavor, safe if swallowed, cavity protection",
-                    ingredients: "Sodium Fluoride, Calcium",
-                    usage: "Brush children's teeth twice daily",
-                    type: "toothpaste",
-                    badge: "For Kids",
-                    stock: 40
-                },
-                {
-                    id: 21,
-                    name: "Closeup Red Hot Toothpaste",
-                    price: 22.51,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Deep red gel toothpaste for intense freshness",
-                    benefits: "Long-lasting freshness, whitening, fights bacteria",
-                    ingredients: "Hydrated Silica, Sodium Fluoride",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "Intense Fresh",
+                    name: "FairSun M.C.O ointment 75g",
+                    price: 20.85,
+                    image: "https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Moisturizing cream ointment for dry skin conditions.",
+                    benefits: "Deeply moisturizes, soothes dry and irritated skin",
+                    ingredients: "Mineral oil, lanolin, emollients",
+                    usage: "Apply to affected areas as needed",
+                    type: "skin",
+                    volume: "75g",
+                    badge: "Skin Care",
                     stock: 35
                 },
                 {
-                    id: 22,
-                    name: "Slosep Aloe Fresh Toothpaste",
-                    price: 93.22,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Aloe vera toothpaste for sensitive teeth and gums",
-                    benefits: "Soothes gums, reduces sensitivity, natural formula",
-                    ingredients: "Aloe Vera, Potassium Nitrate",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "Sensitive",
-                    stock: 15
+                    id: 8,
+                    name: "Allstar M.C.O ointment 25g",
+                    price: 16.19,
+                    image: "https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Moisturizing cream ointment for dry and chapped skin.",
+                    benefits: "Provides long-lasting moisture, protects skin",
+                    ingredients: "Mineral oil, lanolin, emollients",
+                    usage: "Apply to dry areas as needed",
+                    type: "skin",
+                    volume: "25g",
+                    badge: "Skin Care",
+                    stock: 28
                 },
                 {
-                    id: 23,
-                    name: "Sensodyne Multi-care Toothpaste",
-                    price: 71.13,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Multi-protection toothpaste for sensitive teeth",
-                    benefits: "Relieves sensitivity, cavity protection, fresh breath",
-                    ingredients: "Potassium Nitrate, Stannous Fluoride",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "For Sensitive Teeth",
-                    stock: 42
+                    id: 9,
+                    name: "Fairsun Wintergreen 20g",
+                    price: 13.54,
+                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Topical analgesic ointment for muscle and joint pain relief.",
+                    benefits: "Relieves minor aches and pains of muscles and joints",
+                    ingredients: "Methyl salicylate, menthol",
+                    usage: "Apply to affected area up to 3-4 times daily",
+                    type: "pain",
+                    volume: "20g",
+                    badge: "Pain Relief",
+                    stock: 40
                 },
-                // Page 6
                 {
-                    id: 24,
-                    name: "Meridol Toothpaste",
-                    price: 97.97,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Specialist toothpaste for gum health and protection",
-                    benefits: "Reduces plaque, prevents gingivitis, strengthens gums",
-                    ingredients: "Amine Fluoride, Stannous Fluoride",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "Gum Care",
+                    id: 10,
+                    name: "Ouma Rhoda's Baby Bokvet balm 80ml",
+                    price: 70.84,
+                    image: "https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Gentle baby balm for dry skin and minor irritations.",
+                    benefits: "Soothes and protects baby's delicate skin",
+                    ingredients: "Natural oils, beeswax, chamomile",
+                    usage: "Apply to affected areas as needed",
+                    type: "skin",
+                    volume: "80ml",
+                    badge: "Baby Care",
                     stock: 20
                 },
                 {
-                    id: 25,
-                    name: "Deep Cleaning Smokers Fresh Breath Toothpaste",
-                    price: 46.12,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Specially formulated for smokers to remove nicotine stains",
-                    benefits: "Removes tough stains, fights bad breath, whitening",
-                    ingredients: "Hydrated Silica, Sodium Tripolyphosphate",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "For Smokers",
-                    stock: 18
-                },
-                {
-                    id: 26,
-                    name: "Corega Super Denture Cleaner",
-                    price: 146.20,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Effervescent tablets for deep cleaning dentures",
-                    benefits: "Removes stains, kills bacteria, freshens dentures",
-                    ingredients: "Sodium Percarbonate, Sodium Bicarbonate",
-                    usage: "Soak dentures daily for 3-5 minutes",
-                    type: "denture",
-                    badge: "Deep Clean",
-                    stock: 12
-                },
-                {
-                    id: 27,
-                    name: "Aquafresh Milk Teeth Toothbrush",
-                    price: 46.69,
-                    image: "https://images.unsplash.com/photo-1606310734273-1a332d20c867?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Soft-bristled toothbrush designed for children's milk teeth",
-                    benefits: "Extra soft bristles, small head, comfortable grip",
-                    ingredients: "",
-                    usage: "Use with children's toothpaste twice daily",
-                    type: "toothbrush",
-                    badge: "For Kids",
-                    stock: 30
-                },
-                // Page 7
-                {
-                    id: 28,
-                    name: "Aquafresh Little Teeth Toothbrush",
-                    price: 39.92,
-                    image: "https://images.unsplash.com/photo-1606310734273-1a332d20c867?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Toothbrush designed for toddlers and young children",
-                    benefits: "Extra soft bristles, small head, easy-grip handle",
-                    ingredients: "",
-                    usage: "Use with children's toothpaste twice daily",
-                    type: "toothbrush",
-                    badge: "For Toddlers",
+                    id: 11,
+                    name: "Ouma Rhoda's Bokvet 50ml",
+                    price: 43.06,
+                    image: "https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Traditional balm for skin protection and minor irritations.",
+                    benefits: "Protects and soothes dry, chapped skin",
+                    ingredients: "Natural oils, beeswax, herbal extracts",
+                    usage: "Apply to affected areas as needed",
+                    type: "skin",
+                    volume: "50ml",
+                    badge: "Skin Care",
                     stock: 25
                 },
                 {
-                    id: 29,
-                    name: "Sensodyne Toothbrush",
-                    price: 89.34,
-                    image: "https://images.unsplash.com/photo-1606310734273-1a332d20c867?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Ultra-soft toothbrush for sensitive teeth and gums",
-                    benefits: "Extra soft bristles, gentle on gums, comfortable grip",
-                    ingredients: "",
-                    usage: "Use with Sensodyne toothpaste twice daily",
-                    type: "toothbrush",
-                    badge: "Extra Soft",
+                    id: 12,
+                    name: "Wintergreen 25g",
+                    price: 36.78,
+                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Topical analgesic ointment for temporary pain relief.",
+                    benefits: "Relieves minor muscle and joint pain",
+                    ingredients: "Methyl salicylate, menthol",
+                    usage: "Apply to affected area up to 3-4 times daily",
+                    type: "pain",
+                    volume: "25g",
+                    badge: "Pain Relief",
+                    stock: 30
+                },
+                {
+                    id: 13,
+                    name: "Zinc Ointment 25g",
+                    price: 26.53,
+                    image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Protective ointment for diaper rash and minor skin irritations.",
+                    benefits: "Forms protective barrier, soothes irritated skin",
+                    ingredients: "Zinc oxide, mineral oil",
+                    usage: "Apply to affected area as needed",
+                    type: "skin",
+                    volume: "25g",
+                    badge: "Skin Care",
+                    stock: 35
+                },
+                {
+                    id: 14,
+                    name: "Alpha wintergreen ointment 25ml",
+                    price: 41.41,
+                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Topical analgesic for temporary relief of minor aches and pains.",
+                    benefits: "Relieves muscle and joint discomfort",
+                    ingredients: "Methyl salicylate, menthol, camphor",
+                    usage: "Apply to affected area up to 3-4 times daily",
+                    type: "pain",
+                    volume: "25ml",
+                    badge: "Pain Relief",
                     stock: 22
+                },
+                {
+                    id: 15,
+                    name: "BETADING AUTHENTIC OINTMENT 24g",
+                    price: 74.01,
+                    image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Antiseptic ointment for minor cuts, burns and skin infections.",
+                    benefits: "Prevents infection, promotes healing",
+                    ingredients: "Povidone-iodine",
+                    usage: "Apply to affected area 1-3 times daily",
+                    type: "antiseptic",
+                    volume: "24g",
+                    badge: "Antiseptic",
+                    stock: 18
+                },
+                {
+                    id: 16,
+                    name: "Dermadine Antiseptic Ointment 25g",
+                    price: 59.01,
+                    image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Antiseptic treatment for minor wounds and skin infections.",
+                    benefits: "Kills germs, prevents infection in minor cuts and scrapes",
+                    ingredients: "Povidone-iodine",
+                    usage: "Apply to affected area 1-3 times daily",
+                    type: "antiseptic",
+                    volume: "25g",
+                    badge: "Antiseptic",
+                    stock: 25
+                },
+                {
+                    id: 17,
+                    name: "Germolene Antiseptic Ointment 20g",
+                    price: 65.38,
+                    image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Antiseptic and anesthetic ointment for minor wounds.",
+                    benefits: "Prevents infection, provides pain relief for minor cuts",
+                    ingredients: "Phenol, chlorhexidine digluconate",
+                    usage: "Apply to affected area as needed",
+                    type: "antiseptic",
+                    volume: "20g",
+                    badge: "Antiseptic",
+                    stock: 20
                 }
             ];
 
@@ -1835,7 +1769,7 @@
             // Pagination variables
             const productsPerPage = 8;
             let currentPage = 1;
-            let filteredProducts = [...dentalProducts];
+            let filteredProducts = [...ointmentsProducts];
             
             // DOM Elements
             const productGrid = document.getElementById('productGrid');
@@ -1900,29 +1834,25 @@
                     let tagText = '';
                     
                     switch(product.type) {
-                        case 'toothpaste':
-                            tagClass = 'tag-toothpaste';
-                            tagText = 'Toothpaste';
+                        case 'pain':
+                            tagClass = 'tag-pain';
+                            tagText = "Pain Relief";
                             break;
-                        case 'toothbrush':
-                            tagClass = 'tag-toothbrush';
-                            tagText = 'Toothbrush';
+                        case 'antiseptic':
+                            tagClass = 'tag-antiseptic';
+                            tagText = "Antiseptic";
                             break;
-                        case 'mouthwash':
-                            tagClass = 'tag-mouthwash';
-                            tagText = 'Mouthwash';
+                        case 'haemorrhoids':
+                            tagClass = 'tag-haemorrhoids';
+                            tagText = "Hemorrhoid";
                             break;
-                        case 'whitening':
-                            tagClass = 'tag-whitening';
-                            tagText = 'Whitening';
-                            break;
-                        case 'floss':
-                            tagClass = 'tag-sensitive';
-                            tagText = 'Floss';
+                        case 'skin':
+                            tagClass = 'tag-skin';
+                            tagText = "Skin Care";
                             break;
                         default:
-                            tagClass = 'tag-toothpaste';
-                            tagText = 'Dental';
+                            tagClass = 'tag-general';
+                            tagText = 'General';
                     }
                     
                     productCard.innerHTML = `
@@ -1935,6 +1865,7 @@
                             <div class="product-price">R${product.price.toFixed(2)}</div>
                             <div class="product-tags">
                                 <span class="product-tag ${tagClass}">${tagText}</span>
+                                <span class="product-tag">${product.volume}</span>
                             </div>
                             <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
                         </div>
@@ -2035,17 +1966,17 @@
                 const value = filterBy.value;
                 
                 if (value === 'all') {
-                    filteredProducts = [...dentalProducts];
-                } else if (value === 'toothpaste') {
-                    filteredProducts = dentalProducts.filter(p => p.type === 'toothpaste');
-                } else if (value === 'toothbrush') {
-                    filteredProducts = dentalProducts.filter(p => p.type === 'toothbrush');
-                } else if (value === 'mouthwash') {
-                    filteredProducts = dentalProducts.filter(p => p.type === 'mouthwash');
-                } else if (value === 'whitening') {
-                    filteredProducts = dentalProducts.filter(p => p.type === 'whitening');
-                } else if (value === 'sensitive') {
-                    filteredProducts = dentalProducts.filter(p => p.name.toLowerCase().includes('sensitive'));
+                    filteredProducts = [...ointmentsProducts];
+                } else if (value === 'pain') {
+                    filteredProducts = ointmentsProducts.filter(p => p.type === 'pain');
+                } else if (value === 'antiseptic') {
+                    filteredProducts = ointmentsProducts.filter(p => p.type === 'antiseptic');
+                } else if (value === 'haemorrhoids') {
+                    filteredProducts = ointmentsProducts.filter(p => p.type === 'haemorrhoids');
+                } else if (value === 'skin') {
+                    filteredProducts = ointmentsProducts.filter(p => p.type === 'skin');
+                } else if (value === 'best-seller') {
+                    filteredProducts = ointmentsProducts.filter(p => p.badge === 'Best Seller');
                 }
                 
                 currentPage = 1;
@@ -2063,7 +1994,7 @@
                     return;
                 }
                 
-                const results = dentalProducts.filter(product => 
+                const results = ointmentsProducts.filter(product => 
                     product.name.toLowerCase().includes(query) || 
                     product.description.toLowerCase().includes(query)
                 );
@@ -2098,7 +2029,7 @@
             
             // Show product details in modal
             function showProductDetails(productId) {
-                const product = dentalProducts.find(p => p.id == productId);
+                const product = ointmentsProducts.find(p => p.id == productId);
                 if (!product) return;
                 
                 modalBody.innerHTML = `
@@ -2164,7 +2095,7 @@
             
             // Add to cart functionality
             function addToCart(productId, quantity = 1) {
-                const product = dentalProducts.find(p => p.id == productId);
+                const product = ointmentsProducts.find(p => p.id == productId);
                 if (!product) return;
                 
                 // Check if product is already in cart

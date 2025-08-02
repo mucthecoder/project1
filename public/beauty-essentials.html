@@ -1063,13 +1063,12 @@
                             <li><a href="category.html?category=Baby & Kids Medication">Baby & Kids</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Prescriptions</a></li>
-                    <li><a href="#">Health & Wellness</a></li>
-                    <li><a href="#">Baby & Kids</a></li>
-                    <li><a href="#">Vitamins & Supplements</a></li>
-                    <li><a href="#">Beauty</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="female-essentials.html">Female Essentials</a></li>
+                    <li><a href="baby-&-kids-medication.html">Baby & Kids</a></li>
+                    <li><a href="pregnancy-vitamins.html">Pregnancy Vitamins</a></li>
+                    <li><a href="cold-and-flu.html">Cold and Flu</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -1200,176 +1199,163 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Baby & Kids products data
             const babyProducts = [
-                {
-                    id: 1,
-                    name: "Panado Paediatric Syrup 100ml",
-                    price: 49.99,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Gentle pain and fever relief for children. Contains paracetamol suitable for infants from 3 months. Sugar-free formula with pleasant taste.",
-                    benefits: "Reduces fever, relieves pain, gentle on stomach",
-                    ingredients: "Paracetamol 120mg/5ml",
-                    usage: "Dosage according to weight/age. Shake well before use.",
-                    ageGroups: ["infant", "toddler", "child"],
-                    type: "liquid",
-                    badge: "Best Seller",
-                    stock: 35
-                },
-                {
-                    id: 2,
-                    name: "Pedi-Lax Suppositories 10s",
-                    price: 89.50,
-                    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Glycerin suppositories for gentle relief of occasional constipation in infants and children. Easy to administer.",
-                    benefits: "Relieves constipation, gentle formula, works within 15-30 minutes",
-                    ingredients: "Glycerin",
-                    usage: "Insert one suppository rectally as needed. For infants and children up to 6 years.",
-                    ageGroups: ["newborn", "infant", "toddler"],
-                    type: "suppository",
-                    badge: "Popular",
-                    stock: 20
-                },
-                {
-                    id: 3,
-                    name: "Teegel Teething Gel 15g",
-                    price: 65.25,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Soothing gel for teething babies. Provides fast relief from teething pain and discomfort. Sugar-free formula.",
-                    benefits: "Soothes sore gums, reduces inflammation, easy to apply",
-                    ingredients: "Lidocaine, Chamomile extract",
-                    usage: "Apply small amount to affected gums with clean finger up to 4 times daily.",
-                    ageGroups: ["infant", "toddler"],
-                    type: "gel",
-                    badge: "New",
-                    stock: 28
-                },
-                {
-                    id: 4,
-                    name: "Allergex Paediatric Syrup 100ml",
-                    price: 112.75,
-                    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Antihistamine syrup for relief of allergy symptoms in children. Non-drowsy formula suitable for daytime use.",
-                    benefits: "Relieves hayfever, hives, allergic reactions, non-drowsy",
-                    ingredients: "Cetirizine hydrochloride",
-                    usage: "Dosage according to age. Shake well before use.",
-                    ageGroups: ["toddler", "child"],
-                    type: "liquid",
-                    badge: "Best Seller",
-                    stock: 18
-                },
-                {
-                    id: 5,
-                    name: "BabyCalm Gripe Water 150ml",
-                    price: 75.30,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Traditional herbal remedy for colic, wind and digestive discomfort in babies. Alcohol-free formula.",
-                    benefits: "Relieves colic, reduces wind, soothes tummy discomfort",
-                    ingredients: "Dill oil, Fennel oil, Ginger extract",
-                    usage: "Give 5ml dose before or after feeds as needed. Suitable from birth.",
-                    ageGroups: ["newborn", "infant"],
-                    type: "liquid",
-                    badge: "Popular",
-                    stock: 22
-                },
-                {
-                    id: 6,
-                    name: "Kids Vitamin C Chewables 60s",
-                    price: 129.99,
-                    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Delicious orange-flavored chewable vitamin C tablets for kids. Supports immune system and overall health.",
-                    benefits: "Boosts immunity, promotes healthy growth, great taste",
-                    ingredients: "Vitamin C, Zinc, Natural flavors",
-                    usage: "Chew 1 tablet daily. Suitable for children 4 years and older.",
-                    ageGroups: ["child"],
-                    type: "chewable",
-                    badge: "New",
-                    stock: 15
-                },
-                {
-                    id: 7,
-                    name: "Nappy Rash Cream 50g",
-                    price: 59.95,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Protective cream for prevention and treatment of nappy rash. Creates a barrier against moisture and irritants.",
-                    benefits: "Soothes irritated skin, prevents rash, promotes healing",
-                    ingredients: "Zinc oxide, Lanolin, Almond oil",
-                    usage: "Apply at each nappy change to clean, dry skin.",
-                    ageGroups: ["newborn", "infant", "toddler"],
-                    type: "cream",
-                    badge: "Value",
-                    stock: 30
-                },
-                {
-                    id: 8,
-                    name: "Children's Multivitamin Drops 30ml",
-                    price: 95.50,
-                    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Complete multivitamin supplement in easy-to-administer drops. Specially formulated for infants and toddlers.",
-                    benefits: "Supports growth and development, easy to use, pleasant taste",
-                    ingredients: "Vitamins A, C, D, E, B-complex",
-                    usage: "Give 1ml daily mixed with food or drink. Suitable from 6 months.",
-                    ageGroups: ["infant", "toddler"],
-                    type: "liquid",
-                    badge: "Best Seller",
-                    stock: 12
-                },
-                {
-                    id: 9,
-                    name: "Kids Probiotic Powder 30 Sachets",
-                    price: 149.99,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Strawberry-flavored probiotic powder to support digestive health in children. Contains beneficial bacteria strains.",
-                    benefits: "Supports gut health, boosts immunity, improves digestion",
-                    ingredients: "Lactobacillus, Bifidobacterium, Natural flavors",
-                    usage: "Mix 1 sachet daily with cool food or drink. Suitable from 1 year.",
-                    ageGroups: ["toddler", "child"],
-                    type: "powder",
-                    badge: "New",
-                    stock: 10
-                },
-                {
-                    id: 10,
-                    name: "Baby Saline Nasal Drops 15ml",
-                    price: 45.80,
-                    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Gentle saline solution to relieve nasal congestion in babies. Helps clear blocked noses naturally.",
-                    benefits: "Relieves congestion, moisturizes nasal passages, drug-free",
-                    ingredients: "Sterile saline solution",
-                    usage: "Place 2-3 drops in each nostril as needed. Suitable from birth.",
-                    ageGroups: ["newborn", "infant", "toddler"],
-                    type: "drops",
-                    badge: "Popular",
-                    stock: 25
-                },
-                {
-                    id: 11,
-                    name: "Children's Cough Syrup 100ml",
-                    price: 87.60,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Soothing herbal cough syrup for children. Relieves dry and tickly coughs. Alcohol-free formula.",
-                    benefits: "Calms cough reflex, soothes throat, promotes rest",
-                    ingredients: "Ivy leaf extract, Thyme, Honey",
-                    usage: "Dosage according to age. Shake well before use.",
-                    ageGroups: ["toddler", "child"],
-                    type: "liquid",
-                    badge: "Value",
-                    stock: 17
-                },
-                {
-                    id: 12,
-                    name: "Baby Sunscreen SPF 50+ 100ml",
-                    price: 139.95,
-                    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Extra gentle sunscreen specially formulated for baby's delicate skin. Water-resistant and fragrance-free.",
-                    benefits: "Broad spectrum protection, gentle formula, non-greasy",
-                    ingredients: "Zinc oxide, Titanium dioxide",
-                    usage: "Apply liberally before sun exposure. Reapply every 2 hours.",
-                    ageGroups: ["newborn", "infant", "toddler", "child"],
-                    type: "cream",
-                    badge: "Best Seller",
-                    stock: 14
-                }
-            ];
-
+                 {
+                id: 1,
+                name: "Cetaphil Gentle Skin Cleanser 500ml",
+                price: 189.99,
+                image: "https://via.placeholder.com/300x300?text=Cetaphil+Cleanser",
+                description: "Gentle, non-irritating cleanser suitable for all skin types. Removes impurities without stripping natural oils.",
+                benefits: "Cleanses without drying, fragrance-free, pH balanced",
+                ingredients: "Water, cetyl alcohol, propylene glycol",
+                usage: "Apply to face and neck, massage gently, rinse or tissue off",
+                type: "cleanser",
+                badge: "Best Seller",
+                stock: 25
+            },
+            {
+                id: 2,
+                name: "La Roche-Posay Anthelios SPF 50+ 50ml",
+                price: 349.95,
+                image: "https://via.placeholder.com/300x300?text=La+Roche+SPF50",
+                description: "High protection sunscreen with advanced UVA/UVB filters. Lightweight, non-greasy formula for daily use.",
+                benefits: "Broad spectrum protection, antioxidant enriched, non-comedogenic",
+                ingredients: "Aqua, alcohol denat, octocrylene",
+                usage: "Apply liberally 15 minutes before sun exposure",
+                type: "sunscreen",
+                badge: "Premium",
+                stock: 18
+            },
+            {
+                id: 3,
+                name: "Neutrogena Hydro Boost Gel Cream 50ml",
+                price: 229.00,
+                image: "https://via.placeholder.com/300x300?text=Neutrogena+Hydro",
+                description: "Oil-free gel cream that provides intense hydration. Absorbs quickly without leaving greasy residue.",
+                benefits: "Hydrates for 72 hours, non-comedogenic, fragrance-free",
+                ingredients: "Water, dimethicone, glycerin",
+                usage: "Apply to clean face and neck morning and night",
+                type: "moisturizer",
+                badge: "Popular",
+                stock: 22
+            },
+            {
+                id: 4,
+                name: "The Ordinary Niacinamide 10% + Zinc 1% 30ml",
+                price: 145.00,
+                image: "https://via.placeholder.com/300x300?text=The+Ordinary",
+                description: "High-strength vitamin and mineral formula that visibly targets blemishes and signs of congestion.",
+                benefits: "Reduces blemishes, minimizes pores, regulates oil",
+                ingredients: "Niacinamide, zinc PCA, hyaluronic acid",
+                usage: "Apply a few drops to clean face before moisturizer",
+                type: "serum",
+                badge: "Best Seller",
+                stock: 15
+            },
+            {
+                id: 5,
+                name: "CeraVe Moisturizing Cream 454g",
+                price: 289.99,
+                image: "https://via.placeholder.com/300x300?text=CeraVe+Cream",
+                description: "Rich, non-greasy moisturizer that helps restore the protective skin barrier. Suitable for face and body.",
+                benefits: "24-hour hydration, ceramide-enriched, fragrance-free",
+                ingredients: "Ceramides, hyaluronic acid, MVE technology",
+                usage: "Apply as needed to face and body",
+                type: "moisturizer",
+                badge: "Value",
+                stock: 20
+            },
+            {
+                id: 6,
+                name: "Vaseline Petroleum Jelly Original 100ml",
+                price: 49.99,
+                image: "https://via.placeholder.com/300x300?text=Vaseline",
+                description: "Pure petroleum jelly that helps heal dry skin and lock in moisture. Multipurpose skin protectant.",
+                benefits: "Heals dry skin, protects minor cuts, softens rough areas",
+                ingredients: "100% petroleum jelly",
+                usage: "Apply to dry areas as needed",
+                type: "balm",
+                badge: "Essential",
+                stock: 40
+            },
+            {
+                id: 7,
+                name: "Dove Deeply Nourishing Body Wash 1L",
+                price: 119.99,
+                image: "https://via.placeholder.com/300x300?text=Dove+Body+Wash",
+                description: "NutriumMoisture technology nourishes deep into the surface layers of skin. Gentle, pH-balanced formula.",
+                benefits: "Nourishes skin, maintains moisture barrier, creamy lather",
+                ingredients: "Water, sodium lauroyl isethionate, stearic acid",
+                usage: "Apply to wet skin, lather, rinse thoroughly",
+                type: "body wash",
+                badge: "Best Seller",
+                stock: 28
+            },
+            {
+                id: 8,
+                name: "Nivea Soft Moisturizing Creme 200ml",
+                price: 89.95,
+                image: "https://via.placeholder.com/300x300?text=Nivea+Soft",
+                description: "Light, fast-absorbing cream with jojoba oil and vitamin E. Suitable for face, body and hands.",
+                benefits: "Intensive moisture, non-greasy, vitamin-enriched",
+                ingredients: "Glycerin, jojoba oil, vitamin E",
+                usage: "Apply to face and body as needed",
+                type: "moisturizer",
+                badge: "Popular",
+                stock: 30
+            },
+            {
+                id: 9,
+                name: "Garnier Micellar Cleansing Water 400ml",
+                price: 129.00,
+                image: "https://via.placeholder.com/300x300?text=Garnier+Micellar",
+                description: "All-in-1 cleanser that removes makeup, cleanses and refreshes skin without rinsing. Suitable for sensitive skin.",
+                benefits: "Removes waterproof makeup, soothes skin, no harsh rubbing",
+                ingredients: "Micelles, glycerin, vitamin B5",
+                usage: "Apply to cotton pad and wipe over face",
+                type: "cleanser",
+                badge: "New",
+                stock: 24
+            },
+            {
+                id: 10,
+                name: "Palmer's Cocoa Butter Formula 250ml",
+                price: 109.99,
+                image: "https://via.placeholder.com/300x300?text=Palmer's",
+                description: "Rich cream with pure cocoa butter and vitamin E to moisturize and improve skin elasticity.",
+                benefits: "Improves skin elasticity, softens skin, reduces stretch marks",
+                ingredients: "Cocoa butter, vitamin E, collagen",
+                usage: "Massage into skin daily, especially after shower",
+                type: "body butter",
+                badge: "Popular",
+                stock: 18
+            },
+            {
+                id: 11,
+                name: "L'Oréal Paris Revitalift Filler 50ml",
+                price: 349.00,
+                image: "https://via.placeholder.com/300x300?text=Revitalift",
+                description: "Anti-aging moisturizer with hyaluronic acid that plumps skin and reduces wrinkles.",
+                benefits: "Reduces wrinkles, firms skin, intense hydration",
+                ingredients: "Hyaluronic acid, proxylane, vitamin C",
+                usage: "Apply morning and evening to clean face and neck",
+                type: "anti-aging",
+                badge: "Premium",
+                stock: 12
+            },
+            {
+                id: 12,
+                name: "Nuxe Huile Prodigieuse Multi-Purpose Dry Oil 100ml",
+                price: 429.95,
+                image: "https://via.placeholder.com/300x300?text=Nuxe+Oil",
+                description: "Iconic dry oil that nourishes, repairs and beautifies face, body and hair with a delicate floral scent.",
+                benefits: "Multi-purpose, non-greasy, nourishing",
+                ingredients: "7 precious botanical oils, vitamin E",
+                usage: "Apply to damp skin or hair, do not rinse",
+                type: "body oil",
+                badge: "Luxury",
+                stock: 10
+            }
+        ];
             // Cart functionality
             let cart = [];
             const cartIcon = document.getElementById('cartIcon');

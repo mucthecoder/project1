@@ -8,24 +8,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* Reusing the same CSS from the cold & flu page */
-        :root {
-             --primary-color: rgb(233, 30, 99); /* Professional blue */
-            --primary-dark: rgb(33, 150, 243); /* Darker blue for contrast */
-            --secondary-color: #f5f7fa;
-            --accent-color: #2196F3;
-            --accent-light: #BBDEFB;
-            --text-color: #333;
-            --light-text: #666;
+ :root {
+            --primary-color: #E91E63; /* Professional blue */
+            --primary-dark: #1565C0; /* Darker blue for contrast */
+            --secondary-color: #f5f7fa; /* Light background */
+            --accent-color: #E91E63; /* Vibrant pink */
+            --accent-light: #F8BBD0; /* Light pink for accents */
+            --text-color: #333; /* Darker, more readable text */
+            --light-text: #666; /* Lighter secondary text */
             --white: #ffffff;
-            --cold-blue: #E3F2FD;
-            --flu-purple: #EDE7F6;
-            --border-radius: 10px;
+            --border-radius: 10px; /* Smoother corners */
             --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --box-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             --header-height: 80px;
-        }
-        
+        }        
         * {
             margin: 0;
             padding: 0;
@@ -1179,13 +1176,12 @@
                             <li><a href="category.html?category=Baby & Kids Medication">Baby & Kids</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Prescriptions</a></li>
-                    <li><a href="#">Health & Wellness</a></li>
-                    <li><a href="#">Baby & Kids</a></li>
-                    <li><a href="#">Vitamins & Supplements</a></li>
-                    <li><a href="#">Beauty</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="female-essentials.html">Female Essentials</a></li>
+                    <li><a href="baby-&-kids-medication.html">Baby & Kids</a></li>
+                    <li><a href="pregnancy-vitamins.html">Pregnancy Vitamins</a></li>
+                    <li><a href="cold-and-flu.html">Cold and Flu</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -1370,120 +1366,344 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Cough & Pediatric products data
             const coughPedProducts = [
-                {
-                    id: 1,
-                    name: "Benylin Pediatric Dry Cough Syrup 150ml",
-                    price: 89.99,
-                    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Alcohol-free formula specifically designed for children. Soothes dry, tickly coughs and throat irritation.",
-                    benefits: "Gentle on stomach, sugar-free, fast-acting relief",
-                    ingredients: "Glycerin, Honey, Lemon Flavor",
-                    usage: "Children 1-5 years: 5ml every 4 hours. Children 6-12 years: 10ml every 4 hours.",
-                    type: "pediatric",
-                    coughType: "dry",
-                    badge: "Pediatric Choice",
-                    stock: 42
-                },
-                {
-                    id: 2,
-                    name: "Buckley's Chesty Cough Mixture 200ml",
-                    price: 75.50,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Strong expectorant for chesty coughs with mucus. Helps loosen phlegm and clear chest congestion.",
-                    benefits: "Breaks down mucus, soothes chest discomfort, non-drowsy",
-                    ingredients: "Guaifenesin, Ammonium Chloride",
-                    usage: "Adults: 10ml every 4 hours. Children 6-12: 5ml every 4 hours.",
-                    type: "adult",
-                    coughType: "chesty",
-                    badge: "Best Seller",
-                    stock: 28
-                },
-                {
-                    id: 3,
-                    name: "Prospan Pediatric Cough Syrup 100ml",
-                    price: 120.25,
-                    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Natural ivy leaf extract for productive and dry coughs in children. Clinically proven to relieve cough symptoms.",
-                    benefits: "Plant-based, alcohol-free, no artificial colors",
-                    ingredients: "Ivy Leaf Extract",
-                    usage: "Children under 6: 2.5ml twice daily. Children 6-12: 5ml twice daily.",
-                    type: "pediatric",
-                    coughType: "dry",
-                    badge: "Natural",
-                    stock: 35
-                },
-                {
-                    id: 4,
-                    name: "Tixylix Dry Cough Syrup 150ml",
-                    price: 65.99,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Dual action formula for dry coughs. Soothes throat irritation and suppresses cough reflex.",
-                    benefits: "Fast relief, non-drowsy, suitable for diabetics",
-                    ingredients: "Pholcodine, Diphenhydramine",
-                    usage: "Adults: 10ml every 4-6 hours. Children 6-12: 5ml every 4-6 hours.",
-                    type: "adult",
-                    coughType: "dry",
-                    badge: "Value",
-                    stock: 22
-                },
-                {
-                    id: 5,
-                    name: "Bronchosedal Pediatric Syrup 125ml",
-                    price: 95.30,
-                    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Triple action formula for chesty, dry and night coughs in children. Helps loosen mucus and soothe airways.",
-                    benefits: "Alcohol-free, sugar-free, pleasant taste",
-                    ingredients: "Guaifenesin, Bromhexine, Honey",
-                    usage: "Children 2-5 years: 5ml 3 times daily. Children 6-12: 10ml 3 times daily.",
-                    type: "pediatric",
-                    coughType: "chesty",
-                    badge: "Pediatric Choice",
-                    stock: 18
-                },
-                {
-                    id: 6,
-                    name: "Benylin 4 Flu Chesty Cough Syrup 150ml",
-                    price: 89.99,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Multi-symptom relief for chesty coughs with flu. Helps loosen phlegm, relieve chest congestion and reduce fever.",
-                    benefits: "Four actions in one, fever reduction, chest congestion relief",
-                    ingredients: "Paracetamol, Guaifenesin, Phenylephrine",
-                    usage: "Adults: 20ml every 4 hours. Maximum 4 doses in 24 hours.",
-                    type: "adult",
-                    coughType: "chesty",
-                    badge: "Flu Relief",
-                    stock: 30
-                },
-                {
-                    id: 7,
-                    name: "Vicks BabyRub Soothing Ointment 50g",
-                    price: 69.95,
-                    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Gentle ointment for babies 3 months and older. Helps soothe cough and congestion for better sleep.",
-                    benefits: "Pediatrician-tested, non-medicated, comforting fragrance",
-                    ingredients: "Aloe Vera, Eucalyptus, Lavender, Rosemary",
-                    usage: "Apply to chest, back and feet before bedtime.",
-                    type: "pediatric",
-                    coughType: "dry",
-                    badge: "Baby Care",
-                    stock: 40
-                },
-                {
-                    id: 8,
-                    name: "Adco-Dol Cough Syrup 100ml",
-                    price: 55.50,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Economical solution for persistent dry coughs. Provides effective suppression of cough reflex.",
-                    benefits: "Cost-effective, reliable relief, long-lasting",
-                    ingredients: "Dextromethorphan",
-                    usage: "Adults: 10ml every 4-6 hours. Children 6-12: 5ml every 4-6 hours.",
-                    type: "adult",
-                    coughType: "dry",
-                    badge: "Value",
-                    stock: 25
-                }
-            ];
-
+                            {
+                id: 1,
+                name: "Woods Peppermint Cure 50ml",
+                price: 43.39,
+                image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Traditional herbal remedy for cough and chest congestion.",
+                benefits: "Soothes throat, peppermint flavor, alcohol-free",
+                ingredients: "Peppermint oil, menthol, herbal extracts",
+                usage: "Adults: 10ml every 4 hours as needed",
+                type: "adult",
+                coughType: "chesty",
+                badge: "Herbal",
+                stock: 35
+            },
+            {
+                id: 2,
+                name: "Expligen Cough Syrup 200ml",
+                price: 124.95,
+                image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Dual-action formula for persistent coughs.",
+                benefits: "Long-lasting relief, non-drowsy, soothes irritation",
+                ingredients: "Dextromethorphan, Guaifenesin",
+                usage: "Adults: 15ml every 6 hours. Children 6-12: 7.5ml every 6 hours",
+                type: "adult",
+                coughType: "dry",
+                badge: "Value Size",
+                stock: 28
+            },
+            {
+                id: 3,
+                name: "Expligen Cough Syrup 100ml",
+                price: 64.20,
+                image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Effective relief for dry and tickly coughs.",
+                benefits: "Portable size, fast-acting, sugar-free",
+                ingredients: "Pholcodine, Diphenhydramine",
+                usage: "Adults: 10ml every 4 hours. Max 40ml daily",
+                type: "adult",
+                coughType: "dry",
+                badge: "",
+                stock: 42
+            },
+            {
+                id: 4,
+                name: "Bronchostop 200ml",
+                price: 0, // Price not provided
+                image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Herbal cough syrup for chesty coughs.",
+                benefits: "Natural ingredients, alcohol-free, soothes airways",
+                ingredients: "Ivy leaf extract, thyme",
+                usage: "Adults: 15ml 3 times daily",
+                type: "adult",
+                coughType: "chesty",
+                badge: "Natural",
+                stock: 30
+            },
+            {
+                id: 5,
+                name: "Bronchostop Childrens Cough Syrup 120ml",
+                price: 0, // Price not provided
+                image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Gentle formula for children's coughs.",
+                benefits: "Alcohol-free, pleasant taste, plant-based",
+                ingredients: "Ivy leaf extract, natural flavors",
+                usage: "Children 1-5 years: 2.5ml 3 times daily",
+                type: "pediatric",
+                coughType: "chesty",
+                badge: "Pediatric",
+                stock: 25
+            },
+            {
+                id: 6,
+                name: "Borstol Cough Remedy 100ml",
+                price: 0, // Price not provided
+                image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Traditional remedy for persistent coughs.",
+                benefits: "Soothes throat, reduces irritation, herbal formula",
+                ingredients: "Glycerin, honey, lemon",
+                usage: "Adults: 10ml every 4 hours as needed",
+                type: "adult",
+                coughType: "dry",
+                badge: "Traditional",
+                stock: 20
+            },
+            {
+                id: 7,
+                name: "Borstol Cough Remedy 50ml",
+                price: 0, // Price not provided
+                image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Compact size cough relief solution.",
+                benefits: "Travel-friendly, fast-acting, soothing",
+                ingredients: "Glycerin, honey, lemon",
+                usage: "Adults: 10ml every 4 hours as needed",
+                type: "adult",
+                coughType: "dry",
+                badge: "Travel Size",
+                stock: 18
+            },
+            {
+                id: 8,
+                name: "Benylin Children's Wet Cough 100ml",
+                price: 78.04,
+                image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Specially formulated for children's chesty coughs.",
+                benefits: "Alcohol-free, pediatrician-recommended, pleasant taste",
+                ingredients: "Guaifenesin, bromhexine",
+                usage: "Children 2-5 years: 5ml 3 times daily",
+                type: "pediatric",
+                coughType: "chesty",
+                badge: "Pediatric Choice",
+                stock: 32
+            },
+            {
+                id: 9,
+                name: "Benylin 4 Cough 100ml",
+                price: 126.13,
+                image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Multi-symptom relief for cough and cold.",
+                benefits: "Four actions in one, relieves multiple symptoms",
+                ingredients: "Paracetamol, phenylephrine, guaifenesin",
+                usage: "Adults: 20ml every 4 hours. Max 4 doses daily",
+                type: "adult",
+                coughType: "chesty",
+                badge: "Multi-Symptom",
+                stock: 27
+            },
+            {
+                id: 10,
+                name: "Benylin Wet Cough 100ml",
+                price: 128.97,
+                image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Effective relief for chesty coughs with mucus.",
+                benefits: "Breaks down mucus, soothes chest, non-drowsy",
+                ingredients: "Guaifenesin, bromhexine",
+                usage: "Adults: 10ml every 4 hours. Max 40ml daily",
+                type: "adult",
+                coughType: "chesty",
+                badge: "Chesty Cough",
+                stock: 29
+            },
+            {
+                id: 11,
+                name: "Vicks Acta Plus Wet+Dry 50ml",
+                price: 55.30,
+                image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Dual action relief for both wet and dry coughs.",
+                benefits: "Two-in-one formula, fast-acting, Vicks vapor action",
+                ingredients: "Dextromethorphan, guaifenesin, menthol",
+                usage: "Adults: 10ml every 4-6 hours",
+                type: "adult",
+                coughType: "chesty",
+                badge: "Dual Action",
+                stock: 38
+            },
+            {
+                id: 12,
+                name: "Vicks Acta Plus Wet+Dry 100ml",
+                price: 82.58,
+                image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Relief for both productive and non-productive coughs.",
+                benefits: "Medium size, value pack, trusted brand",
+                ingredients: "Dextromethorphan, guaifenesin, menthol",
+                usage: "Adults: 10ml every 4-6 hours",
+                type: "adult",
+                coughType: "chesty",
+                badge: "Value Size",
+                stock: 31
+            },
+            {
+                id: 13,
+                name: "Vicks Acta Plus Wet+Dry 200ml",
+                price: 147.41,
+                image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Economy size for long-lasting cough relief.",
+                benefits: "Family size, cost-effective, dual action formula",
+                ingredients: "Dextromethorphan, guaifenesin, menthol",
+                usage: "Adults: 10ml every 4-6 hours",
+                type: "adult",
+                coughType: "chesty",
+                badge: "Family Size",
+                stock: 22
+            },
+            {
+                id: 14,
+                name: "Panado 0+ Months 100ml",
+                price: 74.14,
+                image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Gentle pain and fever relief for newborns.",
+                benefits: "Suitable from birth, sugar-free, easy to administer",
+                ingredients: "Paracetamol",
+                usage: "As directed by physician based on weight",
+                type: "pediatric",
+                coughType: "",
+                badge: "Infant Formula",
+                stock: 45
+            },
+            {
+                id: 15,
+                name: "Panado 0+ Months 50ml",
+                price: 38.56,
+                image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Small size for infant pain and fever relief.",
+                benefits: "Newborn-safe, convenient size, fast-acting",
+                ingredients: "Paracetamol",
+                usage: "As directed by physician based on weight",
+                type: "pediatric",
+                coughType: "",
+                badge: "Travel Size",
+                stock: 40
+            },
+            {
+                id: 16,
+                name: "Panado 3+ Months 50ml",
+                price: 42.42,
+                image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Pain and fever relief for infants 3+ months.",
+                benefits: "Specifically formulated for infants, gentle on stomach",
+                ingredients: "Paracetamol",
+                usage: "Infants 3-12 months: as directed by physician",
+                type: "pediatric",
+                coughType: "",
+                badge: "Infant Care",
+                stock: 37
+            },
+            {
+                id: 17,
+                name: "Panado 3+ Months 100ml",
+                price: 77.25,
+                image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Larger size for infant pain and fever relief.",
+                benefits: "Value size, trusted brand, pediatrician-recommended",
+                ingredients: "Paracetamol",
+                usage: "Infants 3-12 months: as directed by physician",
+                type: "pediatric",
+                coughType: "",
+                badge: "Value Size",
+                stock: 33
+            },
+            {
+                id: 18,
+                name: "Calpol 3+ Months 100ml",
+                price: 84.58,
+                image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Gentle relief for pain and fever in infants.",
+                benefits: "Trusted brand, strawberry flavor, easy dosing",
+                ingredients: "Paracetamol",
+                usage: "Infants 3+ months: as directed by physician",
+                type: "pediatric",
+                coughType: "",
+                badge: "Pediatric Choice",
+                stock: 29
+            },
+            {
+                id: 19,
+                name: "Calpol 3+ Months 50ml",
+                price: 51.90,
+                image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Convenient size for infant pain relief.",
+                benefits: "Travel-friendly, fast-acting, gentle formula",
+                ingredients: "Paracetamol",
+                usage: "Infants 3+ months: as directed by physician",
+                type: "pediatric",
+                coughType: "",
+                badge: "Travel Size",
+                stock: 41
+            },
+            {
+                id: 20,
+                name: "Actanol Solution 100ml",
+                price: 21.38,
+                image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Effective pain and fever relief solution.",
+                benefits: "Economical, fast absorption, trusted formula",
+                ingredients: "Paracetamol",
+                usage: "Adults: 10-20ml every 4-6 hours as needed",
+                type: "adult",
+                coughType: "",
+                badge: "Value",
+                stock: 48
+            },
+            {
+                id: 21,
+                name: "Fever Pain 100ml",
+                price: 22.09,
+                image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Dual relief for fever and pain symptoms.",
+                benefits: "Cost-effective, fast relief, easy to swallow",
+                ingredients: "Paracetamol",
+                usage: "Adults: 10-20ml every 4-6 hours",
+                type: "adult",
+                coughType: "",
+                badge: "Economy",
+                stock: 36
+            },
+            {
+                id: 22,
+                name: "Adco-Napamol 100ml",
+                price: 21.25,
+                image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Generic paracetamol solution for pain relief.",
+                benefits: "Budget-friendly, effective, pharmacy brand",
+                ingredients: "Paracetamol",
+                usage: "Adults: 10-20ml every 4-6 hours as needed",
+                type: "adult",
+                coughType: "",
+                badge: "Value",
+                stock: 44
+            },
+            {
+                id: 23,
+                name: "Painogenic 100ml",
+                price: 18.40,
+                image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Effective pain relief solution.",
+                benefits: "Low cost, fast-acting, reliable",
+                ingredients: "Paracetamol",
+                usage: "Adults: 10-20ml every 4-6 hours",
+                type: "adult",
+                coughType: "",
+                badge: "Economy",
+                stock: 39
+            },
+            {
+                id: 24,
+                name: "Zinplex Junior Cough Syrup 200ml",
+                price: 65.99,
+                image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Immune-supporting cough syrup for children.",
+                benefits: "With vitamins and minerals, pleasant taste, immune support",
+                ingredients: "Zinc, vitamins, herbal extracts",
+                usage: "Children 2-12 years: 10ml daily",
+                type: "pediatric",
+                coughType: "chesty",
+                badge: "Immune Support",
+                stock: 27
+            }
+        ];
+        
             // Cart functionality
             let cart = [];
             const cartIcon = document.getElementById('cartIcon');

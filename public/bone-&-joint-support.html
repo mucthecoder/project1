@@ -1144,13 +1144,12 @@
                             <li><a href="category.html?category=Baby & Kids Medication">Baby & Kids</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Prescriptions</a></li>
-                    <li><a href="#">Health & Wellness</a></li>
-                    <li><a href="#">Baby & Kids</a></li>
-                    <li><a href="#">Vitamins & Supplements</a></li>
-                    <li><a href="#">Beauty</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="female-essentials.html">Female Essentials</a></li>
+                    <li><a href="baby-&-kids-medication.html">Baby & Kids</a></li>
+                    <li><a href="pregnancy-vitamins.html">Pregnancy Vitamins</a></li>
+                    <li><a href="cold-and-flu.html">Cold and Flu</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -1314,120 +1313,148 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Bones & Joints products data
             const boneProducts = [
-                {
+{
                     id: 1,
-                    name: "Calcium + Vitamin D3 120 Tablets",
-                    price: 149.99,
+                    name: "FlexiCAL 30 day supply",
+                    price: 553.63,
                     image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Essential calcium with vitamin D3 for optimal bone health and density. Formulated for maximum absorption to support strong bones and teeth.",
-                    benefits: "Supports bone density, enhances calcium absorption, prevents osteoporosis",
-                    ingredients: "Calcium Carbonate, Vitamin D3, Magnesium, Zinc",
-                    usage: "Take 2 tablets daily with food",
-                    healthFocus: ["bone"],
+                    description: "Nutrient support for joints, bones and muscles. Supplement with Calcium, Magnesium & Omega-3.",
+                    benefits: "Supports joint flexibility, bone strength, and muscle recovery",
+                    ingredients: "Calcium, Magnesium, Omega-3, Collagen, Chondroitin, MSM",
+                    usage: "Take one tablet daily with food",
+                    healthFocus: ["bone", "joint", "cartilage"],
                     type: "tablets",
                     badge: "Best Seller",
-                    stock: 35
+                    stock: 25
                 },
                 {
                     id: 2,
-                    name: "Glucosamine & Chondroitin Complex 90 Capsules",
-                    price: 229.50,
+                    name: "OsteoEze Gold 90 capsules",
+                    price: 465.13,
                     image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Advanced formula for joint support and cartilage maintenance. Helps maintain joint flexibility and mobility while supporting cartilage structure.",
-                    benefits: "Supports joint health, maintains cartilage, reduces joint discomfort",
-                    ingredients: "Glucosamine Sulfate, Chondroitin Sulfate, MSM, Turmeric",
-                    usage: "Take 3 capsules daily with meals",
+                    description: "Premium joint health formula designed for comprehensive support and mobility enhancement.",
+                    benefits: "Enhances joint flexibility, reduces discomfort, supports cartilage health",
+                    ingredients: "Glucosamine, Chondroitin, MSM, Turmeric Extract",
+                    usage: "Take two capsules daily with meals",
                     healthFocus: ["joint", "cartilage"],
                     type: "capsules",
                     badge: "Popular",
-                    stock: 20
-                },
-                {
-                    id: 3,
-                    name: "Omega-3 Joint Support 60 Softgels",
-                    price: 189.75,
-                    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "High potency omega-3 fatty acids with added joint support nutrients. Reduces inflammation and supports overall joint comfort and mobility.",
-                    benefits: "Reduces inflammation, supports joint flexibility, cardiovascular health",
-                    ingredients: "Fish Oil, EPA, DHA, Vitamin E",
-                    usage: "Take 2 softgels daily with food",
-                    healthFocus: ["joint", "inflammation"],
-                    type: "softgels",
-                    badge: "New",
-                    stock: 28
-                },
-                {
-                    id: 4,
-                    name: "Bone Strength Complex 60 Tablets",
-                    price: 199.99,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Comprehensive bone support formula with calcium, magnesium, and essential minerals. Specifically designed to maintain bone density and strength.",
-                    benefits: "Enhances bone density, provides essential minerals, supports skeletal health",
-                    ingredients: "Calcium, Magnesium, Zinc, Copper, Manganese",
-                    usage: "Take 2 tablets daily",
-                    healthFocus: ["bone"],
-                    type: "tablets",
-                    badge: "Best Seller",
                     stock: 18
                 },
                 {
-                    id: 5,
-                    name: "Turmeric Curcumin Joint Relief 60 Capsules",
-                    price: 175.30,
+                    id: 3,
+                    name: "OsteoEze acute injury relief 30 tabs",
+                    price: 154.82,
                     image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "High absorption turmeric with black pepper extract for joint comfort. Powerful anti-inflammatory properties to support joint mobility and reduce discomfort.",
-                    benefits: "Reduces joint inflammation, supports mobility, antioxidant protection",
-                    ingredients: "Turmeric Extract, Curcumin, Black Pepper Extract",
-                    usage: "Take 1 capsule twice daily",
-                    healthFocus: ["joint", "inflammation"],
-                    type: "capsules",
-                    badge: "Popular",
+                    description: "Fast-acting formula for acute injury relief and inflammation reduction.",
+                    benefits: "Reduces inflammation, accelerates recovery, supports tissue repair",
+                    ingredients: "Boswellia Extract, Turmeric, Ginger, Bromelain",
+                    usage: "Take one tablet as needed during injury recovery",
+                    healthFocus: ["inflammation", "joint"],
+                    type: "tablets",
+                    badge: "New",
+                    stock: 32
+                },
+                {
+                    id: 4,
+                    name: "B-CAL-D 30 chew tabs",
+                    price: 132.97,
+                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "Chewable calcium and vitamin D supplement for easy absorption and bone health.",
+                    benefits: "Strengthens bones, enhances calcium absorption, prevents osteoporosis",
+                    ingredients: "Calcium Carbonate, Vitamin D3",
+                    usage: "Chew one tablet daily",
+                    healthFocus: ["bone"],
+                    type: "chewable tablets",
+                    badge: "",
                     stock: 22
                 },
                 {
-                    id: 6,
-                    name: "MSM Joint Support Powder 300g",
-                    price: 249.99,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Pure MSM powder for joint health and connective tissue support. Easily mixed with water or juice for flexible dosing.",
-                    benefits: "Supports connective tissue, reduces joint discomfort, improves flexibility",
-                    ingredients: "Methylsulfonylmethane (MSM)",
-                    usage: "Mix 1 teaspoon daily with water or juice",
-                    healthFocus: ["joint", "cartilage"],
-                    type: "powder",
-                    badge: "New",
-                    stock: 15
-                },
-                {
-                    id: 7,
-                    name: "Vitamin D3 5000IU 120 Softgels",
-                    price: 129.95,
+                    id: 5,
+                    name: "B-CAL-D 30 tabs",
+                    price: 89.83,
                     image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "High potency vitamin D3 for bone health and immune support. Essential for calcium absorption and maintaining strong bones.",
-                    benefits: "Enhances calcium absorption, supports bone health, boosts immunity",
-                    ingredients: "Vitamin D3 (Cholecalciferol)",
-                    usage: "Take 1 softgel daily with food",
+                    description: "Essential calcium with vitamin D3 for optimal bone health and density.",
+                    benefits: "Supports bone density, enhances calcium absorption, prevents osteoporosis",
+                    ingredients: "Calcium Carbonate, Vitamin D3",
+                    usage: "Take one tablet daily with food",
                     healthFocus: ["bone"],
-                    type: "softgels",
+                    type: "tablets",
                     badge: "Value",
                     stock: 30
                 },
                 {
-                    id: 8,
-                    name: "Collagen Peptides for Joints 300g",
-                    price: 299.50,
+                    id: 6,
+                    name: "B-CAL-D 100 TABS",
+                    price: 232.56,
                     image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Hydrolyzed collagen peptides to support joint and bone health. Unflavored powder easily mixes with hot or cold beverages.",
-                    benefits: "Supports cartilage, improves joint comfort, promotes skin elasticity",
-                    ingredients: "Hydrolyzed Collagen Peptides",
-                    usage: "Mix 2 scoops daily with water or beverage",
+                    description: "Economy size calcium and vitamin D supplement for long-term bone health maintenance.",
+                    benefits: "Maintains bone strength, prevents calcium deficiency, supports skeletal health",
+                    ingredients: "Calcium Carbonate, Vitamin D3",
+                    usage: "Take one tablet daily with meals",
+                    healthFocus: ["bone"],
+                    type: "tablets",
+                    badge: "Economy Pack",
+                    stock: 15
+                },
+                {
+                    id: 7,
+                    name: "Dona 750 60 tabs",
+                    price: 360.19,
+                    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "Glucosamine sulfate supplement for joint health and cartilage support.",
+                    benefits: "Supports joint mobility, maintains cartilage structure, reduces discomfort",
+                    ingredients: "Glucosamine Sulfate",
+                    usage: "Take one tablet daily",
                     healthFocus: ["joint", "cartilage"],
-                    type: "powder",
-                    badge: "Best Seller",
-                    stock: 12
+                    type: "tablets",
+                    badge: "Premium",
+                    stock: 20
+                },
+                {
+                    id: 8,
+                    name: "Threshold real msm 60 tabs",
+                    price: 206.90,
+                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "High-purity MSM (Methylsulfonylmethane) for joint support and connective tissue health.",
+                    benefits: "Reduces joint discomfort, improves flexibility, supports connective tissue",
+                    ingredients: "Methylsulfonylmethane (MSM)",
+                    usage: "Take two tablets daily with water",
+                    healthFocus: ["joint", "cartilage"],
+                    type: "tablets",
+                    badge: "Pure Formula",
+                    stock: 28
+                },
+                {
+                    id: 9,
+                    name: "CENT vitamin D3 30 tabs",
+                    price: 49.17,
+                    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "Essential vitamin D3 supplement for bone health and immune support.",
+                    benefits: "Enhances calcium absorption, supports immune function, maintains bone density",
+                    ingredients: "Vitamin D3 (Cholecalciferol)",
+                    usage: "Take one tablet daily",
+                    healthFocus: ["bone"],
+                    type: "tablets",
+                    badge: "Essential",
+                    stock: 40
+                },
+                {
+                    id: 10,
+                    name: "peppina basics vitamin d3 90 veggie capsules",
+                    price: 113.11,
+                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "Plant-based vitamin D3 capsules for bone health and overall wellbeing.",
+                    benefits: "Supports bone density, immune health, and calcium utilization",
+                    ingredients: "Vitamin D3, Plant-based capsule (Hypromellose)",
+                    usage: "Take one capsule daily with food",
+                    healthFocus: ["bone"],
+                    type: "veggie capsules",
+                    badge: "Vegan",
+                    stock: 35
                 }
             ];
-
+            
             // Cart functionality
             let cart = [];
             const cartIcon = document.getElementById('cartIcon');

@@ -8,19 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #8e44ad;
-            --primary-dark: #6c3483;
-            --secondary-color: #f8f9fa;
-            --accent-color: #9b59b6;
-            --accent-light: #e8daef;
-            --intimacy-purple: #f5eef8;
-            --intimacy-pink: #fdebd0;
-            --intimacy-red: #fadbd8;
-            --intimacy-blue: #d6eaf8;
-            --text-color: #333;
-            --light-text: #666;
+          --primary-color: #E91E63; /* Professional blue */
+            --primary-dark: #1565C0; /* Darker blue for contrast */
+            --secondary-color: #f5f7fa; /* Light background */
+            --accent-color: #E91E63; /* Vibrant pink */
+            --accent-light: #F8BBD0; /* Light pink for accents */
+            --text-color: #333; /* Darker, more readable text */
+            --light-text: #666; /* Lighter secondary text */
             --white: #ffffff;
-            --border-radius: 10px;
+            --border-radius: 10px; /* Smoother corners */
             --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --box-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -1262,13 +1258,12 @@
                             <li><a href="category.html?category=Baby & Kids Medication">Baby & Kids</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Prescriptions</a></li>
-                    <li><a href="#">Health & Wellness</a></li>
-                    <li><a href="#">Baby & Kids</a></li>
-                    <li><a href="#">Vitamins & Supplements</a></li>
-                    <li><a href="#">Beauty</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="female-essentials.html">Female Essentials</a></li>
+                    <li><a href="baby-&-kids-medication.html">Baby & Kids</a></li>
+                    <li><a href="pregnancy-vitamins.html">Pregnancy Vitamins</a></li>
+                    <li><a href="cold-and-flu.html">Cold and Flu</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -1522,118 +1517,48 @@
             // Intimacy supplements products data
             const intimacyProducts = [
                 {
-                    id: 1,
-                    name: "Natural Libido Booster",
-                    price: 249.99,
-                    image: "https://images.unsplash.com/photo-1598808503746-f34cfb6c2524?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Herbal blend to naturally enhance desire and sexual wellness for both men and women.",
-                    benefits: "Increases libido, improves arousal, enhances pleasure",
-                    ingredients: "Maca Root, Tribulus Terrestris, Ginseng, L-Arginine",
-                    usage: "Take 2 capsules daily with water",
-                    type: "libido",
-                    volume: "60 capsules",
-                    badge: "Best Seller",
-                    stock: 50
-                },
-                {
-                    id: 2,
-                    name: "Men's Performance Formula",
-                    price: 299.50,
-                    image: "https://images.unsplash.com/photo-1518577915332-c2a19f149a75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Premium blend for enhanced stamina, endurance, and vitality.",
-                    benefits: "Supports performance, increases energy, improves circulation",
-                    ingredients: "Horny Goat Weed, Tongkat Ali, Zinc, Vitamin B Complex",
-                    usage: "Take 1 capsule daily 30 minutes before intimacy",
-                    type: "men",
-                    volume: "30 capsules",
-                    badge: "New Formula",
-                    stock: 35
-                },
-                {
-                    id: 3,
-                    name: "Women's Desire Complex",
-                    price: 279.99,
-                    image: "https://images.unsplash.com/photo-1526662093473-1cfff6a3b0c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Designed to support female arousal, sensitivity, and intimate wellness.",
-                    benefits: "Enhances desire, improves natural lubrication, balances hormones",
-                    ingredients: "Fenugreek, Shatavari, Damiana, Ashwagandha",
-                    usage: "Take 1 capsule daily with food",
-                    type: "women",
-                    volume: "45 capsules",
-                    badge: "Women's Choice",
-                    stock: 40
-                },
-                {
-                    id: 4,
-                    name: "Couples Intimacy Blend",
-                    price: 459.75,
-                    image: "https://images.unsplash.com/photo-1603398938373-e54da0bbf5e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Dual-action formula for couples to enhance connection and intimacy.",
-                    benefits: "Synchronizes desire, deepens emotional connection, enhances pleasure",
-                    ingredients: "Mucuna Pruriens, Rhodiola Rosea, Ginkgo Biloba, Theobromine",
-                    usage: "Take 1 capsule each daily",
-                    type: "couples",
-                    volume: "60 capsules (30 each)",
-                    badge: "Couples Special",
-                    stock: 30
-                },
-                {
-                    id: 5,
-                    name: "Stress Relief & Relaxation",
-                    price: 189.99,
-                    image: "https://images.unsplash.com/photo-1591348131719-8c1a7b8a2b4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Calming formula to reduce anxiety and promote relaxation for intimacy.",
-                    benefits: "Reduces stress, enhances mood, promotes relaxation",
-                    ingredients: "L-Theanine, Passionflower, Chamomile, Magnesium",
-                    usage: "Take 1-2 capsules as needed",
-                    type: "general",
-                    volume: "40 capsules",
-                    badge: "Anxiety Relief",
-                    stock: 25
-                },
-                {
-                    id: 6,
-                    name: "Sensual Oil Blend",
-                    price: 149.95,
-                    image: "https://images.unsplash.com/photo-1607602132863-7c1a8d5a8c4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Arousing massage oil with natural aphrodisiacs for sensual touch.",
-                    benefits: "Enhances sensitivity, warms skin, creates intimate atmosphere",
-                    ingredients: "Jojoba Oil, Ylang Ylang, Ginger, Cinnamon",
-                    usage: "Apply to skin as desired",
-                    type: "general",
-                    volume: "100ml",
-                    badge: "Topical Formula",
-                    stock: 45
-                },
-                {
-                    id: 7,
-                    name: "Hormonal Balance Complex",
-                    price: 329.50,
-                    image: "https://images.unsplash.com/photo-1591348131719-8c1a7b8a2b4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Supports hormonal health for improved libido and intimate wellness.",
-                    benefits: "Balances hormones, supports menstrual health, enhances vitality",
-                    ingredients: "Vitex, Black Cohosh, Dong Quai, Vitamin D",
-                    usage: "Take 1 capsule twice daily",
-                    type: "women",
-                    volume: "60 capsules",
-                    badge: "Hormone Support",
-                    stock: 28
-                },
-                {
-                    id: 8,
-                    name: "Endurance & Vitality Booster",
-                    price: 279.99,
-                    image: "https://images.unsplash.com/photo-1518577915332-c2a19f149a75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Enhances physical stamina and energy for improved intimate experiences.",
-                    benefits: "Increases energy, improves circulation, supports performance",
-                    ingredients: "Cordyceps, Beet Root, CoQ10, B Vitamins",
-                    usage: "Take 2 capsules 30 minutes before activity",
-                    type: "men",
-                    volume: "45 capsules",
-                    badge: "Stamina Booster",
-                    stock: 22
-                }
-            ];
+                id: 1,
+                name: "Dr. Lee Rocky enlargement cream",
+                price: 154.56,
+                image: "https://images.unsplash.com/photo-1598808503746-f34cfb6c2524?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                description: "Topical cream for male enhancement and performance support.",
+                benefits: "Supports male enhancement, improves confidence",
+                ingredients: "Herbal extracts, L-Arginine, Natural moisturizers",
+                usage: "Apply as directed to target areas",
+                type: "men",
+                volume: "50ml",
+                badge: "Topical Formula",
+                stock: 25
+            },
+            {
+                id: 2,
+                name: "Durex KY jelly",
+                price: 108.76,  
+                image: "https://images.unsplash.com/photo-1607602132863-7c1a8d5a8c4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                description: "Water-based personal lubricant for enhanced comfort during intimacy.",
+                benefits: "Reduces friction, enhances comfort, water-soluble",
+                ingredients: "Water, Glycerin, Hydroxyethylcellulose",
+                usage: "Apply to skin as needed",
+                type: "general",
+                volume: "57g",
+                badge: "Personal Lubricant",
+                stock: 40
+            },
+            {
+                id: 3,
+                name: "Med-E-Enlarge",
+                price: 199.99, // Placeholder price since not specified in PDF
+                image: "https://images.unsplash.com/photo-1518577915332-c2a19f149a75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                description: "Capsule formula for male enhancement and performance support.",
+                benefits: "Supports male enhancement, improves stamina",
+                ingredients: "Herbal extracts, Amino acids, Vitamins",
+                usage: "Take 1 capsule daily with water",
+                type: "men",
+                volume: "60 capsules",
+                badge: "Enhancement Formula",
+                stock: 30
+            }
+        ];
 
             // Cart functionality
             let cart = [];

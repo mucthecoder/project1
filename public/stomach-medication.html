@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dental & Oral Essentials - FirstChem Pharmacy</title>
+    <title>Stomach Medications - FirstChem Pharmacy</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-            :root {
+        :root {
             --primary-color: #E91E63; /* Professional blue */
             --primary-dark: #1565C0; /* Darker blue for contrast */
             --secondary-color: #f5f7fa; /* Light background */
@@ -22,7 +22,6 @@
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             --header-height: 80px;
         }
-        
         * {
             margin: 0;
             padding: 0;
@@ -69,13 +68,13 @@
             font-weight: 600;
             font-size: 15px;
             letter-spacing: 0.5px;
-            box-shadow: 0 2px 5px rgba(33, 150, 243, 0.2);
+            box-shadow: 0 2px 5px rgba(141, 110, 99, 0.2);
         }
         
         .btn:hover {
             background-color: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(25, 118, 210, 0.3);
+            box-shadow: 0 4px 8px rgba(93, 64, 55, 0.3);
         }
         
         .btn-outline {
@@ -220,7 +219,7 @@
             outline: none;
             border-color: var(--primary-color);
             background-color: var(--white);
-            box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+            box-shadow: 0 0 0 3px rgba(93, 64, 55, 0.1);
         }
         
         .search-bar button {
@@ -579,8 +578,8 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(250, 250, 250, 0.6), rgba(13, 71, 161, 0.7)), 
-            url('https://images.unsplash.com/photo-1583324113626-70df0f4deaab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(142, 68, 173, 0.8), rgba(108, 52, 131, 0.8)), 
+            url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
             height: 350px;
@@ -628,43 +627,54 @@
             color: var(--light-text);
         }
         
-        /* Health Tips Section */
-        .health-tips {
-            background: linear-gradient(to right, var(--cough-green), var(--pediatric-blue));
-            padding: 50px 0;
-            margin-bottom: 40px;
-            border-radius: var(--border-radius);
+        /* Categories */
+        .categories {
+            padding: 40px 0;
         }
         
-        .tips-container {
+        .categories-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
-            margin-top: 30px;
         }
         
-        .tip-card {
+        .category-card {
             background: white;
-            padding: 25px;
             border-radius: var(--border-radius);
+            overflow: hidden;
             box-shadow: var(--box-shadow);
             transition: var(--transition);
+            position: relative;
+            text-align: center;
         }
         
-        .tip-card:hover {
+        .category-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
         
-        .tip-card h3 {
+        .category-img {
+            height: 180px;
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 15px;
-            color: var(--primary-dark);
+            justify-content: center;
+            background-color: #f5eef8;
         }
         
-        .tip-card h3 i {
-            color: var(--accent-color);
+        .category-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .category-info {
+            padding: 20px;
+        }
+        
+        .category-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary-dark);
         }
         
         /* Products Section */
@@ -739,7 +749,7 @@
             position: absolute;
             top: 10px;
             left: 10px;
-            background-color: var(--accent-color);
+            background-color: #e74c3c;
             color: white;
             padding: 5px 12px;
             border-radius: 20px;
@@ -754,7 +764,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: var(--cough-green);
+            background-color: #f5eef8;
             position: relative;
             overflow: hidden;
         }
@@ -806,8 +816,8 @@
             background-color: var(--primary-dark);
         }
         
-        /* Relief Type Tags */
-        .relief-tag {
+        /* Product Type Tags */
+        .product-tag {
             display: inline-block;
             padding: 3px 8px;
             border-radius: 4px;
@@ -817,24 +827,34 @@
             margin-bottom: 5px;
         }
         
-        .tag-adult {
-            background-color: #E3F2FD;
-            color: #0D47A1;
+        .tag-laxative {
+            background-color: #d5a6bd;
+            color: #4a235a;
         }
         
-        .tag-pediatric {
-            background-color: #FFECB3;
-            color: #FF8F00;
+        .tag-antacid {
+            background-color: #f9cb9c;
+            color: #7d6608;
         }
         
-        .tag-cough {
-            background-color: #E8F5E9;
-            color: #1B5E20;
+        .tag-diarrhea {
+            background-color: #b6d7a8;
+            color: #274e13;
         }
         
-        .tag-chest {
-            background-color: #FFF3E0;
-            color: #E65100;
+        .tag-dehydration {
+            background-color: #a2c4c9;
+            color: #0c343d;
+        }
+        
+        .tag-digestive {
+            background-color: #d5a6bd;
+            color: #4a235a;
+        }
+        
+        .tag-general {
+            background-color: #e0e0e0;
+            color: #424242;
         }
         
         /* Pagination */
@@ -1056,83 +1076,6 @@
                 justify-content: space-around;
             }
         }
-
-        /* Oral Care Guide */
-        .oral-care-guide {
-            background-color: #f0f7ff;
-            border-radius: var(--border-radius);
-            padding: 30px;
-            margin: 40px 0;
-            box-shadow: var(--box-shadow);
-        }
-        
-        .oral-care-guide h3 {
-            color: var(--primary-dark);
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        .care-steps {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        
-        .care-step {
-            flex: 1;
-            min-width: 200px;
-            text-align: center;
-            padding: 20px;
-            background: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-        }
-        
-        .care-step h4 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-        
-        .care-step i {
-            font-size: 36px;
-            color: var(--accent-color);
-            margin-bottom: 15px;
-        }
-        
-        /* Daily Routine */
-        .daily-routine {
-            background: linear-gradient(to right, var(--dental-teal), var(--dental-green));
-            padding: 30px;
-            border-radius: var(--border-radius);
-            margin: 40px 0;
-        }
-        
-        .routine-title {
-            text-align: center;
-            margin-bottom: 30px;
-            color: var(--primary-dark);
-        }
-        
-        .routine-steps {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        
-        .routine-step {
-            flex: 1;
-            min-width: 150px;
-            text-align: center;
-            padding: 15px;
-        }
-        
-        .routine-step i {
-            font-size: 32px;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
     </style>
 </head>
 <body>
@@ -1155,16 +1098,18 @@
             <div class="container">
                 <div class="header-content">
                     <a href="/" class="logo">
-                        <img src="images/FirstChemLogo-removebg-preview-e1751526921499-removebg.png" style="height: 100px; width: auto;">
+                        <div class="logo-text">First<span>Chem</span></div>
                     </a>
+
                     <div class="search-bar">
                         <div class="search-container">
-                            <label for="searchInput" class="sr-only">Search for medicines and health products</label>
-                            <input type="text" id="searchInput" placeholder="Search for dental and oral care products..." aria-label="Search products">
+                            <label for="searchInput" class="sr-only">Search for stomach medications</label>
+                            <input type="text" id="searchInput" placeholder="Search for stomach medications..." aria-label="Search products">
                             <div id="searchResults" class="results-dropdown"></div>
                         </div>
                         <button aria-label="Search" id="searchButton"><i class="fas fa-search"></i></button>
                     </div>
+
                     <div class="header-icons">
                         <a href="#account" class="header-icon" aria-label="My Account">
                             <i class="fas fa-user" aria-hidden="true"></i>
@@ -1205,6 +1150,10 @@
             </div>
         </div>
         
+        <!-- Main Navigation -->
+        <nav class="main-nav" aria-label="Main navigation">
+            <div class="container">
+                <ul>
                     <li><a href="#">Home</a></li>
                     <li class="nav-dropdown">
                         <a href="#">Shop <i class="fas fa-chevron-down"></i></a>
@@ -1213,6 +1162,7 @@
                             <li><a href="category.html?category=Self Medication">Self Medication</a></li>
                             <li><a href="category.html?category=Vitamins & Supplements">Vitamins & Supplements</a></li>
                             <li><a href="category.html?category=Baby & Kids Medication">Baby & Kids</a></li>
+                            <li><a href="stomach-meds.html">Stomach Medications</a></li>
                         </ul>
                     </li>
                     <li><a href="female-essentials.html">Female Essentials</a></li>
@@ -1233,8 +1183,8 @@
     <section class="hero" aria-labelledby="hero-heading">
         <div class="container">
             <div class="hero-content">
-                <h1 id="hero-heading">Dental & Oral Essentials</h1>
-                <p>Complete oral care solutions for a healthy, confident smile</p>
+                <h1 id="hero-heading">Stomach Medications</h1>
+                <p>Find relief for constipation, diarrhea, heartburn, and other digestive issues with our trusted medications</p>
             </div>
         </div>
     </section>
@@ -1242,99 +1192,61 @@
     <!-- Breadcrumb -->
     <div class="breadcrumb">
         <div class="container">
-            <a href="index.html">Home</a> > <a href="#">Shop</a> > <span>Dental & Oral Care</span>
+            <a href="index.html">Home</a> > <a href="#">Shop</a> > <span>Stomach Medications</span>
         </div>
     </div>
 
-    <!-- Health Tips Section -->
-    <section class="health-tips">
+    <!-- Categories -->
+    <section class="categories">
         <div class="container">
-            <h2 class="section-title text-center">Oral Health Tips</h2>
-            <div class="tips-container">
-                <div class="tip-card">
-                    <h3><i class="fas fa-tooth"></i> Brush Twice Daily</h3>
-                    <p>Brush your teeth for two minutes, twice a day with fluoride toothpaste to remove plaque and prevent decay.</p>
+            <h2 class="section-title text-center">Stomach Medication Categories</h2>
+            <div class="categories-container">
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Constipation Relief">
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-title">Constipation Relief</h3>
+                        <p>Effective laxatives and stool softeners for occasional constipation</p>
+                    </div>
                 </div>
-                <div class="tip-card">
-                    <h3><i class="fas fa-hand-holding-water"></i> Floss Regularly</h3>
-                    <p>Floss daily to remove food particles and plaque between teeth where your toothbrush can't reach.</p>
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Diarrhea Relief">
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-title">Diarrhea Relief</h3>
+                        <p>Medications to help control diarrhea and restore digestive balance</p>
+                    </div>
                 </div>
-                <div class="tip-card">
-                    <h3><i class="fas fa-apple-alt"></i> Healthy Diet</h3>
-                    <p>Limit sugary snacks and drinks which can cause tooth decay. Choose water, dairy, fruits and vegetables.</p>
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Heartburn Relief">
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-title">Heartburn Relief</h3>
+                        <p>Antacids and acid reducers for gastric acidity and digestive discomfort</p>
+                    </div>
                 </div>
-                <div class="tip-card">
-                    <h3><i class="fas fa-calendar-check"></i> Regular Checkups</h3>
-                    <p>Visit your dentist every six months for professional cleaning and early detection of dental issues.</p>
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Dehydration">
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-title">Dehydration</h3>
+                        <p>Oral rehydration solutions to restore electrolyte balance</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Oral Care Guide -->
-    <div class="container">
-        <div class="oral-care-guide">
-            <h3>Complete Oral Care Routine</h3>
-            <div class="care-steps">
-                <div class="care-step">
-                    <i class="fas fa-toothbrush"></i>
-                    <h4>Toothbrushing</h4>
-                    <p>Brush twice daily with fluoride toothpaste</p>
-                </div>
-                <div class="care-step">
-                    <i class="fas fa-hand-sparkles"></i>
-                    <h4>Flossing</h4>
-                    <p>Clean between teeth daily</p>
-                </div>
-                <div class="care-step">
-                    <i class="fas fa-spray-can"></i>
-                    <h4>Mouthwash</h4>
-                    <p>Use antimicrobial rinse to reduce bacteria</p>
-                </div>
-                <div class="care-step">
-                    <i class="fas fa-water"></i>
-                    <h4>Hydration</h4>
-                    <p>Drink water to maintain saliva flow</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Daily Routine -->
-    <div class="container">
-        <div class="daily-routine">
-            <h3 class="routine-title">Daily Dental Routine</h3>
-            <div class="routine-steps">
-                <div class="routine-step">
-                    <i class="fas fa-sun"></i>
-                    <h4>Morning</h4>
-                    <p>Brush & Floss</p>
-                </div>
-                <div class="routine-step">
-                    <i class="fas fa-utensils"></i>
-                    <h4>After Meals</h4>
-                    <p>Rinse with water</p>
-                </div>
-                <div class="routine-step">
-                    <i class="fas fa-moon"></i>
-                    <h4>Evening</h4>
-                    <p>Floss & Brush</p>
-                </div>
-                <div class="routine-step">
-                    <i class="fas fa-spray-can"></i>
-                    <h4>Before Bed</h4>
-                    <p>Mouthwash rinse</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Products Section -->
-    <section class="products" aria-labelledby="dental-heading">
+    <section class="products" aria-labelledby="products-heading">
         <div class="container">
-            <h2 id="dental-heading" class="section-title">Dental & Oral Care Products</h2>
+            <h2 id="products-heading" class="section-title">Our Stomach Medications</h2>
             <p class="text-center" style="margin-bottom: 30px; color: var(--light-text); max-width: 800px; margin-left: auto; margin-right: auto;">
-                Complete your oral care routine with our range of dentist-recommended products for all your dental hygiene needs.
+                Browse our selection of effective medications for various stomach and digestive issues.
             </p>
             
             <!-- Filter Section -->
@@ -1354,11 +1266,11 @@
                     <span class="filter-label">Filter By:</span>
                     <select id="filterBy" class="filter-select">
                         <option value="all">All Products</option>
-                        <option value="toothpaste">Toothpaste</option>
-                        <option value="toothbrush">Toothbrushes</option>
-                        <option value="mouthwash">Mouthwash</option>
-                        <option value="whitening">Whitening</option>
-                        <option value="sensitive">Sensitive Teeth</option>
+                        <option value="laxative">Laxatives</option>
+                        <option value="antacid">Antacids</option>
+                        <option value="diarrhea">Diarrhea Relief</option>
+                        <option value="dehydration">Dehydration</option>
+                        <option value="digestive">Digestive Support</option>
                     </select>
                 </div>
             </div>
@@ -1436,390 +1348,542 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Dental products data
-            const dentalProducts = [
+            // Stomach medications data from the PDF
+            const stomachMedications = [
+                // Constipation Relief
                 {
                     id: 1,
-                    name: "Dentyl Mouth Wash Mint",
-                    price: 156.99,
-                    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Advanced dual-phase formula fights bacteria and freshens breath",
-                    benefits: "Kills germs, reduces plaque, fresh mint flavor",
-                    ingredients: "Cetylpyridinium Chloride, Essential Oils",
-                    usage: "Rinse with 10ml for 30 seconds twice daily",
-                    type: "mouthwash",
-                    badge: "Popular",
-                    stock: 35
+                    name: "Mist Alba 100ml",
+                    price: 12.85,
+                    image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Liquid laxative for relief of occasional constipation.",
+                    type: "laxative",
+                    volume: "100ml",
+                    stock: 50
                 },
                 {
                     id: 2,
-                    name: "Listerine Cool Mint Mouthwash",
-                    price: 67.22,
-                    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Kills 99.9% of germs that cause bad breath, plaque, and gingivitis",
-                    benefits: "Fresh breath, reduces plaque, alcohol formula",
-                    ingredients: "Menthol, Thymol, Eucalyptol, Methyl Salicylate",
-                    usage: "Rinse with 20ml for 30 seconds twice daily",
-                    type: "mouthwash",
-                    badge: "Best Seller",
-                    stock: 50
+                    name: "Brunel Mist Alba 100ml",
+                    price: 23.17,
+                    image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Laxative liquid for constipation relief.",
+                    type: "laxative",
+                    volume: "100ml",
+                    stock: 35
                 },
                 {
                     id: 3,
-                    name: "Tea Tree Oil Mouth Wash",
-                    price: 48.29,
-                    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Natural antiseptic properties for healthy gums and fresh breath",
-                    benefits: "Natural formula, fights bacteria, soothes gums",
-                    ingredients: "Melaleuca Alternifolia (Tea Tree) Leaf Oil",
-                    usage: "Rinse with 15ml for 60 seconds twice daily",
-                    type: "mouthwash",
-                    badge: "Natural",
-                    stock: 25
+                    name: "Mister Alba Kids 100ml",
+                    price: 18.39,
+                    image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Gentle laxative specially formulated for children.",
+                    type: "laxative",
+                    volume: "100ml",
+                    stock: 40
                 },
                 {
                     id: 4,
-                    name: "Medi-keel A Throat Spray",
-                    price: 70.70,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Soothes sore throats and reduces inflammation",
-                    benefits: "Instant relief, antiseptic action, easy application",
-                    ingredients: "Benzocaine, Cetylpyridinium Chloride",
-                    usage: "Spray directly onto affected area 3-4 times daily",
-                    type: "throatspray",
-                    badge: "Fast Relief",
-                    stock: 20
-                },
-                // Page 2
-                {
-                    id: 5,
-                    name: "Dermadine Oral Antiseptic",
-                    price: 63.49,
-                    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Antiseptic solution for oral hygiene and wound care",
-                    benefits: "Promotes healing, prevents infection, soothes irritation",
-                    ingredients: "Povidone-Iodine",
-                    usage: "Apply directly to affected area 2-3 times daily",
-                    type: "mouthwash",
-                    badge: "Antiseptic",
-                    stock: 18
-                },
-                {
-                    id: 6,
-                    name: "Betadine Gargle and Mouth Wash",
-                    price: 55.14,
-                    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Antiseptic gargle for sore throats and oral hygiene",
-                    benefits: "Kills germs, soothes throat, prevents infection",
-                    ingredients: "Povidone-Iodine",
-                    usage: "Gargle with 15ml for 30 seconds twice daily",
-                    type: "mouthwash",
-                    badge: "Dentist Recommended",
-                    stock: 30
-                },
-                {
-                    id: 7,
-                    name: "Septochlor Oral Antiseptic 200ml",
-                    price: 49.99,
-                    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Antiseptic mouthwash for comprehensive oral care",
-                    benefits: "Reduces bacteria, prevents plaque, freshens breath",
-                    ingredients: "Chlorhexidine Gluconate",
-                    usage: "Rinse with 10ml for 60 seconds twice daily",
-                    type: "mouthwash",
-                    badge: "Antibacterial",
-                    stock: 22
-                },
-                {
-                    id: 8,
-                    name: "Septochlor Toothbrush",
-                    price: 19.96,
-                    image: "https://images.unsplash.com/photo-1606310734273-1a332d20c867?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Soft bristle toothbrush for gentle cleaning",
-                    benefits: "Gentle on gums, effective plaque removal, comfortable grip",
-                    ingredients: "",
-                    usage: "Use with fluoride toothpaste twice daily",
-                    type: "toothbrush",
-                    badge: "Soft Bristles",
-                    stock: 40
-                },
-                // Page 3
-                {
-                    id: 9,
-                    name: "Spetadine Oral Antiseptic 200ml",
-                    price: 49.99,
-                    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Antiseptic solution for oral hygiene maintenance",
-                    benefits: "Reduces bacteria, prevents infection, promotes healing",
-                    ingredients: "Povidone-Iodine",
-                    usage: "Rinse or apply to affected area 2-3 times daily",
-                    type: "mouthwash",
-                    badge: "Antiseptic",
-                    stock: 15
-                },
-                {
-                    id: 10,
-                    name: "Andolex C Mouthwash 200ml",
-                    price: 65.50,
-                    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Antiseptic and analgesic mouth rinse for oral discomfort",
-                    benefits: "Soothes pain, reduces inflammation, promotes healing",
-                    ingredients: "Chlorhexidine Gluconate, Benzocaine",
-                    usage: "Rinse with 15ml for 1 minute 3 times daily",
-                    type: "mouthwash",
-                    badge: "Pain Relief",
-                    stock: 28
-                },
-                {
-                    id: 11,
-                    name: "Andolex C Mouthwash 100ml",
-                    price: 35.75,
-                    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Travel size antiseptic and analgesic mouth rinse",
-                    benefits: "Soothes oral pain, reduces inflammation, convenient size",
-                    ingredients: "Chlorhexidine Gluconate, Benzocaine",
-                    usage: "Rinse with 10ml for 1 minute 3 times daily",
-                    type: "mouthwash",
-                    badge: "Travel Size",
-                    stock: 20
-                },
-                // Page 4
-                {
-                    id: 12,
-                    name: "333 Disinfecting Liquid 100ml",
-                    price: 96.28,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Disinfectant solution for dental instruments and surfaces",
-                    benefits: "Effective disinfection, kills bacteria and viruses",
-                    ingredients: "Alkyl Dimethyl Benzyl Ammonium Chloride",
-                    usage: "Dilute as directed for surface or instrument disinfection",
-                    type: "denture",
-                    badge: "Disinfectant",
-                    stock: 12
-                },
-                {
-                    id: 13,
-                    name: "Mentadent P Toothpaste",
-                    price: 40.10,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Advanced whitening toothpaste with micro granules",
-                    benefits: "Removes surface stains, whitens teeth, fresh breath",
-                    ingredients: "Hydrated Silica, Sodium Bicarbonate",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "Whitening",
+                    name: "Fams Mist Alba Original 100ml",
+                    price: 13.78,
+                    image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Original formula laxative for constipation relief.",
+                    type: "laxative",
+                    volume: "100ml",
                     stock: 45
                 },
                 {
-                    id: 14,
-                    name: "Himalaya Stain Removal Toothpaste",
-                    price: 46.29,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Natural toothpaste for stain removal and whitening",
-                    benefits: "Removes coffee and tea stains, whitens naturally, herbal formula",
-                    ingredients: "Pomegranate Extract, Papain, Salt Minerals",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "Natural",
+                    id: 5,
+                    name: "Freshen 12 tabs",
+                    price: 18.52,
+                    image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Laxative tablets for occasional constipation relief.",
+                    type: "laxative",
+                    count: "12 tablets",
                     stock: 30
                 },
                 {
+                    id: 6,
+                    name: "Freshen salts 200g",
+                    price: 38.69,
+                    image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Salts for relief of occasional constipation.",
+                    type: "laxative",
+                    weight: "200g",
+                    stock: 25
+                },
+                {
+                    id: 7,
+                    name: "Aloe Ferox 30 tabs",
+                    price: 33.51,
+                    image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Natural laxative tablets containing aloe ferox.",
+                    type: "laxative",
+                    count: "30 tablets",
+                    stock: 40
+                },
+                {
+                    id: 8,
+                    name: "Lennon Glycerin suppositories 12s",
+                    price: 137.44,
+                    image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Glycerin suppositories for constipation relief.",
+                    type: "laxative",
+                    count: "12 suppositories",
+                    stock: 20
+                },
+                {
+                    id: 9,
+                    name: "Lennon Glycerin suppositories kids",
+                    price: 120.00,
+                    image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Gentle glycerin suppositories for children.",
+                    type: "laxative",
+                    count: "12 suppositories",
+                    stock: 30
+                },
+                {
+                    id: 10,
+                    name: "Microlax 4 5ml microenemas",
+                    price: 83.54,
+                    image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Microenemas for quick relief from constipation.",
+                    type: "laxative",
+                    count: "4 x 5ml",
+                    stock: 25
+                },
+                {
+                    id: 11,
+                    name: "Lebalax 10mg 10 suppositories",
+                    price: 114.94,
+                    image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Bisacodyl suppositories for constipation relief.",
+                    type: "laxative",
+                    count: "10 suppositories",
+                    stock: 20
+                },
+                {
+                    id: 12,
+                    name: "Brooklax Chocolate 4s",
+                    price: 41.75,
+                    image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Chocolate laxative for occasional constipation relief.",
+                    type: "laxative",
+                    count: "4 pieces",
+                    stock: 30
+                },
+                {
+                    id: 13,
+                    name: "Brooklax 10 Tabs",
+                    price: 36.79,
+                    image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Laxative tablets for occasional constipation.",
+                    type: "laxative",
+                    count: "10 tablets",
+                    stock: 35
+                },
+                {
+                    id: 14,
+                    name: "Lenolax enema adult 135ml",
+                    price: 66.53,
+                    image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Enema for adult constipation relief.",
+                    type: "laxative",
+                    volume: "135ml",
+                    stock: 25
+                },
+                {
                     id: 15,
-                    name: "Corega Denture Fixative Cream",
-                    price: 185.74,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Strong hold denture adhesive cream for all-day security",
-                    benefits: "Long-lasting hold, prevents food particles, zinc-free formula",
-                    ingredients: "Methyl Vinyl Ether/Maleic Anhydride Copolymer",
-                    usage: "Apply to clean, dry dentures before wearing",
-                    type: "denture",
-                    badge: "Strong Hold",
-                    stock: 8
+                    name: "Ducolax 5mg 10s Kids suppositories",
+                    price: 207.75,
+                    image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Bisacodyl suppositories for children.",
+                    type: "laxative",
+                    count: "10 suppositories",
+                    stock: 20
                 },
                 {
                     id: 16,
-                    name: "White Glo Charcoal Toothpaste",
-                    price: 29.18,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Activated charcoal toothpaste for deep whitening",
-                    benefits: "Removes deep stains, whitens teeth, detoxifies mouth",
-                    ingredients: "Activated Charcoal, Hydrated Silica",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "Whitening",
-                    stock: 50
+                    name: "Dulcelax 10mg 10 adult suppositories",
+                    price: 270.47,
+                    image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Bisacodyl suppositories for adult constipation relief.",
+                    type: "laxative",
+                    count: "10 suppositories",
+                    stock: 30
                 },
-                // Page 5
                 {
                     id: 17,
-                    name: "Miswak Toothpaste",
-                    price: 51.59,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Natural toothpaste with miswak extract for oral health",
-                    benefits: "Natural cleaning, fights bacteria, strengthens gums",
-                    ingredients: "Miswak Extract, Calcium Carbonate",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "Herbal",
+                    name: "Dulcelax 60 Tabs",
+                    price: 142.00,
+                    image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Bisacodyl tablets for occasional constipation relief.",
+                    type: "laxative",
+                    count: "60 tablets",
                     stock: 25
                 },
                 {
                     id: 18,
-                    name: "Colgate Triple Action Toothpaste",
-                    price: 51.59,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Triple protection against cavities, plaque and bad breath",
-                    benefits: "Cavity protection, fresh breath, whitening",
-                    ingredients: "Sodium Fluoride, Triclosan",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "Best Seller",
-                    stock: 60
+                    name: "Lacson syrup 150ml",
+                    price: 73.53,
+                    image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Lactulose syrup for chronic constipation.",
+                    type: "laxative",
+                    volume: "150ml",
+                    stock: 30
                 },
                 {
                     id: 19,
-                    name: "Aquafresh Fresh and Minty Toothpaste",
-                    price: 20.65,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Triple protection toothpaste with fresh mint flavor",
-                    benefits: "Cavity protection, fresh breath, whitening",
-                    ingredients: "Sodium Fluoride, Triclosan",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "Fresh Mint",
-                    stock: 55
-                },
-                {
-                    id: 20,
-                    name: "Aquafresh Milk Teeth Toothpaste",
-                    price: 31.19,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Gentle toothpaste specially formulated for children's milk teeth",
-                    benefits: "Mild flavor, safe if swallowed, cavity protection",
-                    ingredients: "Sodium Fluoride, Calcium",
-                    usage: "Brush children's teeth twice daily",
-                    type: "toothpaste",
-                    badge: "For Kids",
-                    stock: 40
-                },
-                {
-                    id: 21,
-                    name: "Closeup Red Hot Toothpaste",
-                    price: 22.51,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Deep red gel toothpaste for intense freshness",
-                    benefits: "Long-lasting freshness, whitening, fights bacteria",
-                    ingredients: "Hydrated Silica, Sodium Fluoride",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "Intense Fresh",
+                    name: "Lactlax syrup 100ml",
+                    price: 50.50,
+                    image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Lactulose syrup for the relief of constipation.",
+                    type: "laxative",
+                    volume: "100ml",
                     stock: 35
                 },
                 {
-                    id: 22,
-                    name: "Slosep Aloe Fresh Toothpaste",
-                    price: 93.22,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Aloe vera toothpaste for sensitive teeth and gums",
-                    benefits: "Soothes gums, reduces sensitivity, natural formula",
-                    ingredients: "Aloe Vera, Potassium Nitrate",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "Sensitive",
-                    stock: 15
-                },
-                {
-                    id: 23,
-                    name: "Sensodyne Multi-care Toothpaste",
-                    price: 71.13,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Multi-protection toothpaste for sensitive teeth",
-                    benefits: "Relieves sensitivity, cavity protection, fresh breath",
-                    ingredients: "Potassium Nitrate, Stannous Fluoride",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "For Sensitive Teeth",
-                    stock: 42
-                },
-                // Page 6
-                {
-                    id: 24,
-                    name: "Meridol Toothpaste",
-                    price: 97.97,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Specialist toothpaste for gum health and protection",
-                    benefits: "Reduces plaque, prevents gingivitis, strengthens gums",
-                    ingredients: "Amine Fluoride, Stannous Fluoride",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "Gum Care",
-                    stock: 20
-                },
-                {
-                    id: 25,
-                    name: "Deep Cleaning Smokers Fresh Breath Toothpaste",
-                    price: 46.12,
-                    image: "https://images.unsplash.com/photo-1625832018533-54a3a0d7d1b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Specially formulated for smokers to remove nicotine stains",
-                    benefits: "Removes tough stains, fights bad breath, whitening",
-                    ingredients: "Hydrated Silica, Sodium Tripolyphosphate",
-                    usage: "Brush twice daily for 2 minutes",
-                    type: "toothpaste",
-                    badge: "For Smokers",
-                    stock: 18
-                },
-                {
-                    id: 26,
-                    name: "Corega Super Denture Cleaner",
-                    price: 146.20,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Effervescent tablets for deep cleaning dentures",
-                    benefits: "Removes stains, kills bacteria, freshens dentures",
-                    ingredients: "Sodium Percarbonate, Sodium Bicarbonate",
-                    usage: "Soak dentures daily for 3-5 minutes",
-                    type: "denture",
-                    badge: "Deep Clean",
-                    stock: 12
-                },
-                {
-                    id: 27,
-                    name: "Aquafresh Milk Teeth Toothbrush",
-                    price: 46.69,
-                    image: "https://images.unsplash.com/photo-1606310734273-1a332d20c867?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Soft-bristled toothbrush designed for children's milk teeth",
-                    benefits: "Extra soft bristles, small head, comfortable grip",
-                    ingredients: "",
-                    usage: "Use with children's toothpaste twice daily",
-                    type: "toothbrush",
-                    badge: "For Kids",
-                    stock: 30
-                },
-                // Page 7
-                {
-                    id: 28,
-                    name: "Aquafresh Little Teeth Toothbrush",
-                    price: 39.92,
-                    image: "https://images.unsplash.com/photo-1606310734273-1a332d20c867?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Toothbrush designed for toddlers and young children",
-                    benefits: "Extra soft bristles, small head, easy-grip handle",
-                    ingredients: "",
-                    usage: "Use with children's toothpaste twice daily",
-                    type: "toothbrush",
-                    badge: "For Toddlers",
+                    id: 20,
+                    name: "Laxette solution 150ml",
+                    price: 81.00,
+                    image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Liquid laxative for constipation relief.",
+                    type: "laxative",
+                    volume: "150ml",
                     stock: 25
                 },
                 {
+                    id: 21,
+                    name: "Fybogel 3,5g 10 powder sachets",
+                    price: 188.50,
+                    image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Ispaghula husk for constipation relief.",
+                    type: "laxative",
+                    count: "10 sachets",
+                    stock: 20
+                },
+                {
+                    id: 22,
+                    name: "MOVICOL",
+                    price: 218.24,
+                    image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Macrogol-based laxative for constipation relief.",
+                    type: "laxative",
+                    stock: 30
+                },
+                {
+                    id: 23,
+                    name: "PEGICOL",
+                    price: 266.33,
+                    image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Macrogol-based laxative for constipation.",
+                    type: "laxative",
+                    stock: 25
+                },
+                {
+                    id: 24,
+                    name: "Duphalac Dry 10 sachets",
+                    price: 67.80,
+                    image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Lactulose powder sachets for constipation relief.",
+                    type: "laxative",
+                    count: "10 sachets",
+                    stock: 30
+                },
+                {
+                    id: 25,
+                    name: "Movicol original 20 sachets",
+                    price: 218.24,
+                    image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Macrogol-based laxative in sachets.",
+                    type: "laxative",
+                    count: "20 sachets",
+                    stock: 25
+                },
+                {
+                    id: 26,
+                    name: "Pegicol Plain 20 sachets",
+                    price: 266.33,
+                    image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Macrogol-based laxative in plain sachets.",
+                    type: "laxative",
+                    count: "20 sachets",
+                    stock: 20
+                },
+                {
+                    id: 27,
+                    name: "Duphalac Dry 30 sachets",
+                    price: 201.17,
+                    image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Lactulose powder sachets for chronic constipation.",
+                    type: "laxative",
+                    count: "30 sachets",
+                    stock: 25
+                },
+                {
+                    id: 28,
+                    name: "Progast Colon Cleanse 10 capsules",
+                    price: 84.03,
+                    image: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Colon cleansing capsules for digestive health.",
+                    type: "laxative",
+                    count: "10 capsules",
+                    stock: 30
+                },
+                
+                // Diarrhea Relief
+                {
                     id: 29,
-                    name: "Sensodyne Toothbrush",
-                    price: 89.34,
-                    image: "https://images.unsplash.com/photo-1606310734273-1a332d20c867?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Ultra-soft toothbrush for sensitive teeth and gums",
-                    benefits: "Extra soft bristles, gentle on gums, comfortable grip",
-                    ingredients: "",
-                    usage: "Use with Sensodyne toothpaste twice daily",
-                    type: "toothbrush",
-                    badge: "Extra Soft",
-                    stock: 22
+                    name: "Gastropect 100ml",
+                    price: 49.81,
+                    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Antidiarrheal suspension for diarrhea relief.",
+                    type: "diarrhea",
+                    volume: "100ml",
+                    stock: 40
+                },
+                {
+                    id: 30,
+                    name: "Pectin K 100ml",
+                    price: 33.56,
+                    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Pectin-based antidiarrheal medication.",
+                    type: "diarrhea",
+                    volume: "100ml",
+                    stock: 35
+                },
+                {
+                    id: 31,
+                    name: "Smeeta Strawberry 10 sachets",
+                    price: 136.08,
+                    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Strawberry flavored antidiarrheal sachets.",
+                    type: "diarrhea",
+                    count: "10 sachets",
+                    stock: 30
+                },
+                {
+                    id: 32,
+                    name: "Smeeta Orange 10 sachets",
+                    price: 95.15,
+                    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Orange flavored antidiarrheal sachets.",
+                    type: "diarrhea",
+                    count: "10 sachets",
+                    stock: 30
+                },
+                {
+                    id: 33,
+                    name: "Kolorex 30 capsules",
+                    price: 253.62,
+                    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Natural antifungal for digestive support.",
+                    type: "diarrhea",
+                    count: "30 capsules",
+                    stock: 25
+                },
+                
+                // Gastric Acidity/Digestive discomfort/Heartburn
+                {
+                    id: 34,
+                    name: "Adco-Mayogel 100ml",
+                    price: 26.77,
+                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Antacid suspension for heartburn relief.",
+                    type: "antacid",
+                    volume: "100ml",
+                    stock: 40
+                },
+                {
+                    id: 35,
+                    name: "Magasil 100ml",
+                    price: 49.90,
+                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Antacid liquid for gastric acidity.",
+                    type: "antacid",
+                    volume: "100ml",
+                    stock: 35
+                },
+                {
+                    id: 36,
+                    name: "Magasil 200ml",
+                    price: 14.89,
+                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Larger size antacid liquid for heartburn.",
+                    type: "antacid",
+                    volume: "200ml",
+                    stock: 30
+                },
+                {
+                    id: 37,
+                    name: "Ulsanic 10 effervescent tabs",
+                    price: 130.41,
+                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Effervescent tablets for gastric relief.",
+                    type: "antacid",
+                    count: "10 tablets",
+                    stock: 25
+                },
+                {
+                    id: 38,
+                    name: "Ulsanic syrup 100ml",
+                    price: 195.71,
+                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Syrup for gastric ulcer relief.",
+                    type: "antacid",
+                    volume: "100ml",
+                    stock: 20
+                },
+                {
+                    id: 39,
+                    name: "Spaamopep 10 capsules",
+                    price: 83.72,
+                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Complete gastric relief formula.",
+                    type: "antacid",
+                    count: "10 capsules",
+                    stock: 30
+                },
+                {
+                    id: 40,
+                    name: "Gasgon 30 capsules",
+                    price: 162.90,
+                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Capsules for gas and bloating relief.",
+                    type: "digestive",
+                    count: "30 capsules",
+                    stock: 25
+                },
+                {
+                    id: 41,
+                    name: "Pepta AC gel 200ml",
+                    price: 50.91,
+                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Antacid gel for heartburn relief.",
+                    type: "antacid",
+                    volume: "200ml",
+                    stock: 35
+                },
+                {
+                    id: 42,
+                    name: "Progast gastrointestinal Support 50ml Drops",
+                    price: 154.50,
+                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Digestive support drops for gastrointestinal health.",
+                    type: "digestive",
+                    volume: "50ml",
+                    stock: 20
+                },
+                {
+                    id: 43,
+                    name: "Eno fruit salts 100g",
+                    price: 75.61,
+                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Effervescent fruit salts for heartburn relief.",
+                    type: "antacid",
+                    weight: "100g",
+                    stock: 30
+                },
+                {
+                    id: 44,
+                    name: "Rennie peppermint 24 chew tabs",
+                    price: 62.74,
+                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Peppermint flavored chewable antacid tablets.",
+                    type: "antacid",
+                    count: "24 tablets",
+                    stock: 35
+                },
+                {
+                    id: 45,
+                    name: "Gaviscon 200ml",
+                    price: 137.95,
+                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Liquid antacid for heartburn and acid reflux.",
+                    type: "antacid",
+                    volume: "200ml",
+                    stock: 25
+                },
+                {
+                    id: 46,
+                    name: "Gavison Double Action 150ml",
+                    price: 165.23,
+                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Double action formula for heartburn relief.",
+                    type: "antacid",
+                    volume: "150ml",
+                    stock: 20
+                },
+                {
+                    id: 47,
+                    name: "Gavison peppermint 16 tabs",
+                    price: 80.98,
+                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Peppermint flavored chewable antacid tablets.",
+                    type: "antacid",
+                    count: "16 tablets",
+                    stock: 30
+                },
+                {
+                    id: 48,
+                    name: "Gavison 12 10ml liquid sachets",
+                    price: 141.93,
+                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Liquid antacid in convenient sachets.",
+                    type: "antacid",
+                    count: "12 x 10ml sachets",
+                    stock: 25
+                },
+                {
+                    id: 49,
+                    name: "Gavison Double Action 12 10ml sachets",
+                    price: 138.03,
+                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Double action antacid in convenient sachets.",
+                    type: "antacid",
+                    count: "12 x 10ml sachets",
+                    stock: 20
+                },
+                
+                // Dehydration
+                {
+                    id: 50,
+                    name: "Hydrol rehydration 20 sachets",
+                    price: 227.50,
+                    image: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Oral rehydration solution for dehydration.",
+                    type: "dehydration",
+                    count: "20 sachets",
+                    stock: 30
+                },
+                {
+                    id: 51,
+                    name: "Rehidrat 6 sachets",
+                    price: 115.44,
+                    image: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Electrolyte mixture for rehydration.",
+                    type: "dehydration",
+                    count: "6 sachets",
+                    stock: 35
+                },
+                {
+                    id: 52,
+                    name: "Nudrate citrus 6 sachets",
+                    price: 90.65,
+                    image: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Citrus flavored oral rehydration sachets.",
+                    type: "dehydration",
+                    count: "6 sachets",
+                    stock: 25
+                },
+                {
+                    id: 53,
+                    name: "Nudrate blackcurrent 6 sachets",
+                    price: 84.00,
+                    image: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                    description: "Blackcurrent flavored oral rehydration sachets.",
+                    type: "dehydration",
+                    count: "6 sachets",
+                    stock: 25
                 }
             ];
 
@@ -1835,7 +1899,7 @@
             // Pagination variables
             const productsPerPage = 8;
             let currentPage = 1;
-            let filteredProducts = [...dentalProducts];
+            let filteredProducts = [...stomachMedications];
             
             // DOM Elements
             const productGrid = document.getElementById('productGrid');
@@ -1900,33 +1964,35 @@
                     let tagText = '';
                     
                     switch(product.type) {
-                        case 'toothpaste':
-                            tagClass = 'tag-toothpaste';
-                            tagText = 'Toothpaste';
+                        case 'laxative':
+                            tagClass = 'tag-laxative';
+                            tagText = "Laxative";
                             break;
-                        case 'toothbrush':
-                            tagClass = 'tag-toothbrush';
-                            tagText = 'Toothbrush';
+                        case 'antacid':
+                            tagClass = 'tag-antacid';
+                            tagText = "Antacid";
                             break;
-                        case 'mouthwash':
-                            tagClass = 'tag-mouthwash';
-                            tagText = 'Mouthwash';
+                        case 'diarrhea':
+                            tagClass = 'tag-diarrhea';
+                            tagText = "Diarrhea Relief";
                             break;
-                        case 'whitening':
-                            tagClass = 'tag-whitening';
-                            tagText = 'Whitening';
+                        case 'dehydration':
+                            tagClass = 'tag-dehydration';
+                            tagText = "Dehydration";
                             break;
-                        case 'floss':
-                            tagClass = 'tag-sensitive';
-                            tagText = 'Floss';
+                        case 'digestive':
+                            tagClass = 'tag-digestive';
+                            tagText = "Digestive";
                             break;
                         default:
-                            tagClass = 'tag-toothpaste';
-                            tagText = 'Dental';
+                            tagClass = 'tag-general';
+                            tagText = 'General';
                     }
                     
+                    // Determine the size/volume text
+                    let sizeText = product.volume || product.count || product.weight || '';
+                    
                     productCard.innerHTML = `
-                        ${product.badge ? `<div class="product-badge">${product.badge}</div>` : ''}
                         <div class="product-img">
                             <img src="${product.image}" alt="${product.name}">
                         </div>
@@ -1935,6 +2001,7 @@
                             <div class="product-price">R${product.price.toFixed(2)}</div>
                             <div class="product-tags">
                                 <span class="product-tag ${tagClass}">${tagText}</span>
+                                ${sizeText ? `<span class="product-tag">${sizeText}</span>` : ''}
                             </div>
                             <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
                         </div>
@@ -2035,17 +2102,17 @@
                 const value = filterBy.value;
                 
                 if (value === 'all') {
-                    filteredProducts = [...dentalProducts];
-                } else if (value === 'toothpaste') {
-                    filteredProducts = dentalProducts.filter(p => p.type === 'toothpaste');
-                } else if (value === 'toothbrush') {
-                    filteredProducts = dentalProducts.filter(p => p.type === 'toothbrush');
-                } else if (value === 'mouthwash') {
-                    filteredProducts = dentalProducts.filter(p => p.type === 'mouthwash');
-                } else if (value === 'whitening') {
-                    filteredProducts = dentalProducts.filter(p => p.type === 'whitening');
-                } else if (value === 'sensitive') {
-                    filteredProducts = dentalProducts.filter(p => p.name.toLowerCase().includes('sensitive'));
+                    filteredProducts = [...stomachMedications];
+                } else if (value === 'laxative') {
+                    filteredProducts = stomachMedications.filter(p => p.type === 'laxative');
+                } else if (value === 'antacid') {
+                    filteredProducts = stomachMedications.filter(p => p.type === 'antacid');
+                } else if (value === 'diarrhea') {
+                    filteredProducts = stomachMedications.filter(p => p.type === 'diarrhea');
+                } else if (value === 'dehydration') {
+                    filteredProducts = stomachMedications.filter(p => p.type === 'dehydration');
+                } else if (value === 'digestive') {
+                    filteredProducts = stomachMedications.filter(p => p.type === 'digestive');
                 }
                 
                 currentPage = 1;
@@ -2063,7 +2130,7 @@
                     return;
                 }
                 
-                const results = dentalProducts.filter(product => 
+                const results = stomachMedications.filter(product => 
                     product.name.toLowerCase().includes(query) || 
                     product.description.toLowerCase().includes(query)
                 );
@@ -2098,8 +2165,11 @@
             
             // Show product details in modal
             function showProductDetails(productId) {
-                const product = dentalProducts.find(p => p.id == productId);
+                const product = stomachMedications.find(p => p.id == productId);
                 if (!product) return;
+                
+                // Determine the size/volume text
+                let sizeText = product.volume || product.count || product.weight || '';
                 
                 modalBody.innerHTML = `
                     <div class="modal-image">
@@ -2110,14 +2180,10 @@
                         <div class="modal-price">R${product.price.toFixed(2)}</div>
                         <p class="modal-description">${product.description}</p>
                         
-                        <h4>Key Benefits:</h4>
-                        <p>${product.benefits}</p>
-                        
-                        <h4>Ingredients:</h4>
-                        <p>${product.ingredients}</p>
-                        
-                        <h4>Usage:</h4>
-                        <p>${product.usage}</p>
+                        <div class="product-tags">
+                            <span class="product-tag ${getTagClass(product.type)}">${getTagText(product.type)}</span>
+                            ${sizeText ? `<span class="product-tag">${sizeText}</span>` : ''}
+                        </div>
                         
                         <div class="modal-quantity">
                             <label for="quantity">Quantity:</label>
@@ -2162,9 +2228,33 @@
                 productModal.style.display = 'block';
             }
             
+            // Helper function to get tag class
+            function getTagClass(type) {
+                switch(type) {
+                    case 'laxative': return 'tag-laxative';
+                    case 'antacid': return 'tag-antacid';
+                    case 'diarrhea': return 'tag-diarrhea';
+                    case 'dehydration': return 'tag-dehydration';
+                    case 'digestive': return 'tag-digestive';
+                    default: return 'tag-general';
+                }
+            }
+            
+            // Helper function to get tag text
+            function getTagText(type) {
+                switch(type) {
+                    case 'laxative': return 'Laxative';
+                    case 'antacid': return 'Antacid';
+                    case 'diarrhea': return 'Diarrhea Relief';
+                    case 'dehydration': return 'Dehydration';
+                    case 'digestive': return 'Digestive';
+                    default: return 'General';
+                }
+            }
+            
             // Add to cart functionality
             function addToCart(productId, quantity = 1) {
-                const product = dentalProducts.find(p => p.id == productId);
+                const product = stomachMedications.find(p => p.id == productId);
                 if (!product) return;
                 
                 // Check if product is already in cart

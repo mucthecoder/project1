@@ -8,19 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #1976D2;
-            --primary-dark: #1565C0;
-            --secondary-color: #f5f7fa;
-            --accent-color: #2196F3;
-            --accent-light: #BBDEFB;
-            --immune-green: #E8F5E9;
-            --immune-orange: #FFF3E0;
-            --immune-purple: #EDE7F6;
-            --immune-blue: #E3F2FD;
-            --text-color: #333;
-            --light-text: #666;
+           --primary-color: #E91E63; /* Professional blue */
+            --primary-dark: #1565C0; /* Darker blue for contrast */
+            --secondary-color: #f5f7fa; /* Light background */
+            --accent-color: #E91E63; /* Vibrant pink */
+            --accent-light: #F8BBD0; /* Light pink for accents */
+            --text-color: #333; /* Darker, more readable text */
+            --light-text: #666; /* Lighter secondary text */
             --white: #ffffff;
-            --border-radius: 10px;
+            --border-radius: 10px; /* Smoother corners */
             --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --box-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -1262,13 +1258,12 @@
                             <li><a href="category.html?category=Baby & Kids Medication">Baby & Kids</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Prescriptions</a></li>
-                    <li><a href="#">Health & Wellness</a></li>
-                    <li><a href="#">Baby & Kids</a></li>
-                    <li><a href="#">Vitamins & Supplements</a></li>
-                    <li><a href="#">Beauty</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="female-essentials.html">Female Essentials</a></li>
+                    <li><a href="baby-&-kids-medication.html">Baby & Kids</a></li>
+                    <li><a href="pregnancy-vitamins.html">Pregnancy Vitamins</a></li>
+                    <li><a href="cold-and-flu.html">Cold and Flu</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -1521,119 +1516,133 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Immune booster products data
             const immuneProducts = [
-                {
-                    id: 1,
-                    name: "Premium Vitamin C 1000mg",
-                    price: 189.99,
-                    image: "https://images.unsplash.com/photo-1598808503746-f34cfb6c2524?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "High-potency vitamin C with bioflavonoids for enhanced absorption and immune support.",
-                    benefits: "Boosts immune function, antioxidant protection, collagen production",
-                    ingredients: "Vitamin C (as Ascorbic Acid), Citrus Bioflavonoids, Rose Hips",
-                    usage: "Take 1 tablet daily with food",
-                    type: "vitamin",
-                    volume: "60 tablets",
-                    badge: "Best Seller",
-                    stock: 50
-                },
-                {
-                    id: 2,
-                    name: "Zinc + Elderberry Complex",
-                    price: 159.50,
-                    image: "https://images.unsplash.com/photo-1595941063115-451a0b4f9080?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Powerful combination of zinc and elderberry for comprehensive immune defense.",
-                    benefits: "Supports immune cell function, antioxidant properties, seasonal wellness",
-                    ingredients: "Zinc (as Zinc Gluconate), Elderberry Extract, Vitamin C",
-                    usage: "Take 2 capsules daily",
-                    type: "mineral",
-                    volume: "60 capsules",
-                    badge: "Fast Acting",
-                    stock: 35
-                },
-                {
-                    id: 3,
-                    name: "Advanced Immune Probiotic",
-                    price: 249.99,
-                    image: "https://images.unsplash.com/photo-1584303858092-1b5a9c1f1a3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Probiotic formula with 50 billion CFUs and immune-supporting strains.",
-                    benefits: "Supports gut health, enhances immune response, improves nutrient absorption",
-                    ingredients: "Lactobacillus acidophilus, Bifidobacterium lactis, Prebiotic Fiber",
-                    usage: "Take 1 capsule daily on an empty stomach",
-                    type: "probiotic",
-                    volume: "30 capsules",
-                    badge: "Clinically Proven",
-                    stock: 40
-                },
-                {
-                    id: 4,
-                    name: "Echinacea & Goldenseal Formula",
-                    price: 129.75,
-                    image: "https://images.unsplash.com/photo-1593483316242-efb5420596ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Traditional herbal combination for immune system activation and support.",
-                    benefits: "Stimulates immune response, antioxidant properties, seasonal support",
-                    ingredients: "Echinacea Purpurea, Goldenseal Root, Astragalus Root",
-                    usage: "Take 1-2 capsules daily as needed",
-                    type: "herbal",
-                    volume: "60 capsules",
-                    badge: "Natural Formula",
-                    stock: 30
-                },
-                {
-                    id: 5,
-                    name: "Vitamin D3 5000 IU",
-                    price: 119.99,
-                    image: "https://images.unsplash.com/photo-1598808503746-f34cfb6c2524?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "High-potency vitamin D3 for immune regulation and bone health.",
-                    benefits: "Immune system modulation, calcium absorption, mood support",
-                    ingredients: "Vitamin D3 (as Cholecalciferol), Medium Chain Triglycerides",
-                    usage: "Take 1 softgel daily with a meal",
-                    type: "vitamin",
-                    volume: "120 softgels",
-                    badge: "Essential Nutrient",
-                    stock: 25
-                },
-                {
-                    id: 6,
-                    name: "Complete Immune Support",
-                    price: 299.95,
-                    image: "https://images.unsplash.com/photo-1595941063115-451a0b4f9080?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Comprehensive formula with vitamins, minerals, and herbs for immune defense.",
-                    benefits: "Multi-pathway immune support, antioxidant protection, energy production",
-                    ingredients: "Vitamin C, Zinc, Selenium, Elderberry, Echinacea",
-                    usage: "Take 2 capsules daily",
-                    type: "general",
-                    volume: "60 capsules",
-                    badge: "Premium Blend",
-                    stock: 45
-                },
-                {
-                    id: 7,
-                    name: "Wellness Defense Gummies",
-                    price: 149.50,
-                    image: "https://images.unsplash.com/photo-1584303858092-1b5a9c1f1a3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Delicious gummies with vitamin C, D, zinc, and elderberry for immune support.",
-                    benefits: "Great taste, immune support, convenient format for all ages",
-                    ingredients: "Vitamin C, Vitamin D, Zinc, Elderberry Extract",
-                    usage: "Take 2 gummies daily",
-                    type: "general",
-                    volume: "60 gummies",
-                    badge: "Family Favorite",
-                    stock: 28
-                },
-                {
-                    id: 8,
-                    name: "Turmeric & Ginger Immune Tea",
-                    price: 89.99,
-                    image: "https://images.unsplash.com/photo-1593483316242-efb5420596ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Soothing herbal tea blend with immune-supporting herbs and antioxidants.",
-                    benefits: "Anti-inflammatory properties, antioxidant support, digestive comfort",
-                    ingredients: "Organic Turmeric, Organic Ginger, Cinnamon, Black Pepper",
-                    usage: "Steep 1 tea bag in hot water for 5-7 minutes",
-                    type: "herbal",
-                    volume: "30 tea bags",
-                    badge: "Natural Comfort",
-                    stock: 22
-                }
-            ];
+                           {
+                id: 1,
+                name: "Vita-G 30 effervescent",
+                price: 250.00,
+                image: "https://images.unsplash.com/photo-1598808503746-f34cfb6c2524?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                description: "Vitamin C and ginger effervescent tablets for immune support.",
+                benefits: "Boosts immune function, antioxidant protection",
+                ingredients: "Vitamin C, Ginger Extract",
+                usage: "Dissolve 1 tablet in water daily",
+                type: "vitamin",
+                volume: "30 effervescent tablets",
+                badge: "Best Seller",
+                stock: 45
+            },
+            {
+                id: 2,
+                name: "Vita-G 10 effervescent",
+                price: 90.00,
+                image: "https://images.unsplash.com/photo-1595941063115-451a0b4f9080?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                description: "Small pack of vitamin C and ginger effervescent tablets.",
+                benefits: "Immune support, convenient travel size",
+                ingredients: "Vitamin C, Ginger Extract",
+                usage: "Dissolve 1 tablet in water daily",
+                type: "vitamin",
+                volume: "10 effervescent tablets",
+                badge: "Travel Size",
+                stock: 30
+            },
+            {
+                id: 3,
+                name: "Vira-Vance",
+                price: 286.00,
+                image: "https://images.unsplash.com/photo-1584303858092-1b5a9c1f1a3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                description: "Comprehensive immune support formula.",
+                benefits: "Enhanced immune defense, all-in-one protection",
+                ingredients: "Vitamins, Minerals, Herbal Extracts",
+                usage: "Take as directed on packaging",
+                type: "general",
+                volume: "1 unit",
+                badge: "Premium Blend",
+                stock: 35
+            },
+            {
+                id: 4,
+                name: "Immune Booster Veggie Capsules",
+                price: 109.07,
+                image: "https://images.unsplash.com/photo-1593483316242-efb5420596ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                description: "Plant-based immune support capsules.",
+                benefits: "Natural immune enhancement, vegan-friendly",
+                ingredients: "Herbal Extracts, Vitamins",
+                usage: "Take 1 capsule daily with food",
+                type: "herbal",
+                volume: "90 veggie capsules",
+                badge: "Vegan",
+                stock: 40
+            },
+            {
+                id: 5,
+                name: "Immuvite C Advance",
+                price: 105.05,
+                image: "https://images.unsplash.com/photo-1598808503746-f34cfb6c2524?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                description: "Advanced vitamin C formula for immune support.",
+                benefits: "Enhanced immune cell function, antioxidant protection",
+                ingredients: "Vitamin C, Bioflavonoids",
+                usage: "Take 1 capsule daily",
+                type: "vitamin",
+                volume: "60 capsules",
+                badge: "Advanced Formula",
+                stock: 38
+            },
+            {
+                id: 6,
+                name: "Immuvite",
+                price: 44.72,
+                image: "https://images.unsplash.com/photo-1595941063115-451a0b4f9080?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                description: "Essential multivitamin for daily immune support.",
+                benefits: "Basic immune support, overall wellness",
+                ingredients: "Multivitamins, Minerals",
+                usage: "Take 1 tablet daily",
+                type: "vitamin",
+                volume: "60 tablets",
+                badge: "Essential",
+                stock: 42
+            },
+            {
+                id: 7,
+                name: "Immunadue",
+                price: 138.30,
+                image: "https://images.unsplash.com/photo-1584303858092-1b5a9c1f1a3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                description: "Dual-action immune support capsules.",
+                benefits: "Comprehensive protection, enhanced defense",
+                ingredients: "Vitamins, Herbal Extracts",
+                usage: "Take 1 capsule twice daily",
+                type: "general",
+                volume: "100 capsules",
+                badge: "Dual Action",
+                stock: 33
+            },
+            {
+                id: 8,
+                name: "Vita-thion Extra",
+                price: 195.44,
+                image: "https://images.unsplash.com/photo-1593483316242-efb5420596ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                description: "Extra strength effervescent immune support.",
+                benefits: "High-potency immune boost, rapid absorption",
+                ingredients: "Vitamins, Minerals, Amino Acids",
+                usage: "Dissolve 1 tablet in water daily",
+                type: "vitamin",
+                volume: "30 effervescents",
+                badge: "Extra Strength",
+                stock: 28
+            },
+            {
+                id: 9,
+                name: "Berocca Immune Daily Defence",
+                price: 89.37,
+                image: "https://images.unsplash.com/photo-1598808503746-f34cfb6c2524?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+                description: "Daily immune defense effervescent tablets.",
+                benefits: "Daily protection, energy boost",
+                ingredients: "Vitamin C, B Vitamins, Zinc",
+                usage: "Dissolve 1 tablet in water daily",
+                type: "vitamin",
+                volume: "10 effervescents",
+                badge: "Daily Use",
+                stock: 50
+            }
+        ];
 
             // Cart functionality
             let cart = [];

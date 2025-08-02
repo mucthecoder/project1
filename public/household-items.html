@@ -8,19 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #388E3C; /* Green instead of blue */
-            --primary-dark: #2E7D32;
-            --secondary-color: #f5f7fa;
-            --accent-color: #4CAF50;
-            --accent-light: #C8E6C9;
-            --household-green: #E8F5E9;
-            --household-yellow: #FFF8E1;
-            --household-blue: #E3F2FD;
-            --household-orange: #FFF3E0;
-            --text-color: #333;
-            --light-text: #666;
+          --primary-color: #E91E63; /* Professional blue */
+            --primary-dark: #1565C0; /* Darker blue for contrast */
+            --secondary-color: #f5f7fa; /* Light background */
+            --accent-color: #E91E63; /* Vibrant pink */
+            --accent-light: #F8BBD0; /* Light pink for accents */
+            --text-color: #333; /* Darker, more readable text */
+            --light-text: #666; /* Lighter secondary text */
             --white: #ffffff;
-            --border-radius: 10px;
+            --border-radius: 10px; /* Smoother corners */
             --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --box-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -1258,13 +1254,12 @@
                             <li><a href="category.html?category=Baby & Kids Medication">Baby & Kids</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Prescriptions</a></li>
-                    <li><a href="#">Health & Wellness</a></li>
-                    <li><a href="#">Baby & Kids</a></li>
-                    <li><a href="#">Vitamins & Supplements</a></li>
-                    <li><a href="#">Beauty</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="female-essentials.html">Female Essentials</a></li>
+                    <li><a href="baby-&-kids-medication.html">Baby & Kids</a></li>
+                    <li><a href="pregnancy-vitamins.html">Pregnancy Vitamins</a></li>
+                    <li><a href="cold-and-flu.html">Cold and Flu</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -1517,147 +1512,147 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Household products data
             const householdProducts = [
-                {
-                    id: 1,
-                    name: "All-Purpose Cleaner",
-                    price: 89.99,
-                    image: "https://images.unsplash.com/photo-1591370874773-6702e8f12fd8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Effective cleaner for all surfaces - countertops, appliances, and more.",
-                    benefits: "Removes grease and grime, disinfects surfaces, fresh citrus scent",
-                    ingredients: "Plant-based surfactants, citric acid, essential oils",
-                    usage: "Spray on surface and wipe clean with a cloth",
-                    type: "cleaning",
-                    volume: "750ml",
-                    badge: "Best Seller",
-                    stock: 50
-                },
-                {
-                    id: 2,
-                    name: "Liquid Laundry Detergent",
-                    price: 129.50,
-                    image: "https://images.unsplash.com/photo-1604176354204-9268737828e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Concentrated formula for deep cleaning and stain removal.",
-                    benefits: "Removes tough stains, brightens colors, hypoallergenic formula",
-                    ingredients: "Enzymes, plant-based surfactants, optical brighteners",
-                    usage: "Use 2 capfuls per regular load",
-                    type: "laundry",
-                    volume: "2L",
-                    badge: "Eco-Friendly",
-                    stock: 35
-                },
-                {
-                    id: 3,
-                    name: "Dishwashing Liquid",
-                    price: 49.99,
-                    image: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Tough on grease but gentle on hands with moisturizing formula.",
-                    benefits: "Cuts through grease, long-lasting suds, pleasant lemon scent",
-                    ingredients: "Plant-based surfactants, aloe vera, lemon extract",
-                    usage: "Use a few drops for hand washing dishes",
-                    type: "kitchen",
-                    volume: "500ml",
-                    badge: "Popular",
-                    stock: 40
-                },
-                {
-                    id: 4,
-                    name: "Multi-Surface Disinfectant",
-                    price: 99.75,
-                    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Kills 99.9% of germs and bacteria on hard surfaces.",
-                    benefits: "Hospital-grade disinfection, safe for most surfaces, no harsh fumes",
-                    ingredients: "Quaternary ammonium compound, isopropyl alcohol",
-                    usage: "Spray and leave wet for 3 minutes before wiping",
-                    type: "cleaning",
-                    volume: "1L",
-                    badge: "Germ Killer",
-                    stock: 30
-                },
-                {
-                    id: 5,
-                    name: "Fabric Softener",
-                    price: 79.99,
-                    image: "https://images.unsplash.com/photo-1618932260643-eee4a2f652a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Leaves clothes soft, fresh and static-free with long-lasting fragrance.",
-                    benefits: "Reduces static, adds freshness, protects fabrics",
-                    ingredients: "Cationic surfactants, fragrance, colorant",
-                    usage: "Add to final rinse cycle",
-                    type: "laundry",
-                    volume: "1.5L",
-                    badge: "Long Lasting",
-                    stock: 25
-                },
-                {
-                    id: 6,
-                    name: "Storage Containers Set",
-                    price: 349.95,
-                    image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Airtight containers for pantry organization and food storage.",
-                    benefits: "Keeps food fresh, stackable design, BPA-free plastic",
-                    ingredients: "Food-grade polypropylene",
-                    usage: "Store dry goods in pantry or refrigerator",
-                    type: "organization",
-                    volume: "10-piece set",
-                    badge: "Bestseller",
-                    stock: 45
-                },
-                {
-                    id: 7,
-                    name: "Glass Cleaner",
-                    price: 69.50,
-                    image: "https://images.unsplash.com/photo-1596476557178-86a94b5a52a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Streak-free formula for sparkling clean windows and mirrors.",
-                    benefits: "No streaks or residue, quick-drying, ammonia-free",
-                    ingredients: "Isopropyl alcohol, water, surfactants",
-                    usage: "Spray directly on surface and wipe with clean cloth",
-                    type: "cleaning",
-                    volume: "750ml",
-                    badge: "Streak-Free",
-                    stock: 28
-                },
-                {
-                    id: 8,
-                    name: "Bathroom Cleaner",
-                    price: 84.99,
-                    image: "https://images.unsplash.com/photo-1598522325074-042db73a0b9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Powerful formula to remove soap scum, hard water stains, and mildew.",
-                    benefits: "Removes tough stains, prevents mold growth, fresh scent",
-                    ingredients: "Hydrochloric acid, surfactants, fragrance",
-                    usage: "Apply to surface, leave for 5 minutes, scrub and rinse",
-                    type: "cleaning",
-                    volume: "1L",
-                    badge: "Heavy Duty",
-                    stock: 22
-                },
-                {
-                    id: 9,
-                    name: "Trash Bags",
-                    price: 129.99,
-                    image: "https://images.unsplash.com/photo-1604176354204-9268737828e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Heavy-duty drawstring bags with leak protection.",
-                    benefits: "Extra strong, leak-proof bottom, fresh scent",
-                    ingredients: "High-density polyethylene",
-                    usage: "Fits standard 50L trash cans",
-                    type: "organization",
-                    volume: "30-pack",
-                    badge: "Heavy Duty",
-                    stock: 50
-                },
-                {
-                    id: 10,
-                    name: "Microfiber Cloths",
-                    price: 89.50,
-                    image: "https://images.unsplash.com/photo-1604176354204-9268737828e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Premium cleaning cloths that trap dust and dirt without scratching.",
-                    benefits: "Lint-free, highly absorbent, machine washable",
-                    ingredients: "Polyester and polyamide blend",
-                    usage: "Use damp for cleaning, dry for dusting",
-                    type: "cleaning",
-                    volume: "6-pack",
-                    badge: "Reusable",
-                    stock: 35
-                }
-            ];
+        {
+                id: 1,
+            name: "Renew Foam bath",
+            price: 70.00,
+            image: "https://images.unsplash.com/photo-1591370874773-6702e8f12fd8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Foaming bath solution for a luxurious bathing experience",
+            benefits: "Creates rich foam, moisturizes skin, relaxing fragrance",
+            ingredients: "Mild surfactants, moisturizing agents, fragrance",
+            usage: "Add 2-3 capfuls under running bath water",
+            type: "bath",
+            volume: "2L",
+            badge: "New",
+            stock: 50
+        },
+        {
+            id: 2,
+            name: "Plush supreme bathroom cleaner",
+            price: 55.99,
+            image: "https://images.unsplash.com/photo-1598522325074-042db73a0b9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Powerful bathroom cleaner for tiles, sinks and fixtures",
+            benefits: "Removes soap scum, prevents mold, fresh scent",
+            ingredients: "Cleaning agents, disinfectants, fragrance",
+            usage: "Spray on surfaces, leave for 5 minutes, then wipe clean",
+            type: "cleaning",
+            volume: "500ml",
+            badge: "Best Seller",
+            stock: 35
+        },
+        {
+            id: 3,
+            name: "Plush supreme kitchen cleaner",
+            price: 47.79,
+            image: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Effective cleaner for kitchen surfaces and appliances",
+            benefits: "Cuts through grease, food-safe formula, lemon fresh scent",
+            ingredients: "Degreasing agents, plant-based cleaners",
+            usage: "Spray on countertops and wipe clean with cloth",
+            type: "kitchen",
+            volume: "500ml",
+            badge: "Popular",
+            stock: 40
+        },
+        {
+            id: 4,
+            name: "Plush supreme all purpose cream",
+            price: 30.06,
+            image: "https://images.unsplash.com/photo-1591370874773-6702e8f12fd8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Versatile cream cleaner for multiple surfaces",
+            benefits: "Removes tough stains, non-abrasive, fresh scent",
+            ingredients: "Cleaning agents, gentle abrasives, fragrance",
+            usage: "Apply cream to surface, scrub, then rinse",
+            type: "cleaning",
+            volume: "750ml",
+            badge: "Value",
+            stock: 45
+        },
+        {
+            id: 5,
+            name: "Plush supreme takkie cleaner",
+            price: 57.55,
+            image: "https://images.unsplash.com/photo-1604176354204-9268737828e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Specialized cleaner for sneakers and sports shoes",
+            benefits: "Removes dirt and stains, protects materials, fresh scent",
+            ingredients: "Gentle cleaning agents, protectants",
+            usage: "Apply to shoes, brush gently, then wipe clean",
+            type: "cleaning",
+            volume: "250ml",
+            badge: "Specialized",
+            stock: 30
+        },
+        {
+            id: 6,
+            name: "So pure oxygen bleach",
+            price: 102.14,
+            image: "https://images.unsplash.com/photo-1618932260643-eee4a2f652a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Powerful oxygen-based bleach for laundry and surfaces",
+            benefits: "Removes tough stains, brightens whites, eco-friendly",
+            ingredients: "Sodium percarbonate, activators",
+            usage: "Add to washing machine or mix with water for surface cleaning",
+            type: "laundry",
+            volume: "450g",
+            badge: "Eco-Friendly",
+            stock: 25
+        },
+        {
+            id: 7,
+            name: "Raid",
+            price: 43.46,
+            image: "https://images.unsplash.com/photo-1598522325074-042db73a0b9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Insecticide spray for crawling and flying insects",
+            benefits: "Kills insects on contact, residual protection",
+            ingredients: "Pyrethroids, synergists",
+            usage: "Spray directly on insects or in areas of infestation",
+            type: "pest",
+            volume: "300ml",
+            badge: "Fast Acting",
+            stock: 40
+        },
+        {
+            id: 8,
+            name: "Doom Multi Insect Killer",
+            price: 56.84,
+            image: "https://images.unsplash.com/photo-1598522325074-042db73a0b9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Multi-insect killer for various household pests",
+            benefits: "Kills flies, mosquitoes, cockroaches and ants",
+            ingredients: "Pyrethroids, piperonyl butoxide",
+            usage: "Spray directly on insects or in infested areas",
+            type: "pest",
+            volume: "300ml",
+            badge: "Multi-Purpose",
+            stock: 35
+        },
+        {
+            id: 9,
+            name: "Doom Insect Killer",
+            price: 69.83,
+            image: "https://images.unsplash.com/photo-1598522325074-042db73a0b9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Extra strength insect killer for tough infestations",
+            benefits: "Fast knockdown, long-lasting residual effect",
+            ingredients: "Pyrethroids, synergists",
+            usage: "Spray directly on insects or surfaces where insects hide",
+            type: "pest",
+            volume: "450ml",
+            badge: "Extra Strength",
+            stock: 30
+        },
+        {
+            id: 10,
+            name: "Sunlight dishwashing liquid",
+            price: 39.25,
+            image: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Concentrated dishwashing liquid for tough grease",
+            benefits: "Cuts through grease, gentle on hands, lemon fresh scent",
+            ingredients: "Surfactants, cleaning agents, fragrance",
+            usage: "Add a few drops to water for hand washing dishes",
+            type: "kitchen",
+            volume: "750ml",
+            badge: "Popular",
+            stock: 50
+        }
+    ];
 
             // Cart functionality
             let cart = [];

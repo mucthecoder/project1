@@ -8,19 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #FF9800;
-            --primary-dark: #F57C00;
-            --secondary-color: #FFF9F0;
-            --accent-color: #4CAF50;
-            --accent-light: #C8E6C9;
-            --vitamin-orange: #FFF3E0;
-            --vitamin-green: #E8F5E9;
-            --vitamin-blue: #E3F2FD;
-            --vitamin-purple: #F3E5F5;
-            --text-color: #333;
-            --light-text: #666;
+           --primary-color: #E91E63; /* Professional blue */
+            --primary-dark: #1565C0; /* Darker blue for contrast */
+            --secondary-color: #f5f7fa; /* Light background */
+            --accent-color: #E91E63; /* Vibrant pink */
+            --accent-light: #F8BBD0; /* Light pink for accents */
+            --text-color: #333; /* Darker, more readable text */
+            --light-text: #666; /* Lighter secondary text */
             --white: #ffffff;
-            --border-radius: 10px;
+            --border-radius: 10px; /* Smoother corners */
             --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --box-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -1262,13 +1258,12 @@
                             <li><a href="category.html?category=Baby & Kids Medication">Baby & Kids</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Prescriptions</a></li>
-                    <li><a href="#">Health & Wellness</a></li>
-                    <li><a href="#">Baby & Kids</a></li>
-                    <li><a href="#">Vitamins & Supplements</a></li>
-                    <li><a href="#">Beauty</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="female-essentials.html">Female Essentials</a></li>
+                    <li><a href="baby-&-kids-medication.html">Baby & Kids</a></li>
+                    <li><a href="pregnancy-vitamins.html">Pregnancy Vitamins</a></li>
+                    <li><a href="cold-and-flu.html">Cold and Flu</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -1527,119 +1522,287 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Kids vitamins products data
             const kidsVitamins = [
-                {
-                    id: 1,
-                    name: "Chewable Multivitamin Gummies",
-                    price: 129.99,
-                    image: "https://images.unsplash.com/photo-1612860607070-0df8a31f8e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Delicious mixed berry flavored gummies with 13 essential vitamins and minerals.",
-                    benefits: "Supports immune health, energy production, and overall growth",
-                    ingredients: "Vitamins A, C, D, E, B-complex, Zinc, Calcium",
-                    usage: "2 gummies daily for children 4+ years",
-                    type: "multivitamin",
-                    volume: "60 gummies",
-                    badge: "Best Seller",
-                    stock: 50
-                },
-                {
-                    id: 2,
-                    name: "Omega-3 Fish Oil Chewables",
-                    price: 149.50,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Natural orange flavor chewables with EPA and DHA for brain development.",
-                    benefits: "Supports brain function, eye health, and cognitive development",
-                    ingredients: "Fish Oil, EPA, DHA, Vitamin E",
-                    usage: "1 chewable daily for children 3+ years",
-                    type: "omega",
-                    volume: "90 chewables",
-                    badge: "Brain Support",
-                    stock: 35
-                },
-                {
-                    id: 3,
-                    name: "Vitamin C Immune Support",
-                    price: 89.99,
-                    image: "https://images.unsplash.com/photo-1566878987130-1b9a0d1e8d8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Tangy orange flavored chewables with zinc for immune system support.",
-                    benefits: "Boosts immunity, antioxidant protection, collagen formation",
-                    ingredients: "Vitamin C, Zinc, Rose Hips, Citrus Bioflavonoids",
-                    usage: "1-2 chewables daily for children 4+ years",
-                    type: "vitamin-c",
-                    volume: "120 chewables",
-                    badge: "Immune Boost",
-                    stock: 40
-                },
-                {
-                    id: 4,
-                    name: "Probiotic Drops for Infants",
-                    price: 179.75,
-                    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Gentle probiotic drops to support digestive health from birth.",
-                    benefits: "Promotes healthy gut flora, supports digestion, reduces colic",
-                    ingredients: "Lactobacillus rhamnosus GG, Sunflower Oil",
-                    usage: "5 drops daily, can be mixed with milk or food",
-                    type: "probiotic",
-                    volume: "10ml",
-                    badge: "For Infants",
-                    stock: 30
-                },
-                {
-                    id: 5,
-                    name: "Vitamin D3 Liquid Drops",
-                    price: 99.99,
-                    image: "https://images.unsplash.com/photo-1599837565318-67429bde7162?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Unflavored vitamin D drops for optimal bone development.",
-                    benefits: "Supports calcium absorption, bone health, immune function",
-                    ingredients: "Vitamin D3 (Cholecalciferol), MCT Oil",
-                    usage: "1 drop daily for infants, 2 drops for children 1+ years",
-                    type: "vitamin-d",
-                    volume: "15ml",
-                    badge: "Bone Health",
-                    stock: 25
-                },
-                {
-                    id: 6,
-                    name: "Iron Supplement Drops",
-                    price: 119.95,
-                    image: "https://images.unsplash.com/photo-1623846547660-b3c13a84d0e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Gentle iron supplement with vitamin C for better absorption.",
-                    benefits: "Supports healthy blood, energy levels, cognitive development",
-                    ingredients: "Iron, Vitamin C, Folic Acid, Vitamin B12",
-                    usage: "1ml daily mixed with juice or food",
-                    type: "multivitamin",
-                    volume: "50ml",
-                    badge: "Energy Support",
-                    stock: 45
-                },
-                {
-                    id: 7,
-                    name: "Calcium + Vitamin D Gummies",
-                    price: 139.50,
-                    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Delicious strawberry flavored gummies for strong bones and teeth.",
-                    benefits: "Builds strong bones, supports muscle function, dental health",
-                    ingredients: "Calcium, Vitamin D, Phosphorus, Magnesium",
-                    usage: "2 gummies daily for children 4+ years",
-                    type: "multivitamin",
-                    volume: "60 gummies",
-                    badge: "New",
-                    stock: 28
-                },
-                {
-                    id: 8,
-                    name: "Kids Probiotic Gummies",
-                    price: 159.99,
-                    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-                    description: "Berry flavored probiotic gummies with 3 billion CFUs per serving.",
-                    benefits: "Supports digestive health, immunity, nutrient absorption",
-                    ingredients: "Probiotic Blend (L. acidophilus, B. lactis), Prebiotic Fiber",
-                    usage: "1 gummy daily for children 2+ years",
-                    type: "probiotic",
-                    volume: "30 gummies",
-                    badge: "Gut Health",
-                    stock: 22
-                }
-            ];
+{
+            id: 1,
+            name: "NegroVance",
+            price: 191.71,
+            image: "https://images.unsplash.com/photo-1612860607070-0df8a31f8e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Comprehensive vitamin supplement for children",
+            benefits: "Supports overall growth and development",
+            ingredients: "Essential vitamins and minerals",
+            usage: "As directed by healthcare professional",
+            type: "multivitamin",
+            volume: "",
+            badge: "",
+            stock: 50
+        },
+        {
+            id: 2,
+            name: "Zymafluor",
+            price: 68.38,
+            image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Fluoride supplement for dental health",
+            benefits: "Strengthens tooth enamel and prevents cavities",
+            ingredients: "Sodium fluoride",
+            usage: "Daily as per dental recommendation",
+            type: "mineral",
+            volume: "",
+            badge: "",
+            stock: 40
+        },
+        {
+            id: 3,
+            name: "Gummy Vites Select Sugar free multivitamin 60s",
+            price: 274.86,
+            image: "https://images.unsplash.com/photo-1566878987130-1b9a0d1e8d8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Sugar-free multivitamin gummies",
+            benefits: "Complete nutritional support without added sugar",
+            ingredients: "Essential vitamins, natural flavors",
+            usage: "2 gummies daily for children 4+ years",
+            type: "multivitamin",
+            volume: "60s",
+            badge: "Sugar Free",
+            stock: 35
+        },
+        {
+            id: 4,
+            name: "Gummy Vites immune support 60s",
+            price: 151.71,
+            image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Immune-boosting gummies for children",
+            benefits: "Supports natural defense system",
+            ingredients: "Vitamin C, D, Zinc, Echinacea",
+            usage: "1-2 gummies daily during immune challenges",
+            type: "immune",
+            volume: "60s",
+            badge: "Immune Support",
+            stock: 45
+        },
+        {
+            id: 5,
+            name: "Viralmed Zinc Complex immune syrup 200ml",
+            price: 121.12,
+            image: "https://images.unsplash.com/photo-1599837565318-67429bde7162?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Zinc-based immune support syrup",
+            benefits: "Enhances immune function and reduces infection duration",
+            ingredients: "Zinc, Vitamin C, Echinacea",
+            usage: "5ml daily for children 2+ years",
+            type: "immune",
+            volume: "200ml",
+            badge: "",
+            stock: 30
+        },
+        {
+            id: 6,
+            name: "Vita-Gard kids 150ml",
+            price: 140.79,
+            image: "https://images.unsplash.com/photo-1623846547660-b3c13a84d0e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Multivitamin syrup for comprehensive nutrition",
+            benefits: "Supports growth and development",
+            ingredients: "Essential vitamins and minerals",
+            usage: "5ml daily for children 1-12 years",
+            type: "multivitamin",
+            volume: "150ml",
+            badge: "",
+            stock: 25
+        },
+        {
+            id: 7,
+            name: "Sugavite Multi-vitamin syrup 200ml",
+            price: 49.06,
+            image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Complete multivitamin syrup",
+            benefits: "Fills nutritional gaps in children's diets",
+            ingredients: "Vitamins A, B-complex, C, D, E",
+            usage: "5ml daily for children 2+ years",
+            type: "multivitamin",
+            volume: "200ml",
+            badge: "Value",
+            stock: 60
+        },
+        {
+            id: 8,
+            name: "Creche Guard baby 1-3 years 100ml",
+            price: 138.84,
+            image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Immune support for toddlers",
+            benefits: "Protects against common childhood illnesses",
+            ingredients: "Echinacea, Vitamin C, Zinc",
+            usage: "2.5ml daily for children 1-3 years",
+            type: "immune",
+            volume: "100ml",
+            badge: "For Toddlers",
+            stock: 20
+        },
+        {
+            id: 9,
+            name: "Creche Guard 1-12 years 100ml",
+            price: 138.89,
+            image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Immune booster for school-going children",
+            benefits: "Reduces frequency of common infections",
+            ingredients: "Wellmune, Vitamin C, Zinc",
+            usage: "5ml daily during school season",
+            type: "immune",
+            volume: "100ml",
+            badge: "School Ready",
+            stock: 30
+        },
+        {
+            id: 10,
+            name: "Creche Guard 1-12 years 200ml",
+            price: 238.02,
+            image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Larger size immune support formula",
+            benefits: "Long-lasting protection against infections",
+            ingredients: "Echinacea, Beta-Glucans, Vitamins",
+            usage: "5ml daily for children 1-12 years",
+            type: "immune",
+            volume: "200ml",
+            badge: "Economy Size",
+            stock: 15
+        },
+        {
+            id: 11,
+            name: "Sambucol chew teddies 60s",
+            price: 245.73,
+            image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Elderberry immune support chewables",
+            benefits: "Boosts immunity with natural elderberry extract",
+            ingredients: "Black elderberry, Vitamin C, Zinc",
+            usage: "1-2 chewables daily during cold season",
+            type: "immune",
+            volume: "60s",
+            badge: "Natural",
+            stock: 40
+        },
+        {
+            id: 12,
+            name: "Zinplex Junior immune booster gummies 120s",
+            price: 158.00,
+            image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Immune support gummies with zinc",
+            benefits: "Enhances natural defense mechanisms",
+            ingredients: "Zinc, Vitamin C, Vitamin D",
+            usage: "2 gummies daily for children 4+ years",
+            type: "immune",
+            volume: "120s",
+            badge: "Popular",
+            stock: 35
+        },
+        {
+            id: 13,
+            name: "Zinplex multivite gummies 120s",
+            price: 176.62,
+            image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Complete multivitamin gummies",
+            benefits: "Comprehensive nutritional support",
+            ingredients: "Essential vitamins and minerals",
+            usage: "2 gummies daily for children 4+ years",
+            type: "multivitamin",
+            volume: "120s",
+            badge: "Complete Formula",
+            stock: 30
+        },
+        {
+            id: 14,
+            name: "Zinplex Probiotic Drops 30ml",
+            price: 135.00,
+            image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Probiotic supplement for digestive health",
+            benefits: "Supports gut health and immunity",
+            ingredients: "Lactobacillus and Bifidobacterium strains",
+            usage: "5 drops daily for infants and children",
+            type: "probiotic",
+            volume: "30ml",
+            badge: "Gut Health",
+            stock: 25
+        },
+        {
+            id: 15,
+            name: "Zinplex Magnesium Sugar Free 200ml",
+            price: 72.62,
+            image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Magnesium supplement without sugar",
+            benefits: "Supports muscle and nerve function",
+            ingredients: "Magnesium citrate, natural flavors",
+            usage: "5ml daily for children 4+ years",
+            type: "mineral",
+            volume: "200ml",
+            badge: "Sugar Free",
+            stock: 20
+        },
+        {
+            id: 16,
+            name: "Zinplex immune booster syrup 200ml",
+            price: 65.67,
+            image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Immune support syrup with cream soda flavor",
+            benefits: "Strengthens immune defenses",
+            ingredients: "Zinc, Vitamins C, D, B-complex",
+            usage: "5ml daily for children 2+ years",
+            type: "immune",
+            volume: "200ml",
+            badge: "Cream Soda",
+            stock: 35
+        },
+        {
+            id: 17,
+            name: "Zinplex junior immune booster sugar free 200ml",
+            price: 67.70,
+            image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Sugar-free immune support syrup",
+            benefits: "Boosts immunity without added sugar",
+            ingredients: "Zinc, Vitamins, natural flavors",
+            usage: "5ml daily for children 2+ years",
+            type: "immune",
+            volume: "200ml",
+            badge: "Sugar Free",
+            stock: 30
+        },
+        {
+            id: 18,
+            name: "ZN-PED syrup 200ml",
+            price: 38.61,
+            image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Zinc-based supplement syrup",
+            benefits: "Supports immune function and growth",
+            ingredients: "Zinc, essential vitamins",
+            usage: "5ml daily for children 1+ years",
+            type: "mineral",
+            volume: "200ml",
+            badge: "Value",
+            stock: 40
+        },
+        {
+            id: 19,
+            name: "GDC GULF Multivitamin 100ml",
+            price: 13.75,
+            image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Economical multivitamin syrup",
+            benefits: "Basic vitamin support for children",
+            ingredients: "Essential vitamins",
+            usage: "5ml daily for children 2+ years",
+            type: "multivitamin",
+            volume: "100ml",
+            badge: "Budget",
+            stock: 50
+        },
+        {
+            id: 20,
+            name: "Cal-C Kids powder 170g",
+            price: 126.32,
+            image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+            description: "Calcium supplement with vitamin C",
+            benefits: "Supports bone development and growth",
+            ingredients: "Calcium, Vitamin C, Vitamin D",
+            usage: "1 scoop daily mixed with food or drink",
+            type: "mineral",
+            volume: "170g",
+            badge: "Bone Health",
+            stock: 25
+        }
+    ];
 
             // Cart functionality
             let cart = [];

@@ -8,21 +8,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
- --primary-color: rgb(233, 30, 99); /* Professional blue */
-            --primary-dark: rgb(33, 150, 243); /* Darker blue for contrast */
-            --secondary-color: #f5f7fa;
-            --accent-color: #2196F3;
-            --accent-light: #BBDEFB;
-            --text-color: #333;
-            --light-text: #666;
+            --primary-color: #E91E63; /* Professional blue */
+            --primary-dark: #1565C0; /* Darker blue for contrast */
+            --secondary-color: #f5f7fa; /* Light background */
+            --accent-color: #E91E63; /* Vibrant pink */
+            --accent-light: #F8BBD0; /* Light pink for accents */
+            --text-color: #333; /* Darker, more readable text */
+            --light-text: #666; /* Lighter secondary text */
             --white: #ffffff;
-            --cold-blue: #E3F2FD;
-            --flu-purple: #EDE7F6;
-            --border-radius: 10px;
+            --border-radius: 10px; /* Smoother corners */
             --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --box-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            --header-height: 80px;        }
+            --header-height: 80px;
+        }
         
         * {
             margin: 0;
@@ -1128,6 +1127,15 @@
             color: var(--accent-color);
             margin-bottom: 15px;
         }
+        
+        .update-notice {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            text-align: center;
+            border-left: 4px solid var(--accent-color);
+        }
     </style>
 </head>
 <body>
@@ -1214,13 +1222,12 @@
                             <li><a href="category.html?category=Baby & Kids Medication">Baby & Kids</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Prescriptions</a></li>
-                    <li><a href="#">Health & Wellness</a></li>
-                    <li><a href="#">Baby & Kids</a></li>
-                    <li><a href="#">Vitamins & Supplements</a></li>
-                    <li><a href="#">Beauty</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="female-essentials.html">Female Essentials</a></li>
+                    <li><a href="baby-&-kids-medication.html">Baby & Kids</a></li>
+                    <li><a href="pregnancy-vitamins.html">Pregnancy Vitamins</a></li>
+                    <li><a href="cold-and-flu.html">Cold and Flu</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -1315,6 +1322,10 @@
     <!-- Products Section -->
     <section class="products" aria-labelledby="fragrance-heading">
         <div class="container">
+            <div class="update-notice">
+                <i class="fas fa-sync-alt"></i> Product list updated with latest inventory from our suppliers
+            </div>
+            
             <h2 id="fragrance-heading" class="section-title">Premium Fragrance Collection</h2>
             <p class="text-center" style="margin-bottom: 30px; color: var(--light-text); max-width: 800px; margin-left: auto; margin-right: auto;">
                 Find your perfect scent from our curated collection of designer fragrances and effective deodorants for all-day freshness.
@@ -1339,7 +1350,6 @@
                         <option value="all">All Products</option>
                         <option value="deodorant">Deodorants</option>
                         <option value="perfume">Perfumes</option>
-                        <option value="cologne">Colognes</option>
                         <option value="body-spray">Body Sprays</option>
                         <option value="best-seller">Best Sellers</option>
                     </select>
@@ -1419,119 +1429,385 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Fragrance products data
+            // Updated fragrance products data from PDF
             const fragranceProducts = [
                 {
                     id: 1,
-                    name: "Dior Sauvage Eau de Toilette 100ml",
-                    price: 899.99,
+                    name: "Beverly Hills Perfume Spray Gold Series 100ml",
+                    price: 65.98,
                     image: "https://images.unsplash.com/photo-1590732870482-9b3b9b6c9b0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "A radically fresh composition with a magnetic trail. An aromatic fougere with a powerful signature.",
-                    benefits: "Long-lasting scent, masculine fragrance, iconic bottle design",
-                    notes: ["Bergamot", "Ambroxan", "Pepper", "Lavender"],
-                    type: "cologne",
-                    concentration: "Eau de Toilette",
+                    description: "A luxurious perfume spray from the Gold Series with a captivating fragrance.",
+                    benefits: "Long-lasting scent, elegant packaging, premium quality",
+                    notes: ["Floral", "Woody", "Vanilla"],
+                    type: "perfume",
+                    concentration: "Eau de Parfum",
                     size: "100ml",
-                    badge: "Best Seller",
+                    badge: "Premium",
                     stock: 15
                 },
                 {
                     id: 2,
-                    name: "Nivea Men Silver Protect Roll-On",
-                    price: 49.50,
-                    image: "https://images.unsplash.com/photo-1611934188040-5a2d0d7c1f1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "48h protection against body odor and wetness. With silver protect technology and fresh scent.",
-                    benefits: "Long-lasting protection, non-staining formula, alcohol-free",
-                    notes: ["Fresh", "Aquatic", "Clean"],
-                    type: "deodorant",
-                    concentration: "Roll-On",
-                    size: "50ml",
-                    badge: "Value",
-                    stock: 40
+                    name: "Gold Perfume Spray Gold Series 100ml",
+                    price: 65.73,
+                    image: "https://images.unsplash.com/photo-1590732870482-9b3b9b6c9b0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "A rich and elegant fragrance from the Gold Series collection.",
+                    benefits: "Long-lasting scent, sophisticated aroma, premium quality",
+                    notes: ["Amber", "Sandalwood", "Musk"],
+                    type: "perfume",
+                    concentration: "Eau de Parfum",
+                    size: "100ml",
+                    badge: "Popular",
+                    stock: 12
                 },
                 {
                     id: 3,
-                    name: "Chanel Coco Mademoiselle EDP 50ml",
-                    price: 1199.99,
+                    name: "Forever Red Perfume Spray 100ml Gold Series",
+                    price: 66.02,
                     image: "https://images.unsplash.com/photo-1590732870482-9b3b9b6c9b0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "A vibrant, intense fragrance. A dazzling, energetic scent that emanates a young, rebellious spirit.",
-                    benefits: "Iconic feminine scent, long-lasting, sophisticated blend",
-                    notes: ["Orange", "Jasmine", "Patchouli", "Vetiver"],
+                    description: "A passionate and vibrant fragrance with notes of red fruits and florals.",
+                    benefits: "Alluring scent, long-lasting, elegant presentation",
+                    notes: ["Berry", "Jasmine", "Vanilla"],
                     type: "perfume",
                     concentration: "Eau de Parfum",
-                    size: "50ml",
-                    badge: "Luxury",
-                    stock: 8
+                    size: "100ml",
+                    badge: "Best Seller",
+                    stock: 18
                 },
                 {
                     id: 4,
-                    name: "Dove Go Fresh Cucumber Deodorant Stick",
-                    price: 59.99,
-                    image: "https://images.unsplash.com/photo-1611934188040-5a2d0d7c1f1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "48h protection with 1/4 moisturizing cream. Gentle on skin with refreshing cucumber scent.",
-                    benefits: "Moisturizing formula, dermatologist-tested, aluminum-free",
-                    notes: ["Cucumber", "Green Tea", "Fresh"],
-                    type: "deodorant",
-                    concentration: "Stick",
-                    size: "73g",
-                    badge: "Popular",
-                    stock: 35
+                    name: "Priv'e Perfume Spray Gold Series 100ml",
+                    price: 88.87,
+                    image: "https://images.unsplash.com/photo-1590732870482-9b3b9b6c9b0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "An exclusive and intimate fragrance from the Gold Series.",
+                    benefits: "Unique scent profile, long-lasting, premium packaging",
+                    notes: ["Patchouli", "Oud", "Leather"],
+                    type: "perfume",
+                    concentration: "Eau de Parfum",
+                    size: "100ml",
+                    badge: "Exclusive",
+                    stock: 8
                 },
                 {
                     id: 5,
-                    name: "Victoria's Secret Bombshell Body Mist",
-                    price: 249.99,
+                    name: "First Edition Perfume Spray Gold Series 100ml",
+                    price: 88.91,
                     image: "https://images.unsplash.com/photo-1590732870482-9b3b9b6c9b0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "A sexy, feminine fragrance with fruity and floral notes. Perfect for everyday wear.",
-                    benefits: "Lightweight mist, long-lasting scent, refreshing formula",
-                    notes: ["Purple Passion", "Shangri-la Peony", "Vanilla Orchid"],
-                    type: "body-spray",
-                    concentration: "Body Mist",
-                    size: "250ml",
-                    badge: "Bestseller",
-                    stock: 25
+                    description: "The original fragrance that started the Gold Series collection.",
+                    benefits: "Iconic scent, timeless fragrance, elegant presentation",
+                    notes: ["Citrus", "Lavender", "Cedarwood"],
+                    type: "perfume",
+                    concentration: "Eau de Parfum",
+                    size: "100ml",
+                    badge: "Classic",
+                    stock: 10
                 },
                 {
                     id: 6,
-                    name: "Axe Dark Temptation Body Spray",
-                    price: 89.95,
-                    image: "https://images.unsplash.com/photo-1611934188040-5a2d0d7c1f1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "The irresistible scent of dark chocolate. Attractiveness that's impossible to resist.",
-                    benefits: "Long-lasting freshness, iconic scent, easy application",
-                    notes: ["Cocoa", "Vanilla", "Woody Notes"],
-                    type: "body-spray",
-                    concentration: "Body Spray",
-                    size: "150ml",
-                    badge: "Popular",
-                    stock: 30
+                    name: "B Perfume Spray Gold Series 100ml",
+                    price: 83.71,
+                    image: "https://images.unsplash.com/photo-1590732870482-9b3b9b6c9b0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "A bold and distinctive fragrance with a modern twist.",
+                    benefits: "Unique aroma, long-lasting, contemporary design",
+                    notes: ["Bergamot", "Black Pepper", "Vetiver"],
+                    type: "perfume",
+                    concentration: "Eau de Parfum",
+                    size: "100ml",
+                    badge: "Modern",
+                    stock: 14
                 },
                 {
                     id: 7,
-                    name: "Rexona Women Cotton Dry Roll-On",
-                    price: 45.30,
+                    name: "I'fumes London Perfumes",
+                    price: 114.47,
+                    image: "https://images.unsplash.com/photo-1590732870482-9b3b9b6c9b0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "Premium London-inspired fragrance with sophisticated notes.",
+                    benefits: "Luxurious scent, elegant packaging, long-lasting",
+                    notes: ["Rose", "Peony", "Suede"],
+                    type: "perfume",
+                    concentration: "Eau de Parfum",
+                    size: "100ml",
+                    badge: "Luxury",
+                    stock: 6
+                },
+                {
+                    id: 8,
+                    name: "Garnier Even Tone Roll On",
+                    price: 35.17,
                     image: "https://images.unsplash.com/photo-1611934188040-5a2d0d7c1f1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "MotionSense technology actively responds to movement. 48h protection with fresh cotton scent.",
-                    benefits: "Advanced protection, non-staining, gentle on skin",
-                    notes: ["Fresh Cotton", "Clean Linen"],
+                    description: "A roll-on deodorant that provides even skin tone and freshness.",
+                    benefits: "Skin brightening, 48h protection, gentle formula",
+                    notes: ["Fresh", "Clean", "Citrus"],
                     type: "deodorant",
                     concentration: "Roll-On",
                     size: "50ml",
                     badge: "New",
+                    stock: 25
+                },
+                {
+                    id: 9,
+                    name: "Garnier Men Mineral Sensitive Roll On",
+                    price: 30.27,
+                    image: "https://images.unsplash.com/photo-1611934188040-5a2d0d7c1f1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "Gentle formula for sensitive skin with mineral protection.",
+                    benefits: "Hypoallergenic, 48h protection, no white marks",
+                    notes: ["Mineral", "Fresh", "Clean"],
+                    type: "deodorant",
+                    concentration: "Roll-On",
+                    size: "50ml",
+                    badge: "Sensitive",
+                    stock: 30
+                },
+                {
+                    id: 10,
+                    name: "Garnier Men Mineral Triple Action Roll On",
+                    price: 33.98,
+                    image: "https://images.unsplash.com/photo-1611934188040-5a2d0d7c1f1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "Triple protection against sweat, odor, and marks.",
+                    benefits: "48h protection, anti-white marks, long-lasting freshness",
+                    notes: ["Mineral", "Fresh", "Woody"],
+                    type: "deodorant",
+                    concentration: "Roll-On",
+                    size: "50ml",
+                    badge: "Value",
+                    stock: 28
+                },
+                {
+                    id: 11,
+                    name: "Garnier Men Mineral Invisible Roll On",
+                    price: 34.99,
+                    image: "https://images.unsplash.com/photo-1611934188040-5a2d0d7c1f1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "Invisible protection with mineral freshness.",
+                    benefits: "No white marks, 48h protection, mineral freshness",
+                    notes: ["Mineral", "Fresh", "Clean"],
+                    type: "deodorant",
+                    concentration: "Roll-On",
+                    size: "50ml",
+                    badge: "Invisible",
+                    stock: 22
+                },
+                {
+                    id: 12,
+                    name: "Playgirl Temptation Roll On",
+                    price: 24.99,
+                    image: "https://images.unsplash.com/photo-1611934188040-5a2d0d7c1f1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "A tempting fragrance for confident women.",
+                    benefits: "Long-lasting freshness, feminine scent, gentle on skin",
+                    notes: ["Fruity", "Floral", "Vanilla"],
+                    type: "deodorant",
+                    concentration: "Roll-On",
+                    size: "50ml",
+                    badge: "Feminine",
+                    stock: 35
+                },
+                {
+                    id: 13,
+                    name: "Playgirl Love Is Roll On",
+                    price: 24.99,
+                    image: "https://images.unsplash.com/photo-1611934188040-5a2d0d7c1f1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "A romantic fragrance that captures the essence of love.",
+                    benefits: "48h protection, feminine scent, gentle formula",
+                    notes: ["Rose", "Peony", "Musk"],
+                    type: "deodorant",
+                    concentration: "Roll-On",
+                    size: "50ml",
+                    badge: "Romantic",
+                    stock: 32
+                },
+                {
+                    id: 14,
+                    name: "Playgirl Forbidden Roll On",
+                    price: 24.99,
+                    image: "https://images.unsplash.com/photo-1611934188040-5a2d0d7c1f1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "A mysterious and alluring fragrance for the bold woman.",
+                    benefits: "48h protection, captivating scent, gentle on skin",
+                    notes: ["Berry", "Amber", "Woody"],
+                    type: "deodorant",
+                    concentration: "Roll-On",
+                    size: "50ml",
+                    badge: "Alluring",
+                    stock: 28
+                },
+                {
+                    id: 15,
+                    name: "Playgirl Sensuous Roll On",
+                    price: 23.82,
+                    image: "https://images.unsplash.com/photo-1611934188040-5a2d0d7c1f1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "A sensuous fragrance that enhances your natural charm.",
+                    benefits: "48h protection, feminine scent, gentle formula",
+                    notes: ["Vanilla", "Sandalwood", "Musk"],
+                    type: "deodorant",
+                    concentration: "Roll-On",
+                    size: "50ml",
+                    badge: "Popular",
+                    stock: 40
+                },
+                {
+                    id: 16,
+                    name: "Playboy Amazon Roll On",
+                    price: 23.82,
+                    image: "https://images.unsplash.com/photo-1611934188040-5a2d0d7c1f1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "A bold and adventurous fragrance for the modern man.",
+                    benefits: "48h protection, masculine scent, long-lasting freshness",
+                    notes: ["Woody", "Spicy", "Fresh"],
+                    type: "deodorant",
+                    concentration: "Roll-On",
+                    size: "50ml",
+                    badge: "Adventurous",
+                    stock: 36
+                },
+                {
+                    id: 17,
+                    name: "Playboy Original Roll On",
+                    price: 23.82,
+                    image: "https://images.unsplash.com/photo-1611934188040-5a2d0d7c1f1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "The classic Playboy fragrance that never goes out of style.",
+                    benefits: "48h protection, iconic scent, gentle formula",
+                    notes: ["Citrus", "Lavender", "Amber"],
+                    type: "deodorant",
+                    concentration: "Roll-On",
+                    size: "50ml",
+                    badge: "Classic",
                     stock: 42
                 },
                 {
-                    id: 8,
-                    name: "Calvin Klein One Unisex Eau de Toilette",
-                    price: 599.50,
-                    image: "https://images.unsplash.com/photo-1590732870482-9b3b9b6c9b0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "A clean, fresh scent that captures the essence of unity. Iconic unisex fragrance.",
-                    benefits: "Unisex appeal, fresh scent, modern minimalist bottle",
-                    notes: ["Bergamot", "Green Notes", "Jasmine", "Sandalwood"],
-                    type: "cologne",
-                    concentration: "Eau de Toilette",
-                    size: "100ml",
-                    badge: "Iconic",
-                    stock: 12
+                    id: 18,
+                    name: "Playboy Invisible Dry Roll On",
+                    price: 23.82,
+                    image: "https://images.unsplash.com/photo-1611934188040-5a2d0d7c1f1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "Invisible protection with the classic Playboy fragrance.",
+                    benefits: "No white marks, 48h protection, fresh scent",
+                    notes: ["Fresh", "Clean", "Woody"],
+                    type: "deodorant",
+                    concentration: "Roll-On",
+                    size: "50ml",
+                    badge: "Invisible",
+                    stock: 38
+                },
+                {
+                    id: 19,
+                    name: "Nivea Double Effect Roll On",
+                    price: 37.44,
+                    image: "https://images.unsplash.com/photo-1611934188040-5a2d0d7c1f1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "Double protection against sweat and odor with a fresh scent.",
+                    benefits: "48h protection, fresh scent, gentle on skin",
+                    notes: ["Fresh", "Clean", "Ocean"],
+                    type: "deodorant",
+                    concentration: "Roll-On",
+                    size: "50ml",
+                    badge: "Effective",
+                    stock: 30
+                },
+                {
+                    id: 20,
+                    name: "Playboy Spray Atlantis",
+                    price: 44.71,
+                    image: "https://images.unsplash.com/photo-1611934188040-5a2d0d7c1f1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "A refreshing aquatic fragrance inspired by the ocean.",
+                    benefits: "Refreshing scent, 48h protection, easy application",
+                    notes: ["Aquatic", "Fresh", "Clean"],
+                    type: "body-spray",
+                    concentration: "Spray",
+                    size: "150ml",
+                    badge: "Aquatic",
+                    stock: 25
+                },
+                {
+                    id: 21,
+                    name: "Playboy Black Gold Spray",
+                    price: 47.64,
+                    image: "https://images.unsplash.com/photo-1611934188040-5a2d0d7c1f1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "A luxurious fragrance with notes of black and gold.",
+                    benefits: "Long-lasting scent, premium fragrance, elegant packaging",
+                    notes: ["Amber", "Vanilla", "Woody"],
+                    type: "body-spray",
+                    concentration: "Spray",
+                    size: "150ml",
+                    badge: "Premium",
+                    stock: 20
+                },
+                {
+                    id: 22,
+                    name: "Playboy Black Gold Roll On",
+                    price: 23.82,
+                    image: "https://images.unsplash.com/photo-1611934188040-5a2d0d7c1f1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "The roll-on version of the luxurious Black Gold fragrance.",
+                    benefits: "48h protection, premium scent, gentle formula",
+                    notes: ["Amber", "Vanilla", "Woody"],
+                    type: "deodorant",
+                    concentration: "Roll-On",
+                    size: "50ml",
+                    badge: "Premium",
+                    stock: 18
+                },
+                {
+                    id: 23,
+                    name: "Playgirl Flirtatious Spray",
+                    price: 47.75,
+                    image: "https://images.unsplash.com/photo-1611934188040-5a2d0d7c1f1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "A playful and flirty fragrance for the confident woman.",
+                    benefits: "Long-lasting scent, feminine fragrance, easy application",
+                    notes: ["Fruity", "Floral", "Vanilla"],
+                    type: "body-spray",
+                    concentration: "Spray",
+                    size: "150ml",
+                    badge: "Flirty",
+                    stock: 22
+                },
+                {
+                    id: 24,
+                    name: "Clinica Men VIP Roll On",
+                    price: 28.16,
+                    image: "https://images.unsplash.com/photo-1611934188040-5a2d0d7c1f1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "A VIP treatment for your underarms with premium protection.",
+                    benefits: "48h protection, premium scent, gentle on skin",
+                    notes: ["Woody", "Spicy", "Fresh"],
+                    type: "deodorant",
+                    concentration: "Roll-On",
+                    size: "50ml",
+                    badge: "Premium",
+                    stock: 26
+                },
+                {
+                    id: 25,
+                    name: "Clinica Men Desire Roll On",
+                    price: 27.97,
+                    image: "https://images.unsplash.com/photo-1611934188040-5a2d0d7c1f1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "A desirable fragrance that attracts attention.",
+                    benefits: "48h protection, masculine scent, gentle formula",
+                    notes: ["Citrus", "Woody", "Amber"],
+                    type: "deodorant",
+                    concentration: "Roll-On",
+                    size: "50ml",
+                    badge: "Masculine",
+                    stock: 24
+                },
+                {
+                    id: 26,
+                    name: "Shield Dry Confidence Roll On",
+                    price: 33.82,
+                    image: "https://images.unsplash.com/photo-1611934188040-5a2d0d7c1f1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "Stay confident all day with dry protection.",
+                    benefits: "48h dry protection, fresh scent, gentle formula",
+                    notes: ["Fresh", "Clean", "Ocean"],
+                    type: "deodorant",
+                    concentration: "Roll-On",
+                    size: "50ml",
+                    badge: "Confidence",
+                    stock: 28
+                },
+                {
+                    id: 27,
+                    name: "Shield Men Dry Original Roll On",
+                    price: 33.82,
+                    image: "https://images.unsplash.com/photo-1611934188040-5a2d0d7c1f1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                    description: "The original dry protection formula for men.",
+                    benefits: "48h dry protection, original scent, gentle on skin",
+                    notes: ["Fresh", "Clean", "Woody"],
+                    type: "deodorant",
+                    concentration: "Roll-On",
+                    size: "50ml",
+                    badge: "Original",
+                    stock: 32
                 }
             ];
 
@@ -1619,10 +1895,6 @@
                         case 'perfume':
                             tagClass = 'tag-perfume';
                             tagText = 'Perfume';
-                            break;
-                        case 'cologne':
-                            tagClass = 'tag-cologne';
-                            tagText = 'Cologne';
                             break;
                         case 'body-spray':
                             tagClass = 'tag-body-spray';
@@ -1751,8 +2023,6 @@
                     filteredProducts = fragranceProducts.filter(p => p.type === 'deodorant');
                 } else if (value === 'perfume') {
                     filteredProducts = fragranceProducts.filter(p => p.type === 'perfume');
-                } else if (value === 'cologne') {
-                    filteredProducts = fragranceProducts.filter(p => p.type === 'cologne');
                 } else if (value === 'body-spray') {
                     filteredProducts = fragranceProducts.filter(p => p.type === 'body-spray');
                 } else if (value === 'best-seller') {

@@ -8,21 +8,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: rgb(233, 30, 99); /* Professional blue */
-            --primary-dark: rgb(33, 150, 243); /* Darker blue for contrast */
-            --secondary-color: #f5f7fa;
-            --accent-color: #E91E63;
-            --accent-light: #F8BBD0;
-            --text-color: #333;
-            --light-text: #666;
+            --primary-color: #E91E63; /* Professional blue */
+            --primary-dark: #1565C0; /* Darker blue for contrast */
+            --secondary-color: #f5f7fa; /* Light background */
+            --accent-color: #E91E63; /* Vibrant pink */
+            --accent-light: #F8BBD0; /* Light pink for accents */
+            --text-color: #333; /* Darker, more readable text */
+            --light-text: #666; /* Lighter secondary text */
             --white: #ffffff;
-            --border-radius: 10px;
+            --border-radius: 10px; /* Smoother corners */
             --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --box-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             --header-height: 80px;
-            --baby-blue: #B3E5FC;
-            --baby-pink: #F8BBD0;
         }
         
         * {
@@ -1096,13 +1094,12 @@
                             <li><a href="category.html?category=Baby & Kids Medication">Baby & Kids</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Prescriptions</a></li>
-                    <li><a href="#">Health & Wellness</a></li>
-                    <li><a href="#">Baby & Kids</a></li>
-                    <li><a href="#">Vitamins & Supplements</a></li>
-                    <li><a href="#">Beauty</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="female-essentials.html">Female Essentials</a></li>
+                    <li><a href="baby-&-kids-medication.html">Baby & Kids</a></li>
+                    <li><a href="pregnancy-vitamins.html">Pregnancy Vitamins</a></li>
+                    <li><a href="cold-and-flu.html">Cold and Flu</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -1238,174 +1235,272 @@
             // Baby & Kids products data
             const babyProducts = [
                 {
-                    id: 1,
-                    name: "Panado Paediatric Syrup 100ml",
-                    price: 49.99,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Gentle pain and fever relief for children. Contains paracetamol suitable for infants from 3 months. Sugar-free formula with pleasant taste.",
-                    benefits: "Reduces fever, relieves pain, gentle on stomach",
-                    ingredients: "Paracetamol 120mg/5ml",
-                    usage: "Dosage according to weight/age. Shake well before use.",
-                    ageGroups: ["infant", "toddler", "child"],
-                    type: "liquid",
-                    badge: "Best Seller",
-                    stock: 35
-                },
-                {
-                    id: 2,
-                    name: "Pedi-Lax Suppositories 10s",
-                    price: 89.50,
-                    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Glycerin suppositories for gentle relief of occasional constipation in infants and children. Easy to administer.",
-                    benefits: "Relieves constipation, gentle formula, works within 15-30 minutes",
-                    ingredients: "Glycerin",
-                    usage: "Insert one suppository rectally as needed. For infants and children up to 6 years.",
-                    ageGroups: ["newborn", "infant", "toddler"],
-                    type: "suppository",
-                    badge: "Popular",
-                    stock: 20
-                },
-                {
-                    id: 3,
-                    name: "Teegel Teething Gel 15g",
-                    price: 65.25,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Soothing gel for teething babies. Provides fast relief from teething pain and discomfort. Sugar-free formula.",
-                    benefits: "Soothes sore gums, reduces inflammation, easy to apply",
-                    ingredients: "Lidocaine, Chamomile extract",
-                    usage: "Apply small amount to affected gums with clean finger up to 4 times daily.",
-                    ageGroups: ["infant", "toddler"],
-                    type: "gel",
-                    badge: "New",
-                    stock: 28
-                },
-                {
-                    id: 4,
-                    name: "Allergex Paediatric Syrup 100ml",
-                    price: 112.75,
-                    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Antihistamine syrup for relief of allergy symptoms in children. Non-drowsy formula suitable for daytime use.",
-                    benefits: "Relieves hayfever, hives, allergic reactions, non-drowsy",
-                    ingredients: "Cetirizine hydrochloride",
-                    usage: "Dosage according to age. Shake well before use.",
-                    ageGroups: ["toddler", "child"],
-                    type: "liquid",
-                    badge: "Best Seller",
-                    stock: 18
-                },
-                {
-                    id: 5,
-                    name: "BabyCalm Gripe Water 150ml",
-                    price: 75.30,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Traditional herbal remedy for colic, wind and digestive discomfort in babies. Alcohol-free formula.",
-                    benefits: "Relieves colic, reduces wind, soothes tummy discomfort",
-                    ingredients: "Dill oil, Fennel oil, Ginger extract",
-                    usage: "Give 5ml dose before or after feeds as needed. Suitable from birth.",
-                    ageGroups: ["newborn", "infant"],
-                    type: "liquid",
-                    badge: "Popular",
-                    stock: 22
-                },
-                {
-                    id: 6,
-                    name: "Kids Vitamin C Chewables 60s",
-                    price: 129.99,
-                    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Delicious orange-flavored chewable vitamin C tablets for kids. Supports immune system and overall health.",
-                    benefits: "Boosts immunity, promotes healthy growth, great taste",
-                    ingredients: "Vitamin C, Zinc, Natural flavors",
-                    usage: "Chew 1 tablet daily. Suitable for children 4 years and older.",
-                    ageGroups: ["child"],
-                    type: "chewable",
-                    badge: "New",
-                    stock: 15
-                },
-                {
-                    id: 7,
-                    name: "Nappy Rash Cream 50g",
-                    price: 59.95,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Protective cream for prevention and treatment of nappy rash. Creates a barrier against moisture and irritants.",
-                    benefits: "Soothes irritated skin, prevents rash, promotes healing",
-                    ingredients: "Zinc oxide, Lanolin, Almond oil",
-                    usage: "Apply at each nappy change to clean, dry skin.",
-                    ageGroups: ["newborn", "infant", "toddler"],
-                    type: "cream",
-                    badge: "Value",
-                    stock: 30
-                },
-                {
-                    id: 8,
-                    name: "Children's Multivitamin Drops 30ml",
-                    price: 95.50,
-                    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Complete multivitamin supplement in easy-to-administer drops. Specially formulated for infants and toddlers.",
-                    benefits: "Supports growth and development, easy to use, pleasant taste",
-                    ingredients: "Vitamins A, C, D, E, B-complex",
-                    usage: "Give 1ml daily mixed with food or drink. Suitable from 6 months.",
-                    ageGroups: ["infant", "toddler"],
-                    type: "liquid",
-                    badge: "Best Seller",
-                    stock: 12
-                },
-                {
-                    id: 9,
-                    name: "Kids Probiotic Powder 30 Sachets",
-                    price: 149.99,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Strawberry-flavored probiotic powder to support digestive health in children. Contains beneficial bacteria strains.",
-                    benefits: "Supports gut health, boosts immunity, improves digestion",
-                    ingredients: "Lactobacillus, Bifidobacterium, Natural flavors",
-                    usage: "Mix 1 sachet daily with cool food or drink. Suitable from 1 year.",
-                    ageGroups: ["toddler", "child"],
-                    type: "powder",
-                    badge: "New",
-                    stock: 10
-                },
-                {
-                    id: 10,
-                    name: "Baby Saline Nasal Drops 15ml",
-                    price: 45.80,
-                    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Gentle saline solution to relieve nasal congestion in babies. Helps clear blocked noses naturally.",
-                    benefits: "Relieves congestion, moisturizes nasal passages, drug-free",
-                    ingredients: "Sterile saline solution",
-                    usage: "Place 2-3 drops in each nostril as needed. Suitable from birth.",
-                    ageGroups: ["newborn", "infant", "toddler"],
-                    type: "drops",
-                    badge: "Popular",
-                    stock: 25
-                },
-                {
-                    id: 11,
-                    name: "Children's Cough Syrup 100ml",
-                    price: 87.60,
-                    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Soothing herbal cough syrup for children. Relieves dry and tickly coughs. Alcohol-free formula.",
-                    benefits: "Calms cough reflex, soothes throat, promotes rest",
-                    ingredients: "Ivy leaf extract, Thyme, Honey",
-                    usage: "Dosage according to age. Shake well before use.",
-                    ageGroups: ["toddler", "child"],
-                    type: "liquid",
-                    badge: "Value",
-                    stock: 17
-                },
-                {
-                    id: 12,
-                    name: "Baby Sunscreen SPF 50+ 100ml",
-                    price: 139.95,
-                    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                    description: "Extra gentle sunscreen specially formulated for baby's delicate skin. Water-resistant and fragrance-free.",
-                    benefits: "Broad spectrum protection, gentle formula, non-greasy",
-                    ingredients: "Zinc oxide, Titanium dioxide",
-                    usage: "Apply liberally before sun exposure. Reapply every 2 hours.",
-                    ageGroups: ["newborn", "infant", "toddler", "child"],
-                    type: "cream",
-                    badge: "Best Seller",
-                    stock: 14
-                }
-            ];
+                id: 1,
+                name: "Infacol 50ml",
+                price: 160.40,
+                image: "https://via.placeholder.com/300x300?text=Infacol",
+                description: "Effective colic relief for babies. Free from artificial colors and alcohol. Gentle formula that helps bring up wind and relieve colic.",
+                benefits: "Relieves colic, reduces wind and griping pain, easy to administer",
+                ingredients: "Simeticone",
+                usage: "Give 0.5ml before each feed. Suitable from birth.",
+                ageGroups: ["newborn", "infant"],
+                type: "liquid",
+                badge: "Best Seller",
+                stock: 25
+            },
+            {
+                id: 2,
+                name: "Telament paediatric gripe water 150ml",
+                price: 51.83,
+                image: "https://via.placeholder.com/300x300?text=Telament",
+                description: "Alcohol-free gripe water for infants. Helps relieve stomach discomfort, wind and colic. Natural herbal formula.",
+                benefits: "Soothes tummy discomfort, relieves colic, alcohol-free",
+                ingredients: "Dill oil, Sodium bicarbonate",
+                usage: "Give 5ml dose 3-4 times daily. Suitable for infants.",
+                ageGroups: ["infant"],
+                type: "liquid",
+                badge: "Popular",
+                stock: 30
+            },
+            {
+                id: 3,
+                name: "Woodwards gripe water 150ml",
+                price: 57.80,
+                image: "https://via.placeholder.com/300x300?text=Woodwards",
+                description: "Traditional gripe water formula for infants. Helps relieve stomach discomfort, wind and colic.",
+                benefits: "Relieves colic, reduces wind, soothes digestive discomfort",
+                ingredients: "Dill oil, Sodium bicarbonate",
+                usage: "Give 5ml dose before or after feeds. Suitable from 2 weeks.",
+                ageGroups: ["infant"],
+                type: "liquid",
+                badge: "Value",
+                stock: 22
+            },
+            {
+                id: 4,
+                name: "Probifend probiotic junior 10 chewable tabs",
+                price: 86.42,
+                image: "https://via.placeholder.com/300x300?text=Probifend",
+                description: "Chewable probiotic tablets for children. Supports digestive health and immune function.",
+                benefits: "Improves gut health, boosts immunity, easy to chew",
+                ingredients: "Lactobacillus rhamnosus, Bifidobacterium",
+                usage: "Chew 1 tablet daily. Suitable for children 3+ years.",
+                ageGroups: ["toddler", "child"],
+                type: "chewable",
+                badge: "New",
+                stock: 18
+            },
+            {
+                id: 5,
+                name: "Reuterina Drops 5ml",
+                price: 323.76,
+                image: "https://via.placeholder.com/300x300?text=Reuterina+Drops",
+                description: "Probiotic drops for infants. Supports digestive health and immune system development.",
+                benefits: "Reduces colic, supports gut health, promotes immunity",
+                ingredients: "Lactobacillus reuteri",
+                usage: "Give 5 drops daily. Suitable from birth.",
+                ageGroups: ["newborn", "infant"],
+                type: "drops",
+                badge: "Premium",
+                stock: 12
+            },
+            {
+                id: 6,
+                name: "Reuterina VitD 10ml",
+                price: 484.24,
+                image: "https://via.placeholder.com/300x300?text=Reuterina+VitD",
+                description: "Vitamin D supplement with probiotics for infants. Supports bone development and immune health.",
+                benefits: "Promotes bone health, supports immunity, probiotic benefits",
+                ingredients: "Vitamin D3, Lactobacillus reuteri",
+                usage: "Give 0.5ml daily. Suitable from birth.",
+                ageGroups: ["newborn", "infant"],
+                type: "drops",
+                badge: "Premium",
+                stock: 10
+            },
+            {
+                id: 7,
+                name: "Reuterina junior 30 chewable tabs",
+                price: 316.94,
+                image: "https://via.placeholder.com/300x300?text=Reuterina+Junior",
+                description: "Chewable probiotic tablets for older children. Supports digestive and immune health.",
+                benefits: "Improves digestion, boosts immunity, great taste",
+                ingredients: "Lactobacillus reuteri",
+                usage: "Chew 1 tablet daily. Suitable for children 2+ years.",
+                ageGroups: ["toddler", "child"],
+                type: "chewable",
+                badge: "Popular",
+                stock: 15
+            },
+            {
+                id: 8,
+                name: "Marshalls Gripe Water 150ml",
+                price: 57.80, // Assuming same as Woodwards
+                image: "https://via.placeholder.com/300x300?text=Marshalls+Gripe",
+                description: "Herbal gripe water for infants. Helps relieve stomach discomfort and colic.",
+                benefits: "Relieves colic, reduces wind, natural formula",
+                ingredients: "Dill oil, Fennel, Ginger",
+                usage: "Give 5ml dose as needed. Suitable from 1 month.",
+                ageGroups: ["infant"],
+                type: "liquid",
+                badge: "Value",
+                stock: 20
+            },
+            {
+                id: 9,
+                name: "Himalaya Bonnisan Liquid 120ml",
+                price: 89.99, // Price not in PDF, using estimate
+                image: "https://via.placeholder.com/300x300?text=Bonnisan",
+                description: "Ayurvedic digestive syrup for infants and children. Helps relieve colic and digestive discomfort.",
+                benefits: "Improves digestion, relieves colic, natural ingredients",
+                ingredients: "Dill oil, Licorice, Cardamom",
+                usage: "Give 1-2ml 3 times daily. Suitable from birth.",
+                ageGroups: ["newborn", "infant", "toddler"],
+                type: "liquid",
+                badge: "Natural",
+                stock: 16
+            },
+            {
+                id: 10,
+                name: "Baba Suur 50ml",
+                price: 100.19,
+                image: "https://via.placeholder.com/300x300?text=Baba+Suur",
+                description: "Traditional gripe water for infants. Helps relieve colic, wind and stomach discomfort.",
+                benefits: "Soothes tummy pain, reduces wind, natural formula",
+                ingredients: "Dill oil, Sodium bicarbonate",
+                usage: "Give 5ml before or after feeds. Suitable from 1 month.",
+                ageGroups: ["infant"],
+                type: "liquid",
+                badge: "Traditional",
+                stock: 18
+            },
+            {
+                id: 11,
+                name: "Marshalls children's tonic 100ml",
+                price: 38.40,
+                image: "https://via.placeholder.com/300x300?text=Marshalls+Tonic",
+                description: "Multivitamin tonic for children. Supports overall health and development.",
+                benefits: "Boosts appetite, improves energy, supports growth",
+                ingredients: "Vitamins B complex, Iron, Calcium",
+                usage: "Give 5-10ml daily. Suitable for children 1+ years.",
+                ageGroups: ["toddler", "child"],
+                type: "liquid",
+                badge: "Value",
+                stock: 24
+            },
+            {
+                id: 12,
+                name: "Phipps milk of magnesia 100ml",
+                price: 75.00,
+                image: "https://via.placeholder.com/300x300?text=Phipps",
+                description: "Gentle laxative for children. Relieves occasional constipation.",
+                benefits: "Relieves constipation, gentle formula, easy to take",
+                ingredients: "Magnesium hydroxide",
+                usage: "Give 5-15ml as needed. Suitable for children 2+ years.",
+                ageGroups: ["toddler", "child"],
+                type: "liquid",
+                badge: "Relief",
+                stock: 14
+            },
+            {
+                id: 13,
+                name: "Spasmopep Junior 30ml drops",
+                price: 140.59,
+                image: "https://via.placeholder.com/300x300?text=Spasmopep",
+                description: "Antispasmodic drops for children. Relieves abdominal cramps and discomfort.",
+                benefits: "Reduces stomach cramps, soothes digestive discomfort",
+                ingredients: "Mebeverine hydrochloride",
+                usage: "Give 10-20 drops 3 times daily. Suitable for children 5+ years.",
+                ageGroups: ["child"],
+                type: "drops",
+                badge: "Specialist",
+                stock: 8
+            },
+            {
+                id: 14,
+                name: "Natura rescue baby melts 50 Tabs",
+                price: 74.25,
+                image: "https://via.placeholder.com/300x300?text=Natura+Rescue",
+                description: "Natural stress relief for babies. Dissolvable tablets with flower essences.",
+                benefits: "Calms and soothes, reduces stress, natural ingredients",
+                ingredients: "Bach flower essences",
+                usage: "Dissolve 1 tablet on tongue as needed. Suitable for babies 6+ months.",
+                ageGroups: ["infant", "toddler"],
+                type: "melts",
+                badge: "Natural",
+                stock: 20
+            },
+            {
+                id: 15,
+                name: "Bennetts Saline Nasal Spray 30ml",
+                price: 242.65,
+                image: "https://via.placeholder.com/300x300?text=Bennetts+Saline",
+                description: "Gentle saline spray for babies and children. Clears nasal congestion naturally.",
+                benefits: "Relieves congestion, moisturizes nasal passages, drug-free",
+                ingredients: "Sterile saline solution",
+                usage: "Spray 1-2 times in each nostril as needed. Suitable from birth.",
+                ageGroups: ["newborn", "infant", "toddler", "child"],
+                type: "spray",
+                badge: "Essential",
+                stock: 15
+            },
+            {
+                id: 16,
+                name: "Stefimar nasal hygiene baby 50ml",
+                price: 54.30,
+                image: "https://via.placeholder.com/300x300?text=Stefimar",
+                description: "Nasal hygiene solution for babies. Gently cleanses and moisturizes nasal passages.",
+                benefits: "Clears nasal passages, reduces dryness, gentle formula",
+                ingredients: "Sea water, Aloe vera",
+                usage: "Use 1-2 drops in each nostril daily. Suitable from birth.",
+                ageGroups: ["newborn", "infant"],
+                type: "drops",
+                badge: "Hygiene",
+                stock: 22
+            },
+            {
+                id: 17,
+                name: "Zinplex junior cough syrup 200ml",
+                price: 65.99,
+                image: "https://via.placeholder.com/300x300?text=Zinplex+Cough",
+                description: "Cough syrup for children. Relieves dry and chesty coughs.",
+                benefits: "Soothes cough, reduces irritation, promotes rest",
+                ingredients: "Guaifenesin, Honey, Ivy leaf extract",
+                usage: "Give 5-10ml 3 times daily. Suitable for children 2+ years.",
+                ageGroups: ["toddler", "child"],
+                type: "liquid",
+                badge: "Relief",
+                stock: 18
+            },
+            {
+                id: 18,
+                name: "Andolex sore throat lollies 10s",
+                price: 101.00,
+                image: "https://via.placeholder.com/300x300?text=Andolex",
+                description: "Sore throat relief lollies for children. Soothes and numbs throat pain.",
+                benefits: "Relieves sore throat, reduces pain, pleasant taste",
+                ingredients: "Benzocaine, Cetylpyridinium chloride",
+                usage: "Suck 1 lozenge every 3 hours. Suitable for children 6+ years.",
+                ageGroups: ["child"],
+                type: "lozenges",
+                badge: "Fast Relief",
+                stock: 12
+            },
+            {
+                id: 19,
+                name: "Pegicol children 20 sachets",
+                price: 295.92,
+                image: "https://via.placeholder.com/300x300?text=Pegicol",
+                description: "Laxative for children with chronic constipation. Gentle and effective formula.",
+                benefits: "Relieves constipation, gentle action, easy to take",
+                ingredients: "Polyethylene glycol",
+                usage: "Mix 1 sachet with water daily. Suitable for children 2+ years.",
+                ageGroups: ["toddler", "child"],
+                type: "powder",
+                badge: "Specialist",
+                stock: 7
+            }
+        ];
 
             // Cart functionality
             let cart = [];
