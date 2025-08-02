@@ -30,3 +30,34 @@ setGlobalOptions({ maxInstances: 10 });
 //   logger.info("Hello logs!", {structuredData: true});
 //   response.send("Hello from Firebase!");
 // });
+const functions = require("firebase-functions");
+const axios = require("axios");
+
+exports.chargeCard = functions.https.onRequest(async (req, res) => {
+  if (req.method !== "POST") {
+    return res.status(405).send("Method Not Allowed");
+  }
+
+  const { token, amountInCents } = req.body;
+
+  try {
+    const response = await axios.post(
+      "https://online.yoco.com/v1/charges/",
+      {
+        token: token,
+        amountInCents: amountInCents,
+        currency: "ZAR",
+      },
+      {
+        headers: {
+          "X-Secret-Key":import.meta.env.VITE_YOCO_PUBLIC_KEY, // replace this
+        },
+      }
+    );
+
+    res.status(200).json({ success: true, data: response.data });
+  } catch (err) {
+    console.error(err.response?.data || err.message);
+    res.status(500).json({ success: false, message: err.response?.data?.error || "Charge failed" });
+  }
+});
