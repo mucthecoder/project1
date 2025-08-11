@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #1976D2; /* Professional blue */
+            --primary-color: #E91E63; /* Professional blue */
             --primary-dark: #1565C0; /* Darker blue for contrast */
             --secondary-color: #f5f7fa; /* Light background */
             --accent-color: #E91E63; /* Vibrant pink */
@@ -24,6 +24,7 @@
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             --header-height: 80px;
         }
+
         
         * {
             margin: 0;
@@ -1089,37 +1090,19 @@
         }
 
         .feature-icon {
-            margin-bottom: 20px;
-            transition: var(--transition);
+            width: 120px;
+            height: 120px;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100px;
+            margin: 0 auto 20px;
         }
 
-        .feature-icon {
-            width: 120px;
-            height: 120px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            margin: 0 auto 1rem;
-        }
-
-        .delivery-icon {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/3097/3097974.png');
-        }
-
-        .payment-icon {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/2331/2331966.png');
-        }
-
-        .support-icon {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/2102/2102647.png');
-        }
-
-        .calendar-icon {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/3652/3652191.png');
+        .feature-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: var(--transition);
         }
 
         .feature-card:hover .feature-icon img {
@@ -1139,7 +1122,11 @@
 
         /* Newsletter Section */
         .newsletter {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            background: linear-gradient(135deg, rgba(233, 30, 99, 0.9) 0%, rgba(33, 150, 243, 0.9) 100%), 
+                        url('images/FirstChemLogo-removebg-preview-e1751526921499-removebg.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
             color: var(--white);
             padding: 80px 0;
             text-align: center;
@@ -1914,9 +1901,9 @@
     <div class="main-header">
         <div class="container">
             <div class="header-content">
-                <a href="/" class="logo">
+                <a href="home.html" class="logo">
                     <img src="images/FirstChemLogo-removebg-preview-e1751526921499-removebg.png" 
-                        alt="FirstChem Logo" 
+                        alt="FirstChem Pharmacy Logo"
                         style="height: 100px; width: auto;">
                 </a>
 
@@ -1973,52 +1960,52 @@
         <nav class="main-nav" aria-label="Main navigation">
             <div class="container">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/index.html">Home</a></li>
                     <li class="nav-dropdown">
-                        <a href="shop.html">Shop <i class="fas fa-chevron-down"></i></a>
+                        <a href="/shop.html">Shop <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="baby-&-kids-medication.html">Baby & Kids</a></li>
-                            <li><a href="antioxidants.html">Antioxidants</a></li>
-                            <li><a href="beauty-essentials.html">Beauty Essentials</a></li>
-                            <li><a href="bone-&-joint-support.html">Bone & Joint Support</a></li>
-                            <li><a href="cold-and-flu.html">Cold and Flu</a></li>
-                            <li><a href="cough-mixtures.html">Cough Mixtures</a></li>
-                            <li><a href="dental-oral-care.html">Dental & Oral Care</a></li>
-                            <li><a href="deodorants-&-perfumes.html">Deodorants & Perfumes</a></li>
-                            <li><a href="drinks.html">Drinks</a></li>
-                            <li><a href="essential-oils.html">Essential Oils</a></li>
-                            <li><a href="female-essentials.html">Female Essentials</a></li>
-                            <li><a href="foot-care.html">Foot Care</a></li>
-                            <li><a href="front-shop-meds.html">Front Shop Meds</a></li>
-                            <li><a href="herbal-wound-care.html">Herbal & Wound Care</a></li>
-                            <li><a href="household-items.html">Household Items</a></li>
-                            <li><a href="immune-boosters.html">Immune Boosters</a></li>
-                            <li><a href="intimacy-supplements.html">Intimacy Supplements</a></li>
-                            <li><a href="iron-supplements.html">Iron Supplements</a></li>
-                            <li><a href="kids-vitamins.html">Kids Vitamins</a></li>
-                            <li><a href="liver-support.html">Liver Support</a></li>
-                            <li><a href="multi-vitamins.html">Multi Vitamins</a></li>
-                            <li><a href="muscle-cramp-meds.html">Muscle Cramp Meds</a></li>
-                            <li><a href="ointments.html">Ointments</a></li>
-                            <li><a href="pregnancy-vitamins.html">Pregnancy Vitamins</a></li>
-                            <li><a href="probiotics.html">Probiotics</a></li>
-                            <li><a href="skin-care.html">Skin Care</a></li>
-                            <li><a href="snacks.html">Snacks</a></li>
-                            <li><a href="stomach-meds.html">Stomach Meds</a></li>
-                            <li><a href="teas.html">Teas</a></li>
-                            <li><a href="test-kits.html">Test Kits</a></li>
-                            <li><a href="health-monitors.html">Health Monitors</a></li>
-                            <li><a href="tissues-toilet-rolls.html">Tissues & Toilet Rolls</a></li>
-                            <li><a href="urinary-support.html">Urinary Support</a></li>
-                            <li><a href="vapour-rubs.html">Vapour Rubs</a></li>
+                            <li><a href="/categories/baby-kids-medication.html">Baby & Kids</a></li>
+                            <li><a href="/categories/antioxidants.html">Antioxidants</a></li>
+                            <li><a href="/categories/beauty-essentials.html">Beauty Essentials</a></li>
+                            <li><a href="/categories/bone-joint-support.html">Bone & Joint Support</a></li>
+                            <li><a href="/categories/cold-and-flu.html">Cold and Flu</a></li>
+                            <li><a href="/categories/cough-mixtures.html">Cough Mixtures</a></li>
+                            <li><a href="/categories/dental-oral-care.html">Dental & Oral Care</a></li>
+                            <li><a href="/categories/deodorants-perfumes.html">Deodorants & Perfumes</a></li>
+                            <li><a href="/categories/drinks.html">Drinks</a></li>
+                            <li><a href="/categories/essential-oils.html">Essential Oils</a></li>
+                            <li><a href="/categories/female-essentials.html">Female Essentials</a></li>
+                            <li><a href="/categories/foot-care.html">Foot Care</a></li>
+                            <li><a href="/categories/front-shop-meds.html">Front Shop Meds</a></li>
+                            <li><a href="/categories/herbal-wound-care.html">Herbal & Wound Care</a></li>
+                            <li><a href="/categories/household-items.html">Household Items</a></li>
+                            <li><a href="/categories/immune-boosters.html">Immune Boosters</a></li>
+                            <li><a href="/categories/intimacy-supplements.html">Intimacy Supplements</a></li>
+                            <li><a href="/categories/iron-supplements.html">Iron Supplements</a></li>
+                            <li><a href="/categories/kids-vitamins.html">Kids Vitamins</a></li>
+                            <li><a href="/categories/liver-support.html">Liver Support</a></li>
+                            <li><a href="/categories/multi-vitamins.html">Multi Vitamins</a></li>
+                            <li><a href="/categories/muscle-cramp-meds.html">Muscle Cramp Meds</a></li>
+                            <li><a href="/categories/ointments.html">Ointments</a></li>
+                            <li><a href="/categories/pregnancy-vitamins.html">Pregnancy Vitamins</a></li>
+                            <li><a href="/categories/probiotics.html">Probiotics</a></li>
+                            <li><a href="/categories/skin-care.html">Skin Care</a></li>
+                            <li><a href="/categories/snacks.html">Snacks</a></li>
+                            <li><a href="/categories/stomach-meds.html">Stomach Meds</a></li>
+                            <li><a href="/categories/teas.html">Teas</a></li>
+                            <li><a href="/categories/test-kits.html">Test Kits</a></li>
+                            <li><a href="/categories/health-monitors.html">Health Monitors</a></li>
+                            <li><a href="/categories/tissues-toilet-rolls.html">Tissues & Toilet Rolls</a></li>
+                            <li><a href="/categories/urinary-support.html">Urinary Support</a></li>
+                            <li><a href="/categories/vapour-rubs.html">Vapour Rubs</a></li>
                         </ul>
                     </li>
-                    <li><a href="female-essentials.html">Female Essentials</a></li>
-                    <li><a href="baby-&-kids-medication.html">Baby & Kids</a></li>
-                    <li><a href="pregnancy-vitamins.html">Pregnancy Vitamins</a></li>
-                    <li><a href="cold-and-flu.html">Cold and Flu</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="/categories/female-essentials.html">Female Essentials</a></li>
+                    <li><a href="/categories/baby-kids-medication.html">Baby & Kids</a></li>
+                    <li><a href="/categories/pregnancy-vitamins.html">Pregnancy Vitamins</a></li>
+                    <li><a href="/categories/cold-and-flu.html">Cold and Flu</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -2245,7 +2232,7 @@
                         <h3>Front Shop Meds</h3>
                         <span class="count">(68 products)</span>
                         <p>Aspirins, heart support, and OTC medications</p>
-                        <a href="front-shop-meds.html" class="category-link">Shop Now</a>
+                        <a href="aspirins-&-heart-support.html" class="category-link">Shop Now</a>
                     </div>
                 </div>
                 
@@ -2297,7 +2284,7 @@
                         <h3>Intimacy Supplements</h3>
                         <span class="count">(18 products)</span>
                         <p>Supplements for intimacy and relationships</p>
-                        <a href="intimacy-supplements.html" class="category-link">Shop Now</a>
+                        <a href="intimacy-supplememnts.html" class="category-link">Shop Now</a>
                     </div>
                 </div>
                 
@@ -2324,6 +2311,19 @@
                         <span class="count">(35 products)</span>
                         <p>Essential vitamins for growing children</p>
                         <a href="kids-vitamins.html" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+
+                <!-- Lennon Products -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-bottle"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Lennon Products</h3>
+                        <span class="count">(2 products)</span>
+                        <p>Lennon products we know</p>
+                        <a href="lennon-products.html" class="category-link">Shop Now</a>
                     </div>
                 </div>
                 
@@ -2362,7 +2362,7 @@
                         <h3>Muscle Camp Meds</h3>
                         <span class="count">(15 products)</span>
                         <p>Medications for muscle cramps and pain</p>
-                        <a href="muscle-cramp-meds.html" class="category-link">Shop Now</a>
+                        <a href="muscle-cramp-medication.html" class="category-link">Shop Now</a>
                     </div>
                 </div>
                 
@@ -2414,7 +2414,7 @@
                         <h3>Skin Care</h3>
                         <span class="count">(59 products)</span>
                         <p>Creams and treatments for healthy skin</p>
-                        <a href="skin-care.html" class="category-link">Shop Now</a>
+                        <a href="skin-care-&-creams.html" class="category-link">Shop Now</a>
                     </div>
                 </div>
                 
@@ -2440,7 +2440,7 @@
                         <h3>Stomach Meds</h3>
                         <span class="count">(37 products)</span>
                         <p>Relief for digestive issues and stomach discomfort</p>
-                        <a href="stomach-meds.html" class="category-link">Shop Now</a>
+                        <a href="stomach-medication.html" class="category-link">Shop Now</a>
                     </div>
                 </div>
                 
@@ -2479,7 +2479,7 @@
                         <h3>Health Monitors</h3>
                         <span class="count">(32 products)</span>
                         <p>Thermometers, glucose meters, and BP monitors</p>
-                        <a href="health-monitors.html" class="category-link">Shop Now</a>
+                        <a href="health-monitoring-devices.html" class="category-link">Shop Now</a>
                     </div>
                 </div>
                 
@@ -2492,7 +2492,7 @@
                         <h3>Tissues & Toilet Rolls</h3>
                         <span class="count">(25 products)</span>
                         <p>Hygiene essentials for home and travel</p>
-                        <a href="tissues-toilet-rolls.html" class="category-link">Shop Now</a>
+                        <a href="tissues-&-toilet-roll.html" class="category-link">Shop Now</a>
                     </div>
                 </div>
                 
@@ -2522,40 +2522,6 @@
                     </div>
                 </div>
             </div>
-
-            <a href="beauty-essentials.html" class="category-link">Shop Now</a>
-    <a href="bone-&-joint-support.html" class="category-link">Shop Now</a>
-    <a href="cold-and-flu.html" class="category-link">Shop Now</a>
-    <a href="cough-mixtures.html" class="category-link">Shop Now</a>
-    <a href="dental-oral-care.html" class="category-link">Shop Now</a>
-    <a href="deodorants-&-perfumes.html" class="category-link">Shop Now</a>
-    <a href="drinks.html" class="category-link">Shop Now</a>
-    <a href="essential-oils.html" class="category-link">Shop Now</a>
-    <a href="female-essentials.html" class="category-link">Shop Now</a>
-    <a href="foot-care.html" class="category-link">Shop Now</a>
-    <a href="front-shop-meds.html" class="category-link">Shop Now</a>
-    <a href="herbal-wound-care.html" class="category-link">Shop Now</a>
-    <a href="household-items.html" class="category-link">Shop Now</a>
-    <a href="immune-boosters.html" class="category-link">Shop Now</a>
-    <a href="intimacy-supplements.html" class="category-link">Shop Now</a>
-    <a href="iron-supplements.html" class="category-link">Shop Now</a>
-    <a href="kids-vitamins.html" class="category-link">Shop Now</a>
-    <a href="liver-support.html" class="category-link">Shop Now</a>
-    <a href="multi-vitamins.html" class="category-link">Shop Now</a>
-    <a href="muscle-cramp-meds.html" class="category-link">Shop Now</a>
-    <a href="ointments.html" class="category-link">Shop Now</a>
-    <a href="pregnancy-vitamins.html" class="category-link">Shop Now</a>
-    <a href="probiotics.html" class="category-link">Shop Now</a>
-    <a href="skin-care.html" class="category-link">Shop Now</a>
-    <a href="snacks.html" class="category-link">Shop Now</a>
-    <a href="stomach-meds.html" class="category-link">Shop Now</a>
-    <a href="teas.html" class="category-link">Shop Now</a>
-    <a href="test-kits.html" class="category-link">Shop Now</a>
-    <a href="health-monitors.html" class="category-link">Shop Now</a>
-    <a href="tissues-toilet-rolls.html" class="category-link">Shop Now</a>
-    <a href="urinary-support.html" class="category-link">Shop Now</a>
-    <a href="vapour-rubs.html" class="category-link">Shop Now</a>
-        </section>
 
 <!-- Products Section -->
 <section class="products" aria-labelledby="popular-products-heading">
@@ -2755,25 +2721,33 @@
         <h2 id="features-heading" class="section-title text-center">Why Choose Us</h2>
         <div class="feature-grid">
             <div class="feature-card">
-                <div class="feature-icon delivery-icon"></div>
+                <div class="feature-icon">
+                    <img src="images/sticker-png-graphics-logo-mr-men-pargo-shape-one-stop-service-text-trademark-logo-smiley-sign-removebg-preview-11.png" alt="Delivery icon">
+                </div>
                 <h3>Delivery/Pickup Point</h3>
                 <p>On orders over R450 anywhere in South Africa</p>
             </div>
             
             <div class="feature-card">
-                <div class="feature-icon payment-icon"></div>
+                <div class="feature-icon">
+                    <img src="images/YOCO__1___1_-removebg-preview (1).png" alt="Secure payments icon">
+                </div>
                 <h3>Secure Payments</h3>
                 <p>100% secure payment options with SSL encryption</p>
             </div>
             
             <div class="feature-card">
-                <div class="feature-icon support-icon"></div>
+                <div class="feature-icon">
+                    <img src="images/FirstChemLogo-removebg-preview-e1751526921499-removebg.png" alt="Support icon">
+                </div>
                 <h3>24/7 Support</h3>
                 <p>Dedicated support team ready to assist you</p>
             </div>
             
             <div class="feature-card">
-                <div class="feature-icon calendar-icon"></div>
+                <div class="feature-icon">
+                    <img src="images/book-removebg-preview__1_-removebg-preview.png" alt="Appointment icon">
+                </div>
                 <h3>Book an Appointment</h3>
                 <p>Book an Appointment to see a qualified pharmacists</p>
             </div>
@@ -2812,24 +2786,24 @@
                 <div class="footer-col">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Shop</a></li>
-                        <li><a href="#">Prescriptions</a></li>
-                        <li><a href="#">Health Blog</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/shop.html">Shop</a></li>
+                        <li><a href="/prescriptions.html">Prescriptions</a></li>
+                        <li><a href="/blog.html">Health Blog</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
                     <h3>Customer Service</h3>
                     <ul>
-                        <li><a href="#">My Account</a></li>
-                        <li><a href="#">Order Tracking</a></li>
-                        <li><a href="#">Wishlist</a></li>
-                        <li><a href="#">Shipping Policy</a></li>
-                        <li><a href="#">Returns & Refunds</a></li>
-                        <li><a href="#">FAQs</a></li>
+                        <li><a href="/account.html">My Account</a></li>
+                        <li><a href="/order-tracking.html">Order Tracking</a></li>
+                        <li><a href="/wishlist.html">Wishlist</a></li>
+                        <li><a href="/shipping-policy.html">Shipping Policy</a></li>
+                        <li><a href="/returns-refunds.html">Returns & Refunds</a></li>
+                        <li><a href="/faqs.html">FAQs</a></li>
                     </ul>
                 </div>
                 

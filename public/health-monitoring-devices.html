@@ -8,15 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #3498db;
-            --primary-dark: #2980b9;
-            --secondary-color: #f8f9fa;
-            --accent-color: #5dade2;
-            --accent-light: #ebf5fb;
-            --text-color: #333;
-            --light-text: #666;
+            --primary-color: #E91E63; /* Professional blue */
+            --primary-dark: #1565C0; /* Darker blue for contrast */
+            --secondary-color: #f5f7fa; /* Light background */
+            --accent-color: #E91E63; /* Vibrant pink */
+            --accent-light: #F8BBD0; /* Light pink for accents */
+            --text-color: #333; /* Darker, more readable text */
+            --light-text: #666; /* Lighter secondary text */
             --white: #ffffff;
-            --border-radius: 10px;
+            --border-radius: 10px; /* Smoother corners */
             --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --box-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -1147,8 +1147,10 @@
         <div class="main-header">
             <div class="container">
                 <div class="header-content">
-                    <a href="/" class="logo">
-                        <div class="logo-text">First<span>Chem</span></div>
+                    <a href="home.html" class="logo">
+                        <img src="images/FirstChemLogo-removebg-preview-e1751526921499-removebg.png" 
+                            alt="FirstChem Pharmacy Logo"
+                            style="height: 100px; width: auto;">
                     </a>
 
                     <div class="search-bar">
@@ -2026,7 +2028,7 @@
                 const item = cart.find(item => item.id == productId);
                 if (item) {
                     item.quantity = newQuantity;
-                    if (item.quantity <= 0) {
+                    if (item.quantity <=  0) {
                         removeFromCart(productId);
                     } else {
                         updateCartDropdown();
