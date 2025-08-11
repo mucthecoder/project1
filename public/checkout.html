@@ -3,66 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <title>Checkout</title>
-  <script src="https://js.yoco.com/sdk/v1/yoco-sdk-web.js"></script>
   <style>
-    #card-frame {
-      border: 1px solid #ccc;
-      padding: 20px;
+    input, button {
+      display: block;
       margin-bottom: 10px;
+      padding: 10px;
       width: 300px;
     }
     button {
-      padding: 10px 20px;
+      background: #0066cc;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
     }
   </style>
 </head>
 <body>
   <h2>Pay R200</h2>
-  <div id="card-frame"></div>
+
+  <input type="text" id="card-number" placeholder="Card Number" />
+  <input type="text" id="expiry-month" placeholder="Expiry Month (MM)" />
+  <input type="text" id="expiry-year" placeholder="Expiry Year (YYYY)" />
+  <input type="text" id="cvv" placeholder="CVV" />
+
   <button id="pay-btn">Pay Now</button>
 
-  <script type="module">
-    const yoco = new window.YocoSDK({
-      publicKey: "pk_test_your_public_key", // Replace with your Yoco Public Key
-    });
-
-    const inline = yoco.inline({
-      layout: "basic",
-      amountInCents: 20000, // R200
-      currency: "ZAR",
-    });
-
-    inline.mount("#card-frame");
+  <script>
+    const FIREBASE_FUNCTION_URL = "https://us-central1-YOUR_PROJECT.cloudfunctions.net/chargeCard";
 
     document.getElementById("pay-btn").addEventListener("click", async () => {
-      const result = await inline.createToken();
+      const cardNumber = document.getElementById("card-number").value.trim();
+      const expMonth = document.getElementById("expiry-month").value.trim();
+      const expYear = document.getElementById("expiry-year").value.trim();
+      const cvv = document.getElementById("cvv").value.trim();
 
-      if (result.error) {
-        alert("Payment failed: " + result.error.message);
+      if (!cardNumber || !expMonth || !expYear || !cvv) {
+        alert("Please fill in all fields");
         return;
       }
 
-      const token = result.id;
+      const payBtn = document.getElementById("pay-btn");
+      payBtn.disabled = true;
+      payBtn.innerText = "Processing...";
 
-      // Send token to Firebase Function
-      const response = await fetch("https://your-region.cloudfunctions.net/chargeCard", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          token: token,
-          amountInCents: 20000
-        })
-      });
+      try {
+        const response = await fetch(FIREBASE_FUNCTION_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            cardNumber,
+            expMonth,
+            expYear,
+            cvv,
+            amountInCents: 20000
+          })
+        });
 
-      const data = await response.json();
+        const data = await response.json();
 
-      if (data.success) {
-        alert("Payment successful!");
-      } else {
-        alert("Payment failed: " + data.message);
+        if (data.success) {
+          alert("Payment successful!");
+        } else {
+          alert("Payment failed: " + data.message);
+        }
+      } catch (err) {
+        alert("Error: " + err.message);
       }
+
+      payBtn.disabled = false;
+      payBtn.innerText = "Pay Now";
     });
   </script>
 </body>
