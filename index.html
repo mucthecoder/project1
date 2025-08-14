@@ -1,47 +1,152 @@
-<script src="https://js.yoco.com/sdk/v1/yoco-sdk-web.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login / Signup</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-<button id="checkout-button">Pay Now</button>
-<div id="payment-result"></div>
+    body {
+      background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-<script>
-  var yoco = new window.YocoSDK({
-    publicKey: "pk_test_d9aa6ae78o809b3e1f84", // replace with your PUBLIC key
-  });
+    .container {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 30px;
+      width: 320px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      color: #fff;
+      text-align: center;
+    }
 
-  document.getElementById("checkout-button").addEventListener("click", function () {
-    yoco.showPopup({
-      amountInCents: 500, // 50 ZAR
-      currency: "ZAR",
-      name: "My Website",
-      description: "Test Payment",
-      callback: function (result) {
-        if (result.error) {
-          document.getElementById("payment-result").innerText =
-            "Error: " + result.error.message;
-        } else {
-          fetch("/.netlify/functions/charge", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ token: result.id }),
-})
-.then(async (res) => {
-  const text = await res.text();
-  try {
-    return JSON.parse(text);
-  } catch {
-    return { status: "failed", message: "Invalid or empty response" };
-  }
-})
-.then((data) => {
-  if (data.status === "successful") {
-    document.getElementById("payment-result").innerText = "✅ Payment successful!";
-  } else {
-    document.getElementById("payment-result").innerText = "❌ Payment failed!";
-  }
-});
+    h2 {
+      margin: 20px 0 10px;
+    }
 
-        }
-      },
-    });
-  });
-</script>
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    input::placeholder {
+      color: #eee;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      background-color: #00c9a7;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #00a58f;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .toggle-link {
+      color: #0ff;
+      cursor: pointer;
+      text-decoration: underline;
+      margin-top: 10px;
+      display: block;
+    }
+
+    .google-signin {
+      background: #fff;
+      color: #444;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: normal;
+      border: none;
+      border-radius: 8px;
+      padding: 12px;
+      margin: 10px 0;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .google-signin:hover {
+      background: #f0f0f0;
+    }
+
+    .google-signin img {
+      width: 20px;
+      height: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Login Form -->
+    <div id="login-form">
+      <h2>Login</h2>
+      <input type="email" id="login-email" placeholder="Email" />
+      <input type="password" id="login-password" placeholder="Password" />
+      <p style="text-align: right; margin: 5px 0;">
+        <a href="#" onclick="forgotPassword()" style="color: #00f; text-decoration: underline;">Forgot Password?</a>
+      </p>
+      <button onclick="login()">Login</button>
+      <button class="google-signin" onclick="googleSignIn()">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google"> Sign in with Google
+      </button>
+      <span class="toggle-link" onclick="toggleForms()">Don't have an account? Sign up</span>
+    </div>
+
+    <!-- Signup Form -->
+    <div id="signup-form" class="hidden">
+      <h2>Signup</h2>
+      <input type="text" id="signup-first-name" placeholder="First Name" required />
+      <input type="text" id="signup-last-name" placeholder="Last Name" required />
+      <input type="email" id="signup-email" placeholder="Email" required />
+      <input type="password" id="signup-password" placeholder="Password" required />
+      <button onclick="signup()">Sign Up</button>
+      <button class="google-signin" onclick="googleSignIn()">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google"> Sign up with Google
+      </button>
+      <span class="toggle-link" onclick="toggleForms()">Already have an account? Login</span>
+    </div>
+  </div>
+
+
+  
+  <script type="module" src="/src/main.js"></script>
+  <script>
+    function toggleForms() {
+      const loginForm = document.getElementById('login-form');
+      const signupForm = document.getElementById('signup-form');
+      loginForm.classList.toggle('hidden');
+      signupForm.classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>
