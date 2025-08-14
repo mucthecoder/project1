@@ -19,19 +19,27 @@
           document.getElementById("payment-result").innerText =
             "Error: " + result.error.message;
         } else {
-          fetch("/.netlify/functions/charge.js", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ token: result.id }),
-          })
-            .then((res) => res.json())
-            .then((data) => {
-              if (data.status === "successful") {
-                document.getElementById("payment-result").innerText = "✅ Payment successful!";
-              } else {
-                document.getElementById("payment-result").innerText = "❌ Payment failed!";
-              }
-            });
+          fetch("/.netlify/functions/charge", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ token: result.id }),
+})
+.then(async (res) => {
+  const text = await res.text();
+  try {
+    return JSON.parse(text);
+  } catch {
+    return { status: "failed", message: "Invalid or empty response" };
+  }
+})
+.then((data) => {
+  if (data.status === "successful") {
+    document.getElementById("payment-result").innerText = "✅ Payment successful!";
+  } else {
+    document.getElementById("payment-result").innerText = "❌ Payment failed!";
+  }
+});
+
         }
       },
     });
