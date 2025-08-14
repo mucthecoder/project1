@@ -106,7 +106,7 @@ window.googleSignIn = () => {
       }
 
       alert("Google sign-in successful!");
-      window.location.href = "/checkout.html";
+      window.location.href = "/home.html";
     })
     .catch((err) => alert("Google sign-in failed: " + err.message));
 };
