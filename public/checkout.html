@@ -1,0 +1,39 @@
+<script src="https://js.yoco.com/sdk/v1/yoco-sdk-web.js"></script>
+
+<button id="checkout-button">Pay Now</button>
+<div id="payment-result"></div>
+
+<script>
+  var yoco = new window.YocoSDK({
+    publicKey: "pk_test_d9aa6ae78o809b3e1f84", // replace with your PUBLIC key
+  });
+
+  document.getElementById("checkout-button").addEventListener("click", function () {
+    yoco.showPopup({
+      amountInCents: 5000, // 50 ZAR
+      currency: "ZAR",
+      name: "My Website",
+      description: "Test Payment",
+      callback: function (result) {
+        if (result.error) {
+          document.getElementById("payment-result").innerText =
+            "Error: " + result.error.message;
+        } else {
+          fetch("/.netlify/functions/charge.js", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ token: result.id }),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.status === "successful") {
+                document.getElementById("payment-result").innerText = "✅ Payment successful!";
+              } else {
+                document.getElementById("payment-result").innerText = "❌ Payment failed!";
+              }
+            });
+        }
+      },
+    });
+  });
+</script>

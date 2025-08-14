@@ -1,4 +1,11 @@
 export async function handler(event) {
+  if (event.httpMethod !== "POST") {
+    return {
+      statusCode: 405,
+      body: JSON.stringify({ error: "Method Not Allowed" }),
+    };
+  }
+
   try {
     const { token } = JSON.parse(event.body);
 
@@ -6,7 +13,7 @@ export async function handler(event) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "X-Auth-Secret-Key": process.env.YOCO_SECRET_KEY,
+        "X-Auth-Secret-Key": process.env.YOCO_SECRET_KEY, // Must be defined in Netlify env vars
       },
       body: JSON.stringify({
         token,
@@ -15,7 +22,15 @@ export async function handler(event) {
       }),
     });
 
-    const data = await res.json();
+    const text = await res.text(); // to handle potential empty body
+    let data;
+
+    try {
+      data = JSON.parse(text);
+    } catch {
+      data = { error: "Invalid JSON from Yoco" };
+    }
+
     return {
       statusCode: res.status,
       body: JSON.stringify(data),
