@@ -19,7 +19,7 @@
           document.getElementById("payment-result").innerText =
             "Error: " + result.error.message;
         } else {
-          fetch("/.netlify/functions/charge.js", {
+          fetch("/netlify/functions/charge.js", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ token: result.id }),
