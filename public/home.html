@@ -3467,5 +3467,39 @@
             }
         });
     </script>
+
+    <script>
+  // Load cart from localStorage or start empty
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // Save cart to localStorage
+  function saveCart() {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
+
+  // Add an item to the cart
+  function addToCart(product) {
+    const existingItem = cart.find(item => item.id === product.id);
+    if (existingItem) {
+      existingItem.quantity += product.quantity;
+    } else {
+      cart.push(product);
+    }
+    saveCart();
+    updateCartUI();
+  }
+
+  // Update the cart icon/count
+  function updateCartUI() {
+    const cartCount = document.querySelector(".cart-count");
+    if (cartCount) {
+      cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+    }
+  }
+
+  // Run when the page loads
+  updateCartUI();
+</script>
+
 </body>
 </html>
