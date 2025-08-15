@@ -8,12 +8,26 @@
     publicKey: "pk_test_d9aa6ae78o809b3e1f84", // replace with your PUBLIC key
   });
 
+  // Pull cart data from localStorage and calculate total
+  function getCartTotal() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let total = 0;
+
+    cart.forEach(item => {
+      total += item.price * item.quantity; // Adjust keys if your cart structure is different
+    });
+
+    return total; // total in Rands
+  }
+
   document.getElementById("checkout-button").addEventListener("click", function () {
+    let amountInCents = Math.round(getCartTotal() * 100);
+
     yoco.showPopup({
-      amountInCents: 5000, // 50 ZAR
+      amountInCents: amountInCents,
       currency: "ZAR",
       name: "My Website",
-      description: "Test Payment",
+      description: "Cart Payment",
       callback: function (result) {
         if (result.error) {
           document.getElementById("payment-result").innerText =
@@ -22,10 +36,10 @@
           fetch("/netlify/functions/charge.js", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ token: result.id }),
+            body: JSON.stringify({ token: result.id, amount: amountInCents }),
           })
-            .then((res) => res.json())
-            .then((data) => {
+            .then(res => res.json())
+            .then(data => {
               if (data.status === "successful") {
                 document.getElementById("payment-result").innerText = "✅ Payment successful!";
               } else {
